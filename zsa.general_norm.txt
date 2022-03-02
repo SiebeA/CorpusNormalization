@@ -1,6 +1,14 @@
 sa it costs five or five point zero zero dollars euro .
 
+
 the brand is called B.M.W. a German organization .
+
+he was a H. dog guy .
+
+or this H. dog guy
+
+
+
 
 
 
@@ -61,7 +69,7 @@ we specialize in cars including but not limited to Audi B.M.W. Mini Jaguar Land 
 
 when are you open ?
 
-we are open Monday through Friday <TIME> seven thirty A.M. </TIME> to <TIME> five thirty P.M. </TIME>
+we are open Monday through Friday <TIME> seven thirty in the morning </TIME> to <TIME> half past five P.M. </TIME>
 
 
 what form of payment do you accept ?
@@ -86,7 +94,8 @@ Hyundai Genuine Parts are covered by a twelve month Replacement Parts and Access
 
 what does Roadside Assistance cover ?
 
-the Hyundai Roadside Assistance Program provides you with the following services AA¢AAAA Towing to transport your vehicle to the nearest Hyundai Dealership or Authorized Service Facility in the event your vehicle is inoperable . AA¢AAAA Roadside services such as dead battery jump start flat tire change lockout service keys locked in car or gas delivery up to three gallons where permissible at no charge if you run out of gas . AA¢AAAA Trip Interruption Benefit AA¢AAAA In all five years of coverage you will be eligible for two free roadside events per year . should you happen to use your two free events in a given year you would then need to pay the tow service provider for any further tow or roadside service in that year prior to such services being provided .
+the Hyundai Roadside Assistance Program provides you with the following services towing to transport your vehicle to the nearest Hyundai Dealership or Authorized Service Facility in the event your vehicle is inoperable . roadside services such as dead battery jump start flat tire change lockout service keys locked in car or gas delivery up to three gallons where permissible at no charge if you run out of gas . trip Interruption Benefit
+in all five years of coverage you will be eligible for two free roadside events per year . should you happen to use your two free events in a given year you would then need to pay the tow service provider for any further tow or roadside service in that year prior to such services being provided .
 
 
 what is the warranty on Hyundai parts ?
@@ -135,7 +144,7 @@ the Battery charge low or BATT LOW warning message on my dash is on . what does 
 battery Management System Certain Honda vehicles are equipped with a Battery Management System . this system monitors the battery's state of charge S.O.C. and alerts the driver when it has dropped below a predetermined level via a series of messages on the multi- information display MID . these messages include Battery charge low batt low and CHANGE BATTERY or REPLACE BATTERY . conditions that would cause the battery's S.O.C. to drop include long-term vehicle storage accessory use when the engine is not running and frequent short trips . battery charge low and BATT LOW Messages If these conditions are present and the battery charge is low you will see the Battery charge low and BATT LOW messages on your MID . if you are using accessories such as the audio system and interior lights without the engine running when you see these messages we recommend that you turn off the ignition and remove the key immediately to preserve remaining battery power until you are ready to drive the vehicle . it is possible in this instance that the S.O.C. will be too low to start the vehicle but most likely there will be enough charge left to start the vehicle if you stop using the accessories as soon as the message appears . these messages simply mean that the battery charge is lower than it should be . once the S.O.C. increases these messages will disappear . if the S.O.C. sufficiently drops while you are driving the engine control system will raise your idle speed in an effort to increase alternator output thereby charging the battery . if you are regularly seeing these messages when the described conditions are not present your vehicle may need its software updated . your local Honda dealer's service department can help to address this issue . CHANGE BATTERY and REPLACE BATTERY Messages If the Battery Management System determines the battery is close to exhausting its useful life it may generate a message indicating CHANGE BATTERY or REPLACE BATTERY . the system monitors battery flow and voltage and if it determines that the battery cannot maintain its S.O.C. it will send these messages to the MID to display for the driver . if you receive this message on your MID we recommend visiting your Honda dealership as soon as possible to have the battery inspected and if needed replaced . you can help preserve your battery's life and charge by minimizing short trips when possible and limiting your use of accessories when the engine is not running . if you ever have a concern with your battery please see your Honda dealership .
 
 
-I have a question regarding the Takata bankruptcy and class action settlement . in <DATE> October two thousand seventeen </DATE> T.K. Holdings Incorporated " T.K.H. " the largest U.S. subsidiary of Takata Corporation and certain of T.K.H.'s affiliates sent required legal notices to the past and current owners of all vehicles containing certain types of Takata airbag inflators to notify them of their rights in bankruptcy proceedings . Hond Acura does not anticipate that the bankruptcy will have any negative effect on our ability to repair vehicles included in the airbag inflator recalls . for more information about the Takata bankruptcy please visit <URL> H.T.T.P. colon double slash T.K. restructuring dot com slash ppic </URL> . separately a court has approved the settlement of a class action lawsuit over certain <DATE> two thousand one </DATE> <DATE> two thousand seventeen </DATE> Honda and Acura vehicles equipped with Takata frontal airbag inflators . on <DATE> the twentieth of November two thousand seventeen </DATE> the settlement administrator began sending notices to registered owners of these vehicles past and present to inform them of the terms of the settlement . for more detailed information about the settlement please visit <URL> H.T.T.P.S. </URL> <URL> colon double slash autoairbagsettlement dot com </URL> or call <PHONE> one triple eight seven three triple five nine six </PHONE> . ?
+I have a question regarding the Takata bankruptcy and class action settlement . in <DATE> October two thousand seventeen </DATE> T.K. Holdings Incorporated " T.K.H. " the largest U.S. subsidiary of Takata Corporation and certain of T.K.H.'s affiliates sent required legal notices to the past and current owners of all vehicles containing certain types of Takata airbag inflators to notify them of their rights in bankruptcy proceedings . Hond Acura does not anticipate that the bankruptcy will have any negative effect on our ability to repair vehicles included in the airbag inflator recalls . for more information about the Takata bankruptcy please visit <URL> H.T.T.P. colon double slash T.K. restructuring dot com slash ppic </URL> . separately a court has approved the settlement of a class action lawsuit over certain <DATE> two thousand one </DATE> <DATE> two thousand seventeen </DATE> Honda and Acura vehicles equipped with Takata frontal airbag inflators . on <DATE> November the twentieth two thousand seventeen </DATE> the settlement administrator began sending notices to registered owners of these vehicles past and present to inform them of the terms of the settlement . for more detailed information about the settlement please visit <URL> H.T.T.P.S. </URL> <URL> colon double slash autoairbagsettlement dot com </URL> or call <PHONE> one triple eight seven three triple five nine six </PHONE> . ?
 
 
 how do I obtain verify or update my PIN ?
@@ -150,7 +159,7 @@ E.85 refers to fuel that contains up to eighty-five ethanol . most fuel sold in 
 
 why is my navigation screen clock reading <TIME> zero </TIME> ?
 
-<DATE> two thousand </DATE> <DATE> two thousand four </DATE> odyssey and <DATE> two thousand three </DATE> <DATE> two thousand five </DATE> Pilot models with navigation owners may see <TIME> zero </TIME> on the navigation screen clock . Honda discovered a software issue affecting these vehicles . the software can be updated to correct this issue by obtaining an update disc for your navigation system from Honda's Automobile Customer Service . to do so please call our In-Car Technology Support department at <DATE> five hundred and twenty-eight </DATE> to <DATE> seven thousand eight hundred and seventy-six </DATE> . tech Support office hours are Monday-Friday from <TIME> six A.M. </TIME> AA¢AAAA <TIME> five in the afternoon </TIME> P.S.T. .
+<DATE> two thousand </DATE> <DATE> two thousand four </DATE> odyssey and <DATE> two thousand three </DATE> <DATE> two thousand five </DATE> Pilot models with navigation owners may see <TIME> zero o'clock </TIME> on the navigation screen clock . Honda discovered a software issue affecting these vehicles . the software can be updated to correct this issue by obtaining an update disc for your navigation system from Honda's Automobile Customer Service . to do so please call our In-Car Technology Support department at <DATE> five hundred and twenty-eight </DATE> to <DATE> seven thousand eight hundred and seventy-six </DATE> . tech Support office hours are Monday-Friday from <TIME> six in the morning </TIME> AA¢AAAA <TIME> five P.M. </TIME> P.S.T. .
 
 
 my maintenance guide ends at 120K. miles . what maintenance should be performed on my vehicle past 120K. miles ?

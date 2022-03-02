@@ -61,7 +61,7 @@ we specialize in cars including but not limited to Audi B.M.W. Mini Jaguar Land 
 
 when are you open ?
 
-we are open Monday through Friday <TIME> half past seven A.M. </TIME> to <TIME> five thirty P.M. </TIME>
+we are open Monday through Friday <TIME> seven thirty A.M. </TIME> to <TIME> five thirty P.M. </TIME>
 
 
 what form of payment do you accept ?
@@ -150,7 +150,7 @@ E.85 refers to fuel that contains up to eighty-five ethanol . most fuel sold in 
 
 why is my navigation screen clock reading <TIME> zero </TIME> ?
 
-<DATE> two thousand </DATE> <DATE> two thousand four </DATE> odyssey and <DATE> two thousand three </DATE> <DATE> two thousand five </DATE> Pilot models with navigation owners may see <TIME> zero o'clock </TIME> on the navigation screen clock . Honda discovered a software issue affecting these vehicles . the software can be updated to correct this issue by obtaining an update disc for your navigation system from Honda's Automobile Customer Service . to do so please call our In-Car Technology Support department at <DATE> five hundred and twenty-eight </DATE> to <DATE> seven thousand eight hundred and seventy-six </DATE> . tech Support office hours are Monday-Friday from <TIME> six o'clock </TIME> AA¢AAAA <TIME> five o'clock in the afternoon </TIME> P.S.T. .
+<DATE> two thousand </DATE> <DATE> two thousand four </DATE> odyssey and <DATE> two thousand three </DATE> <DATE> two thousand five </DATE> Pilot models with navigation owners may see <TIME> zero </TIME> on the navigation screen clock . Honda discovered a software issue affecting these vehicles . the software can be updated to correct this issue by obtaining an update disc for your navigation system from Honda's Automobile Customer Service . to do so please call our In-Car Technology Support department at <DATE> five hundred and twenty-eight </DATE> to <DATE> seven thousand eight hundred and seventy-six </DATE> . tech Support office hours are Monday-Friday from <TIME> six A.M. </TIME> AA¢AAAA <TIME> five in the afternoon </TIME> P.S.T. .
 
 
 my maintenance guide ends at 120K. miles . what maintenance should be performed on my vehicle past 120K. miles ?

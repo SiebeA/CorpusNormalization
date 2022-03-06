@@ -9,7 +9,7 @@ output=zsa_output
 
 # ASR_CFG=text.asr.txt
 TTS_CFG=tts_siebe.cfg
-NONE_CFG=siebe_none.cfg
+# NONE_CFG=siebe_none.cfg
 
 echo -n "Starting process at: "; date; printf '\n'
 echo "on input file:"; echo $input; printf '\n'

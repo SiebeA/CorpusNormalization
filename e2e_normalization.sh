@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT=/home/${USER}/dev/irisa-text-normalizer
+ROOT=/home/${USER}/development/irisa-text-normalizer
 LANGUAGE=en
 
 # input=zsa_input.txt
@@ -16,25 +16,25 @@ echo "on input file:"; echo $input; printf '\n'
 
 # General normalization
 echo "Tokenization..."
-perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.tok
+perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
 echo "Generic normalization start..."
-perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.tok > $output.start
+perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
 
-echo "Currency conversion..."
-perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.start > $output.currency_fix.txt
+echo "Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
+perl $HOME/development/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
 
 echo "Generic normalization end..."
-perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl $output.currency_fix.txt > $output.general_norm.txt
+perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl $output.3currency_fix.txt > $output.4general_norm.txt
 
-Specific
-echo "ASR specific normalization..., with the cfg file:"
-echo $ASR_CFG
-echo " "
-perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$ASR_CFG $output.general_norm.txt > $output.asr.txt
+
+# echo "ASR specific normalization..., with the cfg file:"
+# echo $ASR_CFG
+# echo " "
+# perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$ASR_CFG $output.4general_norm.txt > $output.5asr.txt
 
 echo "TTS specific normalization..."
-perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.general_norm.txt > $output.tts.txt
+perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4general_norm.txt > $output.5tts.txt
 
 # # sa try to source from earlier output:
 # echo "TTS specific normalization..."
@@ -51,8 +51,8 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.ge
 # sed -i 's/ \+ / /g' $output.tts.txt
 # Remove empty lines in ASR and TTS:
 echo "Removing empty lines..."
-sed -i '/^\s*$/d' $output.asr.txt
-sed -i '/^\s*$/d' $output.tts.txt
+# sed -i '/^\s*$/d' $output.asr.txt
+sed -i '/^\s*$/d' $output.5tts.txt
 
 # Finished
 echo -n "Done. Finished at: "; date; printf '\n'

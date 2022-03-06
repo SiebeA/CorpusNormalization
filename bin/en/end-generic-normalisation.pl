@@ -57,7 +57,7 @@ while(<INPUT>) {
 }
 close(INPUT);
 
-my $weak_punc = '(?:,|;|:|\(|\)|¡|¿)';
+my $weak_punc = '(;|:|\(|\)|¡|¿)';
 
 
 

@@ -18,11 +18,11 @@ echo "on input file:"; echo $input; printf '\n'
 echo "Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
-# echo "Generic normalization start..."
-# perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
+echo "Generic normalization start..."
+perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
 
 echo "Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
-perl $HOME/development/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.1tok > $output.3currency_fix.txt
+perl $HOME/development/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
 
 echo "Generic normalization end..."
 perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl $output.3currency_fix.txt > $output.4general_norm.txt

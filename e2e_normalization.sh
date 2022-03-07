@@ -4,7 +4,7 @@ ROOT=/home/${USER}/development/irisa-text-normalizer
 LANGUAGE=en
 
 # input=zsa_input.txt
-input=examples/en/zsa_z_input.txt
+input=examples/en/zsa_z_input_sentences.txt
 output=zsa_output
 
 # ASR_CFG=text.asr.txt
@@ -49,10 +49,12 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4g
 # sed -i "s/\./ /g" $output.tts.txt
 # sed -i "s/,/ /g" $output.tts.txt
 # sed -i 's/ \+ / /g' $output.tts.txt
+
+
 # Remove empty lines in ASR and TTS:
-echo "Removing empty lines..."
-# sed -i '/^\s*$/d' $output.asr.txt
-sed -i '/^\s*$/d' $output.5tts.txt
+# echo "Removing empty lines..."
+# # sed -i '/^\s*$/d' $output.asr.txt
+# sed -i '/^\s*$/d' $output.5tts.txt
 
 # Finished
 echo -n "Done. Finished at: "; date; printf '\n'

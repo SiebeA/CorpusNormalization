@@ -1,13 +1,85 @@
 
+
 -- Siebe :
+
+
+this is capitalized text
+
+
+
+SAXON GENETIVES : in grammar , a genitive construction or genitival construction is a type of grammatical construction used to express a relation between two nouns such as the possession of one by another ( e.g. " john's jacket " ) , or some other type of connection ( e.g. " john's father " or " the father of John " ) . a genitive construction involves two nouns , the head ( or modified noun ) and the dependent ( or modifier noun )
+
 
 sa it costs 5$ or 4.00 dollars , depending on your location . # monetary symbols
 
 
-the brand is called BMW , a German organization . # American versus English spelling plus Acronym .
+the brand is called BMW , however , it can also be written as BMW a German organization . # American versus English spelling plus Acronym .
 
 
-he was not the Godman , but the man-god . maybe the hyphen will not be removed for a word like " plug-in " # hyphens
+he was not the Godman , but the man-god . maybe the hyphen will noqt be removed for a word like " plug-in " # hyphens
 
 
 lets's see , how it deals with commas .
+
+
+
+-- # actual sentences from *auto*.xlsx :
+
+
+
+what happens if I sell my vehicle before its warranty expires ? if you sell your vehicle while still under the 10-Year 100000-Mile Powertrain Limited Warranty , the warranty will be reduced to 5-year 60000-mile coverage . other Hyundai warranty terms and coverage periods , including Roadside Assistance , remain unchanged for subsequent owner .
+
+
+do Hyundai Genuine Parts have a warranty ? Hyundai Genuine Parts are covered by a 12-month Replacement Parts and Accessories Limited Warranty . contact your local Hyundai dealer for details .
+
+
+what does Roadside Assistance cover ? the Hyundai Roadside Assistance Program provides you with the following services : - towing to transport your vehicle to the nearest Hyundai Dealership or Authorized Service Facility in the event your vehicle is inoperable . - roadside services , such as dead battery jump start , flat tire change , lock-out service ( keys locked in car ) , or gas delivery ( up to three gallons , where permissible , at no charge if you run out of gas ) . - trip Interruption Benefit
+in all five years of coverage , you will be eligible for two free roadside events per year . should you happen to use your two free events in a given year , you would then need to pay the tow service provider for any further tow or roadside service in that year prior to such services being provided .
+
+
+what is the warranty on Hyundai parts ? all Hyundai parts installed by a dealer are covered by a 12-month 12000-mile warranty .
+
+
+what are you doing to make sure Android Auto is safe to use ? by working together in the OAA ( Open Automotive Alliance ) , automakers and technology companies are able to combine our experience to design a safe implementation intended to reduce driver distraction ( with eyes-free technology , like voice ) . by making the implementation seamless with the automobile's existing controls , we're addressing drivers' current temptations to fumble around with their handsets .
+
+
+how do I place a call using my Bluetooth system after my phone is connected ? below is a basic outline of how to make calls : 1 . press the talk button located on the steering wheel . 2 . listen for a noise and radio display that indicates the Bluetooth is listening . 3 . if you wish to call a contact saved in your phone , say " call ( name ) . " make sure you say the name exactly how it is stored in your phone . if you have more than one number saved for that contact , the Bluetooth will ask " home , " " office , " " mobile , " et cetera . State your selection . 4 . if you wish to call a number , say " call number . " after the Bluetooth asks for the number , say the phone number . the Bluetooth will then reply with the phone number to ensure it is correct . say " dial " to call that number . since every system is slightly different , please refer to your Owner's Manual , Navigation User's Manual , or DIS User's Manual for specific directions and a full list of recognizable commands .
+
+
+how do I reject a call using my Bluetooth system ? when you receive a call , you will hear a ring tone through the audio system . the message " INCOMING " and the caller ID will appear on the screen ( depending on the model ) . if you do not wish to take the call , press the END button located on the steering wheel .
+
+
+what happens if I run out of gas ? just call Hyundai's 24-Hour Roadside Assistance* at <PHONE> 1 8 double 0 2 4 3 double 7 double 6 </PHONE> . *Hyundai's 24-Hour roadside Assistance is complimentary for five years from the date your vehicle was first put in service .
+
+
+which category should I opt in to receive special sales and or deal offers ? turn the subscription slider of " products , Promotions and Sales Events " to " on . "
+
+
+how can I contact someone regarding Blue Link services ? if you would like to contact us regarding Blue Link , call us at 855-2-BLUE-LINK ( 855-225-8354 ) or email us at <URL> customercare at hyundai blue link dot com </URL> .
+
+
+how is the trade-in value determined ? depending on the dealer site , trade-in value is estimated using Kelley Blue Book , Black Book or Edmunds data.* *For more information , visit Kelley Blue Book's <URL> kbb dot com dot </URL> Kelley Blue Book is registered trademark of Kelley Blue Book Company , Incorporated
+
+
+the Battery charge low or BATT LOW warning message on my dash is on . what does that mean and what should I do ? battery Management System Certain Honda vehicles are equipped with a Battery Management System . this system monitors the battery's state of charge ( SOC ) and alerts the driver when it has dropped below a predetermined level via a series of messages on the multi-information display ( MID ) . these messages include Battery charge low , batt low , and CHANGE BATTERY or REPLACE BATTERY . conditions that would cause the battery's SOC to drop include long-term vehicle storage , accessory use when the engine is not running , and frequent short trips . battery charge low and BATT LOW Messages If these conditions are present and the battery charge is low , you will see the Battery charge low and BATT LOW messages on your MID . if you are using accessories , such as the audio system and interior lights , without the engine running when you see these messages , we recommend that you turn off the ignition and remove the key immediately to preserve remaining battery power until you are ready to drive the vehicle . it is possible in this instance that the SOC will be too low to start the vehicle , but most likely there will be enough charge left to start the vehicle if you stop using the accessories as soon as the message appears . these messages simply mean that the battery charge is lower than it should be . once the SOC increases , these messages will disappear . if the SOC sufficiently drops while you are driving , the engine control system will raise your idle speed in an effort to increase alternator output , thereby charging the battery . if you are regularly seeing these messages when the described conditions are not present , your vehicle may need its software updated . your local Honda dealer's service department can help to address this issue . CHANGE BATTERY and REPLACE BATTERY Messages If the Battery Management System determines the battery is close to exhausting its useful life , it may generate a message indicating CHANGE BATTERY or REPLACE BATTERY . the system monitors battery flow and voltage , and if it determines that the battery cannot maintain its SOC , it will send these messages to the MID to display for the driver . if you receive this message on your MID , we recommend visiting your Honda dealership as soon as possible to have the battery inspected and , if needed , replaced . you can help preserve your battery's life and charge by minimizing short trips when possible and limiting your use of accessories when the engine is not running . if you ever have a concern with your battery , please see your Honda dealership .
+
+
+I have a question regarding the Takata bankruptcy and class action settlement . in <DATE> October two thousand seventeen </DATE> , TK Holdings , Incorporated ( " TKH " ) , the largest U.S. subsidiary of Takata Corporation , and certain of TKH's affiliates sent required legal notices to the past and current owners of all vehicles containing certain types of Takata airbag inflators to notify them of their rights in bankruptcy proceedings . Hond Acura does not anticipate that the bankruptcy will have any negative effect on our ability to repair vehicles included in the airbag inflator recalls . for more information about the Takata bankruptcy , please visit <URL> http colon double slash tk restructuring dot com slash ppic </URL> . separately , a court has approved the settlement of a class action lawsuit over certain <DATE> two thousand one </DATE> <DATE> two thousand seventeen </DATE> Honda and Acura vehicles equipped with Takata frontal airbag inflators . on <DATE> November the twentieth two thousand seventeen </DATE> , the settlement administrator began sending notices to registered owners of these vehicles , past and present , to inform them of the terms of the settlement . for more detailed information about the settlement , please visit <URL> https </URL> <URL> colon double slash autoairbagsettlement dot com </URL> or call <PHONE> 1 triple 8 7 3 triple 5 9 6 </PHONE> . ?
+
+
+how do I obtain , verify or update my PIN ? contact HondaLink at <PHONE> 1 8 triple 5 0 8 2 4 1 7 </PHONE> to verify and or reset your PIN . for Clarity Plug-in Hybrid vehicles , please contact Honda's In-Car Technology Support at <PHONE> 1 triple 8 5 2 8 7 8 7 6 </PHONE> .
+
+
+can I use E85 fuel in my Honda vehicle ? E85 refers to fuel that contains up to 85 % ethanol . most fuel sold in the United States contains some ethanol , but not nearly the content of E85 fuel . more recent model year Honda vehicles are designed to operate on fuel containing up to 15 % ethanol but not fuels with higher ethanol content . ( older Honda vehicles only were designed to operate on fuel containing up to 10 % ethanol . ) therefore , you should not use E85 fuel in your Honda vehicle ; using E85 fuel could harm your vehicle's engine and the damage would not be covered under any otherwise applicable warranty . the owner's guide and owner's manual have fuel recommendations for your specific vehicle . to view these documents , please visit <URL> http colon double slash owners dot honda dot com </URL> and select your year and model .
+
+
+my maintenance guide ends at 120K miles . what maintenance should be performed on my vehicle past 120K miles ? after 120K miles , you should start over at the beginning of the maintenance guide . for example , if your maintenance guide begins at 5K miles , you should perform the 5K mile maintenance when your vehicle reaches 125K miles . by 150K miles , you should be performing the maintenance listed at 30K miles . please refer to the Warranty and Maintenance Guide for more information .
+
+
+can I get an on off switch installed for my airbags ? Airbag* on off switches are available for most of our vehicles . however , before we sell and install a switch , the National Highway Traffic Safety Administration ( NHTSA ) requires that you obtain authorization from them . please contact them at <PHONE> 8 double 0 4 2 4 9 3 9 3 </PHONE> . once you have the authorization , please contact a local Toyota dealership to determine if they sell and install the switch . * the Toyota driver and front passenger airbags are a Supplemental Restraint System ( SRS ) designed to inflate in a severe frontal collision . in all other accidents , seat belts offer primary protection , and the front airbags may not inflate . do not sit or place objects close to an airbag . to minimize the risk of severe injury or death , seat belts must be worn at all times by all vehicle occupants . do not use a rearward-facing child seat in any front passenger seat . the force of a deploying airbag SRS may cause serious injury or death . for more information on airbags and instructions on child seat usage , see the Owner's Manual .
+
+
+what is a VIN ? a Vehicle Identification Number , commonly referred to as the VIN , is a sequence of 17 letters and numbers that is uniquely assigned for each vehicle . the VIN provides some information about the vehicle . it is typically composed of four sections . the first three digits are called the World Manufacturer Identifier ( WMI ) . Toyota VINs starting with " 1 " , " 4 " , or " 5 " represent vehicles assembled in the United States , VINs beginning with " 2 " indicate vehicles assembled in Canada , and vehicles with VINs beginning with " 3 " were assembled in Mexico . vehicles with VINs that start with " J " were produced in Japan . the next five digits ( 4 through 8 ) are the Vehicle Description Section ( VDS ) . these digits provide information on the body style , engine type , seat belt airbag types , vehicle series , and model line respectively . the ninth digit is a check digit used internally . the 10th digit indicates the model year ; letters ( except " O " and " Z " ) were used for vehicles up to the this_is_mark_for_a_year 2000 model year while numbers are used for <DATE> two thousand one </DATE> <DATE> two thousand nine </DATE> vehicles and returning to letters for <CURRENCY> 2010 </CURRENCY> for example , " X " means the this_is_mark_for_a_year 1999 model year , " Y " is the this_is_mark_for_a_year 2000 model year , " 1 " represents the this_is_mark_for_a_year 2001 model year , and " a " represents <CURRENCY> 2010 </CURRENCY> the 11th digit is the plant code . finally , digits 12 - 17 are the unique serial number .
+
+
+how do I know if I have a problem with my transmission ? slippage is one of the first signs of a failing transmission . if you put your foot on the gas and it takes your car more than a second to start moving then your transmission is slipping . also , if your car accelerates unevenly or abruptly , this is a sign of transmission slippage . it is important to bring your truck in for service at the first signs of slipping because we may be able to help you avoid a pricey transmission replacement . even if your transmission needs to be replaced , it is best to take care of it early because it may fail at an inopportune time and or ruin other parts of your drive train .

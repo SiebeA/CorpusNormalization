@@ -66,16 +66,16 @@ my $weak_punc = "[,;:¡¿\(\)]";
 load_pos($WIKTIONARY_WORD_POS);
 load_lexicon($LEXIQUE_FILE);
 my $STEP = 0;
-#  	$TEXT =~ s/($weak_punc) / $1 /mg;
-#  	$TEXT =~ s/ \(/ ( /mg;
-# 	trim_blanks(\$TEXT);
-# 	acronyms(\$TEXT);
-#	date_and_time(\$TEXT);
-#	units(\$TEXT);
-# 	tag_ne(\$TEXT);
-#	apostrophes(\$TEXT);
-#  	print $TEXT."\n";
-#  	exit;
+ 	$TEXT =~ s/($weak_punc) / $1 /mg;
+ 	$TEXT =~ s/ \(/ ( /mg;
+	trim_blanks(\$TEXT);
+	acronyms(\$TEXT);
+	date_and_time(\$TEXT);
+	units(\$TEXT);
+	tag_ne(\$TEXT);
+	apostrophes(\$TEXT);
+ 	print $TEXT."\n";
+ 	exit;
 
 
 #106

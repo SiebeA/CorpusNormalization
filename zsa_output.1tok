@@ -1,10 +1,17 @@
 
+The first case is removed with current `cfg` ; however , Also after an comma ?
 
--- Siebe :
+
+What if 1 space is put before ?
 
 
-This is capitalized  text
+What is happened to a under_score or UNDER_SCORE ; why is this word SAXON_GENETIVES being recognized as a acronym ?
 
+
+It seems that Enough capitalized words  together are utomatically case lowered . what ABOUT TWO words ? What About three  words yes ?
+
+
+Instance of " letter_dots " B.
 
 
 SAXON_GENETIVES : In grammar , a genitive construction or genitival construction is a type of grammatical construction used to express a relation between two nouns such as the possession of one by another ( e.g. " John's jacket " ) , or some other type of connection ( e.g. " John's father " or " the father of John " ) . A genitive construction involves two nouns , the head ( or modified noun ) and the dependent ( or modifier noun )
@@ -20,11 +27,6 @@ He was not the God-man , but the man-god . Maybe the hyphen will noqt be removed
 
 
 Lets's see , how it deals with commas .
-
-
-
--- # actual sentences from *auto*.xlsx :
-
 
 
 What happens if I sell my vehicle before its warranty expires ? 	 If you sell your vehicle while still under the 10-Year / 100000-Mile Powertrain Limited Warranty , the warranty will be reduced to 5-year / 60000-mile coverage . Other Hyundai warranty terms and coverage periods , including Roadside Assistance , remain unchanged for subsequent owner .
@@ -63,7 +65,7 @@ How is the trade-in value determined ? 	 Depending on the dealer site , trade-in
 The Battery charge  low or BATT LOW warning message on my dash is on . What does that mean and what should I do ? 	 Battery Management System Certain Honda vehicles are equipped with a Battery Management System . This system monitors the battery's state of charge ( SOC ) and alerts the driver when it has dropped below a predetermined level via a series of messages on the multi-information display ( MID ) . These messages include Battery charge low , batt  low , and CHANGE BATTERY or REPLACE BATTERY . Conditions that would cause the battery's SOC to drop include long-term vehicle storage , accessory use when the engine is not running , and frequent short trips . Battery charge  low and BATT LOW Messages If these conditions are present and the battery charge is low , you will see the Battery charge  low and BATT LOW messages on your MID . If you are using accessories , such as the audio system and interior lights , without the engine running when you see these messages , we recommend that you turn off the ignition and remove the key immediately to preserve remaining battery power until you are ready to drive the vehicle . It is possible in this instance that the SOC will be too low to start the vehicle , but most likely there will be enough charge left to start the vehicle if you stop using the accessories as soon as the message appears . These messages simply mean that the battery charge is lower than it should be . Once the SOC increases , these messages will disappear . If the SOC sufficiently drops while you are driving , the engine control system will raise your idle speed in an effort to increase alternator output , thereby charging the battery . If you are regularly seeing these messages when the described conditions are not present , your vehicle may need its software updated . Your local Honda dealer's service department can help to address this issue . CHANGE BATTERY and REPLACE BATTERY Messages If the Battery Management System determines the battery is close to exhausting its useful life , it may generate a message indicating CHANGE BATTERY or REPLACE BATTERY . The system monitors battery flow and voltage , and if it determines that the battery cannot maintain its SOC , it will send these messages to the MID to display for the driver . If you receive this message on your MID , we recommend visiting your Honda dealership as soon as possible to have the battery inspected and , if needed , replaced . You can help preserve your battery's life and charge by minimizing short trips when possible and limiting your use of accessories when the engine is not running . If you ever have a concern with your battery , please see your Honda dealership .
 
 
-I have a question regarding the Takata bankruptcy and class action settlement . In October 2017 , TK Holdings , Inc. ( " TKH " ) , the largest U.S. subsidiary of Takata Corporation , and certain of TKH's affiliates sent required legal notices to the past and current owners of all vehicles containing certain types of Takata airbag inflators to notify them of their rights in bankruptcy proceedings . Honda / Acura does not anticipate that the bankruptcy will have any negative effect on our ability to repair vehicles included in the airbag inflator recalls . For more information about the Takata bankruptcy , please visit http:// TKRestructuring.com / PPIC . Separately , a court has approved the settlement of a class action lawsuit over certain 2001-2017 Honda and Acura vehicles equipped with Takata frontal airbag inflators . On November 20 , 2017 , the settlement administrator began sending notices to registered owners of these vehicles , past and present , to inform them of the terms of the settlement . For more detailed information about the settlement , please visit https : / / autoairbagsettlement.com or call 1-888-735-5596 . ? 	
+I have a question regarding the Takata bankruptcy and class action settlement . In October 2017 , TK Holdings , Inc. ( " TKH " ) , the largest U.S. subsidiary of Takata Corporation , and certain of TKH's affiliates sent required legal notices to the past and current owners of all vehicles containing certain types of Takata airbag inflators to notify them of their rights in bankruptcy proceedings . Honda / Acura does not anticipate that the bankruptcy will have any negative effect on our ability to repair vehicles included in the airbag inflator recalls . For more information about the Takata bankruptcy , please visit http:// TKRestructuring.com / PPIC . Separately , a court has approved the settlement of a class action lawsuit over certain 2001-2017 Honda and Acura vehicles equipped with Takata frontal airbag inflators . On November 20 , 2017 , the settlement administrator began sending notices to registered owners of these vehicles , past and present , to inform them of the terms of the settlement . For more detailed information about the settlement , please visit https : / / autoairbagsettlement.com or call 1-888-735-5596 . ?
 
 
 How do I obtain , verify or update my PIN ? 	 Contact HondaLink at 1-855-508-2417 to verify and / or reset your PIN . For Clarity Plug-In Hybrid vehicles , please contact Honda's In-Car Technology Support at 1-888-528-7876 .

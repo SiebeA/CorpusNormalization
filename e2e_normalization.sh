@@ -46,12 +46,12 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4g
 # sed -i "s/,/ /g" $output.asr.txt
 # sed -i 's/ \+ / /g' $output.asr.txt
 
-# sed -i "s/\./ /g" $output.tts.txt
-# sed -i "s/,/ /g" $output.tts.txt
-# sed -i 's/ \+ / /g' $output.tts.txt
+# sed -i "s/\./ /g" $output.5tts.txt
+# sed -i "s/,/ /g" $output.5tts.txt
+# sed -i 's/ \+ / /g' $output.5tts.txt
 
 # salb specific
-sed -i 's/^\(.\)/\U\1/' $output.5tts.txt
+sed -i 's/^\(.\)/\U\1/' $output.5tts.txt # case first letter of a sentence
 
 
 

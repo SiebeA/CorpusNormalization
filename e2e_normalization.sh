@@ -50,6 +50,10 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4g
 # sed -i "s/,/ /g" $output.tts.txt
 # sed -i 's/ \+ / /g' $output.tts.txt
 
+# salb specific
+sed -i 's/^\(.\)/\U\1/' $output.5tts.txt
+
+
 
 # Remove empty lines in ASR and TTS:
 # echo "Removing empty lines..."

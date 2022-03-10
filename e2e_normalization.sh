@@ -4,7 +4,8 @@ ROOT=/home/${USER}/development/irisa-text-normalizer
 LANGUAGE=en
 
 # input=zsa_input.txt
-input=examples/en/zsa_z_input_sentences.txt
+# input=examples/en/zsa_z_input_sentences.txt
+input=examples/en/zsa_test_sentences.txt
 output=zsa_output
 
 # ASR_CFG=text.asr.txt
@@ -14,12 +15,24 @@ TTS_CFG=tts_siebe.cfg
 echo -n "Starting process at: "; date; printf '\n'
 echo "on input file:"; echo $input; printf '\n'
 
+
+
 # General normalization
 echo "Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
 echo "Generic normalization start..."
 perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
+
+echo "salb replacing percentages"
+sed -i 's/%/ percent/' $output.2start
+
+
+# echo "salb splitting out e.g. 'E85'"
+# sed -r 's/([A-Z])([0-9])/\1 \2/g' $output.2start
+
+
+
 
 echo "Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
 perl $HOME/development/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt

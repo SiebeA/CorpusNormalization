@@ -28,8 +28,8 @@ echo "salb replacing percentages"
 sed -i 's/%/ percent/' $output.2start
 
 
-# echo "salb splitting out e.g. 'E85'"
-# sed -r 's/([A-Z])([0-9])/\1 \2/g' $output.2start
+echo "salb splitting out e.g. 'E85'"
+sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start # uses capturing groups "( )" then replace "\1 \2" to repaste those capturing groups [with a space in between]
 
 
 

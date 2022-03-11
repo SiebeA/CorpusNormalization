@@ -67,6 +67,12 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4g
 sed -i 's/^\(.\)/\U\1/' $output.5tts.txt # case first letter of a sentence
 
 
+# removing space between punctution
+sed -i 's/ \([.?,\/#!$%\^&\*;:{}=\-_`~()]\)/\1/'g $output.5tts.txt
+
+# sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output
+
+
 
 # Remove empty lines in ASR and TTS:
 # echo "Removing empty lines..."

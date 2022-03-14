@@ -16,10 +16,13 @@ echo -n "Starting process at: "; date; printf '\n'
 echo "on input file:"; echo $input; printf '\n'
 
 
-
 # General normalization
 echo "Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
+
+echo "splitting out e.g. 100k --> 100 k"
+sed -E -i 's/([0-9]+)(k)/\1 \2/g' $output.1tok  # sa NOTICE THAT SED DOES NOT SUPPOT '\d'
+# WHY DOES IT NOT WORK FOR $output.2start ???
 
 echo "Generic normalization start..."
 perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
@@ -30,7 +33,7 @@ sed -i 's/%/ percent/' $output.2start
 
 echo "salb splitting out e.g. 'E85'"
 sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start # uses capturing groups "( )" then replace "\1 \2" to repaste those capturing groups [with a space in between]
-
+     #      group1    group2  g1 g2
 
 
 
@@ -65,6 +68,7 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4g
 
 # salb specific
 sed -i 's/^\(.\)/\U\1/' $output.5tts.txt # case first letter of a sentence
+# TODO capitilize every word after strong punctuation
 
 
 # removing space between punctution

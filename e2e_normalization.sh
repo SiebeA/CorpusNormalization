@@ -1,11 +1,11 @@
 #!/bin/bash
 
-ROOT=/home/${USER}/development/irisa-text-normalizer
+ROOT=/home/${USER}/dev/TN_w_IRISA
 LANGUAGE=en
 
 # input=zsa_input.txt
 # input=examples/en/zsa_z_input_sentences.txt
-input=examples/en/zsa_test_sentences.txt
+input=examples/en/zsa_z_input.txt
 output=zsa_output
 
 # ASR_CFG=text.asr.txt
@@ -35,7 +35,7 @@ sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start # uses capturing groups "( 
 
 
 echo "Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
-perl $HOME/development/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
+perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
 
 echo "Generic normalization end..."
 perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl $output.3currency_fix.txt > $output.4general_norm.txt

@@ -28,7 +28,7 @@ perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 # sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.1tok
 # echo 'after...'
 # sed -n 1p $output.1tok
-# echo
+echo
 #===========================================================
 #                  
 #==========================================================
@@ -38,26 +38,25 @@ cat $output.2start
 #===========================================================
 # "  salb but not in 2start:                "
 #==========================================================
-# echo "splitting out e.g. 100k --> 100 k"
-echo 'before applying percentage fix:'
-sed -n 1p $output.2start # print line 5 to test if '100k' will be split
+# # echo "splitting out e.g. 100k --> 100 k"
+# echo 'before applying percentage fix:'
+# sed -n 1p $output.2start # print line 5 to test if '100k' will be split
+# sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.2start
+# echo 'after...'
+# sed -n 1p $output.2start
+# echo
+
+sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" $output.2start
 sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.2start
-echo 'after...'
-sed -n 1p $output.2start
-echo
 
 # salb, this works, and chaining 2 sed commands together works here as well:
 # echo "salb replacing percentages"
 echo "\n before replacing percentages and E\d":
 sed -n 3p $output.2start
-sed -i -e 's/%/ percent/' -e 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start
+sed -i -e 's/%/ percent/' $output.2start
 echo "after..."
 sed -n 3p $output.2start
 echo
-
-echo "salb splitting out e.g. 'E85'"
-sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start # uses capturing groups "( )" then replace "\1 \2" to repaste those capturing groups [with a space in between]
-     #      group1    group2  g1 g2
 
 
 

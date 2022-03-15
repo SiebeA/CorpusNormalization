@@ -15,21 +15,45 @@ TTS_CFG=tts_siebe.cfg
 echo -n "Starting process at: "; date; printf '\n'
 echo "on input file:"; echo $input; printf '\n'
 
-
 # General normalization
 echo "Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
-echo "splitting out e.g. 100k --> 100 k"
-sed -E -i 's/([0-9]+)(k)/\1 \2/g' $output.1tok  # sa NOTICE THAT SED DOES NOT SUPPOT '\d'
-# WHY DOES IT NOT WORK FOR $output.2start ???
-
+#===========================================================
+#  salb   why doess /sed -i -E/ work it work in 1tok????             
+#==========================================================
+# echo "splitting out e.g. 100k --> 100 k"
+# echo 'before applying percentage fix:'
+# sed -n 1p $output.1tok # print line 5 to test if '100k' will be split
+# sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.1tok
+# echo 'after...'
+# sed -n 1p $output.1tok
+# echo
+#===========================================================
+#                  
+#==========================================================
 echo "Generic normalization start..."
 perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
+cat $output.2start
+#===========================================================
+# "  salb but not in 2start:                "
+#==========================================================
+# echo "splitting out e.g. 100k --> 100 k"
+echo 'before applying percentage fix:'
+sed -n 1p $output.2start # print line 5 to test if '100k' will be split
+sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.2start
+echo 'after...'
+sed -n 1p $output.2start
+echo
 
-echo "salb replacing percentages"
-sed -i 's/%/ percent/' $output.2start
-
+# salb, this works, and chaining 2 sed commands together works here as well:
+# echo "salb replacing percentages"
+echo "\n before replacing percentages and E\d":
+sed -n 3p $output.2start
+sed -i -e 's/%/ percent/' -e 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start
+echo "after..."
+sed -n 3p $output.2start
+echo
 
 echo "salb splitting out e.g. 'E85'"
 sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start # uses capturing groups "( )" then replace "\1 \2" to repaste those capturing groups [with a space in between]
@@ -37,6 +61,9 @@ sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output.2start # uses capturing groups "( 
 
 
 
+#===========================================================
+#                
+ #==========================================================
 echo "Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
 perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
 

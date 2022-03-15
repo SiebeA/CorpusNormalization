@@ -47,7 +47,7 @@ cat $output.2start
 # echo
 
 sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" $output.2start
-sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.2start
+sed -i -E 's/([0-9]+)([a-zA-Z])/\1 \2/g' $output.2start
 
 # salb, this works, and chaining 2 sed commands together works here as well:
 # echo "salb replacing percentages"

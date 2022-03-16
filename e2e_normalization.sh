@@ -19,38 +19,21 @@ echo "on input file:"; echo $input; printf '\n'
 echo "Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
-#===========================================================
-#  salb   why doess /sed -i -E/ work it work in 1tok????             
-#==========================================================
-# echo "splitting out e.g. 100k --> 100 k"
-# echo 'before applying percentage fix:'
-# sed -n 1p $output.1tok # print line 5 to test if '100k' will be split
-# sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.1tok
-# echo 'after...'
-# sed -n 1p $output.1tok
-echo
-#===========================================================
-#                  
-#==========================================================
 echo "Generic normalization start..."
 perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
 cat $output.2start
 #===========================================================
-# "  salb but not in 2start:                "
+# "  salb replacements               "
 #==========================================================
-# # echo "splitting out e.g. 100k --> 100 k"
-# echo 'before applying percentage fix:'
-# sed -n 1p $output.2start # print line 5 to test if '100k' will be split
-# sed -i -E 's/([0-9]+)(k)/\1 \2/g' $output.2start
-# echo 'after...'
-# sed -n 1p $output.2start
-# echo
 
+# slitting out e.g. 'E5--> E 5'
 sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" $output.2start
+# splitting out e.g. '100k --> 100 k'
 sed -i -E 's/([0-9]+)([a-zA-Z])/\1 \2/g' $output.2start
 
-# salb, this works, and chaining 2 sed commands together works here as well:
+
 # echo "salb replacing percentages"
+# salb this is how you can print a line (to check whether a replacement worked)
 echo "\n before replacing percentages and E\d":
 sed -n 3p $output.2start
 sed -i -e 's/%/ percent/' $output.2start
@@ -58,11 +41,9 @@ echo "after..."
 sed -n 3p $output.2start
 echo
 
-
-
 #===========================================================
 #                
- #==========================================================
+#==========================================================
 echo "Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
 perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
 
@@ -102,12 +83,17 @@ sed -i 's/ \([.?,\/#!$%\^&\*;:{}=\-_`~()]\)/\1/'g $output.5tts.txt
 
 # sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output
 
-
-
 # Remove empty lines in ASR and TTS:
 # echo "Removing empty lines..."
 # # sed -i '/^\s*$/d' $output.asr.txt
 # sed -i '/^\s*$/d' $output.5tts.txt
+
+#===========================================================
+# Salb replacements                
+#==========================================================
+# replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
+# perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
+
 
 # Finished
 echo -n "Done. Finished at: "; date; printf '\n'

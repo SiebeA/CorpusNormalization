@@ -8,11 +8,18 @@ The gap between intention and execution. --Jurafsky.
 # =============================================================================
 # importing the manually normalized sentences in a pandas
 # =============================================================================
-zimport pandas as pd
-df = pd.read_excel('ATN_input.xlsx',sheet_name=0)
-df = df.iloc[0:,0:2]
-# print(df.head())
-print(df.columns)
+
+def Importer(path):
+    """
+    path = path to xlsx file
+    Make sure the data are in the first 2 columns
+    """
+    import pandas as pd
+    df = pd.read_excel(path,sheet_name=0)
+    df = df.iloc[0:,0:2]
+    print(df.head())
+    print('the column names of the xlsx file:', df.columns)
+    return df
 
 # %% salb
 # # creating a list of lists containing both the pre and after normalized text:
@@ -24,20 +31,23 @@ print(df.columns)
 #     # print(row['Explanation'], row['Explanation Normalized'])
 
 # append  the levenhstein distance to each row i
-from Levenshtein import distance as lev
-for i in df.index:
-    try:
-        lev_distance = lev(df.iloc[i,0], df.iloc[i,1]) # loop through the rows, keep column static
-        df.at[i,'Levenhstein_distance'] = lev_distance
-        # listt.append(lev_distance)
-    except TypeError:
-        print('ERROR'); print(type(i)); print(i)
+def Levenhstein(df):
+    from Levenshtein import distance as lev
+    for i in df.index:
+        try:
+            lev_distance = lev(df.iloc[i,0], df.iloc[i,1]) # loop through the rows, keep column static
+            df.at[i,'Levenhstein_distance'] = lev_distance
+            # listt.append(lev_distance)
+        except TypeError:
+            print('type error at index:',i,'filetype:', type(i))
+    return df
 
 #%% =============================
 #
 # =============================
 
-df.to_excel('levenhstein_distance_output.xlsx')
+def Exporter(df,file_name):
+    df.to_excel(file_name)
 
 
 #%%
@@ -46,3 +56,8 @@ df.to_excel('levenhstein_distance_output.xlsx')
 # =============================
 
 if __name__=='__main__':
+    # path = input('input the xlsx file path (without quotes):  ')
+    path = 'levenhstein_distance_input.xlsx'
+    df = Importer(path=path)
+    df = Levenhstein(df = df)
+    Exporter(df = df, file_name='levenhstein_distance_output.xlsx')

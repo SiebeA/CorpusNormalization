@@ -1,0 +1,42 @@
+import re
+import pandas as pd
+import numpy as np
+
+#first u have to open  the file and seperate every line like below:
+
+with open('.output.5tts.txt', 'r',encoding=('utf-8')) as df:
+        lines = df.readlines()
+
+with open('goldStandard_tts.txt', 'r',encoding=('utf-8')) as infile:
+        mtn = infile.readlines()
+
+
+
+#def Importer(path):
+#    """
+#    path = path to xlsx file
+#    """
+#    import pandas as pd
+#    df = pd.read_excel(path,sheet_name=0)
+#    df = df.iloc[0:,0:2]
+#    # print(df.head())
+#    print('the column names of the xlsx file:', df.columns)
+#    return df
+
+
+
+# removing empty lines - deprecated
+#liness = [i for i in lines if len(i) >2 ]
+
+#df = open('.output.5tts.txt', "r")
+#lines = df.readlines()
+#df.close()
+        
+df = pd.DataFrame(np.column_stack([lines,mtn]),
+                  columns=['ATN','MTN'])
+
+
+def Exporter(df,file_name):
+    df.to_excel(file_name)
+Exporter(df=df,file_name='levenhstein_distance_input.xlsx',index=False)
+    

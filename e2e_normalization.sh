@@ -6,7 +6,7 @@ LANGUAGE=en
 # input=zsa_input.txt
 # input=examples/en/zsa_z_input_sentences.txt
 # input=examples/en/zsa_z_input.txt
-input=input.txt
+input=ATN_input.txt
 output=.output
 
 # ASR_CFG=text.asr.txt
@@ -22,7 +22,6 @@ perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
 echo "Generic normalization start..."
 perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
-cat $output.2start
 #===========================================================
 # "  salb replacements               "
 #==========================================================
@@ -85,9 +84,9 @@ sed -i 's/ \([.?,\/#!$%\^&\*;:{}=\-_`~()]\)/\1/'g $output.5tts.txt
 # sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output
 
 # Remove empty lines in ASR and TTS:
-# echo "Removing empty lines..."
-# # sed -i '/^\s*$/d' $output.asr.txt
-# sed -i '/^\s*$/d' $output.5tts.txt
+echo "Removing empty lines..."
+# sed -i '/^\s*$/d' $output.asr.txt
+sed -i '/^\s*$/d' $output.5tts.txt
 
 #===========================================================
 # Salb replacements                

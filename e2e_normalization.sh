@@ -5,8 +5,9 @@ LANGUAGE=en
 
 # input=zsa_input.txt
 # input=examples/en/zsa_z_input_sentences.txt
-input=examples/en/zsa_z_input.txt
-output=zsa_output
+# input=examples/en/zsa_z_input.txt
+input=input.txt
+output=.output
 
 # ASR_CFG=text.asr.txt
 TTS_CFG=tts_siebe.cfg

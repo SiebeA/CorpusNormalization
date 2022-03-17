@@ -1,3 +1,9 @@
+### observations made about the normalized text files
+- Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
+
+
+
+
 ### Procedure for automatic text normalization(ATN) (TTS context)
 
 <!-- - Input a `txt` file with sentences to be normalized by -->
@@ -22,7 +28,7 @@
 - 6 Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
 - Alternatively, run all commands:
-`bash e2e_normalization.sh; python3 txt-to-df.py levenhstein_distance_input.xlsx`
+`bash e2e_normalization.sh; python3 txt-to-df.py levenhstein_distance
 
 ## TODO
 

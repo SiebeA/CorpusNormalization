@@ -14,8 +14,8 @@ TTS_CFG=tts_siebe.cfg
 # NONE_CFG=siebe_none.cfg
 
 
-echo -n "Starting process at: "; date; printf '\n'
-echo "on input file:"; echo $input; printf '\n'
+echo -n "Starting process at: "; date
+echo "on input file:"; echo $input0; printf '\n'
 
 #=================================================
 #  salb deleting characters that are wrongly encoded
@@ -24,8 +24,7 @@ echo "on input file:"; echo $input; printf '\n'
 cp $input0 input.txt
 input=input.txt
 # removing; •, 
-sed -i -e "s/•/-/g" -e "s/fiat//g" $input
-
+sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input
 
 
 # General normalization
@@ -37,26 +36,25 @@ perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2
 #===========================================================
 # "  salb replacements               "
 #==========================================================
-
+echo 'making salb replacements'
 # slitting out e.g. 'E5--> E 5'
 sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" $output.2start
 # splitting out e.g. '100k --> 100 k'
 sed -i -E 's/([0-9]+)([a-zA-Z])/\1 \2/g' $output.2start
 
-
 # echo "salb replacing percentages"
 # salb this is how you can print a line (to check whether a replacement worked)
-echo "\n before replacing percentages and E\d":
-sed -n 3p $output.2start
+# sed -n 3p $output.2start
 sed -i -e 's/%/ percent/' $output.2start
-echo "after..."
-sed -n 3p $output.2start
-echo
+# echo "after..."
+# sed -n 3p $output.2start
+# echo
 
 #===========================================================
 #                
 #==========================================================
-echo "3. Currency conversion..."; echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
+echo "3. Currency conversion..."
+# echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
 perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
 
 echo "4. Generic normalization end..."
@@ -96,6 +94,7 @@ sed -i 's/ \([.?,\/#!$%\^&\*;:{}=\-_`~()]\)/\1/'g $output.5tts.txt
 # sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output
 
 # Remove empty lines in ASR and TTS:
+echo
 echo "Removing empty lines..."
 # sed -i '/^\s*$/d' $output.asr.txt
 sed -i '/^\s*$/d' $output.5tts.txt
@@ -108,5 +107,6 @@ sed -i '/^\s*$/d' $output.5tts.txt
 
 
 # Finished
+echo
 echo -n "Done. Finished at: "; date; printf '\n'
-echo $(date)
+# echo $(date)

@@ -21,11 +21,14 @@
   - input the
 - 6 Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
+- Alternatively, run all commands:
+`bash e2e_normalization.sh; python3 txt-to-df.py levenhstein_distance_input.xlsx`
 
 ## TODO
 
 ### Need-to-haves
 - Create a shell script to automize steps 1-6 (after having made the adjustments during working for ticket tlz-83)
+- Flagging the encoding errors that are in `output.5tts.txt` automatically.
 
 ### Nice to haves:
 - post- step 6

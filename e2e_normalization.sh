@@ -13,10 +13,9 @@ output=.output
 TTS_CFG=tts_siebe.cfg
 # NONE_CFG=siebe_none.cfg
 
-
 echo -n "Starting process at: "; date
 echo "on input file:"; echo $input0; printf '\n'
-
+# cat $input0
 #=================================================
 #  salb deleting characters that are wrongly encoded
 #================================================
@@ -29,16 +28,18 @@ sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input # chaining sed commands
 sed -i "s/”/'/g" $input
 sed -i "s/“/'/g" $input
 sed -i "s/—/--/g" $input
+sed -i "s/–/--/g" $input
 sed -i "s/‘/'/g" $input
 sed -i "s/’/'/g" $input
 sed -i "s/…/\.\.\./g" $input
-# ”
-# “
-
 
 # General normalization
 echo "1. Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
+
+
+
+
 
 echo "2. Generic normalization start..."
 perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
@@ -50,14 +51,8 @@ echo 'making salb replacements'
 sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" $output.2start
 # splitting out e.g. '100k --> 100 k'
 sed -i -E 's/([0-9]+)([a-zA-Z])/\1 \2/g' $output.2start
-
 # echo "salb replacing percentages"
-# salb this is how you can print a line (to check whether a replacement worked)
-# sed -n 3p $output.2start
 sed -i -e 's/%/ percent/' $output.2start
-# echo "after..."
-# sed -n 3p $output.2start
-# echo
 
 #===========================================================
 #                

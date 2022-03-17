@@ -23,8 +23,17 @@ echo "on input file:"; echo $input0; printf '\n'
 # salb don't want to edit the original input file, therefore:
 cp $input0 input.txt
 input=input.txt
-# removing; •, 
-sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input
+# removing specials symbols; •, 
+# removing specials symbols; •, 
+sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input # chaining sed commands
+sed -i "s/”/'/g" $input
+sed -i "s/“/'/g" $input
+sed -i "s/—/--/g" $input
+sed -i "s/‘/'/g" $input
+sed -i "s/’/'/g" $input
+sed -i "s/…/\.\.\./g" $input
+# ”
+# “
 
 
 # General normalization

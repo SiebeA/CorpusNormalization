@@ -37,6 +37,6 @@ df = pd.DataFrame(np.column_stack([lines,mtn]),
 
 
 def Exporter(df,file_name):
-    df.to_excel(file_name)
-Exporter(df=df,file_name='levenhstein_distance_input.xlsx',index=False)
+    df.to_excel(file_name, index=(False))
+Exporter(df=df,file_name='levenhstein_distance_input.xlsx')
     

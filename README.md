@@ -28,5 +28,6 @@
 - Create a shell script to automize steps 1-6 (after having made the adjustments during working for ticket tlz-83)
 
 ### Nice to haves:
-- Integration  with a 'diff' program--such as sublime merge--; where, whenever the edit-distance of a sentence surpasses a defined threshold, that sentence is automatically inputted in that diff program, and the manual ATN-double-checker can observe the differences between the 2 sentences visually. (Now the process of getting it in the diff-program is still manual)
+- post- step 6
+  - Integration  with a 'diff' program--such as sublime merge--; where, whenever the edit-distance of a sentence surpasses a defined threshold, that sentence is automatically inputted in that diff program, and the manual ATN-double-checker can observe the differences between the 2 sentences visually. (Now the process of getting it in the diff-program is still manual)
 [sublime-merge-diff-program-preview](https://ibb.co/b3YbnFB)

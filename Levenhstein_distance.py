@@ -17,6 +17,7 @@ def Importer(path):
     import pandas as pd
     df = pd.read_excel(path,sheet_name=0)
     df = df.iloc[0:,0:2]
+    print('df head:')
     print(df.head())
     print('the column names of the xlsx file:', df.columns)
     return df
@@ -48,6 +49,8 @@ def Levenhstein(df):
 
 def Exporter(df,file_name):
     df.to_excel(file_name)
+    print('output file:')
+    print(file_name)
 
 
 #%%

@@ -38,6 +38,8 @@ echo "1. Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
 
+# salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`
+perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .output.1tok
 
 
 

@@ -15,7 +15,6 @@
 - Post-first time:
   - 1 paste all the raw-text-sentences that need to be automatically normalized in `ATN_input.txt`
   - 2 Paste the Manually normalized sentences in `goldStandard_tts.txt`
-    - (TODO 'specify a xlsx file, with ATN sentences in the A column, and Golden standard sentences in the B column')
   - 3 in your terminal, run: `bash e2e_normalization.sh`
     - The normalized sentences are located in `output.5tts.txt`
   - 4 In your terminal, run: `python3 txt-to-df.py`

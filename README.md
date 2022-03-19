@@ -1,8 +1,3 @@
-### observations made about the normalized text files
-- Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
-
-
-
 
 ### Procedure for automatic text normalization(ATN) (TTS context)
 

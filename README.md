@@ -10,8 +10,8 @@
   <!-- - `xlsx file`
 <!-- - Run script `x` that converts the `xlsx` file in a `txt` file -->
 - First time:
-  - 0 Clone the <repo>
-  - 0.1 move to the `TN_w_IRISA`dir
+  - 0 Clone the `TN_w_IRISA` dir
+  - 0.1 move to the `TN_w_IRISA` dir
 - Post-first time:
   - 1 paste all the raw-text-sentences that need to be automatically normalized in `ATN_input.txt`
   - 2 Paste the Manually normalized sentences in `goldStandard_tts.txt`
@@ -24,7 +24,6 @@
 ### For evaluating the ATN:
 <!-- - Input `output.5tts.txt` & `goldStandard_tts.txt` -->
 - 5 In your terminal, run: `python3 Levenhstein_distance.py`
-  - input the
 - 6 Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
 - Alternatively, run all commands:

@@ -1,7 +1,7 @@
 
 ### Procedure for automatic text normalization(ATN) (TTS context)
 
-<!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor
+<!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
 - First time:
   - 0 Clone the `TN_w_IRISA` repo

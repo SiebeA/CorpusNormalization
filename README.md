@@ -1,11 +1,10 @@
 
 ### Procedure for automatic text normalization(ATN) (TTS context)
 
-<!-- - Input a `txt` file with sentences to be normalized by -->
-  <!-- - `xlsx file`
-<!-- - Run script `x` that converts the `xlsx` file in a `txt` file -->
+<!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor
+
 - First time:
-  - 0 Clone the `TN_w_IRISA` dir
+  - 0 Clone the `TN_w_IRISA` repo
   - 0.1 move to the `TN_w_IRISA` dir
 - Post-first time:
   - 1 paste all the raw-text-sentences that need to be automatically normalized in `ATN_input.txt`

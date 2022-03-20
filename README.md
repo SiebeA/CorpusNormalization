@@ -6,13 +6,14 @@
 - First time:
   - 0 Clone the `TN_w_IRISA` repo
 - Post-first time:
-  - `$ /TN_w_IRISA`
-  - 1 paste all the raw-text-sentences that need to be automatically normalized in `ATN_input.txt`
-  - 2 Paste the Manually normalized sentences in `goldStandard_tts.txt`
-  - 3 in your terminal, run: `bash e2e_normalization.sh`
+  - `$ cd /TN_w_IRISA`
+  - export the xlsx file with the sentences that need to be normalized in `TN_w_IRISA` dir
+  - 1. Execute `python3 pf_xlsx_column_importer.py` to export the to-be-manually-normalized sentences of the specified `xlsx` file into a `txt` file (this also strips them from linebreaks)
+  - 2. idem for the gold-standard sentences, if you want to run a comparison between them, and the ATN sentences of 1.
+  - 3 in your terminal, run: `bash e2e_normalization.sh` (you will get some feedback as shell output)
   <!-- TODO echo in the /e2e* that this might take a while, and the error messgaes that can be observed -->
     - The normalized sentences are located in `output.5tts.txt`
-  - 4 In your terminal, run: `python3 txt-to-df.py`
+  - 4 In your terminal, run: `python3 pf_txt-to-df.py`
     - `levenhstein_distance_input.xlsx` will be outputted; column A==`output.5tts.txt` , column B==`goldStandard_tts`
 
 ### For evaluating the ATN:
@@ -36,6 +37,7 @@ rm '" if it is the first symbol af a line, and there is no other one in the line
 - post- step 6
   - Integration  with a 'diff' program--such as sublime merge--; where, whenever the edit-distance of a sentence surpasses a defined threshold, that sentence is automatically inputted in that diff program, and the manual ATN-double-checker can observe the differences between the 2 sentences visually. (Now the process of getting it in the diff-program is still manual)
 [sublime-merge-diff-program-preview](https://ibb.co/b3YbnFB)
+- check whether nr of sentences of goldStandard_tts & ATN_input match
 
 
 ### observations made about the normalized text files

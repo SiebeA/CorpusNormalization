@@ -3,12 +3,14 @@
 
 
 def xlsx_scout(file_path):
+    import pandas as pd
+    file_path = "TLZ-281_283]Combined_urls_glossary.xlsx"
     df = pd.read_excel(file_path, "Bessy_URLs_and_Glossary")
     print(df.head())
-    return df # return the df for importer()
+    return df  # return the df for importer()
 
 
-def importer(df, sheet_name,column1, column2):
+def importer(df, sheet_name, index_start):#, index_end):
     # import pandas as pdTLZ-281_283]Combined_urls_glossary.xlsx
     """
 
@@ -25,7 +27,7 @@ def importer(df, sheet_name,column1, column2):
     """
     df = pd.read_excel(file_path, sheet_name)
     print(df.head())
-    df = df.iloc[0:, column1:column2]
+    df = df.iloc[0:, index_start]#:index_end]
     print('these are the first 5 rows of the 2 columsn:')
     print(df.head())
     return df
@@ -36,16 +38,16 @@ def importer(df, sheet_name,column1, column2):
 
 def exporter(output_file_name):
     """
-    
+
 
     Parameters
     ----------
     output_file_name : STR
-    
+
     Returns
     -------
     None.
-    
+
     Exports a txt_file to the PWD
 
     """
@@ -53,28 +55,50 @@ def exporter(output_file_name):
     with open(output_file_name, 'w') as f:
         for i in df.index:
             # print(df.iloc[i,0])
-            string = df.iloc[i, 0]
+            string = df.iloc[i]
             # some strings have '\n', causes them to be printed on a seperate line in the txt file
             string = string.replace("\n", "")
             f.writelines(string)
             f.write('\n')
 
 
-#%%
+# %%
 if __name__ == '__main__':
     import pandas as pd
+
+    # printing the xlsx files in the dir, for user input convenience
+    import glob
+    import os
+    os.chdir(os.getcwd())
+    for file in glob.glob("*.xlsx"):
+        print(file)
+
     # file_path = "/home/siebe.albers/dev/TN_w_IRISA/TLZ-281_283]Combined_urls_glossary.xlsx"
     file_path = input("input the file path to the xlsx file ")
-    df = xlsx_scout(file_path) #return the df
-    sheet_name = input("input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx")
-    column1 = input("input column1 index ")
-    column2 = input("input column2 index ")
-    
+    df = xlsx_scout(file_path)  # return the df
+    sheet_name = input(
+        "input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx ")
+    index_start = input("input python index slice start ")
+    # index_end = input("input python index slice end ")
+
     df = importer(
         df,
         sheet_name,
-        column1=4,
-        column2=6)
-    
-    output_file_name = input('input the name of the txt output_file ')
-    exporter(output_file_name)
+        index_start=4)
+        # index_end=6)
+
+    output_file_name = "none"
+    while output_file_name.lower() not in ['atn', 'gs']:
+        output_file_name = input(
+            'specify whether you wnat to process the automatic transcript normalization (ATN) or the goldstandard sentences (GS) ')  # dep
+        if output_file_name.lower() == 'atn':
+            exporter('ATN_input.txt')
+        elif output_file_name.lower() == 'gs':
+            exporter('goldStandard_tts.txt')
+        else:
+            print(' specify either "ATN" or GD" ')
+
+
+# TODO specifycolum nname instead of iloc
+# TODO print out the name of the sheets
+# TODO verify which column title is copied

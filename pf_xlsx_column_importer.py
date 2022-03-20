@@ -4,13 +4,13 @@
 
 def xlsx_scout(file_path):
     import pandas as pd
-    file_path = "TLZ-281_283]Combined_urls_glossary.xlsx"
-    df = pd.read_excel(file_path, "Bessy_URLs_and_Glossary")
+    # file_path = "TLZ-281_283]Combined_urls_glossary.xlsx"
+    df = pd.read_excel(file_path, sheet_name)
     print(df.head())
     return df  # return the df for importer()
 
 
-def importer(df, sheet_name, index_start):#, index_end):
+def importer(df, sheet_name, index):#, index_end):
     # import pandas as pdTLZ-281_283]Combined_urls_glossary.xlsx
     """
 
@@ -27,7 +27,7 @@ def importer(df, sheet_name, index_start):#, index_end):
     """
     df = pd.read_excel(file_path, sheet_name)
     print(df.head())
-    df = df.iloc[0:, index_start]#:index_end]
+    df = df.iloc[0:,index]#:index_end]
     print('these are the first 5 rows of the 2 columsn:')
     print(df.head())
     return df
@@ -75,16 +75,15 @@ if __name__ == '__main__':
 
     # file_path = "/home/siebe.albers/dev/TN_w_IRISA/TLZ-281_283]Combined_urls_glossary.xlsx"
     file_path = input("input the file path to the xlsx file ")
+    sheet_name = input("input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx ")
     df = xlsx_scout(file_path)  # return the df
-    sheet_name = input(
-        "input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx ")
-    index_start = input("input python index slice start ")
+    index = int(input("input python index slice start "))
     # index_end = input("input python index slice end ")
 
     df = importer(
         df,
         sheet_name,
-        index_start=4)
+        index)
         # index_end=6)
 
     output_file_name = "none"

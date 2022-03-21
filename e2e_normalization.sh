@@ -37,9 +37,17 @@ sed -i "s/…/\.\.\./g" $input
 echo "1. Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
+# getting rid of a broken line e.g.:
+# 20 percent
+ # to accommodate
+perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .output.1tok
+# the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs
+# it processes all as one string, not one line per
 
 # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`
 perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .output.1tok
+# salb replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
+perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .output.1tok
 
 
 

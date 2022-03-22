@@ -29,7 +29,7 @@
 - To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
 ``` python3 pf_txt-to-df.py```
 - In your terminal, run:
-```python3 pf_Levenhstein_distance.py````
+``` python3 pf_Levenhstein_distance.py```
   - If successful , the `levenhstein_distance_output.xlsx` will be outputted; column B==`output.5tts.txt` , column C==`goldStandard_tts`, column D ==`Levenhstein_distance` between A & B.
 
 + Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`

@@ -26,7 +26,7 @@
     <!-- - The normalized sentences are in `output.5tts.txt` # outputted in shell -->
 
 ### For comparing the ATN to a Golden Standard normalized corpus:
--To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
+- To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
 ``` python3 pf_txt-to-df.py```
 - In your terminal, run:
 ```python3 pf_Levenhstein_distance.py````

@@ -10,6 +10,9 @@ def xlsx_scout(file_path):
     return df  # return the df for importer()
 
 
+
+
+
 def importer(df, sheet_name, index):#, index_end):
     # import pandas as pdTLZ-281_283]Combined_urls_glossary.xlsx
     """
@@ -73,12 +76,20 @@ if __name__ == '__main__':
     import glob
     import os
     os.chdir(os.getcwd())
-    for file in glob.glob("*.xlsx"):
+    for file in glob.glob("*.xls*"):
         print(file)
 
     # file_path = "/home/siebe.albers/dev/TN_w_IRISA/TLZ-281_283]Combined_urls_glossary.xlsx"
     file_path = input("input the file path to the xlsx file ")
     # file_path = 'glos.xlsx'
+    
+    # TODO print out the sheet names (need to use xls)
+    if file_path.endswith((".xls")):
+        import xlrd
+        xls_file = xlrd.open_workbook_xls(file_path)
+        print("These are the available worksheets in the excel file\
+              Worksheet name(s): {0}".format(xls_file.sheet_names()))
+    
     sheet_name = input("input the name of the excel sheet ")
     # sheet_name = 'Bessy'
     df = xlsx_scout(file_path)  # return the df
@@ -101,6 +112,9 @@ if __name__ == '__main__':
         elif output_file_name.lower() == 'gs':
             exporter('goldStandard_tts.txt')
             print('saved under "goldStandard_tts.txt" ')
+        elif output_file_name.lower() == 'other':
+            file_name_other = str(input('specify the name of your output_file'))
+            exporter(f'{file_name_other}.txt')
         else:
             print(' specify either "ATN" or GS" ')
 

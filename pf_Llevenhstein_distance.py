@@ -60,7 +60,7 @@ def Exporter(df,file_name):
 
 if __name__=='__main__':
     # path = input('input the xlsx file path (without quotes):  ')
-    path = 'levenhstein_distance_input.xlsx'
+    path = '.levenhstein_distance_input.xlsx'
     df = Importer(path=path)
     df = Levenhstein(df = df)
     Exporter(df = df, file_name='levenhstein_distance_output.xlsx')

@@ -4,50 +4,51 @@
 <!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
 ##### Python3 dependencies:
+<!-- TODO make a shell script that automatically creates venv with pip packages -->
     - Levenshtein
     - pandas
+    - openpyxl
 
 ### Procedure steps:
 - First time:
-  - 0 Clone this `TN_w_IRISA` repo
+  - Clone this `TN_w_IRISA` repo
 - Post-first time:
   ```bash
   cd /TN_w_IRISA
   ```
-  - export the xlsx file with the sentences that need to be normalized in `TN_w_IRISA` dir
-  - 1. Execute
+  - Move the xlsx file with the sentences that need to be normalized to the `TN_w_IRISA` dir
+  - Execute:
   ```bash
    python3 pf_xlsx_column_importer.py
    ```
-   to export the to-be-manually-normalized sentences of the specified `xlsx` file into a `txt` file (this also strips them from line breaks)
-  - 2. If you want to run a comparison between ATN, and goldStandard_tts, follow the same process in 1., but for GS. (instructions will be outputted in the shell)
-  - 3. For the ATN with the adapted IRISA tool, execute:
+    <!-- (text preprocessing takes places here) -->
+   <!-- e.g. stripping line breaks -->
+  (If you want to run a comparison between ATN, and goldStandard_tts, follow the same process in 1., but for GS. (instructions will be outputted in the shell))
+  - To use the adapted IRISA tool for (ATN), execute:
   ```bash
   bash e2e_normalization.sh
   ```
   <!-- TODO echo in the /e2e* that this might take a while, and the error messgaes that can be observed -->
     - The normalized sentences are in `output.5tts.txt`
 
-### For evaluating the ATN:
--4. To calculate the Levenhstein_distance, In your terminal, run:
+### For comparing the ATN to a Golden Standard normalized corpus:
+-To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
 ```bash
 python3 pf_txt-to-df.py
 ```
--  If, the nr of rows between the 2 files not match, you get an error (probably an extra line break will have been made by the IRISA normalizer in stagev3).
-- 5 In your terminal, run:
+(If, the nr of rows between the 2 files not match, you get an error (probably an extra line break will have been made by the `e2e_normalization.sh` program.
+- In your terminal, run:
 ```bash
 python3 Levenhstein_distance.py`
 ```
-  - If successful , the `levenhstein_distance_input.xlsx` will be outputted; column A==`output.5tts.txt` , column B==`goldStandard_tts`, ??? column C ==`Levenhstein_distance`?
+  - If successful , the `levenhstein_distance_output.xlsx` will be outputted; column B==`output.5tts.txt` , column C==`goldStandard_tts`, column D ==`Levenhstein_distance` between A & B.
 
 - 6 Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
-- **Alternatively, run all commands**:
+### Alternatively, run all commands:
 ```bash
 python3 pf_xlsx_column_importer.py; bash e2e_normalization.sh; python3 pf_txt-to-df.py levenhstein_distance
 ```
-
-
 
 ## TODO
 

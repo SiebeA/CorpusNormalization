@@ -10,10 +10,7 @@ def xlsx_scout(file_path):
     return df  # return the df for importer()
 
 
-
-
-
-def importer(df, sheet_name, index):#, index_end):
+def importer(df, sheet_name, index):  # , index_end):
     # import pandas as pdTLZ-281_283]Combined_urls_glossary.xlsx
     """
 
@@ -30,9 +27,8 @@ def importer(df, sheet_name, index):#, index_end):
     """
     df = pd.read_excel(file_path, sheet_name)
     print(df.head())
-    df = df.iloc[0:,index]#:index_end]
-    
-    
+    df = df.iloc[0:, index]  # :index_end]
+
     print('these are the first 5 rows of the selected column, check the name of the column under "4":')
     print(df.head())
     return df
@@ -60,12 +56,17 @@ def exporter(output_file_name):
     with open(output_file_name, 'w') as f:
         for i in df.index:
             # print(df.iloc[i,0])
-            string = df.iloc[i]
-            string = string.capitalize() # some indices, such as #87 are not capped (also not for the manually normalized)
-            # some strings have '\n', causes them to be printed on a seperate line in the txt file
-            string = string.replace("\n", "")
-            f.writelines(string)
-            f.write('\n')
+            try:
+                string = df.iloc[i]
+                # print(i, string)
+                # some indices, such as #87 are not capped (also not for the manually normalized)
+                string = string.capitalize()
+                # some strings have '\n', causes them to be printed on a seperate line in the txt file
+                string = string.replace("\n", "")
+                f.writelines(string)
+                f.write('\n')
+            except AttributeError:
+                print(i, string)
 
 
 # %%
@@ -82,30 +83,31 @@ if __name__ == '__main__':
     # file_path = "/home/siebe.albers/dev/TN_w_IRISA/TLZ-281_283]Combined_urls_glossary.xlsx"
     file_path = input("input the file path to the xlsx file ")
     # file_path = 'glos.xlsx'
-    
+
     # TODO print out the sheet names (need to use xls)
     if file_path.endswith((".xls")):
         import xlrd
         xls_file = xlrd.open_workbook_xls(file_path)
-        print("These are the available worksheets in the excel file\
-              Worksheet name(s): {0}".format(xls_file.sheet_names()))
-    
+        print("These are the available worksheets in the excel file Worksheet name(s)\n: {0}".format(xls_file.sheet_names()))
+
     sheet_name = input("input the name of the excel sheet ")
     # sheet_name = 'Bessy'
     df = xlsx_scout(file_path)  # return the df
-    index = int(input("input the python index (starting at 0) of the column in which the sentences are located that you want to process "))
+
+    for i, column in enumerate(df.columns):
+        print(i, column)
+    index = int(input("Input the index-number of the column you want to process "))
     # index = 4
 
     df = importer(
         df,
         sheet_name,
         index)
-        # index_end=6)
 
     output_file_name = "none"
-    while output_file_name.lower() not in ['atn', 'gs']:
+    while output_file_name.lower() not in ['atn', 'gs', 'other']:
         output_file_name = input(
-            'specify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) ')  # dep
+            '\nspecify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) or OTHER \n')  # dep
         if output_file_name.lower() == 'atn':
             exporter('ATN_input.txt')
             print('saved under "ATN_input.txt" ')
@@ -113,10 +115,12 @@ if __name__ == '__main__':
             exporter('goldStandard_tts.txt')
             print('saved under "goldStandard_tts.txt" ')
         elif output_file_name.lower() == 'other':
-            file_name_other = str(input('specify the name of your output_file'))
+            file_name_other = str(
+                input('specify the name of your output_file \n'))
             exporter(f'{file_name_other}.txt')
         else:
             print(' specify either "ATN" or GS" ')
+        print('done')
 
 
 # TODO specifycolum nname instead of iloc

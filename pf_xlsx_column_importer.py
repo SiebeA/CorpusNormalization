@@ -79,10 +79,10 @@ if __name__ == '__main__':
     # file_path = "/home/siebe.albers/dev/TN_w_IRISA/TLZ-281_283]Combined_urls_glossary.xlsx"
     file_path = input("input the file path to the xlsx file ")
     # file_path = 'glos.xlsx'
-    sheet_name = input("input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx ")
+    sheet_name = input("input the name of the excel sheet ")
     # sheet_name = 'Bessy'
     df = xlsx_scout(file_path)  # return the df
-    index = int(input("input python index of the column in which the sentences are that you want to normalize "))
+    index = int(input("input the python index (starting at 0) of the column in which the sentences are located that you want to process "))
     # index = 4
 
     df = importer(
@@ -94,7 +94,7 @@ if __name__ == '__main__':
     output_file_name = "none"
     while output_file_name.lower() not in ['atn', 'gs']:
         output_file_name = input(
-            'specify whether you want to process the automatic transcript normalization (ATN) or the goldstandard sentences (GS) ')  # dep
+            'specify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) ')  # dep
         if output_file_name.lower() == 'atn':
             exporter('ATN_input.txt')
             print('saved under "ATN_input.txt" ')

@@ -6,8 +6,20 @@ LANGUAGE=en
 # input=zsa_input.txt
 # input=examples/en/zsa_z_input_sentences.txt
 # input=examples/en/zsa_z_input.txt
-input0=ATN_input.txt
-output=.output
+find . -name 'raw*.txt' # show the user options of file that can be inputted
+read -p 'insert the file name that you want to normalize: ' input0
+
+echo "The current directory is : $current_dir"
+
+output_file_name=$(echo $input0) # store the name of $input0 as a string 
+# replace the patterns in the inptu file name that wanted for use in the output file:
+output_file_name=$(sed 's/raw_//' <<< $output_file_name)
+output_file_name=$(sed 's/.txt//' <<< $output_file_name)
+# and use that for naming the output file names:
+output=$output_file_name
+# echo $output
+
+
 
 # ASR_CFG=text.asr.txt
 TTS_CFG=tts_siebe.cfg

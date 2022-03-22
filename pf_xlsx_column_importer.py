@@ -77,14 +77,13 @@ if __name__ == '__main__':
         print(file)
 
     # file_path = "/home/siebe.albers/dev/TN_w_IRISA/TLZ-281_283]Combined_urls_glossary.xlsx"
-    # file_path = input("input the file path to the xlsx file ")
-    file_path = 'glos.xlsx'
-    # sheet_name = input("input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx ")
-    sheet_name = 'Bessy'
+    file_path = input("input the file path to the xlsx file ")
+    # file_path = 'glos.xlsx'
+    sheet_name = input("input the name of the excel sheet TLZ-281_283]Combined_urls_glossary.xlsx ")
+    # sheet_name = 'Bessy'
     df = xlsx_scout(file_path)  # return the df
-    # index = int(input("input python index slice start "))
-    index = 4
-    # index_end = input("input python index slice end ")
+    index = int(input("input python index of the column in which the sentences are that you want to normalize "))
+    # index = 4
 
     df = importer(
         df,

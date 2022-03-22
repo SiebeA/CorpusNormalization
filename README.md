@@ -29,7 +29,7 @@
   bash e2e_normalization.sh
   ```
   <!-- TODO echo in the /e2e* that this might take a while, and the error messgaes that can be observed -->
-    - The normalized sentences are in `output.5tts.txt`
+    <!-- - The normalized sentences are in `output.5tts.txt` # outputted in shell -->
 
 ### For comparing the ATN to a Golden Standard normalized corpus:
 -To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
@@ -39,7 +39,7 @@ python3 pf_txt-to-df.py
 (If, the nr of rows between the 2 files not match, you get an error (probably an extra line break will have been made by the `e2e_normalization.sh` program.
 - In your terminal, run:
 ```bash
-python3 Levenhstein_distance.py`
+python3 pf_Levenhstein_distance.py`
 ```
   - If successful , the `levenhstein_distance_output.xlsx` will be outputted; column B==`output.5tts.txt` , column C==`goldStandard_tts`, column D ==`Levenhstein_distance` between A & B.
 

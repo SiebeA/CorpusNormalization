@@ -20,11 +20,11 @@ echo "on input file:"; echo $input0; printf '\n'
 #  salb deleting characters that are wrongly encoded
 #================================================
 # salb don't want to edit the original input file, therefore:
-cp $input0 input.txt
-input=input.txt
+cp $input0 .input.txt
+input=.input.txt
 # removing specials symbols; •, 
 # removing specials symbols; •, 
-sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input # chaining sed commands
+sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input #  example of chaining sed commands
 sed -i "s/”/'/g" $input
 sed -i "s/“/'/g" $input
 sed -i "s/—/--/g" $input
@@ -122,5 +122,5 @@ sed -i '/^\s*$/d' $output.5tts.txt
 
 # Finished
 echo
-echo -n "Done. Finished at: "; date; printf '\n'
+echo -n "Done. Finished at: "; date; printf '\n the file is saved under output.5tts.txt \n'
 # echo $(date)

@@ -23,7 +23,7 @@
    ```
     <!-- (text preprocessing takes places here) -->
    <!-- e.g. stripping line breaks -->
-  (If you want to run a comparison between ATN, and goldStandard_tts, follow the same process in 1., but for GS. (instructions will be outputted in the shell))
+    - (If you want to run a comparison between ATN, and goldStandard_tts, follow the same process in 1., but for GS. (instructions will be outputted in the shell))
   - To use the adapted IRISA tool for (ATN), execute:
   ```
   bash e2e_normalization.sh
@@ -36,14 +36,13 @@
 ```bash
 python3 pf_txt-to-df.py
 ```
-(If, the nr of rows between the 2 files not match, you get an error (probably an extra line break will have been made by the `e2e_normalization.sh` program.
 - In your terminal, run:
 ```
 python3 pf_Levenhstein_distance.py`
 ```
   - If successful , the `levenhstein_distance_output.xlsx` will be outputted; column B==`output.5tts.txt` , column C==`goldStandard_tts`, column D ==`Levenhstein_distance` between A & B.
 
-- Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
+    - Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
 ### Alternatively, run all commands:
 ```

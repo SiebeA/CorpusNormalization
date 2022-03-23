@@ -7,7 +7,7 @@ LANGUAGE=en
 # input=examples/en/zsa_z_input_sentences.txt
 # input=examples/en/zsa_z_input.txt
 find . -name 'raw*.txt' # show the user options of file that can be inputted
-read -p 'insert the file name that you want to normalize: ' input0 # ask for user input
+read -p 'insert the name of the file (not the goldStandard of course) that you want to normalize by the ATN tool: ' input0 # ask for user input
 
 echo "The current directory is : $current_dir"
 
@@ -150,3 +150,6 @@ echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; print
 # salb removing redundant file names in dir
 rm .$output_file_name*
 rm *\.orig
+echo
+echo 'end of the ATN normalization program'
+echo

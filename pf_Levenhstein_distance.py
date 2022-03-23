@@ -23,13 +23,6 @@ def Importer(path):
     return df
 
 # %% salb
-# # creating a list of lists containing both the pre and after normalized text:
-# listt = []
-# import pandas as pd
-# # df = df.reset_index()  # make sure indexes pair with number of rows
-# for index, row in df.iterrows():
-#     listt.append((row['Explanation'], row['Explanation Normalized']))
-#     # print(row['Explanation'], row['Explanation Normalized'])
 
 # append  the levenhstein distance to each row i
 def Levenhstein(df):
@@ -49,7 +42,7 @@ def Levenhstein(df):
 
 def Exporter(df,file_name):
     df.to_excel(file_name)
-    print('output file:')
+    print('output file: ')
     print(file_name)
 
 

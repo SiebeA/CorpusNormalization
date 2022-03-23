@@ -16,9 +16,9 @@
   - Clone this `TN_w_IRISA` repo
 - Post-first time:
   ``` cd /TN_w_IRISA```
-  - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx is more convenient )** `TN_w_IRISA` dir
+  - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx, and having column headers on the first row increases convenience level )** `TN_w_IRISA` dir
   - Execute:
-  ```python3 pf_excel_column_importer.py```
+  ```python3 pf_excel_column_importer.py``` (when there are empty rows, FYI the index of the rows will be outputted).
     <!-- (text preprocessing takes places here) -->
    <!-- e.g. stripping line breaks -->
     - (If you want to run a comparison between ATN, and goldStandard_tts, follow the same process, but for GS. (instructions will be outputted in the shell))
@@ -28,6 +28,7 @@
     <!-- - The normalized sentences are in `output.5tts.txt` # outputted in shell -->
 
 ### For comparing the ATN to a Golden Standard normalized corpus:
+- !!! `goldStandard_Rhoda_tts.txt` first letter after ending punct mark is not capped, while it is in the original excel file
 - To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
 `python3 pf_txt_to_df.py`
 - In your terminal, run:
@@ -42,13 +43,16 @@
 ## TODO
 
 ### Need-to-haves
+- Export the sentences from `Levenhstein_distance_output.xlsx` that are above a DISTANCE threshold to 2 seperate txt files
+  - Then, sublime merge those 2 text files
 
 ### Nice to haves:
-- Integration  with a 'diff' program--such as sublime merge--; where, whenever the edit-distance of a sentence surpasses a defined threshold, that sentence is automatically inputted in that diff program, and the manual ATN-double-checker can observe the differences between the 2 sentences visually. (Now the process of getting it in the diff-program is still manual)
+- choose xls file automatically, confirm with 'y'
 [sublime-merge-diff-program-preview](https://ibb.co/b3YbnFB)
 - make a dependencies pip txt file, perhaps even automated virtual environment
-- in `pf_txt-to-df.py`, print the name of the available sheets of the `xlsx` file. --- done for xls files, not possible for xlsx files
-- column names for `Levenhstein_distance_output.xlsx` by adapting  `python3 pf_Levenhstein_distance.py`
+- in `pf_txt-to-df.py`, print the name of the available sheets of the `xlsx` file. --- done for xls files, not possible for xlsx files<!-- 
+- column names for `Levenhstein_distance_output.xlsx` by adapting  `python3 pf_Levenhstein_distance.py` -->
+- column names adapted for when it is not ATN but RAW
 
 <!-- ### observations made about the normalized text files; THESE CONCERN SPECIFIC INSTANCES (not conclusions about the whole corpus)
 Bessy:

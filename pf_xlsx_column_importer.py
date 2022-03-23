@@ -88,15 +88,16 @@ if __name__ == '__main__':
     if file_path.endswith((".xls")):
         import xlrd
         xls_file = xlrd.open_workbook_xls(file_path)
-        print("These are the available worksheets in the excel file Worksheet name(s)\n: {0}".format(xls_file.sheet_names()))
+        print("These are the available worksheets in the excel file Worksheet name(s)\n: {0} \n".format(xls_file.sheet_names()))
 
     sheet_name = input("input the name of the excel sheet ")
     # sheet_name = 'Bessy'
     df = xlsx_scout(file_path)  # return the df
 
-    for i, column in enumerate(df.columns):
-        print(i, column)
-    index = int(input("Input the index-number of the column you want to process "))
+    if len(df.columns) >1:
+        for i, column in enumerate(df.columns):
+            print(i, column)
+    index = int(input("\nInput the index-number of the column you want to process (starting at 0) "))
     # index = 4
 
     df = importer(
@@ -109,11 +110,11 @@ if __name__ == '__main__':
         output_file_name = input(
             '\nspecify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) or OTHER \n')  # dep
         if output_file_name.lower() == 'atn':
-            exporter('ATN_input.txt')
-            print('saved under "ATN_input.txt" ')
+            exporter('ATN.txt')
+            print('saved under "ATN.txt" ')
         elif output_file_name.lower() == 'gs':
-            exporter('goldStandard_tts.txt')
-            print('saved under "goldStandard_tts.txt" ')
+            exporter(f'goldStandard_{sheet_name}_tts.txt')
+            print('saved under f"goldStandard_{sheet_name}_tts.txt" ')
         elif output_file_name.lower() == 'other':
             file_name_other = str(
                 input('specify the name of your output_file \n'))

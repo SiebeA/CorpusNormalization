@@ -7,17 +7,17 @@ LANGUAGE=en
 # input=examples/en/zsa_z_input_sentences.txt
 # input=examples/en/zsa_z_input.txt
 find . -name 'raw*.txt' # show the user options of file that can be inputted
-read -p 'insert the file name that you want to normalize: ' input0
+read -p 'insert the file name that you want to normalize: ' input0 # ask for user input
 
 echo "The current directory is : $current_dir"
 
+# for storing the output file under a convenient way:
 output_file_name=$(echo $input0) # store the name of $input0 as a string 
-# replace the patterns in the inptu file name that wanted for use in the output file:
-output_file_name=$(sed 's/raw_//' <<< $output_file_name)
-output_file_name=$(sed 's/.txt//' <<< $output_file_name)
-# and use that for naming the output file names:
+# replace the patterns in the inptu file name that wanted for use in the$output file:
+# output_file_name=$(sed 's/raw_//' <<< $output_file_name)
+# output_file_name=$(sed 's/.txt//' <<< $output_file_name)
+# and use that for naming the$output file names:
 output=$output_file_name
-# echo $output
 
 
 
@@ -31,11 +31,11 @@ echo "on input file:"; echo $input0; printf '\n'
 #=================================================
 #  salb deleting characters that are wrongly encoded
 #================================================
-# salb don't want to edit the original input file, therefore:
+# salb don't want to sed the original input file, therefore:
 cp $input0 .input.txt
 input=.input.txt
-# removing specials symbols; •, 
-# removing specials symbols; •, 
+
+# removing special symbols
 sed -i -e "s/•/-/g" -e "s/SIEBE//g" $input #  example of chaining sed commands
 sed -i "s/”/'/g" $input
 sed -i "s/“/'/g" $input
@@ -47,19 +47,21 @@ sed -i "s/…/\.\.\./g" $input
 
 # General normalization
 echo "1. Tokenization..."
+echo salb1
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
 
 # getting rid of a broken line e.g.:
 # 20 percent
  # to accommodate
-perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .output.1tok
+ echo salb2
+perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' $output.1tok
 # the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs
 # it processes all as one string, not one line per
-
+echo salb3
 # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`
-perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .output.1tok
+perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' $output.1tok
 # salb replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
-perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .output.1tok
+perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' $output.1tok
 
 
 
@@ -95,7 +97,7 @@ perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl $output.3currency_fix.txt 
 echo "5. TTS specific normalization..."
 perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4general_norm.txt > $output.5tts.txt
 
-# # sa try to source from earlier output:
+# # sa try to source from earlier$output:
 # echo "TTS specific normalization..."
 # perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.start > $output.tts.txt
 
@@ -115,7 +117,7 @@ sed -i 's/^\(.\)/\U\1/' $output.5tts.txt # case first letter of a sentence
 
 
 # removing space between punctution
-sed -i 's/ \([.?,\/#!$%\^&\*;:{}=\-_`~()]\)/\1/'g $output.5tts.txt
+sed -i 's/ \([.?,\/#!$%\^&\*;:{}=\-_`~()]\)/\1/g' $output.5tts.txt
 
 # sed -i 's/\([A-Z]\)\([0-9]\)/\1 \2/g' $output
 
@@ -124,6 +126,11 @@ echo
 echo "Removing empty lines..."
 # sed -i '/^\s*$/d' $output.asr.txt
 sed -i '/^\s*$/d' $output.5tts.txt
+
+
+# salb removing obsolete files:
+rm .input.txt
+
 
 #===========================================================
 # Salb replacements                
@@ -134,5 +141,5 @@ sed -i '/^\s*$/d' $output.5tts.txt
 
 # Finished
 echo
-echo -n "Done. Finished at: "; date; printf '\n the file is saved under output.5tts.txt \n'
+echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; printf $output_file_name; printf '_5tts.txt \n'
 # echo $(date)

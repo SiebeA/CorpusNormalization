@@ -4,13 +4,34 @@ import numpy as np
 
 #first u have to open  the file and seperate every line like below:
 
-with open('.output.5tts.txt', 'r',encoding=('utf-8')) as df:
-        lines = df.readlines()
+import glob
+import os
+os.chdir(os.getcwd())
 
-with open('goldStandard_tts.txt', 'r',encoding=('utf-8')) as infile:
-        mtn = infile.readlines()
-      
-df = pd.DataFrame(np.column_stack([lines,mtn]),
+
+# list a selection of files that can be inputted:
+import glob
+import os
+os.chdir(os.getcwd())
+for file in glob.glob("*goldStandard*"):
+    print(file)
+
+file_path = input('input the goldstandard file name ')
+with open(file_path, 'r',encoding=('utf-8')) as infile:
+        golden_sentences = infile.readlines() # stores all the goldstandard sentences
+     
+
+for file in glob.glob(".txt*"):
+    print(file)
+file_path_tts = input('input the file that you want to compare to the Goldenstandard')
+# file_path_tts = '.output.5tts.txt'
+with open(file_path_tts, 'r',encoding=('utf-8')) as df:
+        raw_sentences = df.readlines()
+print(f'\n{file_path_tts} is exported as input for the Levenhstein distance\n')
+
+
+# this is the df that will be exported:
+df = pd.DataFrame(np.column_stack([raw_sentences,golden_sentences]),
                   columns=['ATN','MTN'])
 
 def Exporter(df,file_name):

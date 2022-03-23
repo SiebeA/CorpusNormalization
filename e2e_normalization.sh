@@ -14,8 +14,8 @@ echo "The current directory is : $current_dir"
 # for storing the output file under a convenient way:
 output_file_name=$(echo $input0) # store the name of $input0 as a string 
 # replace the patterns in the inptu file name that wanted for use in the$output file:
-# output_file_name=$(sed 's/raw_//' <<< $output_file_name)
-# output_file_name=$(sed 's/.txt//' <<< $output_file_name)
+output_file_name=$(sed 's/raw_//' <<< $output_file_name)
+output_file_name=$(sed 's/.txt//' <<< $output_file_name)
 # and use that for naming the$output file names:
 output=$output_file_name
 
@@ -44,58 +44,57 @@ sed -i "s/–/--/g" $input
 sed -i "s/‘/'/g" $input
 sed -i "s/’/'/g" $input
 sed -i "s/…/\.\.\./g" $input
+sed -i "s/®//g" $input
+sed -i "s/™//g" $input
 
 # General normalization
 echo "1. Tokenization..."
-echo salb1
-perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > $output.1tok
+perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output.1tok
 
 # getting rid of a broken line e.g.:
 # 20 percent
  # to accommodate
- echo salb2
-perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' $output.1tok
+perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output.1tok
 # the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs
 # it processes all as one string, not one line per
-echo salb3
 # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`
-perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' $output.1tok
+perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output.1tok
 # salb replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
-perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' $output.1tok
+perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output.1tok
 
 
 
 echo "2. Generic normalization start..."
-perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl $output.1tok > $output.2start
+perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output.1tok > .$output.2start
 #===========================================================
 # "  salb replacements               "
 #==========================================================
 echo 'making salb replacements'
 # slitting out e.g. 'E5--> E 5'
-sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" $output.2start
+sed -i -E "s/([a-zA-Z])([0-9])/\1  \2/" .$output.2start
 # splitting out e.g. '100k --> 100 k'
-sed -i -E 's/([0-9]+)([a-zA-Z])/\1 \2/g' $output.2start
+sed -i -E 's/([0-9]+)([a-zA-Z])/\1 \2/g' .$output.2start
 # echo "salb replacing percentages"
-sed -i -e 's/%/ percent/' $output.2start
+sed -i -e 's/%/ percent/' .$output.2start
 
 #===========================================================
 #                
 #==========================================================
 echo "3. Currency conversion..."
 # echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
-perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl $output.2start > $output.3currency_fix.txt
+perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl .$output.2start > .$output.3currency_fix.txt
 
 echo "4. Generic normalization end..."
-perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl $output.3currency_fix.txt > $output.4general_norm.txt
+perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output.3currency_fix.txt > .$output.4general_norm.txt
 
 
 # echo "ASR specific normalization..., with the cfg file:"
 # echo $ASR_CFG
 # echo " "
-# perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$ASR_CFG $output.4general_norm.txt > $output.5asr.txt
+# perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$ASR_CFG .$output.4general_norm.txt > .$output.5asr.txt
 
 echo "5. TTS specific normalization..."
-perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG $output.4general_norm.txt > $output.5tts.txt
+perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output.4general_norm.txt > $output.5tts.txt
 
 # # sa try to source from earlier$output:
 # echo "TTS specific normalization..."
@@ -138,8 +137,16 @@ rm .input.txt
 # replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
 # perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
+# capitalizing the first letter after a hard punctuation mark (IRISA doesnt do this)
+perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output.5tts.txt
+
 
 # Finished
 echo
 echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; printf $output_file_name; printf '_5tts.txt \n'
 # echo $(date)
+
+
+# salb removing redundant file names in dir
+rm .$output_file_name*
+rm *\.orig

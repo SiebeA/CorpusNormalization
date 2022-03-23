@@ -1,4 +1,6 @@
 
+test*
+
 .*
 examples/
 
@@ -157,3 +159,4 @@ cython_debug/
 *.txt
 *.xlsx
 *.ods
+*.xls

@@ -113,8 +113,9 @@ if __name__ == '__main__':
             exporter('ATN.txt')
             print('saved under "ATN.txt" ')
         elif output_file_name.lower() == 'gs':
+            sheet_name = sheet_name.replace(" ", "_")
             exporter(f'goldStandard_{sheet_name}_tts.txt')
-            print('saved under f"goldStandard_{sheet_name}_tts.txt" ')
+            print(f'saved under "goldStandard_{sheet_name}_tts.txt" ')
         elif output_file_name.lower() == 'other':
             file_name_other = str(
                 input('specify the name of your output_file \n'))

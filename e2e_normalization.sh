@@ -6,7 +6,7 @@ LANGUAGE=en
 # input=zsa_input.txt
 # input=examples/en/zsa_z_input_sentences.txt
 # input=examples/en/zsa_z_input.txt
-find . -name 'raw*.txt' # show the user options of file that can be inputted
+ls -l *.txt # show the user options of file that can be inputted
 read -p 'insert the name of the file (not the goldStandard of course) that you want to normalize by the ATN tool: ' input0 # ask for user input
 
 echo "The current directory is : $current_dir"
@@ -82,7 +82,7 @@ sed -i -e 's/%/ percent/' .$output.2start
 #==========================================================
 echo "3. Currency conversion..."
 # echo "!!!!!!SOURCING FROM tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl "
-perl $HOME/dev/tl_lm_resources/normalizers/irisa_normalizer/convert_currencies.pl .$output.2start > .$output.3currency_fix.txt
+perl $$ROOT/convert_currencies.pl .$output.2start > .$output.3currency_fix.txt
 
 echo "4. Generic normalization end..."
 perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output.3currency_fix.txt > .$output.4general_norm.txt

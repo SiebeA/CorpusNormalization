@@ -120,6 +120,7 @@ if __name__ == '__main__':
             file_name_other = str(
                 input('specify the name of your output_file \n'))
             exporter(f'{file_name_other}.txt')
+            print(f'saved under "{file_name_other}.txt" ')
         else:
             print(' specify either "ATN" or GS" ')
         print('done')

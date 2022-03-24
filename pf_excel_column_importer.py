@@ -6,8 +6,19 @@ def xlsx_scout(file_path):
     import pandas as pd
     # file_path = "TLZ-281_283]Combined_urls_glossary.xlsx"
     df = pd.read_excel(file_path, sheet_name)
+    print()
     print(df.head())
+    print()
+    first_row_not_data = input('Observe the excel sheet (or the output above). Does the excel sheet have a non-data-entry, e.g. a comment on the first row? [Y or N]  ')
+    if first_row_not_data.lower() in ['y', 'yes']:
+        df = pd.read_excel(file_path, sheet_name,skiprows=1)
+        print('\n\n\n With the first row deleted, these are the column names and first rows of the selected sheet:\n')
+        print(df.head())
+        print()
+    else:
+        df = pd.read_excel(file_path, sheet_name)
     return df  # return the df for importer()
+        
 
 
 def importer(df, sheet_name, index):  # , index_end):
@@ -28,8 +39,8 @@ def importer(df, sheet_name, index):  # , index_end):
     df = pd.read_excel(file_path, sheet_name)
     print(df.head())
     df = df.iloc[0:, index]  # :index_end]
-
-    print('these are the first 5 rows of the selected column, check the name of the column under "4":')
+    # TODO salb temp here i is still capped
+    print('these are the first 5 rows of the selected column ')
     print(df.head())
     return df
 
@@ -54,7 +65,7 @@ def exporter(output_file_name):
     """
     # import pandas as pd
     with open(output_file_name, 'w') as f:
-        for i in df.index:
+        for i in df.index[1:]:
             # print(df.iloc[i,0])
             try:
                 string = df.iloc[i]
@@ -66,7 +77,8 @@ def exporter(output_file_name):
                 f.writelines(string)
                 f.write('\n')
             except AttributeError:
-                print(i, string)
+                print(i, 'skipped because of empty row')
+
 
 
 # %%
@@ -88,10 +100,12 @@ if __name__ == '__main__':
     if file_path.endswith((".xls")):
         import xlrd
         xls_file = xlrd.open_workbook_xls(file_path)
+        print()
         print("These are the available worksheets in the excel file Worksheet name(s)\n: {0} \n".format(xls_file.sheet_names()))
 
     sheet_name = input("input the name of the excel sheet ")
     # sheet_name = 'Bessy'
+    print('\n output of the first 6 rows of the excel sheet:')
     df = xlsx_scout(file_path)  # return the df
 
     if len(df.columns) >1:
@@ -104,11 +118,11 @@ if __name__ == '__main__':
         df,
         sheet_name,
         index)
-
+    
     output_file_name = "none"
     while output_file_name.lower() not in ['atn', 'gs', 'other']:
         output_file_name = input(
-            '\nspecify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) or OTHER \n')  # dep
+            '\nspecify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) or OTHER  ')  # dep
         if output_file_name.lower() == 'atn':
             exporter('ATN.txt')
             print('saved under "ATN.txt" ')
@@ -123,7 +137,6 @@ if __name__ == '__main__':
             print(f'saved under "{file_name_other}.txt" ')
         else:
             print(' specify either "ATN" or GS" ')
-        print('done')
 
 
 # TODO specifycolum nname instead of iloc

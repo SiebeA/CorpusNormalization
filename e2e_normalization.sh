@@ -9,9 +9,9 @@ LANGUAGE=en
 
 ls -l *.txt # show the user options of file that can be inputted
 read -p 'insert the name of the file (not the goldStandard of course) that you want to normalize by the ATN tool: ' input0 # ask for user input
-input0='ATN.txt'
+# input0='ATN.txt'
 
-echo "The current directory is : $current_dir"
+# echo "The current directory is : $current_dir"
 
 # for automatically naming the output file:
 output_file_name=$(echo $input0) # store the name of $input0 as a string

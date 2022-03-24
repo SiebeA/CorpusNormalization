@@ -3,20 +3,15 @@
 
 <!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
-## Hot fixes
-<!-- - Test the tool out on a different computer -->
-- Using relative file paths
-- Conversion of the sed commands to perl commands
-- Fixing the header; now the user is prompted to state if there is a comment on row 1 (such as in the `auto_service_industry_faq_v1.0.xlsx` ) then the row will be skipped and the headers of the columns readjusted
-<!-- - find out why in `pf_excel*` the sentences are being uncpapped -->
+## Fixes to implement for the ATN tool:
+- The exclusion of the first row works, but I was just wondering if it would be easier just to enter the index you want to start from than assuming the 0 row is for column names.
+- e.g. "monday–friday, 9:00 a.m.–5:00 p.m." is converted as "monday friday, nine in the morning  five o'clock in the afternoon"
+- 'honda vs Honda' sometimes with/without capitilization
+- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’
+  - ‘15-20 years old' normalized to: 'fifteen twenty years old’
+- 'Check your A/C operation normalized to 'Check your a C operation'
 
-<!-- ##### Python3 dependencies:
-```
-Levenshtein
-pandas
-openpyxl
-xlrd
-``` -->
+
 
 ### Procedure steps:
 - First time:
@@ -30,15 +25,15 @@ pip install -r requirements.txt
 ```
 
 - Post-first time:
-  ``` cd /TN_w_IRISA```
+  - `cd /TN_w_IRISA`
   - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx, and having column headers on the first row increases convenience level )** `TN_w_IRISA` dir
   - Execute:
-  ```python3 pf_excel_column_importer.py``` (when there are empty rows, FYI the index of the rows will be outputted).
+  `python3 pf_excel_column_importer.py` (when there are empty rows, FYI the index of the rows will be outputted).
     <!-- (text preprocessing takes places here) -->
    <!-- e.g. stripping line breaks -->
     - (If you want to run a comparison between ATN, and goldStandard_tts, follow the same process, but for GS. (instructions will be outputted in the shell))
   - Use the adapted IRISA tool for (ATN), execute:
-  ```bash e2e_normalization.sh```
+  `bash e2e_normalization.sh`
   <!-- TODO echo in the /e2e* that this might take a while, and the error messgaes that can be observed -->
     <!-- - The normalized sentences are in `output.5tts.txt` # outputted in shell -->
 
@@ -50,7 +45,7 @@ pip install -r requirements.txt
 + Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
 ### Alternatively, run all commands:
-```python3 pf_excel_column_importer.py; bash e2e_normalization.sh; python3 pf_txt_to_df.py; pf_Levenhstein_distance.py```
+`python3 pf_excel_column_importer.py; bash e2e_normalization.sh; python3 pf_txt_to_df.py; pf_Levenhstein_distance.py`
 
 ## TODO
 
@@ -59,14 +54,14 @@ pip install -r requirements.txt
   - Then, sublime merge those 2 text files
 
 ### Nice to haves:
-- choose xls file automatically, confirm with 'y'
+<!-- - choose xls file automatically, confirm with 'y' -->
 [sublime-merge-diff-program-preview](https://ibb.co/b3YbnFB)
 - make a dependencies pip txt file, perhaps even automated virtual environment
-- in `pf_txt-to-df.py`, print the name of the available sheets of the `xlsx` file. --- done for xls files, not possible for xlsx files<!-- 
+- in `pf_txt-to-df.py`, print the name of the available sheets of the `xlsx` file. --- done for xls files, not possible for xlsx files<!--
 - column names for `Levenhstein_distance_output.xlsx` by adapting  `python3 pf_Levenhstein_distance.py` -->
 - column names adapted for when it is not ATN but RAW
 
-<!-- ### observations made about the normalized text files; THESE CONCERN SPECIFIC INSTANCES (not conclusions about the whole corpus)
+### observations made about the normalized text files; THESE CONCERN SPECIFIC INSTANCES (not conclusions about the whole corpus)
 Bessy:
 -
 - i 3: MTN: "The actuators position a cars" IRISA does not mistake the **Plural vs Possessive**
@@ -74,5 +69,3 @@ Bessy:
   - fixed by capitalize in `pf_xlsx_column_importer`
   - Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
-<!-- - e.g. "monday–friday, 9:00 a.m.–5:00 p.m." is converted as "monday friday, nine in the morning  five o'clock in the afternoon" -->
-<!-- - 'honda vs Honda' sometimes with/without capitilization -->

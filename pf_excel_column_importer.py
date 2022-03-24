@@ -132,7 +132,7 @@ if __name__ == '__main__':
             print(f'saved under "goldStandard_{sheet_name}_tts.txt" ')
         elif output_file_name.lower() == 'other':
             file_name_other = str(
-                input('specify the name of your output_file \n'))
+                input('specify the name of your output_file, without extension \n'))
             exporter(f'{file_name_other}.txt')
             print(f'saved under "{file_name_other}.txt" ')
         else:

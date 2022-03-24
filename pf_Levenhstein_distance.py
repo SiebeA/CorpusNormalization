@@ -53,7 +53,18 @@ def Exporter(df,file_name):
 
 if __name__=='__main__':
     # path = input('input the xlsx file path (without quotes):  ')
-    path = '.levenhstein_distance_input.xlsx'
-    df = Importer(path=path)
-    df = Levenhstein(df = df)
-    Exporter(df = df, file_name='levenhstein_distance_output.xlsx')
+    import os, glob
+    os.chdir(os.getcwd())
+    print()
+    for file in glob.glob(".rawText_vs*"):
+        print(file)
+    answer = input('Is this the file you want to proces? [Y N]  ')
+    if answer.lower() == 'y':
+        path = file
+        # path = input('enter the path to the excel filfe for which you want to calculate the Levenhstein distance')
+        df = Importer(path=path)
+        df = Levenhstein(df = df)
+    else:
+        path = input('enter the path to the excel filfe for which you want to calculate the Levenhstein distance')
+        df = Importer(path=path)
+        df = Levenhstein(df = df)

@@ -23,7 +23,7 @@ xlrd
   - Clone this `TN_w_IRISA` repo
   - ```cd /TN_w_IRISA```
   - Optionally but recommended, pip install dependencies in venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
-  ```
+```
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt

@@ -4,12 +4,16 @@
 <!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
 ## Fixes to implement for the ATN tool:
+- first row is omitted in `goldstandard & raw`
+- instead of skipping a empty row, write to it in the `txt` file as 'empty', such that the `xls` file and `txt` file match
 - The exclusion of the first row works, but I was just wondering if it would be easier just to enter the index you want to start from than assuming the 0 row is for column names.
 - e.g. "monday–friday, 9:00 a.m.–5:00 p.m." is converted as "monday friday, nine in the morning  five o'clock in the afternoon"
-- 'honda vs Honda' sometimes with/without capitilization
+- 'honda vs Honda' sometimes with/without capitalization
 - ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’
   - ‘15-20 years old' normalized to: 'fifteen twenty years old’
 - 'Check your A/C operation normalized to 'Check your a C operation'
+- "the late 20th century" "the late `twenty TH` century"
+- "atmospheric pressure at sea level is 14.7 `psi`." "Atmospheric pressure at sea level is fourteen point seven `psi`."
 
 
 
@@ -69,3 +73,25 @@ Bessy:
   - fixed by capitalize in `pf_xlsx_column_importer`
   - Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
+
+Rhoda:
+- Plural vs Possessive confusion
+  - l.10
+- Capitalization omission after hard punct in `raw` & `gold`
+  - l.747, l.748
+- Capitalization omission proper noun, eg `california`
+  - l.497
+- Capitalization omission of acronyms, eg `m p e g`
+  - l.484
+- Article (the) omission
+  - l.728
+- Article (a) omission
+  - l.494, l491
+- Colons are replaced for commas
+  - l.723
+- Omission of 'etc'
+  - l.695
+- Quation misplacement eg `|trip odometers|`
+  -l. 490
+- And/or replaced for only `and`
+  -l.486

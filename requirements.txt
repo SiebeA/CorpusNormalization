@@ -1,0 +1,4 @@
+Levenshtein
+pandas
+openpyxl
+xlrd

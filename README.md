@@ -5,9 +5,9 @@
 
 ## Hot fixes
 <!-- - Test the tool out on a different computer -->
-  -relative file paths are now used.
-- Convert the sed commands to perl commands
-- Fix the header; now the user is prompted to state if there is a comment on row 1 (such as in the `auto_service_industry_faq_v1.0.xlsx` ) then the row will be skipped and the headers of the columns readjusted
+ -relative file paths are now used.
+- Conversion of the sed commands to perl commands
+- Fixing the header; now the user is prompted to state if there is a comment on row 1 (such as in the `auto_service_industry_faq_v1.0.xlsx` ) then the row will be skipped and the headers of the columns readjusted
 <!-- - find out why in `pf_excel*` the sentences are being uncpapped -->
 
 <!-- ##### Python3 dependencies:

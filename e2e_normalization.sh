@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT=/home/${USER}/dev/TN_w_IRISA
+ROOT=$PWD
 LANGUAGE=en
 
 # input=zsa_input.txt
@@ -14,7 +14,7 @@ input0='ATN.txt'
 echo "The current directory is : $current_dir"
 
 # for automatically naming the output file:
-output_file_name=$(echo $input0) # store the name of $input0 as a string 
+output_file_name=$(echo $input0) # store the name of $input0 as a string
 # replace the patterns in the input file name that wanted for use in the$output file:
 # output_file_name=$(sed 's/raw_//' <<< $output_file_name)
 output_file_name=$(echo $output_file_name | perl -pe 's/.txt//')
@@ -49,6 +49,10 @@ perl -0777 -pi.orig -e "s/…/\.\.\./g" $input
 perl -0777 -pi.orig -e "s/®//g" $input
 perl -0777 -pi.orig -e "s/™//g" $input
 
+# other replacements
+perl -0777 -pi.orig -e "s/e\.g\./, for example/g" $input
+perl -0777 -pi.orig -e "s/u\.s\./, United States/g" $input
+
 # General normalization
 echo "1. Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output.1tok
@@ -76,7 +80,7 @@ perl -0777 -pi.orig -e 's/([0-9]+)([a-zA-Z])/\1 \2/g' .$output.2start
 perl -0777 -pi.orig -e 's/%/ percent/' .$output.2start
 
 #===========================================================
-#                
+#
 #==========================================================
 echo "3. Currency conversion..."
 perl $ROOT/convert_currencies.pl .$output.2start > .$output.3currency_fix.txt
@@ -99,13 +103,18 @@ perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output.5tts.txt
 
 
 #===========================================================
-# Salb replacements                
+# Salb replacements
 #==========================================================
-# replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
+# TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
 # perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
+
+# capitalizing the first letter of a new line:
+perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output.5tts.txt
 # capitalizing the first letter after a hard punctuation mark (IRISA doesnt do this)
 perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output.5tts.txt
+
+
 
 
 echo

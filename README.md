@@ -3,13 +3,23 @@
 
 <!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
+## Hot fixes
+<!-- - Test the tool out on a different computer -->
+  -relative file paths are now used.
+- Convert the sed commands to perl commands
+- Fix the header; now the user is prompted to state if there is a comment on row 1 (such as in the `auto_service_industry_faq_v1.0.xlsx` ) then the row will be skipped and the headers of the columns readjusted
+<!-- - find out why in `pf_excel*` the sentences are being uncpapped -->
+
 ##### Python3 dependencies:
-<!-- TODO make a shell script that automatically creates venv with pip packages -->
 - Levenshtein
 - pandas
 - openpyxl
-- glob
+- xlrd
 
+#### Optionally but recommended, pip install dependencies in venv: create a venv:
+- `python3 -m venv TN_w_IRISA/venv`
+- `source {venv}/bin/activate`
+- `pip install -r requirements.txt`
 
 ### Procedure steps:
 - First time:
@@ -38,7 +48,7 @@
 + Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
 
 ### Alternatively, run all commands:
-```python3 pf_excel_column_importer.py; bash e2e_normalization.sh; python3 pf_txt_to_df.py levenhstein_distance```
+```python3 pf_excel_column_importer.py; bash e2e_normalization.sh; python3 pf_txt_to_df.py; pf_Levenhstein_distance.py```
 
 ## TODO
 
@@ -62,3 +72,4 @@ Bessy:
   - fixed by capitalize in `pf_xlsx_column_importer`
   - Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
+- e.g. "monday–friday, 9:00 a.m.–5:00 p.m." is converted as "monday friday, nine in the morning  five o'clock in the afternoon"

@@ -53,6 +53,10 @@ perl -0777 -pi.orig -e "s/™//g" $input
 perl -0777 -pi.orig -e "s/e\.g\./, for example/g" $input
 perl -0777 -pi.orig -e "s/u\.s\./, United States/g" $input
 
+# e.g. 4am-5am --> 4am till 5am
+perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/gi' $input
+
+
 # General normalization
 echo "1. Tokenization..."
 perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output.1tok
@@ -72,6 +76,36 @@ perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output.1tok > .$output
 #===========================================================
 # "  salb replacements               "
 #==========================================================
+
+
+
+# 12-15 --? 12 to 15
+perl -0777 -pi.orig -e 's/(\d\d*)-(\d\d*)/$1 to $2/' .$output.2start
+
+
+# e.g. 'A/C' --> 'AC'
+# perl -0777 -pi.orig -e 's/(\w)\/(\w)/$1$2/' .$output.2start
+
+
+# e.g. 'monday-friday' 'monday to friday'
+perl -0777 -pi.orig -e 's/(\w{3,}day)-(\w{3,}day)/$1 to $2/gi' .$output.2start
+
+
+# e.g. '20th' --> 'twentieth'
+perl -0777 -pi.orig -e 's/19th/nineteenth/gi' .$output.2start
+perl -0777 -pi.orig -e 's/20th/twentieth/gi' .$output.2start
+perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output.2start
+
+
+
+
+
+# perl -0777 -pi.orig -e 's///gi' .$output.2start
+
+
+
+
+
 # splitting out e.g. 'E5--> E 5'
 perl -0777 -pi.orig -e "s/([a-zA-Z])([0-9])/\1  \2/" .$output.2start
 # splitting out e.g. '100k --> 100 k'
@@ -123,7 +157,7 @@ echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; print
 
 # salb removing obsolete files:
 rm .input*
-rm .$output_file_name*
+# rm .$output_file_name*
 rm *\.or*
 echo
 echo 'The end of the ATN normalization program'

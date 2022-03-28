@@ -50,8 +50,10 @@ perl -0777 -pi.orig -e "s/®//g" $input
 perl -0777 -pi.orig -e "s/™//g" $input
 
 # other replacements
-perl -0777 -pi.orig -e "s/e\.g\./, for example/g" $input
-perl -0777 -pi.orig -e "s/u\.s\./, United States/g" $input
+perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
+perl -0777 -pi.orig -e "s/u\.s\./, United States/gi" $input
+# NOTICE THAT IN THIS CASE '\' INSTEAD OF '$' BEFORE A GROUP REF IS REQUIRED?!
+perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input
 
 # e.g. 4am-5am --> 4am till 5am
 perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/gi' $input
@@ -157,7 +159,7 @@ echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; print
 
 # salb removing obsolete files:
 rm .input*
-# rm .$output_file_name*
+rm .$output_file_name*
 rm *\.or*
 echo
 echo 'The end of the ATN normalization program'

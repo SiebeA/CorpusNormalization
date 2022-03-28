@@ -3,17 +3,18 @@
 
 <!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
-## Fixes to implement for the ATN tool:
+## Fixes:
+<!-- - "atmospheric pressure at sea level is 14.7 `psi`." "Atmospheric pressure at sea level is fourteen point seven `psi`."
 - first row is omitted in `goldstandard & raw`
 - instead of skipping a empty row, write to it in the `txt` file as 'empty', such that the `xls` file and `txt` file match
 - The exclusion of the first row works, but I was just wondering if it would be easier just to enter the index you want to start from than assuming the 0 row is for column names.
-- e.g. "monday–friday, 9:00 a.m.–5:00 p.m." is converted as "monday friday, nine in the morning  five o'clock in the afternoon"
 - 'honda vs Honda' sometimes with/without capitalization
-- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’
-  - ‘15-20 years old' normalized to: 'fifteen twenty years old’
-- 'Check your A/C operation normalized to 'Check your a C operation'
-- "the late 20th century" "the late `twenty TH` century"
-- "atmospheric pressure at sea level is 14.7 `psi`." "Atmospheric pressure at sea level is fourteen point seven `psi`."
+- 'Check your A/C operation normalized to 'Check your a C operation' -->
+
+- e.g. `monday–friday, 9:00 a.m.–5:00 p.m.`now to `Monday to friday, nine o'clock until five o'clock `
+- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’; Now to `Twelve thousand to fifteen thousand miles.`
+- "the late 20th century" `the late twenty TH` century now to `the late twentieth century`
+- `Magnuson-Moss Warranty Act (15 U.S.C. 2302)` DESIRED `magnuson moss warranty act fifteen, USC. Two thousand three hundred and two.`
 
 
 
@@ -30,6 +31,7 @@ pip install -r requirements.txt
 
 - Post-first time:
   - `cd /TN_w_IRISA`
+  - `source venv/bin/activate` # activate the virtual environment
   - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx, and having column headers on the first row increases convenience level )** `TN_w_IRISA` dir
   - Execute:
   `python3 pf_excel_column_importer.py` (when there are empty rows, FYI the index of the rows will be outputted).

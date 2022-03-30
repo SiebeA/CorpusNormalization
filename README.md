@@ -1,20 +1,20 @@
 
+### Navigating e2e_normalization:
+- ABR     corrections of Abbreviations
+  SPY     Special-Symbols   (®,)
+- \N\S    corrections of linebreaks, etc.
+- NUO     Numbers-ordinal
+- NUC     Numbers-Cardinal
+- PUMA    Punctuation-Marks
+- TNO     Time Notation correction
+
+
 ### Procedure for automatic text normalization(ATN) (TTS context)
 
 <!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
 
 ## Fixes:
-<!-- - "atmospheric pressure at sea level is 14.7 `psi`." "Atmospheric pressure at sea level is fourteen point seven `psi`."
-- first row is omitted in `goldstandard & raw`
-- instead of skipping a empty row, write to it in the `txt` file as 'empty', such that the `xls` file and `txt` file match
-- The exclusion of the first row works, but I was just wondering if it would be easier just to enter the index you want to start from than assuming the 0 row is for column names.
-- 'honda vs Honda' sometimes with/without capitalization
-- 'Check your A/C operation normalized to 'Check your a C operation' -->
 
-- e.g. `monday–friday, 9:00 a.m.–5:00 p.m.`now to `Monday to friday, nine o'clock until five o'clock `
-- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’; Now to `Twelve thousand to fifteen thousand miles.`
-- "the late 20th century" `the late twenty TH` century now to `the late twentieth century`
-- `Magnuson-Moss Warranty Act (15 U.S.C. 2302)` DESIRED `magnuson moss warranty act fifteen, USC. Two thousand three hundred and two.`
 
 
 
@@ -93,7 +93,22 @@ Rhoda:
   - l.723
 - Omission of 'etc'
   - l.695
-- Quation misplacement eg `|trip odometers|`
+- quotation misplacement eg `|trip odometers|`
   -l. 490
 - And/or replaced for only `and`
   -l.486
+
+
+
+### fixes archive
+<!-- - "atmospheric pressure at sea level is 14.7 `psi`." "Atmospheric pressure at sea level is fourteen point seven `psi`."
+- first row is omitted in `goldstandard & raw`
+- instead of skipping a empty row, write to it in the `txt` file as 'empty', such that the `xls` file and `txt` file match
+- The exclusion of the first row works, but I was just wondering if it would be easier just to enter the index you want to start from than assuming the 0 row is for column names.
+- 'honda vs Honda' sometimes with/without capitalization
+- 'Check your A/C operation normalized to 'Check your a C operation' -->
+
+<!-- - e.g. `monday–friday, 9:00 a.m.–5:00 p.m.`now to `Monday to friday, nine o'clock until five o'clock `
+- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’; Now to `Twelve thousand to fifteen thousand miles.`
+- "the late 20th century" `the late twenty TH` century now to `the late twentieth century`
+- `Magnuson-Moss Warranty Act (15 U.S.C. 2302)` DESIRED `magnuson moss warranty act fifteen, USC. Two thousand three hundred and two.` -->

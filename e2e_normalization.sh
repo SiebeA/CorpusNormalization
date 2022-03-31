@@ -1,8 +1,21 @@
 #!/bin/bash
 
+### Navigating e2e_normalization:
+# - ABR     corrections of Abbreviations
+#   SPY     Special-Symbols   (®,)
+# - \N\S    corrections of linebreaks, etc.
+# - ANU     Alpha-Numeric combinations
+# - NUO     Numbers-ordinal
+# - NUC     Numbers-Cardinal
+# - PUMA    Punctuation-Marks
+# - TNO     Time Notation correction
+# - SPLIT   Splitting eg monday-friday' '5am-6am', etc.
+
+#==========================================================
+# Input setup
+#==========================================================
 ROOT=$PWD
 LANGUAGE=en
-
 
 ls -l *.txt # show the user options of file that can be inputted
 read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
@@ -44,10 +57,20 @@ perl -0777 -pi.orig -e "s/’/'/g" $input
 perl -0777 -pi.orig -e "s/…/\.\.\./g" $input
 perl -0777 -pi.orig -e "s/®//g" $input
 perl -0777 -pi.orig -e "s/™//g" $input
+perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
+# perl -0777 -pi.orig -e "s/ / /g" $input
+
+
+# Converting ANU eg '50k - 44k' --> '50k and 44k'
+perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
+# converting ANU '50k' -- '50 thousand'
+perl -0777 -pi.orig -e "s/(\d+\s*)k/\1 thousand/g" $input
 
 
 
-
+# PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
+perl -0777 -pi.orig -e "s/(\(|\))//g" $input
+# TODO only numbers
 
 
 # ABR abbreviations with periods; 'e.g.' --> 'for example'
@@ -80,8 +103,11 @@ perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output.1tok
 perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output.1tok
 
 
-# salb replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
+# \n\s replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
 perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output.1tok
+
+# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
+perl -pi.orig -e 's/(\d+)-(\d+)/\1 and \2 /g' .$output.1tok
 
 
 
@@ -96,11 +122,18 @@ perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output.1tok > .$output
 perl -0777 -pi.orig -e 's/(\d\d*)-(\d\d*)/$1 to $2/' .$output.2start
 
 
-# e.g. 'A/C' --> 'AC'
-# perl -0777 -pi.orig -e 's/(\w)\/(\w)/$1$2/' .$output.2start
+# ABR e.g. 'A/C' --> 'AC'
+perl -0777 -pi.orig -e 's/a.c/test/i' .$output.2start
+perl -0777 -pi.orig -e 's/siebe/test/' .$output.2start
+tail .$output.2start
+echo
+
+# ANU splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
+perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gim' .$output.2start
+# LEFTOFF
 
 
-# e.g. 'monday-friday' --> 'monday to friday'
+# PUNCT SPLIT e.g. 'monday-friday' --> 'monday to friday'
 perl -0777 -pi.orig -e 's/(\w{3,}day)-(\w{3,}day)/$1 to $2/gi' .$output.2start
 
 
@@ -111,13 +144,8 @@ perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output.2start
 
 
 
-# perl -0777 -pi.orig -e 's///gi' .$output.2start
 
 
-# splitting out e.g. 'E5--> E 5'
-perl -0777 -pi.orig -e "s/([a-zA-Z])([0-9])/\1  \2/" .$output.2start
-# splitting out e.g. '100k --> 100 k'
-perl -0777 -pi.orig -e 's/([0-9]+)([a-zA-Z])/\1 \2/g' .$output.2start
 # echo "salb replacing percentages"
 perl -0777 -pi.orig -e 's/%/ percent/' .$output.2start
 
@@ -147,14 +175,16 @@ perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output.4
 perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output.5tts.txt
 
 
-# \n\s Remove empty lines in ASR and TTS:
-# perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output.5tts.txt
 
 # capitalizing the first letter of a new line:
 perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output.5tts.txt
 # capitalizing the first letter after a hard punctuation mark.
 perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output.5tts.txt
 
+
+
+# DEBUG \n\s Remove empty lines in ASR and TTS:
+# perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output.5tts.txt
 
 
 
@@ -166,8 +196,12 @@ echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; print
 #==========================================================
 # salb removing obsolete files in the DIR:
 #==========================================================
+
+# comment for DEBUG:
 # rm .input*
 # rm .$output_file_name*
+
+
 rm *\.or*
 echo
 echo 'The end of the ATN normalization program'

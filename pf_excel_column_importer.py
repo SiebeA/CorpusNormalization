@@ -65,10 +65,10 @@ def exporter(output_file_name):
     """
     # import pandas as pd
     with open(output_file_name, 'w') as f:
-        for i in df.index[1:]:
+        for i in df.index[0:]:
             # print(df.iloc[i,0])
-            try:
-                string = df.iloc[i]
+            string = df.iloc[i]
+            if type(string) == str:
                 # print(i, string)
                 # some indices, such as #87 are not capped (also not for the manually normalized)
                 string = string.capitalize()
@@ -76,9 +76,11 @@ def exporter(output_file_name):
                 string = string.replace("\n", "")
                 f.writelines(string)
                 f.write('\n')
-            except AttributeError:
-                print(i, 'skipped because of empty row')
-
+            else:
+                string = 'EMPTYROW'
+                f.writelines(string)
+                f.write('\n')
+                
 
 
 # %%
@@ -105,9 +107,10 @@ if __name__ == '__main__':
 
     sheet_name = input("input the name of the excel sheet ")
     # sheet_name = 'Bessy'
-    print('\n output of the first 6 rows of the excel sheet:')
+    print('\n output of the Headers + the first 5 rows of the excel sheet:')
     df = xlsx_scout(file_path)  # return the df
 
+    # printing out the columns if there are more than 1 (i.e. there is not a comment on first line)
     if len(df.columns) >1:
         for i, column in enumerate(df.columns):
             print(i, column)

@@ -1,8 +1,21 @@
 #!/bin/bash
 
+### Navigating e2e_normalization:
+# - ABR     corrections of Abbreviations
+#   SPY     Special-Symbols   (®,)
+# - \N\S    corrections of linebreaks, etc.
+# - ANU     Alpha-Numeric combinations
+# - NUO     Numbers-ordinal
+# - NUC     Numbers-Cardinal
+# - PUMA    Punctuation-Marks
+# - TNO     Time Notation correction
+# - SPLIT   Splitting eg monday-friday' '5am-6am', etc.
+
+#==========================================================
+# Input setup
+#==========================================================
 ROOT=$PWD
 LANGUAGE=en
-
 
 ls -l *.txt # show the user options of file that can be inputted
 read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
@@ -20,6 +33,10 @@ output=$output_file_name
 
 
 TTS_CFG=tts_siebe.cfg
+echo "${TTS_CFG} is the cfg file"
+
+
+
 
 echo -n "Starting process at: "; date
 echo "on input file:"; echo $input0; printf '\n'
@@ -44,10 +61,20 @@ perl -0777 -pi.orig -e "s/’/'/g" $input
 perl -0777 -pi.orig -e "s/…/\.\.\./g" $input
 perl -0777 -pi.orig -e "s/®//g" $input
 perl -0777 -pi.orig -e "s/™//g" $input
+perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
+# perl -0777 -pi.orig -e "s/ / /g" $input
+
+
+# Converting ANU eg '50k - 44k' --> '50k and 44k'
+perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
+# converting ANU '50k' -- '50 thousand'
+perl -0777 -pi.orig -e "s/(\d+\s*)k/\1 thousand/g" $input
 
 
 
-
+# PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
+perl -0777 -pi.orig -e "s/(\(|\))//g" $input
+# TODO only numbers
 
 
 # ABR abbreviations with periods; 'e.g.' --> 'for example'
@@ -58,30 +85,42 @@ perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input # (NOTICE THAT IN THIS 
 
 
 # TNO e.g. 4am-5am --> 4am till 5am
-perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/gi' $input
+perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/g' $input
+
+
+# ABR e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
+perl -0777 -pi.orig -e 's/(\w)\/(\w)/\U\1\U\2/g' $input # g flag necessary here!!
+# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
+
+
 
 
 #==========================================================
 # 1 TOKENIZATION
 #==========================================================
 echo "1. Tokenization..."
-perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output.1tok
+perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
+
 #==========================================================
 # Corrections after 1. Tokenization:
 #==========================================================
 
 # fixing line breaks done by IRISA, causing line length difference between ATN ^ MTN/raw
-perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output.1tok
+perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output+1.txt
 #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs
 # it processes all as one string, not one line per
 # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
 
 
-perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output.1tok
+perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output+1.txt
 
 
-# salb replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
-perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output.1tok
+# \n\s replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
+perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output+1.txt
+
+# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
+perl -pi.orig -e 's/(\d+)-(\d+)/\1 and \2 /g' .$output+1.txt
+
 
 
 
@@ -89,72 +128,71 @@ perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output.1tok
 # "  2. GENERIC NORMALIZATION               "
 #==========================================================
 echo "2. Generic normalization start..."
-perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output.1tok > .$output.2start
+perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$output+2_genNorma.txt
 
 
 # 12-15 --? 12 to 15
-perl -0777 -pi.orig -e 's/(\d\d*)-(\d\d*)/$1 to $2/' .$output.2start
+perl -0777 -pi.orig -e 's/(\d\d*)-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
 
 
-# e.g. 'A/C' --> 'AC'
-# perl -0777 -pi.orig -e 's/(\w)\/(\w)/$1$2/' .$output.2start
+
+# ANU splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
+perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gim' .$output+2_genNorma.txt
+# LEFTOFF
 
 
-# e.g. 'monday-friday' --> 'monday to friday'
-perl -0777 -pi.orig -e 's/(\w{3,}day)-(\w{3,}day)/$1 to $2/gi' .$output.2start
+# PUNCT SPLIT e.g. 'monday-friday' --> 'monday to friday'
+perl -0777 -pi.orig -e 's/(\w{3,}day)-(\w{3,}day)/$1 to $2/gi' .$output+2_genNorma.txt
 
 
 # NUO e.g. '20th' --> 'twentieth'
-perl -0777 -pi.orig -e 's/19th/nineteenth/gi' .$output.2start
-perl -0777 -pi.orig -e 's/20th/twentieth/gi' .$output.2start
-perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output.2start
+perl -0777 -pi.orig -e 's/19th/nineteenth/gi' .$output+2_genNorma.txt
+perl -0777 -pi.orig -e 's/20th/twentieth/gi' .$output+2_genNorma.txt
+perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output+2_genNorma.txt
 
 
 
-# perl -0777 -pi.orig -e 's///gi' .$output.2start
 
 
-# splitting out e.g. 'E5--> E 5'
-perl -0777 -pi.orig -e "s/([a-zA-Z])([0-9])/\1  \2/" .$output.2start
-# splitting out e.g. '100k --> 100 k'
-perl -0777 -pi.orig -e 's/([0-9]+)([a-zA-Z])/\1 \2/g' .$output.2start
 # echo "salb replacing percentages"
-perl -0777 -pi.orig -e 's/%/ percent/' .$output.2start
+perl -0777 -pi.orig -e 's/%/ percent/' .$output+2_genNorma.txt
 
 #===========================================================
 # 3. CURRENCY CONVERSION
 #==========================================================
 echo "3. Currency conversion..."
-perl $ROOT/convert_currencies.pl .$output.2start > .$output.3currency_fix.txt
+perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
 #==========================================================
 # 4. GENERIC NORMALIZATION
 #==========================================================
 echo "4. Generic normalization end..."
-perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output.3currency_fix.txt > .$output.4general_norm.txt
+perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
 
 #==========================================================
 # 5. TTS Specific NORMALIZATION
 #==========================================================
 echo "5. TTS specific normalization..."
-perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output.4general_norm.txt > $output.5tts.txt
+perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 
 
 # ABR TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
 # perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
 # PUMA removing space between punctution
-perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output.5tts.txt
+perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
 
 
-# \n\s Remove empty lines in ASR and TTS:
-# perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output.5tts.txt
 
 # capitalizing the first letter of a new line:
-perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output.5tts.txt
+perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
 # capitalizing the first letter after a hard punctuation mark.
-perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output.5tts.txt
+perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
+
+
+# DEBUG \n\s Remove empty lines in ASR and TTS:
+# perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 
 
 
@@ -166,9 +204,13 @@ echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; print
 #==========================================================
 # salb removing obsolete files in the DIR:
 #==========================================================
+
+# comment for DEBUG:
 # rm .input*
 # rm .$output_file_name*
-rm *\.or*
+
+
+rm .*.orig
 echo
 echo 'The end of the ATN normalization program'
 echo

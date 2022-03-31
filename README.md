@@ -1,20 +1,19 @@
 
-### Navigating e2e_normalization:
-- ABR     corrections of Abbreviations
-  SPY     Special-Symbols   (®,)
-- \N\S    corrections of linebreaks, etc.
-- NUO     Numbers-ordinal
-- NUC     Numbers-Cardinal
-- PUMA    Punctuation-Marks
-- TNO     Time Notation correction
+
 
 
 ### Procedure for automatic text normalization(ATN) (TTS context)
+- {name}_ATN.txt --> e2 --> {name}_ATN.txt
+- {name}_GStandard.txt
+- {name}_Raw.txt
 
-<!-- - Salb this is how you can make A COMMENT that is not visible in the README outside the editor -->
+# <u>Fixes<u>:
 
-## Fixes:
+### Verified fixes:
 
+
+### Verify fix:
+- Selected that there is no data in the 0 row, but generated text file start on 2 row instead of 1 row.
 
 
 
@@ -68,15 +67,19 @@ pip install -r requirements.txt
 - column names adapted for when it is not ATN but RAW
 
 ### observations made about the normalized text files; THESE CONCERN SPECIFIC INSTANCES (not conclusions about the whole corpus)
-Bessy:
+
+Startup:
+-
+
+#### Bessy:
 -
 - i 3: MTN: "The actuators position a cars" IRISA does not mistake the **Plural vs Possessive**
-- i 87; the first letter is not always capped
+- i 87; the first letter is not always capped (verify with RE: ^[a-z] i)
   - fixed by capitalize in `pf_xlsx_column_importer`
   - Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
 
-Rhoda:
+#### Rhoda:
 - Plural vs Possessive confusion
   - l.10
 - Capitalization omission after hard punct in `raw` & `gold`
@@ -89,14 +92,50 @@ Rhoda:
   - l.728
 - Article (a) omission
   - l.494, l491
-- Colons are replaced for commas
+- Replacement Colons for commas
   - l.723
 - Omission of 'etc'
   - l.695
 - quotation misplacement eg `|trip odometers|`
   -l. 490
-- And/or replaced for only `and`
+- Replacement And/or for only `and`
   -l.486
+
+#### Cindy
+**observations**:
+GS manual-normalization (MN) had:
+- 2 beginning of line (BOL) sentences were not capitalized. ATN fixes this.
+- 359 omissions of non-BOL sentences capitalization.
+- 77 EOL are without punctuation mark --> ATN fixes this.
+- MN removes  hyphens (all) --> ATN can be configured to do so or not.
+- MN removes brackets (all) --> --> ATN can be configured to do so or not
+- The raw `Cindy` texts has many incorrect uses of the plural vs possessive; Whenever the raw text makes this mistake, ATN follows it a, e.g. 'the cars window is broken' MN fixes most of them. I will do some further research whether ATN can solve this, but I think it's difficult.
+  - There are some instances where the Raw text, and therefore ATN, has the correct usages, and MN the incorrect usage.
+- GS has Plural vs Possessive correct:
+  - l.13              ATN incorrectly --> follows raw
+  - l.48              ATN incorrectly --> follows raw
+  - l.52              ATN incorrectly --> follows raw
+  - l.73              ATN incorrectly --> follows raw
+- Plural vs Possessive incorrect:
+ - l. 671             ATN correct --> follows raw
+- converts enumeration
+  - l.84 raw: "either (i) has"  GS: "one, has"
+- removes sentence-part
+  - l.105
+  - fast-forward
+- removes acronyms
+  - l.631   GS spells acronym out, removes the acronym (which is explained in RAW)
+- converts acronyms to lesser known spelled out words
+  - l.647
+- Acronym spelling out of; when acronym is lowercase in the raw file, ATN does not capitalize (and not spell out as in GS)
+  - l.44
+
+
+#### Rebecca
+**Observations**:
+Regex search:
+- 11 sentences were not capitalized
+- 42 sentences were not concluded with a hard punctuation mar. ATN fixes this. (verified with RE "\w$")
 
 
 

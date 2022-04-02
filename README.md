@@ -102,19 +102,16 @@ Startup:
   -l.486
 
 #### Cindy
-<!-- =   GS incorrectly  ATN normalizes correctly
-!== GS and          ATN incorrectly
-==  GS and          ATN correctly
-!=  GS correctly,   ATN incorrectly -->
-Procedure: every 10 rows of every 100 rows
 **observations**:
-- 2 sentences were not capitalized. ATN fixes this.
-
-
-GS:
-- removes  hyphens (all)
-- removes brackets (all)
-- Plural vs Possessive correct
+GS manual-normalization (MN) had:
+- 2 beginning of line (BOL) sentences were not capitalized. ATN fixes this.
+- 359 omissions of non-BOL sentences capitalization.
+- 77 EOL are without punctuation mark --> ATN fixes this.
+- MN removes  hyphens (all) --> ATN can be configured to do so or not.
+- MN removes brackets (all) --> --> ATN can be configured to do so or not
+- The raw `Cindy` texts has many incorrect uses of the plural vs possessive; Whenever the raw text makes this mistake, ATN follows it a, e.g. 'the cars window is broken' MN fixes most of them. I will do some further research whether ATN can solve this, but I think it's difficult.
+  - There are some instances where the Raw text, and therefore ATN, has the correct usages, and MN the incorrect usage.
+- GS has Plural vs Possessive correct:
   - l.13              ATN incorrectly --> follows raw
   - l.48              ATN incorrectly --> follows raw
   - l.52              ATN incorrectly --> follows raw

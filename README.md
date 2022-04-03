@@ -16,6 +16,9 @@
 - Selected that there is no data in the 0 row, but generated text file start on 2 row instead of 1 row.
 
 
+### hard-to-do
+- phone number pronunciation different from other numbers; perhaps if I get the TAGS right.
+
 
 ### Procedure steps:
 - First time:

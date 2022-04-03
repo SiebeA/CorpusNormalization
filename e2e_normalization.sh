@@ -5,6 +5,7 @@
 #   SPY     Special-Symbols   (®,)
 # - \N\S    corrections of linebreaks, etc.
 # - ANU     Alpha-Numeric combinations
+# - DEP		Deprecated
 # - NUO     Numbers-ordinal
 # - NUC     Numbers-Cardinal
 # - PUMA    Punctuation-Marks
@@ -33,6 +34,7 @@ output=$output_file_name
 
 
 TTS_CFG=tts_siebe.cfg
+# TTS_CFG=tts_original.cfg
 echo "${TTS_CFG} is the cfg file"
 
 
@@ -77,21 +79,38 @@ perl -0777 -pi.orig -e "s/(\(|\))//g" $input
 # TODO only numbers
 
 
-# ABR abbreviations with periods; 'e.g.' --> 'for example'
+
+# ABR 
+
+perl -pi.orig -e 's/etc\./etcetera/g' $input
+# eg 'a.k.a' --> "AKA" 
+perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\./\U$1\U$2\U$3/g' $input
+# eg 'a.k.'
+perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
+
+# not working for now:
+# but not a.b.c.d. , for now fix with;
+# perl -pi.orig -e 's/([A-Z]{2,})([a-z])\.$1\U$2/mg' $input
+
+
+
+
+
+# ABR; 'e.g.' --> 'for example'
 perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
 # eg 'u.s.'
 perl -0777 -pi.orig -e "s/u\.s\./, United States/gi" $input
-perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input # (NOTICE THAT IN THIS CASE '\' INSTEAD OF '$' BEFORE A GROUP REF IS REQUIRED?!)
+perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input # (NOTICE THAT IN THIS CASE '\' INSTEAD OF '$' BEFORE A GROUP REF IS REQUIRED?!))
+
+#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
+perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U\1\U\2/g' $input # g flag necessary here!!
+# e.g. for "gas/electric":
+perl -0777 -pi.orig -e 's/(\s\w{2,})\/(\w{2,}\s)/\1 or \2/g' $input # g flag necessary here!!
+# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
 
 
 # TNO e.g. 4am-5am --> 4am till 5am
 perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/g' $input
-
-
-# ABR e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
-perl -0777 -pi.orig -e 's/(\w)\/(\w)/\U\1\U\2/g' $input # g flag necessary here!!
-# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
-
 
 
 
@@ -176,7 +195,8 @@ echo "5. TTS specific normalization..."
 perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 
 
-# ABR TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
+# ABR 
+# TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
 # perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
 # PUMA removing space between punctution
@@ -189,6 +209,9 @@ perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
 # capitalizing the first letter after a hard punctuation mark.
 perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
+
+# DEP PUNCT removing capitilization of last line character
+# perl -0777 -pi.orig -e 's/(\w)$/\L\1/gm' $output+5TTS.txt
 
 
 # DEBUG \n\s Remove empty lines in ASR and TTS:

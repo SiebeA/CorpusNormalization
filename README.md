@@ -2,12 +2,8 @@
 
 
 
-### Procedure for automatic text normalization(ATN) (TTS context)
-- {name}_ATN.txt --> e2 --> {name}_ATN.txt
-- {name}_GStandard.txt
-- {name}_Raw.txt
 
-# <u>Fixes<u>:
+<!-- # <u>Fixes<u>:
 
 ### Verified fixes:
 
@@ -17,7 +13,7 @@
 
 
 ### hard-to-do
-- phone number pronunciation different from other numbers; perhaps if I get the TAGS right.
+- phone number pronunciation different from other numbers; perhaps if I get the TAGS right. -->
 
 
 ### Procedure steps:

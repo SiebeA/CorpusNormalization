@@ -11,8 +11,10 @@ def xlsx_scout(file_path):
     print()
     first_row_not_data = input('Observe the excel sheet (or the output above). Does the excel sheet have a non-data-entry, e.g. a comment on the first row? [Y or N]  ')
     if first_row_not_data.lower() in ['y', 'yes']:
-        df = pd.read_excel(file_path, sheet_name,skiprows=1)
-        print('\n\n\n With the first row deleted, these are the column names and first rows of the selected sheet:\n')
+        df.columns = range(df.shape[1])
+        df = df.iloc[1: , :]
+        # df = pd.read_excel(file_path, sheet_name,skiprows=0)
+        print('\n\n\n Now these are the first rows of the selected sheet:\n')
         print(df.head())
         print()
     else:
@@ -21,23 +23,22 @@ def xlsx_scout(file_path):
         
 
 
-def importer(df, sheet_name, index):  # , index_end):
+def indexSelector(df, sheet_name, index):  # , index_end):
     # import pandas as pdTLZ-281_283]Combined_urls_glossary.xlsx
     """
-
+    Slices the df by the user's given index
 
     Parameters
     ----------
-    file_path : STR
-        The filepath of the xlsx file of which you want to make a df
+    df: the dataframe
 
     Returns
     -------
     df : DataFrame
 
     """
-    df = pd.read_excel(file_path, sheet_name)
-    print(df.head())
+    # df = pd.read_excel(file_path, sheet_name)
+    # print(df.head())
     df = df.iloc[0:, index]  # :index_end]
     # TODO salb temp here i is still capped
     print('these are the first 5 rows of the selected column ')
@@ -65,24 +66,29 @@ def exporter(output_file_name):
     """
     # import pandas as pd
     with open(output_file_name, 'w') as f:
-        for i in df.index[0:]:
-            # print(df.iloc[i,0])
-            string = df.iloc[i]
-            if type(string) == str:
-                # print(i, string)
-                # some indices, such as #87 are not capped (also not for the manually normalized)
-                string = string.capitalize()
-                # some strings have '\n', causes them to be printed on a seperate line in the txt file
-                string = string.replace("\n", "")
-                f.writelines(string)
-                f.write('\n')
-            else:
-                string = 'EMPTYROW'
-                f.writelines(string)
-                f.write('\n')
+        # for i in df.index[0:]:
+        for i in range(0,len(df)):
+            # print(i)
+            try:
+                string = df.iloc[i]
+                if type(string) == str:
+                    # print(i, string)
+                    # some indices, such as #87 are not capped (also not for the manually normalized)
+                    string = string.capitalize()
+                    # some strings have '\n', causes them to be printed on a seperate line in the txt file
+                    string = string.replace("\n", "")
+                    f.writelines(string)
+                    f.write('\n')
+                else:
+                    string = 'EMPTYROW'
+                    f.writelines(string)
+                    f.write('\n')
+
+            except IndexError:
+                print(i)
+                pass
+
                 
-
-
 # %%
 if __name__ == '__main__':
     import pandas as pd
@@ -117,7 +123,7 @@ if __name__ == '__main__':
     index = int(input("\nInput the index-number of the column you want to process (starting at 0) "))
     # index = 4
 
-    df = importer(
+    df = indexSelector(
         df,
         sheet_name,
         index)

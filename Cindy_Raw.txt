@@ -1,0 +1,693 @@
+Explanation:
+The unit of measure for lateral acceleration, or "road-holding." one g is equivalent to 32.2 feet per second per second, the rate at which any object accelerates when dropped at sea level. if a car were cornering at 1.0 g—a figure that very few production cars are able to approach—the driver's body would be pushing equally hard against the side of the seat as against the bottom of it.
+A group of two or more gears used to transmit power.
+The portion of a car's body that rises above the beltline of the car.
+The phenomenon that occurs when the airflow between a moving object and the ground creates downforce.
+An articulating, rotating shaft used in independent-suspension systems to transmit power from a differential to a wheel.
+A general term covering all the aspects of a car's behavior that are related to its directional control.
+A performance-oriented technique of down-shifting while braking that requires the driver to use all three pedals of a manual-transmission car simultaneously. to perform a heel-and-toe downshift, the driver brakes with the toe of his right foot and—while continuing to brake—uses the heel or the side of the same foot to blip the throttle and raise engine rpm as he downshifts. the left foot operates the clutch pedal in the normal fashion. the sequence is as follows: brake with the right toe; depress the clutch with the left foot; shift to neutral; while continuing to brake, blip the throttle with the side or the heel of the right foot to raise rpm; shift to a lower gear; let the clutch out; release the brakes. the technique is difficult to master, but after practice it can be performed in less than a second. this process is best for smooth power flow and long transmission life.
+An extremely rigid articulating joint, commonly known as a "spherical rod-end," used in any precision linkage. heim joints are often used in the suspension links of race cars because they locate wheels very precisely.
+A type of gear in which the teeth are cut at a slanting angle to the gear's circumference. a helical design produces an even, constant tooth loading in a gearset, thereby reducing noise.
+A term used to describe any engine that has hemispherical combustion chambers in its cylinder head. although a four-valve design is more efficient, a hemi head provides room for a pair of large valves and offers good breathing characteristics.
+The common unit of measurement of an engine's power. one horsepower equals 550 foot-pounds per second, the power needed to lift 550 pounds one foot off the ground in one second: or one pound 550 feet up in the same time.
+A live-axle rear suspension in which leaf springs handle both the axle's springing and its location.
+A valve lifter that, using simple valving and the engine's oil pressure, can adjust its length slightly: thereby maintaining zero clearance in the valvetrain. hydraulic lifters reduce valvetrain noise and are maintenance-free.
+Any suspension in which the camber of a wheel is not directly affected by the vertical motion of the opposite wheel.
+The mixture of fuel and air that flows into the engine.
+The network of passages that direct air or air-fuel mixture from the throttle body to the intake ports in the cylinder head. the flow typically proceeds from the throttle body into a chamber called the plenum, which in turn feeds individual tubes, called runners, leading to each intake port. engine breathing is enhanced if the intake manifold is configured to optimize the pressure pulses in the intake system.
+The passageway in a cylinder head leading from the intake manifold to the intake valve(s).
+A heat exchanger that cools the air (or, in some installations, the intake charge) that has been heated by compression in any type of supercharger. an intercooler resembles a radiator; it houses large passages for the intake flow, and uses either outside air or water directed over it to lower the temperature of the intake flow inside.
+The motion of a wheel that compresses its suspension.
+An elastic cushion used to stiffen the suspension gradually as it approaches the end of its jounce travel.
+A downshift in an automatic transmission caused by depressing the throttle.
+A sensor mounted on the engine that is designed to detect the high-frequency vibrations caused by detonation. by employing a knock sensor, a computerized engine-control system allows an engine to operate very near its detonation limit: thereby improving power and efficiency.
+A suspension link that is aligned to resist sideways motion in a wheel.
+A suspension link that is aligned to resist longitudinal motions in a wheel; it is mounted to the chassis behind the wheel.
+A long, flat, thin, flexible piece of spring steel or various composite materials that deflects by bending when forces act upon it. leaf springs are used primarily in suspensions.
+A vertical force directed upward, produced by the airflow around a moving object: such as a car body.
+A handling characteristic that causes the rear tires to lose some of their cornering grip when the throttle is released during hard cornering.
+A differential fitted with a mechanism that limits the speed and torque differences between its two outputs. limited slip ensures that some torque is always distributed to both wheels, even when one is on very slippery pavement.
+The path through a corner that best accommodates a late braking point, a high cornering speed, and the fastest possible exit speed out of a corner.
+A suspension member that has a single joint at each end.
+A rigid axle incorporating a differential and axle shafts to power the two wheels it is supporting.
+The juncture at which a tire starts to skid during braking. a tire's maximum braking force is developed when it is on the verge of lockup, so a car's shortest stopping distances are produced when its front and rear tires approach lockup simultaneously. this is very hard to achieve under varying conditions of load and traction, so one end typically locks up before the other. front-wheel lockup is inherently more stable than rear-wheel lockup.
+A differential whose two outputs can be locked together, eliminating any differential action but maximizing traction under slippery conditions.
+A torque converter fitted with a locking clutch that can be engaged to eliminate the slip between the torque converter's input and output, thereby improving fuel efficiency and performance.
+A slang term for oversteer.
+SKIPPED_ROW
+SKIPPED_ROW
+In a vehicle lease, insurance that covers any "gap" between (i) the amount the lessees insurance company will pay to the lessee if the leased vehicle is stolen or destroyed, and (ii) the aggregate remaining amount the lessee owes at that time to the leasing company.
+A graduated federal tax levied at the time of initial new-vehicle purchase on vehicles with especially poor fuel economy.
+A powertrain that combines an electric motor and a gasoline or diesel internal combustion engine
+An internal combustion engine that burns conventional gasoline.
+The portion of a vehicle above its beltline.
+A score from zero to 10 given by the epa to each new vehicle by that represents the amount of greenhouse gases emitted during a laboratory driving simulation of the vehicle.
+Gases produced by vehicles that use hydrocarbons as fuel (such as carbon dioxide, carbon monoxide, methane, nitrous oxide and hydroflourocarbons) that contribute to reducing the loss of atmospheric heat into space.
+Also referred to as "gvwr." the sum of a vehicles curb weight, cargo weight capacity and passenger weight capacity.
+The distance between the lowest point of a vehicle and level ground.
+A device that enables a vehicles navigation system to determine the direction the vehicle is facing.
+Limited slip coupling used in vehicles with automatic all-wheel drive systems to engage and disengage a secondary axle when needed.
+Homogeneous charge compression ignition. an internal combustion engine in which gasoline and air are compressed to the point of auto-ignition.
+The distance from the hip of a vehicles occupant to the vehicles interior rooftop.
+The central control unit for a vehicles entertainment system.
+A set of washer nozzles and/or wipers that clean a vehicles headlights.
+A pair of bright lamps that provide visibility during darkness.
+A pair of small speakers that, when placed close to a passengers ears, enables the passenger to listen to a vehicles sound system without disturbing other passengers.
+A digital display projected from a vehicles dashboard onto its windshield to provide information within the drivers direct line of sight.
+A device that provides information needed by a vehicles computer to determine the temperature of the air coming into the engine.
+Sideview mirrors with internal electronic heating coils designed to prevent fog and ice from obstructing visibility.
+A windshield with tiny embedded heating elements that act to resist fogging.
+Heating elements below the wipers that melt ice and snow when they freeze to the glass.
+A heat exchanger placed in the ventilation system that diffuses heat from the engines cooling system into an airstream generated by an inline fan.
+Tubing that carries engine coolant between a vehicles cooling system and heater core.
+The distance between the tallest part of a vehicle and level ground.
+The average number of miles a vehicle is able to travel using one gallon of fuel according to epa simulated laboratory tests of highway driving conditions.
+A device that applies brake pressure when a vehicles clutch is disengaged.
+The type of door hinge: standard, scissor, gullwing or suicide-style.
+The distance from the drivers side lower door panel to the front passengers lower side door panel.
+A unit of measurement for engine power that was originally developed as a way to express the output of steam locomotives in terms of the strength of draft horses.
+Heating, ventilation and air conditioning.
+The level of hybrid technology used for a vehicle: full, mild, power-assist or plug-in.
+The drivetrain layout in a hybrid vehicle: parallel, series or combined.
+A powertrain that combines an electric motor and an alternative means of propulsion and/or power generation (for example, hydrogen). a gas/electric hybrid engine is the most common example of a hybrid engine.
+A hybrid vehicles gasoline engines ability to do work, expressed in terms of horsepower or torque.
+A hybrid engine and electric motors combined ability to do work in terms of horsepower, torque or efficiency.
+The source of power in a hybrid vehicle: gas/electric, plug-in, fuel cell or pneumatic.
+A vehicle that combines the use of internal combustion and electricity as power sources.
+Organic compounds commonly used as a fuel source consisting of only hydrogen and carbon atoms.
+An energy conversion device that produces electricity by means of electrochemical reactions between hydrogen and an oxidant.
+The rpm of the engine free from load (all accessories off), at normal operating temperature and in neutral (or, in the case of an automatic transmission, park or neutral).
+A guide or tightening pulley for a belt or chain.
+The process of setting the time that a spark will occur in the combustion chamber (during the power stroke) relative to piston position and crankshaft angular velocity.
+Inherently low-emission vehicle. an emissions standard for alternative-fuel vehicles with closed and pressurized fuel systems.
+A braking system that is located within the chassis of a vehicle instead of at its hubs.
+A cellular phone that either (i) has a handset built into the vehicle, or (ii) is a portable unit with an accompanying dock built into the vehicle that enables operation through the vehicles entertainment and stereo system.
+Any kind of financial assistance from a vehicle manufacturer that, by reducing either the net price or the cost of financing/leasing, motivates customers to buy/lease a new vehicle. the most common incentives are customer cash rebates, low-interest financing and leases that are subsidized by the manufacturer.
+An auto industry term that encompasses all methods by which manufacturers attempt to stimulate vehicle sales and leases by reducing the net cost to consumers without reducing the vehicles msrps, which includes customer rebates, dealer cash incentives and special leases.
+More than one video monitor in the rear passenger area of a vehicle with a rear seat entertainment system.
+Digital and/or analog displays used to convey to the driver information such as dynamic engine parameters, operating conditions, rpm, speed and water temperature.
+The analysis of a vehicles performance characteristics using precise scientific equipment.
+Sometimes referred to as the "iihs." an organization created by the insurance industry for the purpose of reducing the losses (deaths, injuries and property damage) from vehicle crashes.
+A turn signal light that is mounted on or in a vehicles sideview mirror.
+An alternator that operates primarily when the engine has no need for power, i.e., when coasting or during braking. the alternator remains passive while the vehicle is under power, with needed electrical power provided by the battery, for the purpose of improving the vehicles fuel efficiency.
+A vehicle that employs the latest in telemetrics, driver awareness and/or pedestrian safety technology.
+Halogen lamps or light-emitting diodes (leds) used to illuminate a vehicles interior space.
+Wood, composite, leather or metal adornments intended to supplement the aesthetic elements of a vehicles interior.
+A wiper setting that causes the wipers to pause for a driver-selected period between wipes.
+Also referred to as "invoice price." the price that appears on the invoice that the manufacturer sends to the dealer when the dealer receives a vehicle from the factory.
+A system that allows the activation by the driver of a push-button to start a vehicle if proximity sensors detect the electronic key inside the vehicle.
+Lubricated solid bearings or bushings usually present between the kingpin and steering knuckle.
+Small airbags that deploy under the dashboard by the knees, typically on the driver's side where the steering column and other hard vehicle parts are located.
+A system of electronic components designed to warn a driver when a vehicle strays out of its lane.
+A system developed by honda that shows real time video of a vehicle's right side blind spot when the turn signal is activated
+An incentive offered by the manufacturer to reduce the cost of a vehicle lease, either by reducing the interest rate or increasing the residual value of the vehicle.
+The number of months that constitute the term of a vehicle lease.
+The distance from the floor of a vehicle (a persons ankle point) to the centerline of the seat (a persons hip joint).
+The distance from the most forward-facing point of a vehicle to the most rearward point.
+A vehicle that is found to have numerous or severe defects not readily apparent before its purchase. used both informally to mean a vehicle that proves to be defective, imperfect or unsatisfactory, and with more precise meaning in various states "lemon laws" that provide vehicle purchasers certain rights.
+The person or entity that leases a vehicle.
+The entity that owns the vehicle being leased. although most leases are arranged by a dealership, in almost all cases the lessor is either a financial institution or a division of the vehicle manufacturer.
+Low emission vehicle. a vehicle that meets the average emissions standard within the lev program.
+Li-ion (lithium-ion) battery is a type of rechargeable battery that offers better performance versus conventional rechargeable batteries such as nicad (nickel-cadmium) and nimh (nickel-metal hydride). lithium-ion offers more power and less weight, which offers an extended driving range. however, li-ion batteries are more fragile and can be damaged by extreme temperatures.
+The window integrated into the hinged lid of a hatchback, wagon, suv or crossover that swings upward to provide access to the cargo area.
+Additional lighting mounted on a metal or plastic frame that is attached to a vehicles roof, and that is typically available on trucks and suvs.
+A vehicle for which the manufacturer has established a limit on the number units to be produced, without regard to the maximum number the manufacturer may be able to sell. these vehicles typically have special interior and/or exterior trim and/or costly performance enhancements that distinguish them from their mainstream counterparts.
+A vehicle warranty that is in effect for a specified number of years and/or miles driven.
+A spoiler that is flush-mounted to a vehicles trunk lid or liftgate that allows air to flow over it but not under it (and that is usually installed for aesthetic purposes).
+Lng (liquefied natural gas) is natural gas (ch4) that has been refined and liquefied. the process of liquefying natural gas requires the removal of contaminants like helium, water, and heavy hydrocarbons then condensed into a liquid state close to atmospheric pressure 3.6 psi (25 kpa) by cooling it to approximately ?260 °f (?163 °c).
+The minimum height to which an item must be lifted in order to be loaded into a vehicles cargo area.
+The part of a hatch or doors latching mechanism into which the key is inserted.
+A device or system of devices that prevents a vehicle from being entered without a key or an electronic keyless entry remote control.
+The national low emissions vehicle program. an epa-sponsored initiative to reduce the amount of emissions per vehicle.
+An alert, usually in the form of a halogen lamp or led, warning the driver of a low fuel supply.
+A loan offered by the manufacturers captive finance company at a below-market interest rate.
+Liquefied petroleum gas. also referred to as "gpl," "lp gas" or "autogas." a blend primarily of two hydrocarbon gases, propane and butane. propylene and butylenes can also be present in small concentration. ethanethiol, a powerful odorant, is also added so that leaks can be detected.
+A mechanical or pneumatic device that matches a vehicles seat back to the contours of the driver or passenger.
+SKIPPED_ROW
+SKIPPED_ROW
+The rate of gravitational acceleration.
+If the vehicle is lost, stolen, or destroyed, this insurance covers the gap between the amount the lessee's insurance company will pay to the lessee and the remaining amount the lessee owes to the leasing company or dealership.
+When a new vehicle with poor fuel economy is purchased, this federal tax is then added onto the sale price.
+A type of powertrain that is a combination of an electric motor and gasoline or diesel engine.
+The most common type of engine in a motor vehicle, which burns conventional gasoline.
+Typically the transmission in a motor vehicle -- the encasement which houses the gears.
+When two or more additional gears are used to transmit power.
+Type of navigation system with a gps receiver and av components that are used by cars and handheld devices such as phones. gps stands for "global positioning system". the system is a 24-satellite navigation system with multiple satellite signals that can find the gps receiver's position on earth.
+The section of the vehicle that is above the beltline.
+These gases are byproducts of running a motor vehicle and reduce the loss of atmospheric heat into space.
+As designated by the epa to each new vehicle, a score that delineates the amount of greenhouse gases emitted in driving simulations of the vehicle.
+Sometimes short-handed as "gvwr." the curb weight, cargo weight capacity, and passenger weight capacity totaled together.
+Measurement of the distance from the lowest point of the vehicle to ground level.
+Downforce created between airflow and a moving object.
+In the navigation system, the system that senses which direction a vehicle is facing.
+In motor vehicles with all-wheel drive systems, this is a limited slip coupling that engages and disengages the secondary axel if necessary.
+A type of drive axle that does half of the job when extending from a transaxle to a differential to one of the wheels. a companion shaft on the other side completes the set.
+When a vehicle turns, how well a car performs in and out of the turn is referred to as "handling". tighter speeds around corners and turns constitute better handling.
+A system which allows drivers to control various vehicle functions without removing their hands from the wheel. could include strategically placed buttons, or the use of vocal commands.  
+A type of motor vehicle with a large door (instead of trunk lid) that swings upward. often the size of a coupe or sedan, with the extra feature of the door for optimized cargo loading.
+Acronym for homogeneous charge compression ignition. a type of internal combustion engine where auto-ignition takes place when gasoline and air are compressed.
+How far it is between the passenger's hip and the interior rooftop of the vehicle.
+For the motor vehicle's entertainment system, the control unit.
+Nozzles that clean the headlights of a motor vehicle.
+On the front of a vehicle, these bright lamps provide visibility of the roadway and other surrounding environs of during darkness or low visibility.
+A type of display that projects information onto the windshield, instead of the dashboard, to prevent driver distraction.
+To determine whether an engine is running hot, among other things, this sensor provides information to a computer in the motor vehicle about the air temperature coming into the engine.
+Mirrors on the sides of the motor vehicle that have internal heating elements to prevent fog and other low visibility frost or particulates from forming.
+A windshield with internal heating elements to prevent fogging or frosting and low visibility.
+Below the wipers, a heating element that melts frozen particulates on windshield glass.
+In the ventilation system, an inline fan that produces warm air by diffusing heat from the engine cooling system
+The series of tubes and hoses to carry coolant between the cooling system and heater core.
+A driving technique to create a smooth downshift by matching engine speed to wheel speed when driving a manual transmission.
+Between the tallest part of the vehicle and level ground, a measurement of distance.
+A type of mechanical articulating joint used anywhere an articulating joint is required. this is particularly useful when a clevis end is unsuitable for precision articulating joints.
+On an engine, a type of cylindrical gears with a slanted tooth trace. their contract ratio is larger than spur gears, and they are revered for their quietness and ability to transmit force.
+A type of motor vehicle that is propelled by a hemispherical combustion chamber engine.
+As depicted by the epa during simulated laboratory tests, this is the average number of miles a motor vehicle can drive on one gallon of fuel.
+When the clutch of a motor vehicle is disengaged, this device puts additional pressure on the brakes.
+A type of door hinge:  standard, scissor, gullwing or suicide-style
+The term was originally coined to describe the output of steam trains as related to a draft of horses in a carriage, but today is the unit of power in a motor vehicle engine.
+Heating, ventilating, and air conditioning.
+A series of terms used to describe the level of hybrid technology used: full, mid, power-assist, or plug-in.
+In a hybrid vehicle, the various drivetrain layouts available: parallel, series, or combined.
+A type of powertrain with a combination of electric motor and another means of movement or power generation. the most common example of a hybrid engine is gas/electric.
+The ability a hybrid gas engine has in order to perform in a variety of ways. often described in terms of horsepower or torque.
+In a hybrid vehicle, the various ways an engine can receive power. may include gas/electric, plug-in, fuel cell, or pneumatic.
+Type of vehicle that relies on a combination of internal combustion and electricity for propulsion and movement
+An organic compound that is made up of a single hydrogen and a single carbon atom. most frequently used as a fuel source in motor vehicles.
+A type of device that creates electricity through electrochemical reactions involving hydrogen and an oxidant.
+Without any extra load or accessories, the revolutions per minute of the engine when resting in normal temperature and in neutral.
+This pulley  tightens the slack on an engine's accessory drive belts, including those for the power steering, water pump, or air conditioning.
+In an internal combustion engine, the system that creates the spark which then ignites the combined fuel and air mixture. this includes the battery, ignition coil, distributor, spark plugs, and all associated switches and wires.
+Setting when the spark in the ignition system will occur inside the combustion chamber as it relates to the piston position and angular velocity of the crankshaft.
+Inherently low-emission vehicle.
+This is a type of braking system that is located within the chassis, as opposed to at each wheel. 
+The ways in which to connect a mobile or cellular phone to the dashboard of a vehicle; firstly, through a handset that is built into the vehicle; secondly, a portable unit with a dock in the computer system that allows the phone or device to operate the on-board entertainment system.
+Customer cash rebates or other financial offers from a manufacturer that reduces the cost of the vehicle in some way. manufacturers produce offers in order to entice buyers to buy or lease a new vehicle.
+In the passenger area of the vehicle, singular video monitors that are equipped with an entertainment system.
+A type of suspension which allows a single wheel to move vertically without impacting any of the other wheels.
+Information pertinent to the driver of the vehicle and visible in analog or digital displays on the dashboard. can include engine parameters, operating conditions, rpm, speed, and water temperature.
+A way of researching and dissecting the performance and handling characteristics of a vehicle in a laboratory setting with measuring equipment.
+Often abbreviated as "iihs". an insurance industry arm that offers guidance in order to reduce death or property damage occurring during vehicular crashes and collisions
+This is where the intake valve sits. the intake valve opens and closes to allow air into the combustion chamber.
+Type of turn signal that can be found on or in the sideview mirror of a motor vehicle.
+During braking or coasting, this type of alternator kicks in when the engine does not require power. it remains passive if the vehicle does require power; for instance, when otherwise the  vehicle receives power from an electrical source. found in fuel-efficient vehicles, primarily.
+This type of vehicle is engineered with modern telemetrics, driver awareness, and pedestrian safety technology.
+On turbocharged and supercharged engines, an intercooler cools the compressed air being fed to the combustion chamber.
+Leds and halogen lamps inside the vehicle to aid in illumination of the interior space.
+The aesthetic design treatments of the interior of a motor vehicle.
+A setting on the windshield wipers that pauses the wipers for a driver-determined period of time.
+Sometimes referred to as "invoice price." when a manufacturer sends an invoice to the dealer, this price accompanies the invoice. it is the cost of the vehicle from the factory.
+In a suspension, the vertical movement or bounce when a vehicle rides across a bump or other impediment in the road.
+A jounce bumper is designed to minimize the vertical movement that occurs in the vehicle suspension when the vehicle rides across a bump or other impediment in the road.
+A system that is designed to allow a driver or passenger to enter the vehicle without a key. keyless entry systems in the us operate with a short-range transmitter to detect the key nearby
+Using only a push-button rather than inserting a key into the ignition slot, this system allows a driver to start the engine of a vehicle.
+In an automatic transmission, this type of downshift is activated when the driver presses the accelerator pedal to the floor.
+Bearings or bushings that are used with the kingpin and steering knuckle.
+On the driver's side, airbas that are deployed down near the steering column and the driver's knees.
+A system that senses abnormal or otherwise unexpected pulsations that may occur during engine detonation.
+A system that is designed to notify the driver when the motor vehicle may be veering into the next lane unexpectedly. this may also be called lane assist warning system.
+Honda's proprietary system that uses video to monitor the right side blind spot during a lane change.
+In a vehicle suspension, this link in a suspension is aligned in a way to prevent sideways motion in the wheel.
+In a vehicle suspension, this link in a suspension is aligned in a way to longitudinal motion in the wheel.
+Primarily used in suspensions, these are flexible pieces of steel and/or composite materials that bends when impacted by an object of force.
+When leasing a vehicle, this is an offer by the manufacturer to aid in the reduction of the cost of a vehicle. this may be accomplished by reducing the vehicle's interest rate or the vehicle's residual value.
+How many months the vehicle is leased from the dealership.
+How far it is from the floor of the vehicle to a person's hip, from the center line.
+How far it is from the front nose of the vehicle to the most rear point of the vehicle.
+A slang term for a vehicle that has not proven to be a valuable purchase, through the discovery of multiple defects that were not disclosed at the time of buying it.
+The person that takes out a lease on a vehicle.
+The entity that owns the vehicle that is leased.
+A type of environmentally friendly vehicle known as a low emissions vehicle. this vehicle meets emissions standards as set by the leve program.
+Automotive industry shorthand for lithium-ion batteries. this is a type of battery that performs better than many rechargeable batteries. with more power and less weight, this battery exhibits an extended driving range. the downside is that they are potentially more easily damaged by extreme temperatures.
+When airflow around a moving vehicle produces vertical force.
+On a hatchback, wagon, or suv, this window allows access to the cargo area without the need to fully open the back door of the vehicle.
+During a hard corner, this handling causes rear tires to lose some of their grip when power is removed.
+On trucks and suvs, this lighting is attached to the frame on the roof of a vehicle.
+Special vehicles that have exclusive detailing, trim, or performance and handling enhancements for which the manufacturer has determined only a limited number of units to be available.
+This type of differential uses a device to limit speed and torque differences between its outputs. the limited slip provides assurance that some torque is made available to both wheels, especially on slippery or wet pavement and roadways.
+This type of warranty is based upon the number of years or miles the vehicle is driven.
+The path through a corner that best accommodates a late point to pump the brakes, a high cornering speed, and the fastest possible exit speed out of a corner.
+A part in the suspension with a single joint at either end.
+An aesthetic addition to the trunk lid or liftgate. this flush-mounted spoiler allows for air flow over but not under it.
+A type of axle that is responsible for transmitting power to a pair of wheels. modern models  generally use independent suspension for improved ride quality.
+A refined, liquefied natural gas. the gas is liquefied in order to remove contaminants like helium, water, or hydrocarbons. the gas is condensed into a liquid state.
+A height at which an item must be raised or lifted to be loaded into the cargo area of a motor vehicle.
+On a latching mechanism, the part where a key would be inserted.
+When a vehicle is traveling at high speeds, and the engine is running at a low rpm, these types of torque converters will lock to a vehicle's flywheel, preventing slippage and heat generation.  
+The device within a vehicle that protects the vehicle from entry without a key or the remote control if on an electronic keyless entry system.
+The point at which a tire experiences skidding during braking. if a vehicle's front tires and rear tires approach lockup simultaneously, the car will be able to stop in a very short distance. depending on the conditions of the road, load, ad tire traction, this can be very difficult. one set of wheels ordinarily will lock up before the other.
+To warn the driver of a low fuel supply, this led or halogen lamp alert will flash.
+A below-market interest rate loan that is offered by a captive finance company.
+Propane and butane blended into one hydrocarbon gas. sometimes referred to as gpl, lp gas, or autogas. a small concentration of propylene and butylene may be found. ethanethiol is added for leak detection, as it is a powerful odorant.
+The cargo area or trunk space, measured in cubic feet.
+To aid in comfort for a driver or passenger, this device alters the shape or contour of the seat back in a motor vehicle.
+SKIPPED_ROW
+SKIPPED_ROW
+Stands for guaranteed auto protection insurance. extra insurance for lease customers to cover the difference in the actual value of the vehicle and whatever is owed on the lease. important if the car is stolen or totaled early in the lease term. it also covers the difference in value between what may be paid by an insurance carrier and what is still owed to the leasing company, including future lease payments.
+Also called gas-filled shocks. they are shock absorbers filled with a low-pressure gas to smooth the vehicle's ride during up-and-down movement
+Any thin, soft material installed between two metal surfaces to create a good seal.
+This is the garage area at indy, where major mechanical work is done on the cars.
+Any tax on real estate or personal property.
+A code of conduct between parties emphasizing honesty during the transaction.
+This was the previous name for winston cup racing before r.j. reynolds became the sponsor in 1972.
+A type of car race popular in europe. also, a french term meaning great prize.
+Any car that is imported, but not through authorized retailers. may have insufficent emissions standards.
+Used in automotive circles to describe all of the windows enclosing the passenger compartment.
+An opening in the front of the vehicle that allows air to reach the radiator.
+The income of the borrower before taxes or expenses are deducted; used to qualify for a loan or a lease.
+The curb weight of the vehicle plus the maximum load it is designed to carry.
+The ease of vehicle steering and maneuverability around turns, up hills, etc.
+A passenger car with a full-height rear door that includes a rear window. usually has a rear folding seat.
+A situation that may increase the probability of a loss or damage.
+The distance from the top of an occupant's head to the headliner.
+The interior covering of the roof. headliners often contain consoles with slots for garage-door openers and other devices, as well as dome lights and wiring for electrical and electronic components attached to the headliner. the covering usually includes a sound-absorbing material.
+Sister organization to the insurance institute for highway safety. funded by insurance companies.
+The allotted room between a passenger's hips and any other part of the vehicle.
+An agreement where one party assumes responsibility.
+Manufacturer refund to a dealer after a vehicle is sold. usually a percentage of the msrp.
+A loan secured by the equity in your home. interest paid is usually tax-deductible. increasingly, consumers are using home-equity loans instead of consumer loans to purchase items, such as cars, for which conventional-loan interest is not tax-deductible.
+Abbreviated as hp, as in 200-hp engine, or bhp (brake horsepower or net horsepower) to designate power produced by an engine. in general, the higher the horsepower, the higher the vehicle's top speed. one horsepower is the power needed to lift a 550-pound weight one foot in one second.
+A normal vehicle that has been altered to improve speed and overall appearance or look.
+A suspension beam under the car that supports the body in the shape of a capital i.
+International hot rod association
+Indianapolis motor speedway, the site of the indy 500. this is now an irl event.
+International motor sports association, founded by john bishop in 1969. sanctions, organizes, markets and officiates professional auto racing events. season begins in february at daytona international speedway and ends in october on the streets of new orleans.
+Indy racing league founded by tony george in 1995 in response to re-occurring feuds and disputes with cart.
+International race of champions
+The speed of the engine at minimum throttle and the engine in neutral.
+Cylinders are arranged side by side in a row and in a single bank. most four-cylinder and some six-cylinder engines are in-line engines. in v-6, v-8 or v-12 engines, the cylinders are divided into two banks, each of which is angled away from the other in a 'v.'
+A cash refund or attractive lease or loan rate offered by an automotive manufacturer toward the purchase of a new vehicle.
+A legal principle specifying that the insured not collect more than the actual cash value of a loss but be restored to approximately the same financial position that existed before the loss.
+A suspension design that lets each wheel move up and down independently of the others. a vehicle can have two-wheel or four-wheel independent suspension; sportier models have four-wheel independent suspension. see also multi-link suspension, live axle.
+The big race held in indianapolis every year on memorial day weekend.
+One level below indy car racing, known for its lighter version of actual indy cars. this is a stepping stone to the indy 500.
+This tube of woven material is stiffer and stays inflated longer than a traditional airbag cushion. the tube protects the occupant's head and torso in a side impact, in part by keeping them away from the point of intrusion. the uninflated tube is tucked into the edge of the roof headliner. the tube is attached at the base of the a-pillar in front of the occupant, and at the roofline behind the occupant. when it inflates, the tube angles across the window to keep the occupants head from hitting the window glass or metal side pillar. because of the longer time the tubular restraint stays inflated, it is expected to also offer protection in a rollover.
+A loan repaid in separate smaller amounts, typically monthly.
+The instrument panel contains the gauges in front of the driver; the controls for the sound system and climate-control system; the glove box; vents for the windshield defroster; and the front passenger-side airbag. the instrument panel is often delivered to the factory as a complete module with electronic components already installed.
+Sister organization to the highway loss data institute. funded by insurance companies.
+Proof that the borrower has auto insurance.
+May also be called integrated child-safety seats or integrated child-restraint seats. built-in child seats that fold out of the seatback of a rear seat. sedans with this option usually have one in the center of the rear seat; minivans may have one or two in the middle seating positions. while nhtsa and every other safety organization stress that any child-restraint seat is better than none, built-in child-restraint seats are considered the safest alternative because they are more securely anchored than a seat attached to seat belts.
+Device that cools air as it leaves a turbocharger or supercharger before the air is blown into the engine air intake. cooling makes the air denser and richer in oxygen, which lets the engine produce more power.
+The cost of the money borrowed, usually expressed as a percentage of the whole.
+The periodic charge, expressed as a percentage, for the use of credit.
+The amount of space or material that can be carried inside the vehicle.
+The initial charge to the dealer from the manufacturer, including freight and delivery charges.
+An old, dilapidated automobile.
+Ownership that is shared by two or more persons.
+A system for locking and unlocking doors of a vehicle with a central locking system without using the key. usually, the user controls the locks by pressing a button on a remote key-fob transmitter. some vehicles have electronic combination locks on the doors near the handle.
+Multiply by 0.621 to convert to miles per hour.
+A vehicle that is designed for assembly by the private hobbyist.
+A safety belt that secures the driver and/or passenger in the seat with a continuous web of material which fits across the lap and crosses the upper body. it keeps the occupant from jerking forward in the event of a crash. also called three-way belt, three-point belt, or three-point safety harness.
+The termination of a policy due to failure to pay the premium.
+Suspension spring made up of several thin, curved, hardened-steel or composite-material plates attached at the ends to the vehicle underbody. the curved shape of the plates allows them to flex and absorb bumps.
+The fuel mixture is lean when it has too much air, and rich when it has too much fuel. these terms can also be used to refer to adjustments the electronic control module makes to the fuel mixture in response to various driving conditions, particularly on engines with variable-valve technology.
+A contract between lessor and lessee for a specified time period and at a specified payment. the title to the car remains in the name of the lessor as owner of the asset.
+The monthly finance cost of a lease, similar to the interest rate on a conventional loan. determined by the money factor.
+The number of months for which a vehicle is leased.
+Used to estimate the value of the vehicle at the end of the lease.
+With the front seat adjusted all the way back, the distance from the accelerator pedal's heel point to the back of the front seat cushion.
+A vehicle, usually new, that has a large number of defects.
+The person who leases a vehicle. the party paying for the use of the vehicle (consumer).
+The person or institution who owns and leases the vehicle to the lessee. the party funding the lease of the vehicle placed in lease service. it can be the dealer, a leasing company, or a financial institution such as a bank or credit union.
+Any legally enforceable obligation.
+A type of insurance that pays or renders service on behalf of the insured for any loss or damage due to his or her negligence.
+The limit of insurance the company will pay for on a particular policy.
+A legally documented claim against a vehicle by another party to which the vehicle has been offered as security for repayment of a loan or other debt. a lien against the title may make it impossible to sell the vehicle and transfer the title until the lien is cleared.
+An individual or company with a financial interest in an insured's vehicle.
+The rear opening on a hatchback.
+The distance a person must lift an object off the ground to put it in a trunk or cargo bay.
+Adjective that refers to passenger trucks, as opposed to medium-duty or heavy-duty commercial trucks.
+A device that helps prevent the drive wheels from skidding or losing traction by diverting power from the slipping wheel to the opposite wheel on the same axle.
+An approved loan amount that has not yet been used.
+Engine-displacement measurement, as in 2.0-liter engine.
+A solid axle allowing movement of the wheel on one end to affect the opposite wheel. found on older rear-drive cars and tucks. also called a rigid axle.
+The ratio of the sales price or appraised value to the loan amount. obtained by divided price or value into loan amount. a vehicle with a $10,000 price and an $8,000 loan would have a loan-to-value ratio of 80 percent.
+A commitment you obtain from a lender assuring you a particular interest rate for a definite time period. protects you in case interest rates rise during the approval process, or between the time you apply for the loan and actually receive the money you have borrowed.
+The amount sought through an insurer's claim.
+SKIPPED_ROW
+SKIPPED_ROW
+A fuel delivery system that injects gasoline under extremely high pressure directly into the engine combustion chamber. this technology generates more power with better fuel economy and lower emissions.
+Heavy-duty lubricant specifically designed to handle the requirements of the gears and mechanisms located within the differential case. 
+Brakes engage suddenly and strongly, even when applying light pressure on the brake pedal
+Any gas in the atmosphere that absorbs and emits radiation within the thermal infrared range, thereby contributing to climate change/global warming. the primary greenhouse gases in the earth's atmosphere are water vapor, carbon dioxide, methane, nitrous oxide, and ozone.
+The total maximum allowable weight capacity of a vehicle, including the weight of the vehicle itself plus the weight of its fuel, passengers, and cargo.
+A number established by the battery council international (bci) that identifies a battery based on its battery length, height, width, terminal design/location, and other physical characteristics. not every battery has a group number as some automakers use custom-sized batteries to fit the underhood packaging requirements of their cars.
+Momentary loss of power on acceleration.
+Headlights that use high voltage to ionize a mix of gases, including xenon, in a special bulb to produce an extra-white or even bluish light that is several times brighter than a conventional halogen headlight.
+The national highway traffic safety administration term for autonomous vehicles that meet level 3 and higher performance requirements as specified in sae standard j3016.
+The measurement of the engine's ability to produce work.
+A vehicle that achieves improved fuel efficiency by using an electric motor to help the engine propel the car. the motor receives power from a modestly sized battery that is automatically recharged during vehicle operation using a generator driven by the car’s engine. the battery is also recharged by “regenerative braking” that turns the electric motor into a generator during coasting and braking. hevs have no provision to connect an external charger, and the energy contained in the battery can propel the vehicle under electrical power alone for only a very short distance, if at all. the toyota prius is an example of an hev.
+An advanced “battery” that uses hydrogen and oxygen to generate electricity that powers an electric motor to propel the car. the only exhaust emissions of a hydrogen fuel cell are heat and water vapor.
+A combined information and entertainment system that can incorporate audio, video and various types of data from terrestrial radio, satellite radio, cd/dvd/blu-ray discs, sd cards, auxiliary inputs, a factory telematics system and/or a bluetooth link to a smartphone. 
+A problem that comes and goes with no obvious pattern. 
+Rapid, uncontrolled combustion of the air-fuel mixture in the cylinder that results in a hard, rattling sound. knock can cause severe engine damage if left unchecked for long.
+An adas system that monitors lane markings and provides the driver with audible, visual and/or tactile alerts if their car begins to leave its lane and the turn signal is not on.
+An adas system that automatically applies braking and/or steering inputs to help keep a vehicle in its lane when the turn signal is not on.
+Headlights that use an array of leds to provide forward illumination. led headlights provide a “whiter” light than hid units, but they are more directional and may produce less light overall.
+The process of reducing vehicle weight using high-strength steels, aluminum, plastics, carbon fiber and other materials to achieve fuel economy gains that reduce greenhouse gas emissions.
+A system of gears that allows the outside driven wheel to rotate faster than the inside driven wheel when turning a corner. compared to a conventional “open” differential (which directs power to the wheel with the least traction), a “limited-slip” differentials ensure that some power is always delivered to both driven wheels.
+Liquefied petroleum gas, also called propane, is a combustible by-product of natural gas processing and crude oil refining. lpg has been employed as a motor fuel for over 90 years, and outside the u.s. it often goes by the name “autogas.”
+SKIPPED_ROW
+SKIPPED_ROW
+When a vehicle's powertrain can be powered by either gas or electricity, it is a hybrid gas/electric engine
+Headlights are the bright front lamps that provide visibility.
+Horsepower is a unit of measurement describing engine power.
+Independent suspension involves the camber of a wheel that isn't affected by the opposite wheel's vertical motion.
+A keyless ignition allows the driver to turn on the vehicle with a push button as long as the electronic key is inside the vehicle.
+SKIPPED_ROW
+SKIPPED_ROW
+Establishments engaged in automotive repair that do not specialize in one facet of repair, such as transmissions or exhausts.
+Establishments that primarily sell food for home preparation and consumption. many also sell non-edible grocery items and a limited range of automotive products. examples include safeway, kroger and ralph’s.
+The total weight of tractor-trailer combinations, including the trucks, trailers and payload.
+The total weight of the loaded vehicle, including chassis, body and payload.
+Solid engine parts, such as crankshafts, pistons and flywheels.
+Establishments that sell a variety of basic hardware lines such as tools, paint, glass, housewares, appliances and cutlery. may also sell automotive products. examples include ace and true value.
+Fabric or vinyl upholstery on the interior of the roof of a vehicle.
+The portion of the auto care market that deals with the maintenance, repair and auto care market products for commercial, industrial and agricultural vehicles after their original sale.
+Firms primarily involved in maintaining and selling an inventory of products specifically intended for the maintenance and repair of class 3 through class 8 commercial vehicles.
+Parts for large commercial trucks and commercial vehicles.
+Vehicles classed by gross vehicle weight as follows:class 7: 26,001 - 33,000 lbs. (home fuel, refuse, tow, city transit bus, furniture, medium conventional, cabover)class 8: 33,001 lbs. and over (fuel, dump, cement, refrigerated van, intercity tour bus, fire engine, heavy conventional, cabover sleeper)
+Establishments that carry a wide range of home products, such as hardware, lumber, building materials, garden supplies, plumbing and electrical supplies. may also carry automotive products. examples include home depot and lowe’s.
+Vehicle service and repair shops that do not have a significant relationship with either vehicle manufacturers or petroleum marketers.
+Jobbers that are not owned, in part or in full, by a warehouse.
+Firms that are primarily involved in the diagnosis, repair, maintenance or accessorization of commercial motor vehicles and have no significant relationship to vehicle manufacturers or to petroleum marketers.
+The number of times inventory is replenished within a particular time, calculated by dividing the cost of goods sold by the average inventory for the period.
+Firms that sell more than 50 percent of their products to repair shops and more than 50 percent of their purchases are from distributors.
+Wholesalers who also sell parts, chemicals and accessories to retail customers. retail sales account for more than 50 percent of a jobber/retailer’s total sales.
+Owner operators that lease themselves and their vehicles to trucking companies.
+Vehicles classed by gross vehicle weight (gvw) as follows:class 1: 0 - 6,000 lbs. (passenger car, minivan, utility van, multipurpose/sport utility vehicle, compact and full-size pickup)class 2: 6,001 - 10,000 lbs. (minivan, utility van, step van, crew cab pickup, full-size pickup, mini-bus)class 3:  10,001 - 14,000 lbs. (mini-bus, walk-in, city delivery)
+SKIPPED_ROW
+SKIPPED_ROW
+The system of gears controlled by the manual or automatic shifter in a vehicle. the movement of the gears directly influences the movement of the car, and various driving conditions, like cruising on level surfaces,or climbing a hill, use different gear setups.
+A digital navigation system built into many modern vehicles that uses your current location to deliver the best route to a specific destination.
+How well a vehicle moves on straightaways, around corners and over varying degrees of terrain.
+A unit of measurement equal to 550 foot pounds per second used to describe the power of a vehicle’s engine. higher numbers mean more power and the ability to push a car to faster speeds.
+The system that generates a spark and controls the timing of the spark that is necessary to ignite the fuel-air mixture and start fuel combustion inside the engine.
+An emergency starting procedure used to get a car running when the battery is dead. jumper cables are attached to the battery of a working vehicle and run to the failed battery to provide a jolt of power.
+A modern entry system that unlocks doors via a battery-powered remote or key fob instead of requiring you to physically put the key into the lock.
+SKIPPED_ROW
+SKIPPED_ROW
+A liquid blend of hydrocarbons used as automotive fuel and processed from crude oil. 
+A system of two or more gears, such as one that transmits power from the crankshaft or camshaft.
+The speed relationship that exists between a driving (input) and a driven (output) gear. for example, a driving gear that revolves twice for each driven-gear revolution has a 2 to 1 (2:1) ratio. 
+An ac or dc electrical-generating device that converts mechanical energy into electrical energy. 
+A high-output, white-light lamp used as a headlight. also known as halogen light.
+A passenger-car body style where a full opening hatch, including the rear window, lifts for access to the cargo storage area. 
+An abbreviation for hydrocarbon. 
+An abbreviation for heavy duty. 
+The lights at the front of a vehicle used to illuminate the road ahead. also known as headlights. 
+A measurement of mechanical power or the rate at which work is done.  
+A vehicle having two separate propulsion systems, such as a gasoline engine and an electric motor. 
+A compound containing hydrogen (h) and carbon (c), such as gasoline. 
+The engine speed with no load and the accelerator pedal fully released. 
+The firing of a spark plug to ignite the air/fuel mixture in the combustion chamber. 
+A system in which fuel is injected into a pre-chamber, where it is ignited before entering the main combustion chamber. 
+The tube or nozzle through which fuel is injected into the intake airstream of the combustion chamber. 
+A term used for fuel injector. 
+An acronym for internal-combustion engine.
+An abbreviation for japan automobile manufacturers association. 
+A continuous electronic fuel-injection system by bosch that has been modified using a lambda oxygen sensor. 
+A downshift to the gear below in an automatic transmission when the driver applies full throttle, as in overtaking and passing another vehicle. 
+An element, pb, often used as a body filler. to use lead as a body filler. short for tetraethyl lead, a compound formerly used to increase the octane rating of gasoline. 
+A small amount of current that flows through insulation when a voltage is present and heats the insulation due to its resistance, resulting in a slight power loss. 
+A chrysler electronic engine control that appeared in the mid-1970s. it maintains precise control of the spark timing to allow a very lean mixture to burn properly, reducing emissions using an analog computer. 
+Any motor vehicle rated at 8,500 pounds (3,856 kg) gvwr or less, having a curb weight of 6,000 pounds (2,722 kg) or less, and having a frontal area of 45 square feet (4.2 m2) or less. 
+Methane gas (ch4) that has been converted to a liquid by chilling. 
+A predominately propane gas (c3h8) that contains some butane gas (c4h10) that is compressed to a liquid state. 
+SKIPPED_ROW
+SKIPPED_ROW
+Emission standards are the legal requirements governing air pollutants released into the atmosphere. emission standards set quantitative limits on the permissible amount of specific air pollutants that may be released from specific sources over specific timeframes. they are generally designed to achieve air quality standards and to protect human life. different regions and countries have different standards for vehicle emissions.
+Also known as petrol direct injection (pdi),[1] is a mixture formation system for internal combustion engines that run on gasoline (petrol), where fuel is injected into the combustion chamber. this is distinct from manifold fuel injection systems, which inject fuel into the intake manifold.
+Stoichiometric gasoline direct injection
+Lean-burn gasoline direct injection
+Gasoline homogeneous charge compression ignition
+A gas that absorbs and emits radiant energy within the thermal infrared range, causing the greenhouse effect
+Type of sports car that is designed for high speed and long-distance driving, due to a combination of performance and luxury attributes.
+The maximum operating weight/mass of a vehicle as specified by the manufacturer[6] including the vehicle's chassis, body, engine, engine fluids, fuel, accessories, driver, passengers and cargo but excluding that of any trailers.[7] the term is used for motor vehicles and trains.
+The gross vehicle weight rating (gvwr), or gross vehicle mass (gvm), is the maximum operating weight/mass of a vehicle as specified by the manufacturer[6] including the vehicle's chassis, body, engine, engine fluids, fuel, accessories, driver, passengers and cargo but excluding that of any trailers.[7] the term is used for motor vehicles and trains.
+The heat absorbed by any greenhouse gas in the atmosphere, as a multiple of the heat that would be absorbed by the same mass of carbon dioxide (co2). gwp is 1 for co2. for other gases it depends on the gas and the time frame.
+Highly autonomous driving
+An organic compound consisting entirely of hydrogen and carbon.[1]: 620  hydrocarbons are examples of group 14 hydrides
+Type of hybrid vehicle that combines a conventional internal combustion engine (ice) system with an electric propulsion system (hybrid vehicle drivetrain)
+Man-made organic compounds that contain fluorine and hydrogen atoms, and are the most common type of organofluorine compounds.
+Unit of measurement of power, or the rate at which work is done, usually in reference to the output of engines or motors. 
+High-speed (diesel) direct injection
+The process of altering the timing of a valve lift event, and is often used to improve performance, fuel economy or emissions.
+Ignition
+Improved efficiency alternator
+A vehicle start-stop system or stop-start system automatically shuts down and restarts the internal combustion engine to reduce the amount of time the engine spends idling, thereby reducing fuel consumption and emissions.
+Integrated starter-generator system with start-stop operation
+In line four cylinder
+Us classification for trucks or truck-based vehicles with a gross vehicle weight up to 8,500 pounds (3,860 kg) and a payload capacity up to 4,000 pounds (1,815 kg).
+A light-duty truck with a loaded vehicle weight of up to 3750 pounds
+An lev ii light-duty truck with a loaded vehicle weight of 3751 pounds to a gross vehicle weight of 8500 pounds
+Light emitting diode
+Low-emission vehicle
+Liquified petroleum gas
+Loaded vehicle weight
+SKIPPED_ROW
+SKIPPED_ROW
+General manager who presides over all departments of a dealership
+General sales manager who presides over all sales departments at a dealership
+The sum of a vehicles curb weight, cargo weight capacity and passenger weight capacity.
+Horsepower – the measure of an engine’s work rate, which is torque (twisting force) multiplied by speed (how fast it is spinning).
+Insurance institute for highway safety - a nonprofit, scientific and educational organization funded by auto manufactures, dedicated to reducing injuries and deaths from automobile crashes. 
+Internet lead management system
+Inventory management system - takes an inventory feed from a dms allows for editing of descriptions, pricing, and photos. the system then sends edited data to websites for display in inventory listings.
+International standards organization
+Industry service vendor
+International window film association
+Lane departure warning system. cameras and onboard sensors warn if a vehicle is drifting out of marked lanes
+Lng (liquefied natural gas) is natural gas, used as a fuel source
+Limited slip differential – if one wheel loses traction, a limited slip diff prevents all the power being transmitted to the spinning wheel, instead allocating a proportion of the power to the other driven wheels that have grip.
+Long wheelbase – a lengthened version of an existing vehicle chassis, often available as an option for luxury sadans and trucks
+SKIPPED_ROW
+SKIPPED_ROW
+Gasket sheets are used for areas where extreme heat and pressure sealing are required such as exhaust gaskets.
+An electrical element located in the combustion chamber of a diesel engine which helps to heat up the air in the chamber so that the diesel fuel will be ignited more quickly. often they are connected in series so that when one becomes defective the others are inoperative. also called a 'heater plug'.
+Grids are another name for battery plates, because the plates are perforated in such a manner as to form the appearance of a grid.
+Ground, also known as earth, negative or return. ground carries electrical energy to complete the electrical circuit through a substitute for earth, in the case of a vehicle normally through the chassis.
+A hydrocarbon refrigerant blend.
+An alignment head is a device which clamps to a wheel, to give a technician the ability to check the condition of the vehicle's wheel alignment.
+The bolts that fasten the cylinder heads to the engine block.
+A head gasket is a gasket that sits between the engine block and cylinder head(s) in an internal combustion engine. its purpose is to seal the cylinders to ensure maximum compression and avoid leakage of coolant or engine oil into the cylinders.
+A device used to heat the interior of a vehicle.
+A finned housing, normally made of aluminum, that is used to dissipate heat.
+The discharge side for the air conditioning system that carries high pressure vapors, liquid, or air.
+Hot cranking amps (cca) is the amount of current that a battery can deliver at 80 degrees fahrenheit. specifically, it is the number of amps that a battery can deliver for a period of 30 seconds while maintaining a minimum of 1.2 volts per cell (7.2 volts for a 12 volt battery).
+Both external and internal oil filters attach to the housing, which mounts to the engine and requires a gasket to keep engine oil from leaking out around it.
+An actuation device that makes use of a pressurized hydraulic fluid is known as a hydraulic pump. this mechanism is used for producing in linear motion and force in applications that transfer power.
+Power steering helps drivers steer vehicles by augmenting steering effort of the steering wheel. hydraulic or electric actuators add controlled energy to the steering mechanism, so the driver needs to provide only modest effort regardless of conditions. power steering helps considerably when a vehicle is stopped or moving slowly.
+A hydrometer is a device used to measure the specific gravity of the battery electrolyte or acid. specific gravity of the electrolyte changes in proportion to the amount of electrical energy (voltage) in the battery.
+The purpose of the idler arm is to support the center link and to ensure the center link is always at the proper height. the position of steering linkage must be parallel with the control arm. optional steering linkage position maintains directional stability and minimizes wear on the tires.
+A step-up pulse transformer which is a part of the ignition system. it receives a small amount of electrical voltage from the battery and steps up the low primary voltage and amplifies it into a big jolt of secondary voltage of volts, and sends it to the spark plugs. it is made of two windings and a core of iron. also called just coil.
+A transistorized component in an electronic ignition that triggers the ignition coil to fire high voltage. it replaced the breaker points on older cars.
+A sensor that sends information back to the various computers on a vehicle.
+The combustion of the compressed air/fuel mixture in the combustion chamber that is ignited by an electric spark from a spark plug.
+A control device that is generally operated with a key that closes and opens an electrical current to connect and disconnects the ignition system from the battery so that the engine can be started and stopped as desired
+The system that provides the electrical current or spark to ignite the air-fuel mixture in the combustion chambers.
+The relationship between the time a spark plug is fired and the position of the piston in terms of degrees of crankshaft rotation.
+High tension lines (spark plug wires) to the spark plugs where it ignites the air-fuel mixture. the high voltage wires that go to each of the spark plugs are called spark plug wires or high tension leads.
+Included angle is the angle formed between the sai and the chamber. included angle is not directly measurable. to determine the included angle, you add the sai to the camber. if the camber is negative, then the included angle will be less than the sai, if the camber is positive, it will be greater. the included angle must be the same from side to side even if the camber is different. if it is not the same, then something is bent, most likely the steering knuckle.
+Independent suspension is a broad term for any automobile suspension system that allows each wheel on the same axle to move vertically (i.e. reacting to a bump in the road) independently of each other.
+Designed to help protect garage vehicles from dust, scratches, and insects.
+Same as a ignition coil. a pulse-type transformer for increasing the voltage to fire the spark plugs.
+The intake manifold is an aluminum, steel or plastic cover that sits on top of the engine. it is attached to the top of the engine by an intake manifold gasket that is made of plastic and rubber. the intake manifold directs the air-fuel mixture in the engine to the corresponding cylinder where it is burned to produce power.
+The intercell connections are often referred to as the strap. it is generally a flat metal plate that connects each of the cells inside a battery so as to provide continuity through the battery.
+(ice or ic) an engine that burns fuel within itself as a means of developing power (unlike an external combustion engine such as a steam engine).
+The kingpin is the main pivot in the steering mechanism of a heavy truck. it usually consists of a machined steel bolt, washers, bearings and seals.
+In an automotive suspension a steering knuckle is the part which contains the wheel hub or spindle, and attaches to the suspension components. it is variously called a steering knuckle, spindle, or hub as well.
+Due to fast drying process and thin body, lacquer based paints flow smoothly. lacquer-based finishes and paints can easily be sprayed and dried with gloss finish.
+Clearance in the valve operating train with cam follower on camshaft base circle.
+An lc circuit can store electrical energy oscillating at its resonant frequency.
+A leaf spring is a simple form of spring commonly used for the suspension in wheeled vehicles. each leaf (or leaves) are rectangular flat pieces that can be singular or stacked on each other to support increasing loads.
+A hydraulic cylinder that restores the original opening and closing speeds of your hood, hatch or trunk.
+Is a bearing that handles the stress of a wheel. it used to enable rotational or linear movement, while reducing friction and handling stress.
+A load tester, often called a resistance tester or carbon pile, is a battery tester that applies an electrical load to the battery to simulate the effect of a starter or other large electrical load within a vehicle. load testing is a dynamic test that often reveals battery problems that a simple voltage tester would not.
+The return side of the air conditioning system that carries low pressure vapors, liquid, or air.
+SKIPPED_ROW
+SKIPPED_ROW
+An abbreviation for global positioning system, which is based on a network of satellites in orbit around the earth. the signals from the satellites can be used to pinpoint a location on earth with very high accuracy . gps is commonly used in a car’s navigation system and in cell phones mapping apps.
+Abbreviation for horsepower, hp refers to the amount of power needed to lift 550 pounds one foot in one second. horsepower is often used when calculating how fast or powerful a vehicle is but other factors like vehicle weight and aerodynamics also play a role.
+A hybrid is any vehicle that employs more than one source of power to move the vehicle. an overwhelming amount of hybrids on the road today employ a gasoline engine and an electric motor.
+Ice serves as an abbreviation for internal combustion engine, which is the basis for the vast majority of automobiles on the road today.
+Portmanteau of information and entertainment, in the automotive world, infotainment typically refers to a car’s navigation and stereo interface. they often employ touchscreens and have limited smartphone app integration as well as social media content such as twitter and facebook.
+The area behind the steering wheel, often featuring a tachometer and speedometer.
+In the automotive world, a key fob is a small decorative item, often sporting an automaker’s logo, that can lock, unlock, open the trunk and sometimes start a vehicles engine.
+Keyless entry denotes a car that can be unlocked without physically inserting a key to unlock the doors. typically, you must have the key fob on your person for the system to work.
+Short for kinetic energy recovery system, kers gathers (recovers) energy created during braking and stores it for use during acceleration. the technology has yet to make it into production vehicles but can be found in formula one cars.
+Lane departure systems are a form of onboard safety tech and warn the driver through cameras and onboard sensors whether or not it’s drifting out of marked lanes. typically, ldws involve some type of audio-visual warning for the driver.
+Abbreviation for pound-foot, which is a measurement of torque, or the twisting force an engine can create. 
+A liquid crystal display (lcd display) is a flat panel screen often used to display a car’s navigation and entertainment system. generally, lcd displays contain tiny liquid crystal material between two pieces of polarized glass.
+Short for light emitting diode, leds have slowly begun replacing incandescent bulbs largely because of their aesthetic value, long life and high energy efficiency.
+Level 1 refers to electric vehicle charging stations and standard household outlets that deliver 120 volts of ac to an ev’s on-board battery.
+Level 2 chargers refer to public and private charging stations that deliver 240 volts worth of ac to an electric vehicle’s on-board battery.
+An abbreviation for lithium-ion battery, a type of rechargeable battery used to power electric cars and hybrids.
+Cars with limited slip differentials can send rotational power to both wheels when one is raised off the ground or experiencing slippage. standard or “open” differentials cannot perform this task, so if one wheel is raised off the ground it will spin while the wheel in contact with the ground will remain stationary.
+SKIPPED_ROW
+SKIPPED_ROW
+A gantt chart is a type of bar chart that is used as a scheduling tool to manage the development timelines for projects. the gantt chart will show scheduled, completed and in progress work or a given time period and show task dependencies and other relationships so that the project manager can manage the project successfully.
+The system for designing and defining geometrical dimensions, characteristics and tolerances using a standard symbolic language
+Gear cutting uses a variety of processes such as milling, broaching and abrasive waterjet cutting to create the part.
+Vent located on the side of the vehicle near the fender that is sometime used for hot air outlet by primarily is decorative in today’s designs.
+ a go gauge that is designed so that when a part fits, that means it is within specification tolerances but if it does not fit then it goes to rework or is scrapped. a no go gauge is a gauge designed so that the part must not fit into it. an example is for a bearing which has an inner diameter from 1 to 1.5cm. the go gauge will be a rod that is designed at 1mm to ensure that the id is not too small, and the no-go gauge will be designed just over 1.5 mm so that when it is inserted into the bearing it will not fit.
+Greenhouse refers to the top portion of the cabin of the body of the automobile that is primarily glass/windows.
+Grinding is a method to shape materials that are too hard or misshapen to process with conventional tools.
+Hardness is a measurement of how difficult it will be to penetrate the core of an object. in some cases there is a difference in hardness between the surface and the core (case hardened materials).
+The structural roof beam located above the windshield or a section of exhaust piping that is attached to the cylinder heads.
+A histogram is a graphical display of statistical information that uses bars on a graph to represent the frequency of occurrence of data items in successive numerical intervals of equal size.
+A machining milling process for cutting gear teeth, cutting splines, cutting sprockets.
+Horsepower is the measurement of how much power an engine produces and how much work it can perform. as a comparison, one horsepower is the ability to lift 33,000 one foot in one minute.
+The diameter measured inside of a hole within a part. example – when the inner diameter is subtracted from the outer diameter you can determine the thickness of the wall of the part.
+The instrument pane is located within the cabin of the vehicle and houses all of the electronic controls within the vehicle including the instrument cluster which houses the speedometer, odometer and other controls specific to the engine and powertrain functions.
+The international organization for standardization is the worldwide organization that provides specifications for products services and systems that ensure quality, safety and efficiency of multiple different products.
+The japanese automotive standards organization is part of the japan society of automotive engineers and is responsible for developing and maintaining standards used by the automotive industry in japan.
+Just in time manufacturing is a manufacturing philosophy where the assembly process occurs when an order is received and the delivery due date is the same as the production and shipping times so that the component arrives ‘just in time’ to make the due date. this philosophy reduces the overhead inventory costs for manufacturing by not maintaining large amounts of components.
+A philosophy that is used in the automotive engineering world that promotes continuous improvement and making positive changes that will increase productivity.
+A method used to control inventory in automotive manufacturing factories that was developed by the japanese and provides just in time inventory control.
+Laser cutting uses a concentrated beam of light that is transmitted and focused using lenses and mirrors to cut through materials and produce the desired end product from a computer controlled plan.
+A lathe is a piece of manufacturing machinery that machines round stock, a lathe is computer controlled and this process is also known as turning.
+Lead time is the time required for a part to be delivered once and order is placed. lead time takes into account the time for production, acceptance testing, packing and shipping.
+Lean manufacturing is a production philosophy that means any time resources are used they should result in creating something of value and not be wasted.
+ line balancing is the process of establishing the needed rate of production for a product then designing a manufacturing process that meets that needed rate. this could require building multiple stations that perform the same process to match the desired rate of production.
+The lower statistical limit for a variable is the lowest value within the acceptable range for the variable. once the variable goes below the lower statistical limit it is said to be out of control and corrective actions must be taken to bring the process and variable within acceptable.
+SKIPPED_ROW
+SKIPPED_ROW
+Stands for internal combustion engine, which is powered by fuel in the form of diesel or gasoline. internal combustion engines were the standard for vehicles for more than a century.
+The basic measurement of an ev’s power that is generated by its batteries.
+The basic measurement of an ev’s energy – how much power (kilowatts) it can supply over a period of time (hours). 
+The type of charging usually done at home because it uses a typical 120-volt electrical outlet, charging between 8-20 amps. level 1 charging is typically done with a portable charging cord.
+Level 2 chargers often need to be professionally installed and can deliver faster charging times than level 1 chargers, charging up to 80 amps. portable level 2 chargers are also available.
+SKIPPED_ROW
+SKIPPED_ROW
+Also called g-force
+Unit of measure for lateral acceleration or "road holding" ability
+One g is equivalent to 32.2 feet/second2, the rate at which an object accelerates due to gravity
+Coating of steel with zinc to help form a rust-preventive surface.
+Weight specified by the vehicle manufacturer as the load-carrying capacity of a single-axle system, front or rear. the gawr is limited by the lowest individual rating of tires, wheels, springs or the axle itself.
+Weight specified by the manufacturer as the maximum loaded weight of a towing vehicle and its trailer. the sum of the loaded vehicle weight of the truck and trailer should not exceed the gcwr.gcwr = vehicle curb weight + payload + trailer weight + driver and passengers
+Quick-release couplings, attached to the tractor cab, that connect the tractor brake hoses to the trailer
+These couplings open the supply line when twisted together and close the line when twisted apart to prevent the loss of air pressure
+Automotive window glass with construction that helps prevent ultraviolet ray penetration of the passenger compartment
+Solar-tinted glass helps reduce heat buildup in the interior of the vehicle by blocking out a significant portion of the solar energy. it accomplishes this not by reflecting the rays, but by absorbing the radiation and reradiating the majority of it to the exterior of the vehicle
+Grade-climbing ability is the percent of grade a vehicle will climb with a given load
+A 1 percent grade is equivalent to a rise of 1 foot in a horizontal distance of 100 feet; a 2 percent grade is a2-foot rise in a horizontal distance of 100 feet, etc
+Grade-climbing ability will affect a vehicle’s performance and should be considered when determining payload or trailer towing requirements
+On steeper grades, a vehicle will be under more stress to handle these heavy requirements
+Actual weight of a vehicle as determined by the total of the curb weight, payload, driver, passengers and optional equipment
+Gross vehicle weight should not exceed the gross vehicle weight rating (gvwr) or the vehicle’s warranty could be voided
+Refer to the specific vehicle’s owner’s guide for more information
+Maximum allowable weight of a fully loaded vehicle (includes curb weight, optional equipment, payload weight and weight of driver and all passengers)
+Gvwr for a particular vehicle is shown on the vehicle’s safety compliance certification label usually located on the left front door lock facing or on the door latch post pillar
+Hip pivot point or h-point refers to where a vehicle occupant's hip, the pivot joint of the torso and thigh, would be located when in the seated position.
+Rotating shafts that transmit power from the transaxle to the front wheels in front-wheel-drive vehicles.
+Feature that helps provide quick engine starting by keeping engine block coolant warm to build up heat for the heater system. the engine block immersion heater plugs into a conventional "ac" electrical outlet and is:suggested for use when temperatures are between 0°f and -10°frecommended between -10°f and -20°fstrongly recommended below -20°f
+Multiple-position front-seat shoulder safety belt anchor that is height adjustable to allow a comfortable and proper fit of the outboard safety belts.
+Hid lighting systems use a special quartz bulb with no filamentbulb is filled primarily with xenon gas along with a small amount of mercury and other metal saltsbulb features two electrodes separated by a small gap (about 4mm or 3/16th inch). when high voltage current is applied to the electrodes, it excites the gases inside the bulb and forms an electrical arc between the electrodeshot ionized gas produces a "plasma discharge" which generates an intense, bluish-white lightbecause there is no brittle filament inside a xenon hid bulb to break or burn out, the head lamps typically last up to three times longer than halogen head lamps (3000 hours versus 1000 hours of continuous operation, which is equivalent to 5 to 10 years of normal driving)
+Amount of power needed to lift a 550-lb. object at a rate of one foot in one secondhorsepower is expressed as the torque in lb.-ft. times the number of revolutions per minute divided by the constant 5252:gross horsepower is obtained by a dynamometer test of an engine equipped only with the built-in accessories essential to its operation, such as fuel pump, oil pump, coolant pump and built-in emissions-control equipmentnet horsepower is obtained by a dynamometer test of a complete engine equipped with all the accessories necessary to perform its intended functions unaided, including the air-intake system, exhaust system, cooling system, generator, starter and emissions-control equipmenttorque is what gets a vehicle moving, and horsepower is the force required to keep a vehicle moving once torque has started the vehicle moving from a standstill
+Solid rear axle that uses leaf springs as the axle-locating mechanism as well as the primary suspension and load control
+Manual-locking hubsrequire the driver to get out of the vehicle and lock or unlock the hubs at the wheela shifter on the floor of the vehicle allows the driver to shift between two- and four-wheel driveto disengage the hubs, stop the vehicle and rotate both hub lock selector knobs to the free positionstandard on f-series super duty® 4x4 modelsautomatic-locking hubsfront hubs lock without the driver having to exit the vehicleall the driver needs to do is stop the vehicle and move the transfer case shift lever straight back to the 4h positionto revert back to two-wheel drive, move the shift lever straight forward to the 2h positionto immediately disengage the hubs, operate the vehicle in 2h in the opposite direction for approximately 10 feet
+Vehicle that combines a fuel-efficient internal combustion gas engine with one or more electric motors, plus an energy storage device such as a battery.
+Maintenance-free valve lifter that can adjust its length slightly using simple valving and the engine’s oil pressure to maintain zero clearance in the valve train to reduce valve train noise.
+Large liquid-filled bushing that helps isolate the vehicle from road or engine vibrations due to the suspension traveling on uneven road surfaces. a hydro bushing is a bushing filled with fluid (glycol). this type of bushing can be made to react to different vibration frequencies compared to a conventional rubber or urethane bushing which is designed for one specific frequency. hydro bushings are designed to provide a more comfortable ride in a vehicle.
+Manufacturing process that involves pumping fluid into a tubular blank within a die, so the pressure will expand and form a component, providing many structural advantagesallows for major shape alteration, making it ideal for automotive structural parts such as engine cradles, radiator supports and body rails. various shaped and sized holes can be punched in the tube almost anywhere during the process
+An engine mount filled with fluid (glycol)this type of engine mount can be made to react to different vibration frequencies compared to a conventional rubber mount that is designed for one specific frequencydesigned to provide a more comfortable ride in a vehicle, whether sitting still (idle) or traveling
+Provides convenience and security after darkall interior courtesy lights illuminate and remain on for 20 seconds or until the ignition is turned on
+Light truck chassis and other light truck incomplete vehicles that are completed by subsequent manufacturers, such as motor homes, special delivery vans and other specialized vocational unitssafety, emissions and noise compliance representations are included with all light truck incomplete vehicle products (such as chassis cab models and cutaways) manufactured by ford motor company in the form of an incomplete vehicle manualcompleted vehicles are required to be certified by the final manufacturer
+Any suspension in which the movement, or angle, of a wheel is not directly affected by the vertical motion of the opposite wheel.
+System of passages directing the intake air from the throttle body into the intake ports of the cylinder head.
+Passageway in the cylinder head leading from the intake manifold to the intake valve(s).
+Electronic or electro hydraulic device installed in a tow vehicle used to activate the braking system of the trailer being towed. controller uses actual braking pressure of the tow vehicle to calculate how much braking force to apply to the trailer. most after market add-on controllers use a timer or proportional load basis to calculate the amount of brake force required. since the ford trailer brake controller is fully integrated into the truck’s onboard computer, this is the first and only controller able to adapt its output based on the status of the anti-lock braking system (abs) to help provide more controlled, stable stops. trailer brake controller is also fully integrated into the instrument panel design for the convenience of the driver during hookup and operation.
+Provides expedition with an outstanding four-wheel-drive system. the system is vacuum operated. in two-wheel-drive mode, a vacuum is applied to withdraw the clutch ring from the wheel hub coupler, completely separating the axle shaft from the wheel end. this avoids "back driving" the axle shafts, resulting in less wear and drag and slightly improved fuel economy. in four-wheel-drive mode the vacuum is shut off, the clutch ring engages the wheel hub coupler, and the axle shaft and hub are locked together to provide the necessary additional traction.
+Used on supercharged and turbo charged vehicles, the inter cooler is mounted at the front of the vehicle in the air stream and cools the compressed intake air as it flows over fins and plates inside the inter cooler. the inter cooler removes heat (produced by supercharging/turbo charging) from the compressed air before it enters the engine's intake system. this action generates a denser, cooler intake charge and increases the engine’s ability to produce horsepower and torque. inter cooling also increases the detonation threshold of the engine because of the cooler air charge, meaning the engine can be run with more ignition advance for higher performance, or run lower octane fuel before experiencing detonation. the cooler intake air also allows the engine to run slightly cooler, reducing the chance of overheating.
+System for cooling pressurized intake air to obtain improved combustion efficiency and fuel economythe cooling process increases the density of the intake charge, promoting more thorough combustion with reduced emissions
+For a front axle assembly, the kingpin is a pin that connects the front axle and steering knuckles, about which the knuckles pivotfor semi-trailers, the kingpin is the pin that is locked into the fifth wheel on the pickup bed to couple the trailer with the towing vehicle
+Sensor mounted to the engine and designed to detect the high-frequency vibrations caused by detonationby using a knock sensor, a vehicle's engine controls can keep the engine operating near its detonation limit, thereby maintaining power and efficiencysee detonation for more information
+Chassis in which parallel side members are joined at intervals by transverse beams, or cross members, giving the appearance of a ladder.
+Child safety seat installation method consisting of a top tether anchor point and two rigid bars where the seat cushion meets the seat back, designed to make proper installation of a child safety seat easie
+Long, flat, thin, flexible section of spring steel or composite material used in suspensions (especially rear suspensions) to deflect force.
+Leaf springs that are thicker in the center section to carry the loads and provide suspension characteristics. fewer leaves are required than with multi-leaf “piles”; therefore, weight may be reduced.
+Designed to transmit driving force (power) to the wheel/tire with the most tractionas one tire begins to slip (lose grip), available torque is automatically transferred to the tire with better grip to provide improved tractionrefer to the charts in the individual vehicle sections of the source book for specific applications and axle ratios
+Rigid axle incorporating a differential assembly, housing and axle shafts to power the two wheels it is supporting
+Used in conjunction with a hitch platform (receiver) to distribute tongue weight to all towing vehicle and trailer wheels. required for certain class iii and all class iv applications
+Because the automatic transmission is linked to the engine by a fluid coupling, rather than by the mechanical clutch of a manual transmission, there is a potential loss of efficiency due to slippage. the lockup torque converter improves fuel economy by eliminating this slippage. an internal clutch system provides a positive, direct connection between the engine and transmission. it is usually controlled by the power train computer and will operate only after the vehicle has moved away from a stop or shifted out of low gear.
+Engine compartment layout with the engine mounted front to rear, as opposed to side to side. this layout is most often found in rear-wheel-drive vehicles, where the power must run from the front of the vehicle to drive the rear wheels.
+SKIPPED_ROW
+SKIPPED_ROW
+A gas/electric hybrid engine combines an electric engine component with a conventional internal combustion engine that burns gasoline. the toyota prius is a common example of a car that features a gas/electric-hybrid engine. these types of vehicles offer better fuel economy than traditional cars because the engine isn’t powered exclusively by gasoline. regenerative braking, which converts the vehicle’s kinetic energy into electric energy essentially “recycles” energy that recharges the battery without wasting gas. this kind of car also reduces emissions because little exhaust escapes when the car is idling.
+A gasoline engine is a traditional internal combustion engine designed to run on gasoline. invented in 1876, this engine continues to power most vehicles in the u.s., but due to the political impact of buying foreign oil and the high cost of gasoline, many automakers now offer hybrid engine and all-electric vehicles to meet the increasing demand for alternative engines.
+Gasoline is a petroleum-derived oil used in internal combustion engines. it is designated with an octane rating. a higher octane rating translates to a higher compression ratio. this provides for better power output and is the reason sports cars require maximum octane gas.
+A gasket is essentially a seal between two mechanisms. on your car, the head gasket plays a vital role by sealing the combustion process so that oil and coolant do not mix in the combustion chamber. overheating, coolant leaks, white smoke exhaust and residue on your oil dipstick can be indicators of a “blown head gasket.”
+A gear is a rotating part that has a cut-tooth edge designed for meshing with another tooth-edged part in order to transmit torque to a mechanism. gears can change speed, torque, and the direction of a power source. whether you have a manual or automatic transmission, the gears on your car move you forward and backward, faster and slower.
+Gear oil is a high-viscosity oil designed to lubricate the gears of your car so that they move freely without undue friction.
+Gear ratio determines the amount of torque that can be delivered to a mechanism. the higher the gear ratio, the higher the torque output; higher torque results in greater speed.
+Early cars used a generator to power the battery. today, alternators power the battery in lieu of a generator so that the battery power does not deplete at a continuous rate.
+Glazing is when the belts starts to slip. the alternator belt slipping slows down the engine, causing it to stall. once this starts to happen, you will only be able to restart your car a few times using battery power before the belt fails entirely and depletes all of your battery power.
+Hc stands for hydrocarbon, a substance in your exhaust emissions. smog and emissions tests measure the amount of hc that your car produces. high hc readings may indicate poor fuel ignition. the causes are numbered and varied. anything from bad spark plugs or ignition wires to vacuum leaks because of a failed gasket can cause high hc readings and hinder your engine’s performance.
+Headlights are the lamps attached to the front end of your car that illuminate the road when you are driving in the dark. all cars come equipped with halogen headlights, higher-end models often times feature xenon or led lights instead. as with any kind of lights, headlights burn out over time and need to be replaced.
+The heater is what blows hot air into the cabin of your car to keep you warm when it’s cold outside. if your heater is not working, you may have any of the following problems: a broken heater blower motor, low coolant level, broken thermostat, a bad fuse, or a loose or broken hose.
+The heater hose transfers heat coming off the engine into a heater core beneath your dash. if the hose is broken, the heater core won’t contain the necessary heat needed to blow warm air through the vents of your car.
+The hub is the bearing that the wheel is attached to. if you hub is bad, your wheels will vibrate and become loose, which seriously impacts your car’s safety and performance.
+Hvac stands for heating-ventilation-air conditioning. this is your car’s climate control system. though connected, the hvac system performs operations independently. that means, you could have a broken air-conditioner, but the heater still works fine—or vice versa.
+A hybrid engine combines two different energy sources. most hybrid vehicles today contain both an electric engine and a conventional gasoline powered engine. hybrid engines typically have better gas mileage and produce fewer emissions.
+Hydraulics operate many systems within your car, from the clutch to the brakes to the suspension. hydraulic systems work by applying force using an incompressible fluid a.k.a. hydraulic fluid. if these systems leak hydraulic fluid from a breach, the fluid can damage other parts of the car and cause the system its supposed to be lubricating to function poorly.
+When your car loses tire traction and skids from too much water on the road, you are hydroplaning. you can help avoid hydroplaning by making sure your tires are properly inflated and have good tread on them. also, drive slower when it’s raining or the road is wet, stay away from puddles, and avoid driving in outer lanes where water tends to accumulate.
+When your foot is not on the gas pedal and the car is idling, the idle speed is the rotational speed (rpm) the engine runs on when the engine is uncoupled from the drivetrain. for regular cars, idle speed is typically between 600 and 1,000 rpm, just enough to keep the engine’s ancillary systems going, but not enough to move the car forward much.
+The idler pulley helps regulate how your car’s belts run. this pulley contains bearings that wear out over time with normal driving. when this happens the pulley can easily be replaced along with the belts it runs.
+The ignition system is designed to send high-voltage from the car’s battery to the spark plugs. the spark plugs then ignite the car’s fuel-air mixture in the engine, thereby giving your car the power it needs to move on down the road. also included in this system are coils, spark plug wires, modules and sensors.
+Your car's air conditioning compressor uses oil for lubrication. moisture in the system causes corrosion that can restrict the expansion valve on the compressor. when that happens, the flow of oil to the compressor stops. having an inline filter helps trap the contaminants that cause corrosion so that oil can flow freely to the a/c compressor.
+A recent technological advancement, the intelligent alternator reduces fuel consumption while simultaneously providing more power for acceleration by limiting the use of the alternator any time the engine does not require drive power (e.g. when you are braking).
+The intake manifold is a collection of tubes through which the fuel-air mixture flows from the carburetor or fuel injector to the intake valves of the cylinders of an internal-combustion engine so that the right amount of air and fuel can mix. on the rare occasion when a manifold leaks, too much air enters the cylinders, making the internal combustion process less efficient. one sign of a leaking manifold is sluggish acceleration.
+Jumper cables are used to “jump start” or transfer power from a working battery in one car to a dead battery in another car. each of the two cables has alligator clamps at the ends, one with a positive end, the other with a negative end. the positive end attaches to the positive terminal of the battery; the negative end attaches to the negative terminal.
+A jump start is the action of transferring power from a working battery in one vehicle to a dead battery in another vehicle using jumper cables. once you’ve started the engine using a jump start, you must let the engine run so the alternator can charge the battery. if you turn off the engine immediately after jump starting the vehicle, the battery will not have a sufficient charge to operate the vehicle.
+A car key locks and unlocks the vehicle door and acts as the ignition device to start the engine. today, however, many cars have “keyless” entry where the locks of the car operate with a remote control. likewise, push button ignition is taking the place of key ignition.
+A kingpin refers to the main pivot in the steering mechanism of a car.
+Kingpin bushings fit into spindles in your car’s axel. the kingpin fits into the bushings.
+Engine “knocking” as the name suggests refers to “knocking” noises your car may make. knocking can be caused by low quality, low octane gas, which tends to cause pre-ignition problems. or it could be the result of deposits in your cylinder or dirty fuel injectors.
+Led or light-emitting diode lights not only provide better illumination than incandescent light sources, they use less energy and have a longer life—but they do cost more. led lights can be used in headlights or the interior of the car and dashboard instruments. there is also a blue variety you can use in the headlights, which gives your car a sportier appearance.
+The linear exhaust gas recirculation valve is part of your car’s emissions system. this component helps remove nitrogen oxide emissions from escaping into the environment through your exhaust. the egr along with your car’s catalytic convertor helps minimize smog by converting your exhaust into less harmful gases.
+Lift supports are hydraulic lifts used to make opening and closing heavy items such as your hood, trunk, and hatch a little easier. lift supports contain hydraulic fluid, and can be susceptible to losing fluid and the pressure needed to raise the hood or hatch with ease. but these devices are easy to replace.
+In lieu of snow tires or chains, liquid traction is a chemical you can spray on your tires to provide better traction when driving through light snow. its benefits, however, last only a short time before you must reapply.
+The liquid/fuel separator separates the gasoline you put into your car from the vapor the engine uses for power. if you overfill your gas tank, you run the risk of letting liquid get into the compartment designed for vapor, which will create an overly rich fuel-air mixture and a partially flooded condition at start-up. typically, the engine will run poorly and roughly for a few moments after start-up until the purge valve closes and the engine “clears” the excess fuel.
+There are various lock nuts on a car, all designed to hold bolts in place so that they can’t get loose.
+Lock cylinders are where your keys fit in to lock and unlock the doors and trunk of your car. if the lock cylinder is damaged you’ll have to replace the lock to your car’s specifications.
+Lubricant is a substance designed to reduce friction between moving surfaces. there are many parts of your car that require lubricant. the engine needs oil, cylinders and gears need grease, and hydraulic equipment uses fluid. all of these substances are needed to keep your engine parts moving freely so they do not wear down as quickly.
+A lug bolt fastens the wheel of your car to wheel’s hub or brake drum.
+A lug nut is a tapered nut used to fasten the wheel to threaded wheel studs connected to your car’s axle.
+A lug wrench is a type of socket wrench used to remove lug nuts on car wheels.
+SKIPPED_ROW
+SKIPPED_ROW
+Control the speed of the engine in relation the vehicle's speed. in low gear the vehicle runs more slowly, in high gear more quickly.
+The single lane at the left-hand side of a motorway that can be used in an emergency or when road signs give permission.
+Are often like estate cars but have a much smaller boot, which can always be accessed, from the rear seats.
+Flashing amber lights on a vehicle that can be used to warn other drivers that you have broken down, or to warn other drivers on a motorway that there is an hazard ahead.
+Complicated this one but basically an inventor called james watt calculated that one horse could do 30,000 foot-pounds of work in one minute. he applied this measurement to steam engines and the measurement has been use to quantify the power of engines every since. so horsepower is the measure of an engines power.
+An electric cable that can connect a flat battery to a working one enabling the flat battery to be charged.
+A place where two or more roads join.
+SKIPPED_ROW
+SKIPPED_ROW
+A time-delayed system of increased driving privileges, to help ease new drivers into their roles.
+Hydroplaning refers to a loss of traction and sliding on a film of water. wet road surfaces can cause tires to hydroplane. this could result in loss of control and steering ability, as your tires may lose contact with the pavement. hydroplaning is caused by a combination of standing water on the road, car speed, and under-inflated or worn-out tires.
+A test given to applicants for a driver’s license by a driver’s licensing office. knowledge tests usually consist of questions based on knowledge of traffic laws, rules and regulations, and traffic signs. passing a knowledge test is required for getting a learners permit
+Lane position is the placement of your car in the center, on the right, or on the left of a lane. use these different lane positions to make adjustments for potential problems and create more space between your car and problem situations. on most highways or streets the width of a lane is twelve feet. the average vehicle has a width of six feet, which gives you six feet to maneuver your vehicle within the lane.
+A state document required for beginning drivers to operate a vehicle while under the supervision of an experienced driver.
+Liability insurance is the insurance coverage that pays for other people’s expenses in crashes caused by drivers covered under your policy. liability insurance is required by law in most states
+The termination of a driver’s license or driving privilege for an indefinite period of time.
+A suspension is the temporary withdrawal of a drivers license or driving privilege for a definite period. a license may be reinstated after meeting legal requirements.
+SKIPPED_ROW
+SKIPPED_ROW
+The blower motor is the fan that pushes heated or cooled air through dashboard vents based on the climate system settings and the fan speed selected. 
+The heater blower motor reduces or increases the amount of air blowing through the dashboard vents based on the fan speed selected or, in an automatic climate control system, the interior temperature and other factors. 
+The heater core is a small radiator that warms the car’s cabin using hot coolant from the engine.
+Heater hoses are rubber hoses that circulate engine coolant to and from the heater core, which is the small radiator that provides heat for the cabin. 
+Headlamps come in several sizes, shapes and types, as do their bulbs, which need periodic replacing. a majority of vehicles still use halogen headlamp bulbs, but a growing number come with high-intensity-discharge lighting that uses xenon gas instead of a filament, or with a cluster of led bulbs that have a distinctive white light. 
+The ignition (or distributor) cap is where ignition wires that run to the spark plugs receive high-voltage current from the ignition coil.
+Older vehicles with distributor-type ignition systems use ignition (or spark plug) wires to send electrical current from the distributor to individual spark plugs, with the timing based on their firing order. 
+Diesel engines run on fuel that’s much thicker than gas, adding to the difficulty of cold-weather starts. to aid combustion, small electric heaters called glow plugs warm pre-combustion or combustion chambers of a cold diesel engine before it’s started so that the fuel is easier to ignite. diesels don’t have spark plugs, so the air-fuel mixture is ignited by compression. to start a cold diesel engine, a driver typically has to turn the ignition to the on position to activate the glow plugs then wait several seconds before starting the engine. glow plugs aren’t needed once a diesel engine reaches its normal operating temperature.
+The ignition lock cylinder is a mechanical part where the ignition key is inserted to start a vehicle. it’s mounted inside the ignition switch, the electrical component that locks the ignition and “reads” anti-theft coding in the key to allow the vehicle to start.
+Most drivers think of the ignition switch as the slot where they insert the key to start their car, but that’s actually the ignition lock cylinder. the ignition switch is a more complex electrical component that has to “read” anti-theft coding in the key before it will activate electrical systems in the vehicle so the vehicle can start or allow an automatic transmission to be shifted out of park.
+The engine’s knock sensor (or sensors) detects preignition and detonation, potentially damaging forms of abnormal combustion. though full-blown knocking and pinging are audible to the human ear, the knock sensor detects imperceptible levels. when knocking is detected, the engine’s computer can retard the spark plug timing to prevent it. in the event of knock sensor failure, the driver may experience audible knocking or pinging and/or diminished acceleration, which is sometimes accompanied by decreased gas mileage. a check engine light is a likely result.
+Vehicles with haldex all-wheel-drive systems (manufactured by haldex but installed in various vehicles under different names) use specific fluid and filters designed for those awd systems. on many vehicles with haldex awd, the fluid and filter are supposed to be changed periodically (as often as every two years), though some recent models come with a “lifetime” filter that doesn’t need periodic changing. haldex systems are primarily used on front-drive-based vehicles with transverse engines. the haldex coupling (or clutch), located at the rear differential, enables power to be automatically distributed among the wheels as needed to maintain traction.
+The ignition coil converts the vehicle’s 12 volts to the more than 10,000 volts required to produce an effective spark in the spark plugs, which in turn ignite the air-fuel mixture in an engine’s cylinders.
+The ignition system’s job is to ignite the air-fuel mixture in a gasoline engine. in addition to the spark plugs that spark in the combustion chambers, the ignition system consists of an ignition coil, which converts battery voltage to higher voltage, and the spark plug wires that join these components.
+A half shaft is essentially a drive axle, and it’s so named because it does half of the job, extending from a transaxle or differential to one of the wheels. its twin on the other side completes the set. because they’re simply shafts, half shafts age well, but the joints that connect them on either end in independent suspension vehicles are subject to significant wear.

@@ -3,10 +3,10 @@
 
 
 
-<!-- # <u>Fixes<u>:
 
 TODO:
 - proper name Capitilization e.g. 'ferrari'
+- always punct at BOL
 
 
 ### Procedure steps:
@@ -80,7 +80,7 @@ pip install -r requirements.txt
   [\.\?\!](?!\n)\s[a-z] #punctmark- non new line (EOL) - non-capped letter
   ```
 
-#### Bessy:
+### Bessy:
 -
 - i 3: MTN: "The actuators position a cars" IRISA does not mistake the **Plural vs Possessive**
 - i 87; the first letter is not always capped (verify with RE: ^[a-z] i)
@@ -88,7 +88,7 @@ pip install -r requirements.txt
   - Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
 
-#### Rhoda:
+### Rhoda:
 - Plural vs Possessive confusion
   - l.10
 - Capitalization omission after hard punct in `raw` & `gold`
@@ -110,7 +110,7 @@ pip install -r requirements.txt
 - Replacement And/or for only `and`
   -l.486
 
-#### Cindy
+### Cindy
 **observations**:
 GS manual-normalization (MN) had:
 - 2 beginning of line (BOL) sentences were not capitalized. ATN fixes this.
@@ -140,9 +140,9 @@ GS manual-normalization (MN) had:
   - l.44
 
 
-#### Rebecca
+### Rebecca
 **Observations**:
-Based on full data set analysis:
+##### Based on full data set analysis:
 Regex search:
 - 615 non-EOL sentences were not capitalized
 - 45 EOL sentences were not concluded with a hard punctuation mark.
@@ -152,29 +152,58 @@ Regex search:
       - handling related
       -
 
-Based on sampling observations:
-- Questionable additions of words:
-  - adverbs
-    - e.g. "but it **actually** encompasses all varieties of compressors including turbochargers."
+#### Based on sampling observations:
+
+
+- Acronyms not capitalized
+  - e.g. "sedans b m w seven series"
+  - l.768
+
+
+- Article preceding noun omission   -- many, almost by rule.
+e.g.: "society of automotive engineers"
+  - l.235
+
+
+- Capitalization-omission of proper nouns:
+    - e.g. "ferrari, mercedes benz", "porsche" --> ATN doesn't fix this atm, but I think that including a NER could be a solution.
+
+
+- (non) Capitilization of letters
+  e.g. 'Shaped like a u and aptly named, the u joint ' --> ATN fixes this.
+
 - Incorrect wording-out of numbers:
-  l.982 (For the number'3':'thre' instead of 'three')
-- Article preceding noun omissions:
-    e.g.: "society of automotive engineers"
-  - l.235
-- Hyphen omission
-  - e.g. "fixed roof" "two door"
-  - l.235
+  l.982 (For the number'3':'thre' instead of 'three') --> ATN does not make such mistakes.
+
+- Spelling incorrect
+  - e.g. 'everyday'
+
+
 - Pronoun (Incorrect usage)
   - e.g. "...a transmission linkage **that controls** the motion of the gearshift lever. "
   - l.8
-- Capitalization-omission of proper nouns:
-    - e.g. "including ferrari five speeds and mercedes benz automatics"
-    - "porsche"
-- Verb incorrect plural vs singular
-    e.g. "**slip angle** is caused by deflections in the tire's sidewall and **tread** during cornering. "
+
+- Punctuation - Comma omission
+  - e.g. 'Underinflation of a tire affects driving performance, wears the tire out more quickly and reduces fuel efficiency. '
+
+
+- Verb incorrect plural vs singular II
+    - e.g. "**slip angle** is caused by deflections in the tire's sidewall and **tread** during cornering. " MTN follows RAW, and so does ATN. When RAW does this,ATN will also not be able to correct it.
     e.g. "A grouping of features that **affect** steering behavior"
-- Verb omissions:
+
+
+- Verb omissions    (many, almost by rule)
   - e.g. "An air compressor [IS] used to force..."
+
+
+- Verb-form incorrect use
+    - Continuous vs present form
+      e.g. "A spring consisting of"
+
+
+- Words (Questionable additions of):
+  - adverbs
+    - e.g. "but it **actually** encompasses all varieties of compressors including turbochargers."
 
 
 

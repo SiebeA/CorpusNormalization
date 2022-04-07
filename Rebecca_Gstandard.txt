@@ -697,6 +697,7 @@ A component using friction to dampen and control a vehicle's suspension up and d
 A short circuit refers to the direct and generally unintended connection of a battery negative and positive terminal using an electrical conductor. short circuiting a battery may result in rapid battery discharge, causing formation of hydrogen gas, sparks, heat and a generally dangerous situation.
 A shorted cell refers to a condition where one or more negative plates within a cell come in contact with the positive plates. this condition generally results in a zero voltage or dead cell.
 Adjustable connecting sleeves attaching to the outer tie rods allow for directional changes from the pitman arm to be transmitted equally to both sides, making them turn in unison.
+
 S l i is an abbreviation for starting, lighting and ignition, and is the designation of most automotive batteries.
 The snaking effect is a term experienced while towing a travel trailer. in order to move the hitched vehicle in one direction, you must steer the vehicle in the other direction.
 Almost all cars are available in a no cost basic, solid color. the most common options are white, red, blue or black.

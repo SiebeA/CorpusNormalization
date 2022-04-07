@@ -38,8 +38,6 @@ TTS_CFG=tts_siebe.cfg
 echo "${TTS_CFG} is the cfg file"
 
 
-
-
 echo -n "Starting process at: "; date
 echo "on input file:"; echo $input0; printf '\n'
 
@@ -67,9 +65,12 @@ perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
 # perl -0777 -pi.orig -e "s/ / /g" $input
 
 
-# Converting ANU eg '50k - 44k' --> '50k and 44k'
+# ANU  
+# '50k' --> '50 k' 
+perl -0777 -pi.orig -e "s/(\d+)([a-z-A-Z])/\1 \2/gi" $input
+# Converting eg '50k - 44k' --> '50k and 44k'
 perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
-# converting ANU '50k' -- '50 thousand'
+# converting '50k' -- '50 thousand'
 perl -0777 -pi.orig -e "s/(\d+\s*)k/\1 thousand/g" $input
 
 
@@ -80,8 +81,7 @@ perl -0777 -pi.orig -e "s/(\(|\))//g" $input
 
 
 
-# ABR 
-
+# ABR
 perl -pi.orig -e 's/etc\./etcetera/g' $input
 # eg 'a.k.a' --> "AKA" 
 perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\./\U$1\U$2\U$3/g' $input
@@ -154,8 +154,8 @@ perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$outpu
 perl -0777 -pi.orig -e 's/(\d\d*)-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
 
 
-
-# ANU splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
+# ANU 
+# splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
 perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gim' .$output+2_genNorma.txt
 # LEFTOFF
 
@@ -217,23 +217,20 @@ perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 # DEBUG \n\s Remove empty lines in ASR and TTS:
 perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 
-
-
 echo
 echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; printf $output_file_name; printf '+5TTS.txt \n'
-
-
 
 #==========================================================
 # salb removing obsolete files in the DIR:
 #==========================================================
 
-# comment for DEBUG:
-rm .input*
-rm .$output_file_name*
+# DEBUG: (Comment out)
+# rm .input*
+# rm .$output_file_name*
 
 
 rm .*.orig
+rm *.orig
 echo
 echo 'The end of the ATN normalization program'
 echo

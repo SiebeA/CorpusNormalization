@@ -8,6 +8,8 @@ TODO:
 - proper name Capitilization e.g. 'ferrari'
 - always punct at BOL
 
+- fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
+
 
 ### Procedure steps:
 - First time:
@@ -63,25 +65,16 @@ pip install -r requirements.txt
 
 
 ## quantitative checks:
-- non capitalized BOL:
-  ```
-  ^[a-z]
-  ```
-- Capitalization omissions of non-BOL sentences
-  ```
-  ...
-  ```
-- EOL without hard punctuation-mark
-  ```
-  \w$
-  ```
-  - non-EOL hard punctuation omissions
-  ```
-  [\.\?\!](?!\n)\s[a-z] #punctmark- non new line (EOL) - non-capped letter
-  ```
+- non capitalized BOL: `^[a-z]`
+- Capitalization omissions of non-BOL sentences `[\.\?\!](?!\n)\s[a-z]`
+- EOL without hard punctuation-mark `\w$`
 
 ### Bessy:
--
+- 0 BOL sentences were not capitalized
+- 514 non BOL sentences were not capitalized
+- 142 EOL without hard punctuation-mark
+
+
 - i 3: MTN: "The actuators position a cars" IRISA does not mistake the **Plural vs Possessive**
 - i 87; the first letter is not always capped (verify with RE: ^[a-z] i)
   - fixed by capitalize in `pf_xlsx_column_importer`
@@ -89,6 +82,10 @@ pip install -r requirements.txt
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
 
 ### Rhoda:
+- 0 BOL sentences were not capitalized
+- 509 non BOL sentences were not capitalized
+- 41 EOL had no punct mark.
+
 - Plural vs Possessive confusion
   - l.10
 - Capitalization omission after hard punct in `raw` & `gold`
@@ -112,6 +109,10 @@ pip install -r requirements.txt
 
 ### Cindy
 **observations**:
+- 0 BOL are not capitalized
+- 359 Non BOL sentences were not capitalized
+- 77 EOL had no PUNCT mark
+
 GS manual-normalization (MN) had:
 - 2 beginning of line (BOL) sentences were not capitalized. ATN fixes this.
 - 359 omissions of non-BOL sentences capitalization.
@@ -154,16 +155,13 @@ Regex search:
 
 #### Based on sampling observations:
 
-
 - Acronyms not capitalized
   - e.g. "sedans b m w seven series"
   - l.768
 
-
 - Article preceding noun omission   -- many, almost by rule.
 e.g.: "society of automotive engineers"
   - l.235
-
 
 - Capitalization-omission of proper nouns:
     - e.g. "ferrari, mercedes benz", "porsche" --> ATN doesn't fix this atm, but I think that including a NER could be a solution.
@@ -172,8 +170,10 @@ e.g.: "society of automotive engineers"
 - (non) Capitilization of letters
   e.g. 'Shaped like a u and aptly named, the u joint ' --> ATN fixes this.
 
+
 - Incorrect wording-out of numbers:
   l.982 (For the number'3':'thre' instead of 'three') --> ATN does not make such mistakes.
+
 
 - Spelling incorrect
   - e.g. 'everyday'
@@ -182,6 +182,7 @@ e.g.: "society of automotive engineers"
 - Pronoun (Incorrect usage)
   - e.g. "...a transmission linkage **that controls** the motion of the gearshift lever. "
   - l.8
+
 
 - Punctuation - Comma omission
   - e.g. 'Underinflation of a tire affects driving performance, wears the tire out more quickly and reduces fuel efficiency. '
@@ -206,6 +207,24 @@ e.g.: "society of automotive engineers"
     - e.g. "but it **actually** encompasses all varieties of compressors including turbochargers."
 
 
+### Summary for the 4 files:
+#### Quantitative
+- Almost all Acronyms are written-out, even when the acronyms are wider known (e.g. 'CD' vs 'compact disk')
+- Separated letters are often not capitalized
+- All hyphens are removed (sometimes that seems undesirable) (e.g.: Electro chemical, non linear, all weather)
+- More than half of the non-BOL lines are not capitalized
+- About 1/3 EOL do not have a hard-punctuation mark.
+
+#### Sampled
+- Omissions of an article before a noun seems to be the norm in RAW, and (probably therefore) in MTN.
+- Many proper nouns are not capitalized. --> ATN does not fix this atm, but I think a solution (with desirable ROC) could be a NER, and then the capitilization of that named entity.
+
+- in MTN, almost no unnecessary pronouns are removed from the RAW-text (e.g. "...and air which is brought...")
+- Several incorrect uses of verbs
+- Several incorrect uses of plural vs possessive form of the noun, i.e. it does not catch all the incorrect uses in the RAW-text, where this mistake is very widespread.)
+- Very occasionally a number is not correctly written out.
+
+However, for some of these 'mistakes' mentioned; if these are consistent, and this is standard language for the domain, I guess that this is also the language what we'd like to train on.
 
 
 

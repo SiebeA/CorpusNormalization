@@ -5,15 +5,8 @@
 
 <!-- # <u>Fixes<u>:
 
-### Verified fixes:
-
-
-### Verify fix:
-- Selected that there is no data in the 0 row, but generated text file start on 2 row instead of 1 row.
-
-
-### hard-to-do
-- phone number pronunciation different from other numbers; perhaps if I get the TAGS right. -->
+TODO:
+- proper name Capitilization e.g. 'ferrari'
 
 
 ### Procedure steps:
@@ -67,8 +60,25 @@ pip install -r requirements.txt
 
 ### observations made about the normalized text files; THESE CONCERN SPECIFIC INSTANCES (not conclusions about the whole corpus)
 
-Startup:
--
+
+
+## quantitative checks:
+- non capitalized BOL:
+  ```
+  ^[a-z]
+  ```
+- Capitalization omissions of non-BOL sentences
+  ```
+  ...
+  ```
+- EOL without hard punctuation-mark
+  ```
+  \w$
+  ```
+  - non-EOL hard punctuation omissions
+  ```
+  [\.\?\!](?!\n)\s[a-z] #punctmark- non new line (EOL) - non-capped letter
+  ```
 
 #### Bessy:
 -
@@ -132,9 +142,41 @@ GS manual-normalization (MN) had:
 
 #### Rebecca
 **Observations**:
+Based on full data set analysis:
 Regex search:
-- 11 sentences were not capitalized
-- 42 sentences were not concluded with a hard punctuation mar. ATN fixes this. (verified with RE "\w$")
+- 615 non-EOL sentences were not capitalized
+- 45 EOL sentences were not concluded with a hard punctuation mark.
+- Removal of All hyphens
+  - Even when stylistically it seems nicer to use hyphens:
+    e.g.:
+      - handling related
+      -
+
+Based on sampling observations:
+- Questionable additions of words:
+  - adverbs
+    - e.g. "but it **actually** encompasses all varieties of compressors including turbochargers."
+- Incorrect wording-out of numbers:
+  l.982 (For the number'3':'thre' instead of 'three')
+- Article preceding noun omissions:
+    e.g.: "society of automotive engineers"
+  - l.235
+- Hyphen omission
+  - e.g. "fixed roof" "two door"
+  - l.235
+- Pronoun (Incorrect usage)
+  - e.g. "...a transmission linkage **that controls** the motion of the gearshift lever. "
+  - l.8
+- Capitalization-omission of proper nouns:
+    - e.g. "including ferrari five speeds and mercedes benz automatics"
+    - "porsche"
+- Verb incorrect plural vs singular
+    e.g. "**slip angle** is caused by deflections in the tire's sidewall and **tread** during cornering. "
+    e.g. "A grouping of features that **affect** steering behavior"
+- Verb omissions:
+  - e.g. "An air compressor [IS] used to force..."
+
+
 
 
 

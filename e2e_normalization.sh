@@ -215,12 +215,12 @@ perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
 
 # DEBUG \n\s Remove empty lines in ASR and TTS:
-# perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
+perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 
 
 
 echo
-echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; printf $output_file_name; printf '_5tts.txt \n'
+echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; printf $output_file_name; printf '+5TTS.txt \n'
 
 
 
@@ -229,8 +229,8 @@ echo -n "Done. Finished at: "; date; printf '\n the file is saved under:'; print
 #==========================================================
 
 # comment for DEBUG:
-# rm .input*
-# rm .$output_file_name*
+rm .input*
+rm .$output_file_name*
 
 
 rm .*.orig

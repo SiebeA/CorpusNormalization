@@ -19,9 +19,10 @@
 ROOT=$PWD
 LANGUAGE=en
 
-ls -l *.txt # show the user options of file that can be inputted
-# read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
-input0=test.txt
+ls -l --sort=time *.txt # show the user options of file that can be inputted
+read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
+# DEBUG comment:
+# input0=test.txt
 # echo "The current directory is : $current_dir"
 
 # for automatically naming the output file:
@@ -51,25 +52,46 @@ input=.input.txt
 # Replacements before normalization
 #==========================================================
 
-# SSY removing special symbols
-perl -0777 -pi.orig -e "s/•/-/g" $input
-perl -0777 -pi.orig -e "s/”/'/g" $input
-perl -0777 -pi.orig -e "s/“/'/g" $input
-perl -0777 -pi.orig -e "s/—/--/g" $input
-perl -0777 -pi.orig -e "s/–/--/g" $input
-perl -0777 -pi.orig -e "s/‘/'/g" $input
-perl -0777 -pi.orig -e "s/’/'/g" $input
-perl -0777 -pi.orig -e "s/…/\.\.\./g" $input
-perl -0777 -pi.orig -e "s/®//g" $input
-perl -0777 -pi.orig -e "s/™//g" $input
+### SPY removing special symbols
+perl -0777 -pi.orig -e "s/\•/-/g" $input
+perl -0777 -pi.orig -e "s/\”/'/g" $input
+perl -0777 -pi.orig -e "s/\“/'/g" $input
+perl -0777 -pi.orig -e "s/\—/-/g" $input
+perl -0777 -pi.orig -e "s/\–/-/g" $input
+perl -0777 -pi.orig -e "s/\‘/'/g" $input
+perl -0777 -pi.orig -e "s/\’/'/g" $input
+perl -0777 -pi.orig -e "s/\…/\.\.\./g" $input
+perl -0777 -pi.orig -e "s/\®//g" $input
+perl -0777 -pi.orig -e "s/\™//g" $input
 perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
 # perl -0777 -pi.orig -e "s/ / /g" $input
 
+### TNO
+# capitalizing weekdays
+perl -0777 -pi.orig -e "s/monday/Monday/g" $input
+perl -0777 -pi.orig -e "s/tuesday/Tuesday/g" $input
+perl -0777 -pi.orig -e "s/wednesday/Wednesday/g" $input
+perl -0777 -pi.orig -e "s/thursday/Thursday/g" $input
+perl -0777 -pi.orig -e "s/friday/Friday/g" $input
+perl -0777 -pi.orig -e "s/saturday/Saturday/g" $input
+perl -0777 -pi.orig -e "s/sunday/Sunday/g" $input
+# capitalizing months
+perl -0777 -pi.orig -e "s/(january)/January/g" $input
+perl -0777 -pi.orig -e "s/february/February/g" $input
+perl -0777 -pi.orig -e "s/march/March/g" $input
+perl -0777 -pi.orig -e "s/april/April/g" $input
+# perl -0777 -pi.orig -e "s/may/May/g" $input # 'may' multiple identical forms
+perl -0777 -pi.orig -e "s/june/June/g" $input
+perl -0777 -pi.orig -e "s/julY/July/g" $input
+perl -0777 -pi.orig -e "s/august/August/g" $input
+perl -0777 -pi.orig -e "s/september/September/g" $input
+perl -0777 -pi.orig -e "s/oktober/Oktober/g" $input
+perl -0777 -pi.orig -e "s/november/November/g" $input
+perl -0777 -pi.orig -e "s/december/December/g" $input
 
-# ANU
-
-# '50k' --> '50 k' # CAUSES PROLBEMS WITH PHONE NUMBERS
-# perl -0777 -pi.orig -e "s/(\d+)([a-z-A-Z])/\1 \2/gi" $input
+### ANU
+# '50k' --> '50 k' 
+# perl -0777 -pi.orig -e "s/(\d+)([a-z-A-Z])/\1 \2/gi" $input # CAUSES PROLBEMS WITH PHONE NUMBERS
 
 # Converting eg '50k - 44k' --> '50k and 44k'
 perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
@@ -82,10 +104,10 @@ perl -0777 -pi.orig -e "s/(\(|\))//g" $input
 ## TODO only numbers
 
 
-# ABR
+### ABR
 perl -pi.orig -e 's/etc\./etcetera/g' $input
 # eg 'a.k.a' --> "AKA" 
-perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\./\U$1\U$2\U$3/g' $input
+perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U$1\U$2\U$3/g' $input
 # eg 'a.k.'
 perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
 
@@ -94,7 +116,7 @@ perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
 # perl -pi.orig -e 's/([A-Z]{2,})([a-z])\.$1\U$2/mg' $input
 
 
-# ABR; 'e.g.' --> 'for example'
+### ABR; 'e.g.' --> 'for example'
 perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
 # eg 'u.s.'
 perl -0777 -pi.orig -e "s/u\.s\./, United States/gi" $input
@@ -103,11 +125,11 @@ perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input # (NOTICE THAT IN THIS 
 #e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
 perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U\1\U\2/g' $input # g flag necessary here!!
 # e.g. for "gas/electric":
-perl -0777 -pi.orig -e 's/(\s\w{2,})\/(\w{2,}\s)/\1 or \2/g' $input # g flag necessary here!!
+perl -0777 -pi.orig -e 's/(\s\w{2,})\/(\w{2,})/$1 or $2/g' $input # g flag necessary here!!
 # perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
 
 
-# TNO e.g. 4am-5am --> 4am till 5am
+### TNO e.g. 4am-5am --> 4am till 5am
 perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/g' $input
 
 
@@ -149,7 +171,7 @@ perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$outpu
 
 
 # 12-15 --? 12 to 15
-perl -0777 -pi.orig -e 's/(\d\d*)-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
+perl -0777 -pi.orig -e 's/(\d\d*)\-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
 
 
 # ANU 
@@ -159,7 +181,7 @@ perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gim' .$output+2_genNorma.tx
 
 
 # PUNCT SPLIT e.g. 'monday-friday' --> 'monday to friday'
-perl -0777 -pi.orig -e 's/(\w{3,}day)-(\w{3,}day)/$1 to $2/gi' .$output+2_genNorma.txt
+perl -0777 -pi.orig -e 's/(\w{3,}day)\-(\w{3,}day)/$1 to $2/gi' .$output+2_genNorma.txt
 
 
 # NUO e.g. '20th' --> 'twentieth'
@@ -169,7 +191,7 @@ perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output+2_genNorma.txt
 
 
 # echo "salb replacing percentages"
-perl -0777 -pi.orig -e 's/%/ percent/' .$output+2_genNorma.txt
+perl -0777 -pi.orig -e 's/\%/ percent/gim' .$output+2_genNorma.txt
 
 
 

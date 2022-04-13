@@ -1,0 +1,805 @@
+The bearings in an engine block that support the crankshaft.
+A chassis layout that positions the engine behind the passenger compartment but ahead of the rear axle.
+A type of body structure that derives its strength and rigidity from the use of thin, carefully shaped and joined panels, rather than from a framework of thick members. Also called " unit " or unitized construction.
+A leaf spring with several leaves bundled together by steel bands.
+A rear suspension consisting of at least four links, or " arms, " and no struts. Because multilink suspensions assign specific wheel locating duties to each element, they provide great flexibility for optimizing both ride and handling.
+A cornering condition in which the front and rear slip angles are roughly the same. Although seemingly an ideal state of balance, perfect neutral steer is not as stable as slight understeer.
+The responsiveness and feel of the steering when the wheel is approximately centered. In a car with good on center feel, the steering wheel tends to return to center when slightly deflected, assisting straight line stability.
+A technique in which the steering wheel is turned in the direction away from where the car is turning. Opposite lock is used to control a car when it is oversteering and its tail is swinging wide.
+Any gear set in which the output shaft turns faster than the input shaft. Overdrive gears are used in most modern transmissions because they reduce engine RPM and improve fuel economy. Occasionally, a separate gearbox with an overdrive gear set is coupled to a conventional transmission.
+The type of valvetrain arrangement in which the engine's camshafts is in its cylinder heads. When the camshafts is placed close to the valves, the valvetrain components can be stiffer and lighter, allowing the valves to open and close more rapidly and the engine to run at higher RPM. In a single overhead cam sohc layout, one camshaft actuates all of the valves in a cylinder head. In a double overhead camshaft dohc layout, one camshaft actuates the intake valves, and one camshaft operates the exhaust valves.
+A description of an engine whose bore is larger than its stroke.
+A handling condition in which the slip angles of the rear tires are greater than the slip angles of the front tires. An oversteering car is sometimes said to be " loose, " because its tail tends to swing wide.
+A long lateral link that provides lateral location of a rigid axle. It usually sits roughly parallel to the axle, with one end attached to the body and the other attached to the axle.
+A combustion chamber whose upper surface resembles a shallow peaked roof. Usually used with four valves per cylinder.
+The rotation of a car about a horizontal axis, which causes its nose or tail to bob up and down. Dive and squat are pitching motions.
+A gear set in which all of the gears are in one plane, grouped around each other like the planets around the sun. The central gear is called the " sun gear. " in mesh with it is a circular grouping of gears, called " planet gears, " mounted on a rotating carrier. The planet gears also engage teeth on the inner periphery of the " ring gear. " by holding any one of the three gear elements motionless, different ratios can be produced between the other two. Planetary gear sets are common in automatic transmissions.
+A chamber, located between the throttle body and the runners of an intake manifold, used to distribute the intake charge evenly and to enhance engine breathing.
+The resistance of an object to rotational acceleration. When the mass of an object is distributed far from its axis of rotation, the object is said to have a high polar moment of inertia. When the mass distribution is close to the axis of rotation, it has a low polar moment of inertia. A mid  engined car has most of its mass within its wheelbase, contributing to a low polar moment of inertia, which, in turn, improves cornering turn in.
+A type of fuel injection with at least one injector mounted in the intake ports of each cylinder. Usually the injector is mounted on the air intake manifold close to the port. Port fuel injection improves fuel distribution and allows greater flexibility in intake manifold design, which can contribute to improved engine breathing.
+The unit of measurement for torque. One pound foot is equal to the twisting force produced when a one pound force is applied to the end of a one footlong lever.
+The rate at which work is performed. Power is proportional to torque and RPM and is measured in horsepower.
+The subjectively defined RPM range over which an engine delivers a substantial fraction of its peak power. The power band usually extends from slightly below the engine's torque peak to slightly above its power peak.
+An engine and transmission combination.
+The aspect ratio of a tire.
+A spring with an increasing spring constant. For example, if the first inch of spring motion requires one hundred pounds of force, the second inch would require more than an additional one hundred pounds, and the third inch would require still more. Progressive rate springs become stiffer as they are compressed, unlike single rate springs, which have a fixed spring rate.
+Pounds per square inch, the common unit of measurement for pressure. Normal atmospheric pressure at sea level is fourteen point seven psi.
+A slang term for understeer.
+A general term for any rod that transfers force in compression. In a valvetrain, pushrods are used to transfer reciprocating motion from the cam followers to a more distant part of a valvetrain, typically the rocker arms.
+A steering mechanism that consists of a gear in mesh with a toothed bar, called a " " rack. " " the ends of the rack are linked to the steered wheels with tie rods. When the gear is rotated by the steering shaft, it moves the rack from side to side turning the wheels.
+The motion of a wheel that extends the suspension. The opposite of jounce.
+A steering mechanism in which the steering shaft turns a worm gear that, in turn, causes a toothed metal block to move back and forth. Ball bearings in a recirculating track reduce friction between the worm gear and the block. As the block moves, its teeth rotate a gear connected to a steering arm, which then moves the steering linkage.
+The maximum recommended revolutions per minute for an engine. In cars equipped with a tachometer an instrument that measures engine RPM the redline is usually indicated by, surprisingly enough, a red line. Some tachometers mark the redline with a colored sector. Others have two lines the lower one marking the maximum allowable sustained engine RPM, the higher line indicating the absolute maximum RPM.
+A measurement between the ground and some fixed reference point on a car's body the reference point varies according to the whims of the particular automaker. This dimension can be used to measure the amount of suspension deflection or the height of the body from the ground.
+A generally undesirable condition in which a wheel steers slightly as its suspension compresses or extends. Also called " bump steer. "
+A simple nonindependent suspension consisting of a rigid transverse member with wheel hubs solidly bolted to it. The axle can be attached to the body by leaf springs, or by a combination of suspension arms and links.
+Any gear set consisting of a small gear the pinion gear which turns a large diameter annular gear the ring gear.
+The ability of a car to grip the pavement. Technically described as " lateral acceleration, " because cornering is actually a continuous deviation from a straight path. Measured in GS.
+The amount of power at the driving wheels needed to move a car down the road at a steady speed. This power varies according to the car's speed, aerodynamic drag, and mechanical friction, as well as the tires' rolling resistance. Road load horsepower is distinct from engine power because the output of the engine is sapped by various mechanical losses between the engine's output at its flywheel and the driving wheels.
+The rotation of a car's body about a longitudinal axis. Also less accurately called " sway " or " lean, " it occurs in corners because the car's center of gravity is almost always higher than the axis about which it rotates.
+A laterally aligned structural member that is attached to the body or the frame via vibration absorbing rubber isolators. By bolting suspension or driveline components to such crossmembers, automotive engineers can reduce the transmission of noise and or or ride harshness to the body
+EMPTYROW
+M eighty five is a blend of eighty five percent methanol and fifteen percent gasoline. It is not commonly used because methanol and methanol fumes are poisonous.
+For a vehicle, either the name of its manufacturer or, if the manufacturer has more than one operating unit, the name of that unit.
+A thermostatic device that routes exhaust heat to the intake manifold in order to promote fuel vaporization and reduce warm up time.
+A side view mirror that can be manually moved further away from a vehicle when it is towing an object.
+A transmission that uses a clutch and a shift gear selector to change gears.
+The fluid used for lubricating and cooling a manual transmission.
+An alphanumeric code given to an engine by its manufacturer in order to distinguish it from other engines.
+The media on which the maps for a vehicle's navigation system are stored generally CD, DVD or hard drive.
+An auto industry term that describes programs that manufacturers provide to stimulate sales or assist dealers in the advertising and marketing of their vehicles.
+Seats that contain moving mechanical elements in the seatback, usually with several selectable settings.
+The speed of an engine at which it generates its maximum horsepower.
+The speed of an engine at which it generates its maximum torque.
+A measurement of a vehicles cargo volume when the rear seats, including a third row if applicable, are folded or removed.
+Preset positions and settings, for power seats, mirrors or steering column positions for a vehicle's driver, or for the hvac system, audio system, exterior mirrors or navigation system, that can be recalled using a button.
+A vehicle that is propelled solely by its rear wheels and whose engine that is aft of the passenger compartment but forward of the rear axle.
+In a vehicle lease, the number of miles the lessee is permitted to drive over the term of the lease without incurring an excess mileage penalty.
+A specific vehicle brand identified by a name or number and which is usually further classified by trim or style level.
+For a vehicle model, the calendar year designation assigned by the manufacturer to the annual version of that model.
+Also referred to as a " lease factor " or " lease fee. " an auto leasing industry term for expressing the interest rate used to calculate the monthly lease payment, and equal to the leases apr divided by two thousand four hundred. For example, an apr of seven point two percent equals a money factor of zero point thirty three.
+Also referred to as a " window sticker. " a sticker, required by law for all new vehicles sold in the united states, that is affixed to the side window or windshield and that must include the following information MSRP, engine and transmission specs, standard equipment and warranty details, optional equipment and pricing, city and highway mileage ratings as determined by the environment protection agency, and crash test ratings from the national highway traffic safety administration.
+Miles per gallon.
+Manufacturer's suggested retail price. Also referred to as " sticker price. "
+Sometimes referred to as the " nhtsa. " an agency of the united states government authorized to order manufacturers to recall and repair vehicles, or vehicle equipment, when investigations indicate that they contain serious safety defects in their design, construction or performance.
+An internal combustion engine that burns natural gas.
+The means by which a vehicles navigation system is controlled, including touch screen, jog dial, push button and or or voice activation.
+A device that communicates with global positioning satellites to determine a vehicles physical location and plot a course using stored map information.
+The identification number assigned to a recall by the national highway traffic safety administration.
+The identification number assigned to a technical service bulletin by the national highway traffic safety administration.
+An exterior camera that uses infrared technology to provide added visibility when driving in the dark.
+National low emission vehicle program. A voluntary national low emission vehicle program for light duty vehicles and light duty trucks that is enforced by the epa, outside of california, once automakers and states opt in and the program is in effect.
+An abbreviation for six chemical compounds produced during high temperature combustion, containing only nitrogen and oxygen atoms, that react with volatile organic compounds in the presence of sunlight to create photochemical smog.
+The number of different drive ratios a vehicle's transmission is capable of selecting.
+A system of devices that lessens the noise, vibration and harshness in the passenger compartment of a vehicle.
+Original equipment manufacturer, IE, the manufacturer of a vehicle.
+An office within the national highway traffic safety administration that conducts defect investigations and administers safety recalls, and that monitors the adequacy of manufacturers recall campaigns.
+A vehicle with high ground clearance outfitted for the rigors of traveling on non  paved roads.
+A cartridge filled canister placed in an engines lubricating system to strain dirt and abrasive materials out of the oil.
+A computer controlled system that identifies malfunctioning or out  of adjustment components under its control through the display of trouble codes. The presence of trouble codes is usually indicated by an intermittently or constantly lit " check engine " or " service engine soon " light.
+An electrical socket receiving 115V AC current produced by a vehicle's charging system.
+Vehicle windows with a changeover switch that is capable of automatically rolling the window glass completely up or down as well as functioning as a conventional momentary power window switch.
+Equipment that is not included in the manufacturers base configuration of a vehicle.
+A switch used on a turbocharged engine that warns the operator of excessive and potentially harmful intake pressure that May be caused by component malfunction.
+A handling characteristic of a vehicle that causes it to turn more sharply than the driver intends because the rear wheels are sliding to the outside of the turn.
+In a computer controlled, fuel injected vehicle, a sensor mounted in the exhaust stream that relays air or fuel ratio information to the fuel control computer that allows the computer to make adjustments.
+A vehicle that is powered by an electric motor and an internal combustion engine that are inline. This type of hybrid can be driven on either full electric mode, gasoline engine mode, or combined. This is the most common type of hybrid vehicle currently used today.
+An electronic system that employs laser, radar or sonar technology to enable a vehicle to park itself, in some cases without driver input.
+Sometimes referred to as " daytime running lights. " white lights intended to increase a vehicles visibility to other drivers.
+Button size sensors in the front and or or rear bumpers that measure the distance to nearby cars and other objects and alert the driver using sounds or lights.
+Preset power seat positions for the passenger that can be recalled using a button.
+The total volume of space available for passengers in the front and rear seats of a vehicle.
+A vehicle's carrying capacity in pounds of occupants and cargo, and equal to the vehicle's gross vehicle weight rating GVWR minus its curb weight.
+Also called the " buyout amount. " the amount that, at any specified time during the term of a vehicle lease or loan, is required to be paid in order to discharge the remaining obligation.
+Positive crankcase ventilation filter or positive crankcase ventilation valve. Devices that allow the venting of combustion gases from the crankcase to the intake system instead of into the atmosphere.
+The mechanism that controls the position of a vehicles gas, brake and or or clutch pedal to suit the needs of the driver.
+A shaft or other structure that supports the roof of a vehicle, with the a  pillars being the structures that frame the windscreen, and each successive set of structures moving toward the rear of the vehicle being named after successive letters of the alphabet.
+A bearing that is press fit into the rear of the crankshaft and that supports the tip of the transmission input shaft.
+A valve used on some vehicles to drain collected condensation from the intake plenum.
+A vehicle powered solely by electricity available from a standard domestic AC power socket.
+Also known as " up  sized wheels. " wheel and tire packages that are larger in diameter than those included in a vehicles standard equipment.
+A coating that reduces the glare from side view mirrors by modifying the reflected light.
+A component of a vehicles telemetrics system that, when triggered, automatically informs authorities after a collision.
+Safety measures and devices that lessen the chance of a driver or passenger being hurt in the aftermath of a collision.
+The electronically controlled release of a vehicles hatch or trunk in contrast to a conventional cable activated release mechanism.
+An electronically controlled sideview mirror that can be moved further away from a vehicle when it is towing an object.
+An electric and or or hydraulic system that multiplies, for ease and comfort, the force a driver exerts on the steering wheel.
+Hydraulic fluid used in a power steering system.
+The flexible hoses carrying hydraulic fluid between the various components of a power steering system.
+Also referred to as the " drivetrain warranty. " a vehicle warranty that covers most of the parts that make the vehicle move, including the engine, transmission, drive axles and driveshaft. As with a basic warranty, " consumable " parts such as hoses and belts are not covered. However, most of the internal parts of the engine, such as the pistons and bearings, which are also subject to wear and tear, are covered by a powertrain warranty.
+Safety measures and devices that prevent a collision from occurring or lessen the chances of a driver or passenger injury in the event of a collision.
+Seats that spring into a safe position when a precrash systems senses an impending collision.
+A system of devices that employs radar or laser technology to sense an impending collision and reacts by implementing precautionary measures, including tightening seat belts and applying braking.
+A sound system that has been provided to the vehicle manufacturer by a name brand audio manufacturer.
+A vehicle window with a factory installed tint, utilizing either a mylar covering or smoked glass, that has enough opacity to obscure the vehicles interior from view.
+The price consumers are paying private sellers for similar vehicles.
+A " program car " is one that was owned by the manufacturer and given to employees for a short time to use for company business and later purchased at auction by the dealership. Sometimes former rental cars turn up on used car lots advertised as " program cars " this will be revealed if you run a vehicle identification number vin check using a service such as carfax or autocheck.
+The right given to a vehicle lessee to purchase the vehicle at the end of the lease term for an amount equal to the vehicle's residual value.
+In an evaporative emissions control system, the valve that allows the venting of fuel vapors from the charcoal canister to a vehicles intake and prevents the canister from becoming saturated and nonfunctional
+Partial zero emission vehicle. A vehicle that has zero evaporative emissions and meets the epa? S sulev standard.
+The part of a vehicle's radiator and air conditioning systems made up of small diameter tubes with a series of thin, heat conducting fins in between.
+The tubes between the radiator and the engine.
+A small portion of the FM frequency that is allocated for broadcasting alphanumeric news, traffic and song information.
+A feature that uses rainfall sensors to engage the wipers and adjust wiper speed accordingly.
+Traffic congestion information gathered by road sensors and other means read by a vehicles navigation system through communications satellites.
+The type of rear brake drum or disc.
+A device that melts ice or frost or removes condensation from a vehicles rear window.
+The type of rear door hinged or sliding.
+An electric vehicles or hybrid vehicles rear electric motors ability to do work, expressed in terms of horsepower, torque and or or kilowatts.
+The type of rear electric motor in a hybrid vehicle or ev used to power the rear wheels permanent magnet motor or other traction motor.
+The climate control system used to regulate heating and air conditioning for the area of a vehicle behind the front row seating.
+The elements of a vehicles entertainment system accessible to rear seat passengers.
+The type of rear seating bench seats, bucket seats, removable seats, split bench seats, captains chairs or seats that convert into a bed.
+An aerodynamic device attached to a vehicles trunk lid or liftgate consisting of one or more airfoils supported by uprights that allows air to flow over it as well as under it, resulting in decreased lift and increased stability at high speeds.
+A cash payment offered as an incentive by the manufacturer to consumers, which is usually applied by the consumer to reduce the net price of a vehicle.
+A recall is a notice sent by a vehicle manufacturer to owners of a vehicle advising them that the vehicle has or May have a serious defect that May compromise the safety of the vehicle and that the service departments of that manufacturer's dealers will make any necessary replacements or repairs free of charge. Ordinarily, recalls affect only a portion of the production run of a given year, make and model.
+A notice by a manufacturer to the owners of a defective or unsafe vehicle or vehicle component as well as dealers that a recall has occurred.
+The optimal type of fuel based on its octane rating recommended by a vehicles manufacturer.
+A method of assisting the deceleration of a hybrid or electric vehicle in which the vehicles electric motor switches from drive or output mode to generator mode. This recharges the battery by converting a portion of the vehicle's kinetic energy into electrical energy.
+A feature of a vehicles electronic key fob that controls the vehicle's ignition.
+The control of a vehicles power activated release using a button on an electronic key fob or smart key.
+The control of a vehicles power window system by one or more buttons on an electronic key fob or smart key.
+Natural energy sources that are naturally replenished, such as solar power, wind power, hydrogen and biofuels.
+Tire repair equipment that typically consists of an emergency tire sealant and a means of refilling a flat tire.
+A method of valuing insured property that uses the cost of replacing the property at current prices and does not take into consideration the property's condition or whether it has depreciated since first acquired. Compare " actual cash value. "
+The minimum acceptable type of fuel based on its octane rating recommended by a vehicle? S manufacturer.
+A vehicle leasing companies assumption of what a vehicle will be worth at the end of the lease, which is a factor used to determine the monthly lease payment. The higher the residual value, the lower the monthly payment.
+A feature that permits the operation of a vehicles power accessories after the key is removed from the ignition for a set period of time or until a door is opened.
+Side view mirrors that can be moved closer to a vehicle when parking in a tight space or using an automatic car wash.
+Power sideview mirrors that tilt down when a vehicle is in reverse in order to aid the driver in parallel parking.
+A service available from various manufacturers that assists a driver when a vehicle is inoperable.
+A system of devices that works to prevent or lessen the damage from rollover accidents.
+A metal or plastic device attached to a vehicle that is used to anchor cargo to the vehicles roof.
+A spoiler that is mounted from the rearward facing edge of a vehicle's roof to the liftgate just above the rear windshield, or to the upper edge of the rear windshield itself and that is usually installed for aesthetic purposes.
+The outline or contour of the roof a vehicle.
+The number of available rows of seating in a vehicle.
+Rear engine rear wheel drive. A vehicle that is propelled solely by its rear wheels and whose engine is located aft of its front axle.
+A tire that is capable of being driven on temporarily after losing its pneumatic pressure.
+Rocker panel extensions that function as steps to aid the driver and passengers in the entering and exiting of tall vehicles.
+A warranty that covers the repair or replacement of the vehicles sheet metal in the event of damage from rust or corrosion that is severe enough to cause a hole. Surface rust is not covered.
+EMPTYROW
+EMPTYROW
+The component used to turn mechanical force applied to the brake pedal into the hydraulic power needed to apply the brakes and slow or stop the vehicle.
+The component used to turn mechanical force applied to the clutch pedal into the hydraulic power needed to release the clutch and allow gear changing with a manual transmission.
+A measure of fuel efficiency based on the number of miles a vehicle can travel using one gallon of fuel. Federal fuel economy estimates are based on standardized tests that enable the use of epa fuel economy estimates to compare vehicles.
+The distance an electric vehicle can travel on the amount of energy equivalent to that in a gallon of gasoline.
+The failure of the fuel charge in one or more engine cylinders to ignite, or to ignite at the proper time.
+A fuel delivery system that utilizes a separate fuel injector for each cylinder.
+Systems that use active infrared lighting or passive thermographic cameras to detect people, animals and other warm objects on or adjacent to the road that are beyond what can be seen with the headlights. Obstacle locations are displayed on a dashboard screen or projected onto the windshield in front of the driver.
+An acronym used to discuss various operational characteristics that affect perceived vehicle quality and detract from the driving experience.
+A built in diagnostic system on all nineteen ninety six and newer vehicles that monitors vehicle emissions control systems for proper operation. Problems that cause an increase in emissions will illuminate the check engine malfunction indicator light mil on the dash. The obd system also provides a standardized diagnostic link connector DLC for attaching diagnostic tools to the vehicle.
+Original equipment or original equipment manufacturer. Typically refers to components used to build the vehicle at the factory, and available as service replacements through franchised dealers.
+A system of ultrasonic sensors on the front and or or rear bumpers that provide the driver with audible, visual and or or tactile alerts as their vehicle approaches a stationary object. Also, see self parking.
+The name volvo uses for their semiautonomous vehicle driving system.
+Degree of looseness in a movable component or series of components. Often used to describe suspension or steering wear. In the case of steering, play is the amount of free movement at the steering wheel before the vehicle wheels actually begin to turn.
+Similar to a conventional hybrid electric vehicle, a phev has a larger battery that can be charged by plugging the car into an external power source. Phevs have an electric only range of around ten and twenty miles. Once that range is exhausted, the vehicle reverts to normal hybrid operation with a gasoline engine that drives the car and combines with regenerative braking to charge the battery for a limited amount of electrical power assist. The toyota prius plug in is an example of a phev.
+A fuel delivery system that uses a separate fuel injector for each cylinder, and injects fuel into the intake ports upstream of the intake valves.
+Emission control system that redirects crankcase vapors back into the engine to be burned. Often controlled by a PCV valve that requires periodic replacement. PCV valve problems can cause a car to run rough, stall, use excess engine oil, smoke, and have high exhaust emissions.
+Engine runs at reduced speed or requires more throttle to maintain constant speed.
+The combination of the engine, transmission, driveshaft, differential and axles that deliver power to the wheels.
+The assembly of two components often bearings with a specified amount of pressure between them so they are prepared to handle the loads that will be applied.
+When a vehicle self  steers to one side or the other when driving or braking.
+An assembly of tubes and fins that transfer heat from the engine coolant into the passing air stream. This process is aided by mechanical and or or electrical fans that pull or push additional air through the radiator as needed.
+Windshield wipers whose rate of operation is electronically controlled based on the amount of moisture on the windshield.
+Sensors at the rear of the vehicle detect approaching traffic or pedestrians when backing out of a parking space. May be accompanied by or integrated with a rearview camera.
+A camera mounted at the back of the vehicle that displays a picture on a screen in the dash or rear view mirror of what is behind the car when the transmission is in reverse.
+A drive system that provides power to only the rear wheels of the vehicle. In trucks, this type of powertrain is sometimes referred to as 4X two in comparison to a four wheel drive 4X four system.
+The speed at which the engine crankshaft is turning.
+The quality of the vehicle's movement as it is driven down the road. Based on their intended use, vehicles can have a variety of different ride characteristics. Factors that affect a vehicle's ride include the suspension, steering and brakes.
+When the engine vibrates or shakes while running with the driver's foot off the gas.
+Protective coatings applied to vulnerable areas of a vehicle to provide protection against moisture and road salts that cause rust and corrosion. Tar based products are typically used on exposed areas of the undercarriage, while wax based formulas are used on enclosed areas of the car body such as doors and fenders.
+EMPTYROW
+EMPTYROW
+A tire rating which indicates a tire designed to perform well in mud and snow.
+Michigan international speedway. Site of the nineteen ninety six us five hundred, a cart event.
+The manufacturer's suggested retail price. The recommended selling price for a vehicle as set by the manufacturer.
+A macpherson strut is a unit that includes a damper or shock absorber cartridge inside a large, long metal spring. Macpherson struts are used over the front wheels of most front drive cars. Replacement of macpherson strut cartridges requires a spring compressor.
+Detects engine load by measuring air pressure or vacuum in the intake manifold.
+The suggested selling price of the vehicle. Does not include destination charges, optional equipment, or taxes.
+Device that measures the flow of air entering the throttle housing.
+A piston type pump that produces pressure in the brake hydraulic system.
+A medium size car designed to seat four to six passengers.
+The lessee's estimate of how much mileage he will drive during the lease term. If the lessee underestimates how much he drives, he will face an excess mileage charge at lease end.
+In a lease transaction, the maximum number of miles the vehicle can be driven by the end of the lease. There is a per  mile penalty for exceeding this limit.
+Fees assessed if lessee drives more than the contracted mileage limit.
+The distance between the ground and the lowest point of the vehicle chassis usually the axle. A vehicle can drive over any object shorter than its minimum ground clearance.
+The money factor is used to determine the lease rate. For all intents and purposes it is the lease equivalent of the interest rate on a conventional loan. The money factor is the current annual percentage rate divided by twenty four. To figure out the equivalent interest rate, multiply the money factor by two thousand four hundred. The money factor usually has two zeroes after the decimal point before the rest of the number, for example zero point zero zero four one three three, so any differences in the figure seem very small, but translated into an interest rate they can make a great difference in the actual finance cost of a lease.
+The price which appears on the label showing the base price, installed options, transportation charge, and fuel economy. Required by law, it May not be removed by anyone other than the purchaser.
+A window type opening in the roof of the car that can open or tilt up or down.
+It's insured so why worry? This attitude usually increases the probability of loss or damage.
+The exhaust system device in the tailpipe that reduces engine noise. Some vehicles have more than one muffler along the tailpipe.
+Independent suspension controlled with several link arms that restrict undesired motion of the suspension for a smoother ride and more precise handling.
+An electronic fuel injection method that uses individual injectors to spray fuel directly into each intake port, bypassing the intake manifold. Also called multi  point fuel injection.
+A lessee May choose to pay additional security deposits or monthly payments upfront in exchange for a lower monthly lease payment via a reduced money factor, which reduces the monthly charges.
+National hot rod association
+The person or company that is designated as the insured.
+The federal agency that creates safety regulations for cars and trucks, crash tests them, and analyzes safety related defects that May require recalls.
+The amount owed on a vehicle loan is greater than its market value.
+One of several crash test programs run by nhtsa. Cars are crashed head on into a rigid barrier at thirty five MPH, and instrumented dummies measure crash forces endured by properly restrained occupants. Nhtsa assigns each tested vehicle a score indicating the likelihood of moderate, severe or fatal injury.
+A mixture of nitric acid and methane which is used to fuel top fuel dragsters and funny cars is also called nitro or top fuel.
+A type of insurance where both parties in an accident file claims regardless of fault.
+Orange county international raceway.
+The hydrocarbon substance in gasoline that reduces engine knock or pinging, which is a noise caused by premature ignition of fuel in the cylinder combustion chamber. The higher the octane number, the less chance of premature ignition. High octane, which has a rating above ninety one, is useful only when recommended by the manufacturer.
+Indicates the number of miles a vehicle has been driven. It is illegal to tamper with the odometer reading.
+The illegal practice of rolling a vehicle's odometer back to indicate that it traveled fewer miles than it actually has.
+Occurs when the vehicle's mileage exceeds the mechanical limits of the odometer? Usually ninety nine thousand nine hundred and ninety nine miles. This must be certified by the seller, under the truth in mileage act.
+Also called a finance or equity lease. The lessee is responsible for the difference between the agreed upon residual value and the fair market value of the vehicle at the end of the lease, if the vehicle is worth less than anticipated. For example, if the vehicle has a market value of eight thousand dollars at the end of the lease, and the residual value was set at ten thousand dollars, then the lessee owes the leasing company the difference of two thousand dollars. The lessee has the right to an independent appraisal of the vehicle, at his or her own expense. The payments for an open end lease are generally lower than those for a closed end lease.
+A transmission gear with a ratio below one one, which improves fuel economy by reducing engine revolutions per minute at highway speeds. On a five speed manual transmission, the fourth and fifth gears are overdrive. On a four speed automatic transmission, the fourth gear is overdrive. When an overdrive gear set is engaged, the output shaft turns at a higher rate than the input shaft, reducing engine revolutions at cruising or highway speeds.
+The camshaft is on top of the cylinder head on overhead cam engines. Single overhead cam sohc engines have a single cam above the cylinder head. Dual overhead cam dohc engines have two cams above the cylinder head. All overhead cam engines are also overhead valve ohv engines, which means the intake and exhaust valves sit atop the cylinder head.
+Occurs when the rear tires lose adhesion under cornering. In motorsports, this is also called loose. Oversteer can lead to a spin if the driver doesn't reduce acceleration. See also understeer.
+Measures the amount of oxygen in the exhaust.
+Sheet of metal panel that covers the front and rear quarters of the vehicle.
+The chlorofluorocarbon refrigerant, commonly referred to as freon a dupont trademark or CFC twelve, now considered environmentally hazardous but once the key ingredient in automotive air conditioning systems. A refrigerant is a chemical compound that absorbs, carries and releases heat in an air conditioning system.
+The environmentally safe refrigerant now used in air conditioning systems. It requires a slightly bulkier condenser unit than R twelve. Vehicles equipped with R twelve systems can be converted to use R 134A. Since freon is now banned, expensive and hard to obtain, the conversion May be a good idea when an R twelve based system needs recharging, particularly if technicians detect a leak.
+The rac motor sports association is recognized by the fia as the governing body of motor sport in great britain.
+The steering wheel is connected to a pinion gear that meshes with a toothed bar, also called a rack or linear gear. As the pinion turns, the rack moves side to side, moving the steering linkage and causing the front wheels to turn left or right. The ends of the rack are linked to the steering wheel with tie rods.
+The copper or aluminum device in front of the engine through which hot engine coolant is circulated and cooled. The liquid is then recirculated back through the engine block to cool it.
+A convertible with a soft top.
+Competing teams, consisting of a driver and a navigator, are given route instructions, which they must follow exactly. Each team follows the course independently, trying to rack up points based on how well they meet a predetermined schedule.
+The per unit cost of insurance.
+The drivetrain in which power is applied through the rear wheels only.
+An illegal action wherein the agent gives the insured a portion of his or her commission to entice the purchase of insurance.
+A partial reimbursement from the manufacturer, to either the dealer or buyer, for purchasing a vehicle.
+A steering mechanism in which the steering shaft turns a worm gear causing a toothed metal block to move back and forth, turning the front wheels. Ball bearings reduce friction between the worm gear and the metal block.
+Another name for the security deposit when leasing a vehicle.
+Unfairly discriminating against a risk because of its location.
+The point on the engine tachometer that indicates the maximum RPM the engine can safely withstand.
+Money to be held until lease end as a security method for all lease obligations.
+Disengages the clutch disc from the flywheel by pressing on the pressure plate release springs.
+The continuation of coverage that is about to expire.
+The amount charged in addition to the depreciation and any amortized costs.
+The estimated value of the vehicle at the end of the lease. Often expressed as a percentage in decimal form. It is based on a vehicle's MSRP. For example, the residual value of a vehicle May be zero point sixty five, or sixty five percent of its MSRP at the end of the lease term. In this example, a car with an MSRP of twenty thousand dollars is estimated to be worth thirteen thousand dollars at the end of the lease term. Residual value May be a negotiable figure. This should be clearly stated in the lease. It is one of the elements used in determining the monthly lease payment and also in deciding whether to buy the vehicle at term end. Also called the walkaway value or guaranteed value.
+The amount of liability that is assumed but not reinsured by the agency.
+Describes at which speed the engine crankshaft is turning.
+The outer edge of a bare wheel.
+Any chance of loss or damage.
+The body panel that runs beneath a vehicle's doors.
+A protective steel cage to prevent driver injury during a rollover.
+The type of vehicle impact in which the car or truck rolls over on its side, onto its roof, or turns over completely. The biggest cause of injury in a rollover is ejection of the occupant or any part of the occupant. Rollover is a greater risk in any sport utility vehicle because of its high center of gravity than in a minivan, pickup truck or passenger car. Rollover can occur immediately upon impact or in the seconds after an impact, which makes it more difficult to protect occupants with traditional airbags. Inflatable tubular restraints and similar designs that stay inflated longer than traditional airbags will be more effective in rollover situations.
+Under a rule of seventy eight loan, the interest over the entire life of the loan is divided into seventy eight equal pieces. The first monthly payment consists of twelve of these pieces, the next of eleven pieces and the rest principal, the third of ten interest pieces and the rest principal, and so on to the twelfth payment, which includes only one seventy eight of the interest. Under this type of loan, all the interest due is paid during the first year, and all future payments go toward reducing the principal. A rule of seventy eight loan insures that the financier will earn its profit immediately but leaves the borrower with less equity in the early years of the loan. Many dealers advertise that their loans are not of this type.
+This indicates that something May be wrong on the track, but the cars are allowed to stay, running at a reduced speed. A quick check by the officials usually resolves the issue and the green light comes back on.
+EMPTYROW
+EMPTYROW
+Oil change intervals vary by manufacturer and engines, so consult your owner's manual or maintenance schedule to see how often to change the oil in your vehicle and what type of oil to use. You May be surprised. We were surprised to learn that the camry's two point five liter engine requires 0W twenty synthetic oil, for instance. Manufacturers suggest you change oil more often for " severe " driving conditions, such as frequent trailer towing, extensive stop go driving or idling in traffic, driving in extreme heat or cold, or frequent short distance driving in which the engine doesn't reach full operating temperature.
+Engine oil that's leaked can be amber if it's fresh, brown or if it hasn't been changed for ten thousand miles black, and it will leave slickness on your fingers that's hard to wipe off. Oil can leak from gaskets and seals on the front or rear of an engine, from valve covers or from the oil pan underneath, so there are several possibilities.
+Oil change intervals vary by manufacturer and engines, so consult your owner's manual or maintenance schedule to see how often to change the oil in your vehicle and what type of oil to use. You May be surprised. We were surprised to learn that the camry's two point five liter engine requires 0W twenty synthetic oil, for instance. Manufacturers suggest you change oil more often for " severe " driving conditions, such as frequent trailer towing, extensive stop go driving or idling in traffic, driving in extreme heat or cold, or frequent short distance driving in which the engine doesn't reach full operating temperature.
+EMPTYROW
+EMPTYROW
+Firms that are the principal owners of the brand and trade names of more than fifty percent of the products sold by their companies.
+Independent sales and marketing agencies which represent, by contract, the products of multiple manufacturers in the auto care market.
+The difference between the cost of the merchandise and its initial retail price.
+Vehicles classed by gross vehicle weight as follows class four fourteen thousand and one sixteen thousand lbs conventional van, large walk in, landscaping or utility, city delivery class five sixteen thousand and one nineteen thousand five hundred lbs large walk in, city delivery, bucket class six nineteen thousand five hundred and one twenty six thousand lbs rack, single axle van, beverage, stake body, school bus
+Firms primarily involved in the diagnosis, repair or maintenance of motor vehicles and whose activities are predominantly conducted at a site not owned or leased by the firms.
+The entire auto care market, including all products and services for light, medium and heavy duty vehicles after their original sale.
+Distribution firms selling primarily tools and equipment with sales activity primarily occurring at the site of the buyer from inventory available on the distributor's vehicle.
+North american industry classification system codes. The standard statistical classification codes underlying all establishment based federal economic statistics classified by industry for the united states, mexico and canada.
+Firms primarily involved in the retailing of new, personal use motor vehicles, which also provide service for those vehicles after the sale.
+National highway traffic safety administration. The agency that develops and administers educational, engineering and enforcement programs for safe vehicle use and cost effective highway travel.
+Original equipment. Parts and components supplied to manufacturers for motor vehicle production.
+Original equipment manufacturers. Companies that supply parts and components for the production of motor vehicles.
+Occupational safety and health administration. The regulatory and enforcement agency for workplace safety and health.
+Someone who owns one or more commercial trucks and personally drives at least one of them. If they own more than one vehicle they are also known as small fleet owners.
+Specialists in providing vehicle refinishing products and supplies to the collision repair industry.
+European terminology used to describe the total number of registered vehicles within a certain geographic region.
+Products that enhance the speed and handling of a motor vehicle.
+A group of businesses purchasing, selling and marketing under a common banner.
+Service establishments specializing in providing fast oil changes. May also offer other automotive services.
+A rebuilder of motor vehicle engines and hard parts.
+The percentage of vehicles in operation for which a particular component or service job was purchased during a particular year.
+EMPTYROW
+EMPTYROW
+Lubricant that reduces wear and tear on an engine's moving parts, prevents overheating and delays the process of corrosion.
+This system consists of the combination of the engine and transmission and is often protected by a manufacturer warranty.
+Pounds per square inch, a measurement of pressure most often used to ensure that tires are properly inflated.
+EMPTYROW
+EMPTYROW
+A manually shifted gearing device in the powertrain that allows variation on the relationship between engine speed and road speed.
+An alphanumerical code to identify a product
+A lettered marking code on tire sidewalls indicating tire manufacturer, plant, tire size, construction type and date of manufacture.
+An abbreviation for microprocessor control unit.
+Any chemical compound of nitrogen and oxygen nox as a by product of combustion that forms smog in the presence of sunlight.
+A non flammable, nonexplosive gas N 2O used as an oxidizing agent with gasoline or methanol to increase the rate and efficiency of combustion, thereby increasing the horsepower.
+A term used for oxygen sensor.
+A molecule of oxygen, an unstable pale  blue gas O three, which is formed by exposure of O two to an electrical discharge. It has a penetrating or pungent odor and a strong oxidizing effect.
+A solid matter, mainly soot from burned carbon, in an internal combustion engine's exhaust.
+A form of solid air pollution such as microscopic solid or liquid matter that floats in the air.
+An emission control device in the exhaust system of a diesel engine which is used to capture particulates before they can enter the atmosphere.
+A unit used to measure the amount of contamination in a substance, such as moisture in refrigerant.
+A measurement of the emissions of a motor vehicle given as the number of parts of a particular chemical within one million parts of exhaust gas.
+The weight of the cargo that May be carried by a truck, determined by subtracting the curb weight of the vehicle and one hundred and fifty pounds sixty eight thousandg for each passenger from the gross vehicle weight rating.
+An engine part that reciprocates in the cylinder and transfers the force of the expanding gases via the piston pin and connecting rod to the crankshaft.
+A round, caliper component in a disc brake that is moved outward by fluid pressure to press the pads against each rotor face.
+An aluminum or sintered iron component of a drum brake inside a wheel cylinder that supports the cylinder cup.
+The part of a compressor that is driven by a crankshaft to compress vapor.
+A gear set consisting of a central sun gear surrounded by two or more planet gears which are, in turn, meshed with a ring gear, used in overdrives and automatic transmissions.
+A rare, valuable metallic element which is highly resistant to corrosion, and is used as a catalytic agent in automotive catalytic converters of the oxidizing type.
+Any substance that adds to the pollution of the atmosphere.
+Any substance in the exhaust gas from an engine or evaporating from the fuel tank or carburetor.
+A power assisted steering system that uses hydraulic pressure to increase the torque turning effort applied to the steering wheel by the driver.
+An electrical device used to convert alternating current to direct current.
+EMPTYROW
+EMPTYROW
+Mobile air conditioning
+Medium duty passenger vehicle
+Medium duty vehicle
+Milligrams per mile
+Moderate hybrid
+Non  methane organic gas
+Nitrous oxide
+Oxides of nitrogen
+Power brakes
+Passenger car
+Revolutions per minute
+Power steering
+Refrigerant 134A, tetrafluoroethane C 2H 2F four
+Refrigerant 152A, difluoroethane C 2H 4F two
+Retail price equivalent
+Rear wheel drive
+EMPTYROW
+EMPTYROW
+Us value the fuel economy of an automobile relates distance traveled by a vehicle and the amount of fuel consumed.
+Us value miles per gallon comparing the energy consumed by alternative fuel vehicles to that of traditional gas powered vehicle
+Manufacturer suggested retail price also known as sticker price
+National automobile dealers association
+National highway traffic safety administration
+National independent automobile dealers association
+A pre  delivery inspection is part of the process of preparing a vehicle for display or delivery. Some manufacturers require proof the pdi has occurred and May compensate a dealer for the service. Also known as make ready, prep, or get ready.
+Parts order an invoice generated at the parts counter for the purchase of a part or group of parts
+Repair order a document created when a vehicle is brought in for service contained work performed an related costs
+Rear wheel drive power from the engine is sent to the rear wheels only.
+EMPTYROW
+EMPTYROW
+A piece of magnetized steel that will attract all ferrous material. The permanent magnet does not need electricity to function and will retain its magnetism over a period of years. Often shaped into the letter U
+A pulse generator consisting of a stator with a permanent magnet and a rotor, which induces an AC voltage in the inductive winding by the periodic change of the air gap between stator and rotor. Magnetic pickups attached to the distributor for ignition triggering have as many teeth on the pole piece stator and on the trigger wheel rotor as the engine has cylinders. Some magnetic pickups have a bowl like rotor with ferrite rods inserted in the walls. Magnetic pickups on the crankshaft flywheel act as reference mark sensors.
+As the pistons move down on the intake stroke, they create a suction or vacuum in the intake manifold.
+Marine cranking amps mca is the amount of current that a battery can deliver at thirty two degrees fahrenheit. Specifically, it is the number of amps that a battery can deliver for a period of thirty seconds while maintaining a minimum of one point two volts per cell seven point two volts for a twelve volt battery. Mca is better known as cranking amps.
+Matte is a dull non  gloss finish. Matte or flat paints diffuses light in a range of angles, making the paint have no shine effect. It's not common to see matte finishes, but some niche vehicles are available in a variety of matte colors, usually gray or black.
+Metallic paints are effectively the same as solid paints, only with a small quantity of powdered metal added. The size and type of metal added varies depending on manufacturer choices, but it's commonly about one part in fifty of aluminum powder.
+The state of your vehicle's wheels when they are out of alignment. This can lead to uneven and rapid treadwear resulting in the need to replace tires sooner.
+Negative charge simply means that one source has a lower electrical potential than another.
+In a negative ground electrical system, current travels from the positive to negative using the chassis as a current return path to the battery. The vast majority of road vehicles in use today are negative grounded.
+Paint specially formulated to exactly match the color of the original factory applied coating. Ideal for use on all oem paint surfaces.
+An ohm is a measure of electrical resistance that causes one volt to produce a current of one ampere.
+A drain plug is a plug which is taken out to allow a fluid to be drained from a tank such as an engine oil pan or sump.
+A component, located near the oil pump, that removes abrasive particles from the motor oil by a straining process as the oil circulates through the lubrication system.
+An oil pan is a metal container that contains the engine oil. The oil pan gasket seals the oil pan to the bottom of the engine.
+The single or one or two part component paints are also known as one thousand or two thousand and these distinctions simply refer to the need or non  need of an activator for the paint to dry. You can spray one or single part products instantly, although they might need a solvent like thinner so it can go through a spray gun properly. This kind of paint is not usually used to paint a whole car.
+Open circuit voltage ocv in reference to a battery is the voltage as measured across the battery terminals with no load applied.
+A component of the air conditioning system that controls the flow of liquid refrigerant to the evaporator.
+Created for outdoor use against the elements that can damage your car's paint and finish.
+The state of your vehicle's wheels when they are out of alignment. This can lead to uneven and rapid treadwear resulting in the need to replace tires sooner.
+Overcharge is the continuous introduction of charging current through a battery after all the active material has been converted chemically to a charged state. Overcharge by definition is the exceeding of one hundred percent state of charge.
+Over discharge is an excessive discharge applied to a battery and can be damaging.
+The tendency for a vehicle, when negotiating a corner, to turn more sharply than the driver intends.
+Paint classification systems are used to individualize paint in single stage, undercoat, mid  stage, clear coat and base coat products. With these systems, automobile paints are classified into usage instead of composition in the process of painting.
+The pan gasket is a mechanical seal between the transmission oil pan and the transmission itself.
+Parasitic drain, also referred to as parasitic draw, is the unintended discharge of a battery through applied electrical loads that typically remain on continually. Typical parasitic drain can be the keepalive memory in the vehicle computers, but can also be an unintended load such as a glove box light left on.
+The passive steering system uses the lateral forces generated in a turn through suspension geometry and the bushings to correct this tendency and steer the wheels slightly to the inside of the corner. This improves the stability of the car, through the turn.
+Abbreviation for powertrain control module a computer that controls the operation of the engine's fuel, ignition, and emission control systems as well as the transmission on vehicles with automatic transmission.
+Positive crankcase ventilation.
+Pearlescent paints use ceramic crystals that don't just reflect light but refract it too, splitting it into different colors by allowing some light in and slowing it down as it passes through. This gives the paint not just a sparkle, but a deep color that can vary depending on how you look at it, making for interesting effects where the car's bodywork creases or changes direction.
+Gas engine. A british term for gasoline.
+The pigment or what is also known as the tint is the one responsible for the color of the paint.
+A short lever arm splined to the steering gear cross shaft, the pitman arm transmits the steering force from the cross shaft to the steering linkage system.
+Designed to be waterproof and a temporary solution for outdoor protection.
+Plasti dip is a multi purpose, air dry, specialty rubber coating. It can be easily applied by dipping, brushing, or spraying. Plasti dip protective coating is ideal for a broad array of do it yourself projects around the home, garage, garden, and elsewhere. It protects coated items against moisture, acids, abrasion, corrosion, and skidding or slipping, and provides a comfortable, controlled grip. Plasti dip remains flexible and stretchy over time, and will not crack or become brittle in extreme weather conditions. It has been tested and proven in temperatures from 30F to 200F.
+An area, filled with air at a pressure that is slightly higher than the surrounding air pressure, such as the chamber just before the blower motor.
+A piece of thin compressible material such as cork, rubber, or soft metal, placed between two mating surfaces to form a seal within the plenum chamber.
+A chamber containing air under pressure.
+Polarity is the electrical condition of positive or negative charge.
+Polarization is the change in electrical potential in a battery cell that is caused by current flow through the battery.
+Positive charge refers to introduction of electrons toward the electrode or terminal with a shortage of electrons.
+A linear actuator consisting of a piston in a cylinder, driven by pneumatic or hydraulic fluid under high pressure.
+A system for steering used on vehicles, where the torque applied to the steering wheel is augmented by engine power.
+Is a belt used to transfer energy between the engine and the power steering pump to drive the power steering system.
+A power steering pump contains a pressure relief valve to make sure that the pressure does not get too high, especially at high engine speeds when so much fluid is being pumped.
+Is an aftermarket device used when replacing a rack and pinion or power steering pump to remove contaminants usually found in the fluid after a previous system failure. Enables the replacement part to work more efficiently having clean fluid throughout the system.
+A gear box refers to the mechanism by which energy output of an engine or a high speed motor is redirected into another mechanical component in the same machine at a higher torque and at a lower rotational speed. The mechanism is also known as gear shifter.
+A device used on a hydraulic system for the passage of hydraulic fluid to pass through the system to and from the pump. Similar in nature to a power steering hose, but is one hundred percent metal.
+The power steering pressure switch feeds information about the demand on power to the engine control module.
+A power steering pulley is a pulley used to drive a power steering pump on an automobile or truck. Usually is attached to the power steering pump which attaches to a belt and is driven by the engine.
+The power steering pump transfers power steering fluid under pressure to other power steering system components, allowing the driver to steer with minimal effort.
+Power steering hoses are grouped into two parts, high pressure hose and low pressure hose. High pressure hose is required to supply the fluid under high pressure and hence it is used with compression fittings. Hoses are made up of reinforced synthetic compound and are highly resistive against the high pressure and temperature of the fluid passing through it. The low pressure hose is used to bring back the fluid from the gearbox to the reservoir and is not usually applied with compression fittings as the pressure of oil is comparatively low.
+Ready to spray system that requires no mixing or reducing, and with no re  coat window.
+Prep finishes are referred to as primers. Car paint primers are usually available in either gray or black and are used to prime the surface of the vehicle and make it ready for painting. Primer is designed to help car paint better adhere to the vehicle by creating a binding layer that can bond to paint easier and more consistently than bare metal.
+A device used to measure the amount of pressure in a given system.
+Primer is designed to help car paint better adhere to the vehicle by creating a binding layer that can bond to paint easier and more consistently than bare metal.
+The primary angles are the basic angle alignment of the wheels relative to each other and to the car body. These adjustments are the camber, caster and toe. On some cars, not all of these can be adjusted on every wheel.
+A piece of thin compressible material such as cork, rubber, or soft metal, placed between two mating surfaces to form a seal between the valve lifter and rocker arm.
+A solid or hollow rod which serves as a link between the valve lifter and rocker arm. The pushrod transmits the movement and force of the driver from the brake pedal lever to the master cylinder.
+A chlorofluorocarbon refrigerant, also known as CFC twelve, which was once the common chemical compound used in older refrigerant systems.
+The refrigerant that is now used in automotive air conditioning systems today, which can be converted from R twelve.
+A rack and pinion is a type of linear actuator that comprises a pair of gears which convert rotational motion into linear motion. A circular gear called the pinion engages teeth on a linear gear bar called the rack, rotational motion applied to the pinion causes the rack to move, thereby translating the rotational motion of the pinion into the linear motion of the rack.
+A heat exchanger used to remove heat from the coolant in the cooling system containing a vertical or horizontal finned tubing section connected between two tanks.
+Ratings, as applies to batteries, are determined through a prescribed and precise series of tests. Ratings include cranking amperage, reserve capacity and voltage.
+Rear wheel drive RWD is a form of engine or transmission layout used in motor vehicles, where the engine drives the rear wheels only. Most rear wheel drive vehicles feature a conventional longitudinal engine arrangement.
+Ride height also called ground clearance or simply clearance is the amount of space between the base of an automobile tire and the underside of the chassis or, more properly, to the shortest distance between a flat, level surface, and any part of a vehicle other than those parts designed to contact the ground such as tires. Ground clearance is measured with standard vehicle equipment, and for cars, is usually given with no cargo or passengers.
+Also known as drier, receiver drier, or dehydrator. A storage component of the AC system for liquid refrigerant and desiccants.
+The action of refilling the air conditioning system once a leak is fixed or repair is made.
+The recirculating ball steering mechanism contains a worm gear inside a block with a threaded hole in it, this block has gear teeth cut into the outside to engage the sector shaft also called a sector gear which moves the pitman arm. The steering wheel connects to a shaft, which rotates the worm gear inside of the block.
+The substance used in the air conditioning system in order to create a cooling effect, its chemical compound can be changed from liquid to gas.
+The process in which the air conditioning system recycles refrigerant.
+A ferrous metal piece attached to the distributor shaft. Made up of teeth of which the number are the same as the number of engine cylinders. As the reluctor teeth pass through the pickup magnetic field, an alternating current is generated in the pickup coil. Also called an armature.
+Reserve capacity is the number of minutes a battery can maintain a specified voltage under a twenty five ampere discharge load.
+The resins in automotive paint are usually made up of one of three elements namely urethane, enamel or lacquer. In general though, enamel and urethane are the common terms for the chemical combination of hydrocarbon polymers that formulates the resins in paints. This chemical combination impacts the durability and look of a paint's finish, the manner by which it is applied and its costs.
+Resistance, also known as impedance is the restriction to electrical current flow within a battery.
+A computer or module used in order to switch the AC system on and off.
+Is an assembled working frame and chassis of the automobile, including the wheels and suspension.
+A small rotating cap like unit at the end of the distributor shaft. It is located on the breaker cam inside the cap. It connects between the center electrode and the various outer spark plug terminals as it turns, thus distributing the high voltage from the ignition coil secondary winding to the proper spark plug. Also called rotor arm.
+Abbreviation for revolutions per minute. The number of times a rotating object turns every minute.
+Seals, bonds, repairs, mends and secures glass, metal, plastics, fabric, vinyl, weather stripping and vinyl tops.
+EMPTYROW
+EMPTYROW
+A type of transmission that requires drivers to shift manually from gear to gear. Can also refer to the owners guide that comes with a new car.
+The amount in miles a vehicle can travel per gallon of gasoline used while an engine is running.
+Short for miles per gallon equivalent, mpge describes the energy efficiency of an ev and plug in hybrid. The standard conversion used by the epa is one hundred and fifteen thousand british thermal units btu per US gallon of gas, which is equal to thirty three point seven thousandilowatt hours of electricity. Essentially, it refers to how far the car could go on a gallon of gas if that was the fuel being used.
+Abbreviation for navigation systems also referred to as a GPS systems.
+National highway traffic safety administration, the nhtsa is tasked with writing and enforcing federal motor vehicle safety standards.
+Short for onboard diagnostics, obd II is an industry standard port found in modern vehicles that once used to connect diagnostic equipment, vehicle data and diagnostic trouble codes through a car's onboard computer. When you take your vehicle to the deq, they plug their computer into the odb II port. App makers are also making use of this port to inform drivers about what their car is doing.
+Open XC is the architecture ford uses to let apps talk to a car's onboard systems.
+Driving characteristic where a car turns more sharply than intended, possibly causing the car to spin out of control. Oversteer is commonly associated with rear wheel drive cars.
+Push button ignition also referred to as push button start is any system that allows you to start a car by pressing a button instead of physically inserting and turning a key in the ignition.
+Ragtop refers to convertibles that use a soft top instead of a hard top for its roof. See convertible.
+Braking system typically employed in hybrids and battery electric vehicles that captures energy created during braking and transfers it to the onboard battery.
+Remote start refers to any car that can be started without physically being inside the car and using a key to turn the ignition.
+EMPTYROW
+EMPTYROW
+Four wheel drive vehicles apply power to all four vehicles at the same time and there are typically two settings low or high depending on the speed and driving conditions. 4WD differs from awd in that 4WD has set power ratios for each wheel and awd will sense the driving conditions and distribute power the wheels that have the best traction.
+The five step methodology includes seiri or sort where you do a first pass of a process or area and discard anything that is not essential, next is seiton or straighten which puts the remaining items in order, third is seison or shine where the area is cleaned and a process put in place to maintain the cleanliness, fourth is seiketsu or standardize that creates habits to keep things in order and clean and finally is shitsuke or sustain where the procedures developed in the fourth step must be put in place and maintained. 5S methodology is used as a continuous improvement process to make process more efficient and streamlined.
+The eighty or twenty rule, which also goes by the name the principle of factor scarcity or the law of the vital few, says that eighty percent of the results comes from just twenty percent of the actions. This principle is used in the automotive engineering field when doing pareto analysis on quality data from production
+THE 8D problem solving methodology is a process used by automotive engineers to resolve a quality issue and allows the engineering team to identify, correct and stop the problem recurring in the future. The steps in the process include plan, form a team, define the problem, develop a containment plan, identify root cause, implement a permanent corrective action, validate the corrective action, put preventative measures in place and finally celebrate the success with the team.
+Machining is the general term for a process of shaping, cutting or changing the physical properties of a material.
+Transmission that requires the driver to manually shift the gears while driving the vehicle using a clutch.
+Max horsepower RPM is therpm when the automobile operates at its max power. Below or above this RPM will decrease power. Usually specified in a specific gear as well.
+Max torque RPM is the RPM when the automobile operates at its max torque point. Below or above this RPM will decrease torque. Usually specified in a specific gear as well.
+Measurement system analysis is a statistical process that is meant to validate a measurement tool to ensure there are no variations in the measurement processes.
+The combination of mechanical, computing and electronics when designing and developing a new vehicle.
+A machining process that removes materials from specific areas on a part using rotary cutters and a wide range of machine tools.
+Materials resource planning is the function of the manufacturing planning department to ensure that sufficient quantities of raw materials are available to support manufacturing operations.
+An accepted condition or measurement which is accepted as an approximation rather than a measured exact value, a nominal value.
+Norms and standards are informal guidelines by which business is conducted within the automotive engineering world. Norms and standards provide a basis of expectations within the organization so that each member understands their roles and what they are required to do for the team to succeed.
+Nvh is one of the biggest challenges in the automotive engineering design. Automotive engineers work to eliminate exterior noise and create a peaceful environment within the vehicle additionally they work to create a smooth ride, free from vibration and harshness.
+The self  diagnostic reporting capability found on all vehicles produced in the nineties until present times. The obd system will provide status of the vehicles components and error codes that will help to trouble shoot problems with the vehicle. The diagnostics codes provide more detailed information than the idiot lights that illuminate when there is a problem.
+The outer diameter of the part is the diameter as measured to the outermost surface of a circle.
+Operation equipment effectiveness is a calculation based on three important factors including availability, performance and quality of the equipment used in manufacturing.
+Original equipment manufacturers or oems in the automotive industry are the companies that manufacture the vehicles using the components and subassemblies that tier I supplier provide to them.
+Osha is the government agency responsible for overseeing all aspects of the work environment to ensure it is safe, healthy and that all workers are giving training, education and assistance for their jobs.
+The portion of the vehicle that lies in front a of the center point of the wheel or for the rear of the car lies behind B the center of the wheel.
+Oversteering occurs when a driver is turning a vehicle and the vehicle turns more sharply than the driver intended.
+A pareto analysis is a formal quality technique using a bar graph that looks at all the reported problems and helps identify which problem is most severe and should be addressed first so that the maximum benefits will be provided by addressing that issue first.
+Pfmea is a analytical technique used by process engineers to look at potential causes of failure in a production process, the severity of the failures and the whether or not the failure can be detected and uses rankings for each of these measurements to identify the highest risk areas and puts controls in place to correct or monitor these potential failure modes.
+Structural components found within the body of the vehicle.
+Rotation around a lateral axis within a vehicle that changes the vertical direction of the front or rear of a vehicle.
+Pitch is the distance between two threads on a screw or bolt or the distance between the tooth on a gear.
+The base of the windshield of the vehicle where the windshield wipers are located or the location of the intake manifold.
+An error proofing method used in manufacturing that helps to eliminate mistakes and remove variability in products by forcing the operator to only perform an action one way. Poke yoke designs ensure that the part is always correct by making sure that incorrect parts will not fit to reduce the chance of quality problems.
+The components of a vehicle that produce power and deliver it to the surface of the road. This includes the engine, transmission and other components that assist in transferring power.
+The ppap process pronounced pee pap is the process by which suppliers qualify a raw material, component or end process to make sure there are no safety, design or quality issues and that the manufacturer can produce the part without quality issues.
+Process performance index are the calculations that predict how many parts will be produced out of specification when a production process is running. CPK is used for a sample statistics while PPK is used for a population.
+Pre  series automobiles are vehicles produced that help test out the production processes and ensure that everything is prepared for start of production.
+Preloading is when a portion of the load a part is designed to bear is applied and then the part is tightened or adjusted so that it is prepared to bear the full load it was designed for.
+Preventative maintenance is routine maintenance done to keep manufacturing equipment and machinery in optimal running condition and to avoid downtime due to breakdowns or repairs being needed.
+The defined steps within an automotive company to develop a product from the initial concept phases through design and development all the way to production.
+A pull system in automotive manufacturing is when inventory is produced when it is needed and there is an order available.
+A machining process that puts holes in a part using a die and punch tooling.
+A push manufacturing system produces large amounts of product and forces them upstream in the process whether they are ready for them or not. Push systems result in large amounts of unsold inventory sitting around.
+Describes the metal components in the front or rear corner of the automobile.
+Radial describes forces or directions that move out from a common center.
+The angle between the vehicle and the horizontal axis of the ground, if the back is higher than the front it is a positive rake or if the front is higher it is a negative rake.
+The process where representative models of a part are built that will be dimensionally correct but not functional to assist with the development process. Rapid prototyping or quick turn prototypes are built as demonstration models or placeholders to assess fit.
+The process where a drawing is marked up with changes that must be made to a design, the process is called redlining as typically a red colored pen is used so that all the changes can be easily seen.
+The metal portion on the body of the vehicle between the doorsills and the passenger compartment.
+A test to determine how hard the surface of a material is using a scale from a to G with G being the hardest.
+Steering effect that occurs when load within the vehicle transfers from side to side allowing the axles to move from their normal parallel relationship.
+Root cause analysis is a problem solving method that looks for the root cause of quality or design issues with a process. The root cause of an issues is the one cause that will permanently correct an issue when it is fixed or removed and its removal stops recurrence of the issue.
+The measurement of the amount of vertical deviations in the surface of a texture, small deviations mean the surface is smooth, large means the surface is rough.
+A material, usually liquid that inhibits rust on a part. An example is an oil coating that prevents parts from being exposed to direct humid air.
+Engine RPM represents the revolutions per minute for the engine crankshaft.
+A trial production run, usually in the late prototype stages of an assembly process, where the assembly or production is tested at the serial production takt time or speed for a limited trial. The goal of run at rate is to see what problems occur while running the process at the speed it will run in serial production. R at R usually uncovers ergonomic or logistical issues in the process and allows these to be fixed prior to serial production.
+EMPTYROW
+EMPTYROW
+The total distance an electric vehicle can travel on one full charge before the battery needs to be recharged.
+Energy sources that naturally replenish, such as solar or wind power. GM's commitment to renewable energy use began more than two decades ago and is expected to culminate by two thousand forty, sourcing one hundred percent renewable energy to meet all global electricity needs.
+EMPTYROW
+EMPTYROW
+Suspension systems front
+In an engine block that support the crankshaft.
+Engine system monitoring feature that employs a hotwire sensing device positioned between the air filter and the throttle body to measure the mass of airflow into the engine. Information is fed into the electronic engine control system, which then automatically adjusts the fuel flow to provide more efficient combustion. Mass airflow sensor provides precise air metering for better engine performance, greater fuel efficiency and reduced exhaust emissions.
+Automatically adjusts to night mode when illuminated from the rear at a predetermined level and returns to day mode after illumination is reduced below threshold levels. Features reverse gear override when backing out of dark areas and replaces the conventional day or night inside rearview mirror.
+Family of engines that share engineering elements and manufacturing features, enabling the same basic design or components to be adapted for a variety of configurations six, eight or ten cylinder models and applications.
+Suspension systems front.
+MP three is a compression technology that allows for the shrinking of the size of an audio and or or video file while maintaining excellent sound quality. It is an open standard so no one group controls the technology and those who do have technology interests are compelled to license it. This means that music can be downloaded to a computer quickly and played back at CD quality sound reproduction. MP three stands for mpeg one layer three. Mpeg stands for moving pictures experts group
+Leaf spring with several leaves bundled together.
+Engine design that uses more than one intake and or or exhaust valve per cylinder for increased engine breathing, resulting in increased horsepower and torque, especially at higher engine speeds. For example, a sixteen valve, four cylinder engine provides two intake and two exhaust valves per cylinder.
+Noise, vibration and harshness are sound and ride characteristics occupants May experience while in a moving vehicle.
+Term used by ford and other truck manufacturers to generally categorize the load capacity of a vehicle series and to describe the general, usable cargo capability the vehicle series can expect to handle.
+Octane is the measure of gasoline's ability to resist autoignition, which can cause engine knock
+Device used to measure and register mileage throughout a vehicle's lifetime. Many vehicles also offer " trip odometers " that can be reset to measure distance traveled during any given trip or time period.
+Continuously monitors the power train. Pinpoints malfunctions and wear for virtually every component and system that can increase emissions. System allows service technicians to diagnose power train problems and helps reduce service time and cost.
+Feature provides the driver with a one touchdown button that completely lowers the driver's window for hands free convenience. The window also can be lowered and stopped at any position. Refer to individual vehicle sections for availability.
+Completely lowers the window by pushing on the switch once and raises it by pulling on the switch once.
+Transmission or transaxle gear ratio of less than one one that is designed for economical highway driving. The overdrive gear allows the engine to operate at lower RPM while maintaining the given vehicle speed, thus requiring less fuel because the engine is doing less work.
+Single overhead camshaft sohc design and dual overhead camshaft dohc design.
+Engine design with the valves located in the cylinder head and the camshaft located within the engine block with push rods and rocker arms to actuate, or open, the valves.
+One hundred and twenty thousand miles of driving. By comparison, a vehicle certified to the federal tier two bin five california lev II emissions standards currently in effect emits about twenty nine pounds over the same one hundred and twenty thousand miles. To achieve a pzev rating, a vehicle must meet certain criteria, including meet the super ultra low emissions vehicle sulev II standards for tailpipe pollution, demonstrate zero fuel based evaporative emissions, the manufacturer's warranty must ensure that emissions related components are covered for fifteen years or one hundred and fifty thousand miles, whichever comes FIRST one
+Weight of the actual cargo and occupants carried by a vehicle. Payload capacities are computed by subtracting the curb weight of the vehicle from its specified gross vehicle weight rating GVWR. Addition of any optional equipment or passengers adds to the vehicle weight and subtracts from the allowable payload. Trucks with a GVWR of class six or higher calculate payload by simply subtracting the weight of the completed vehicle from the GVWR to determine payload.
+Pillars are the vertical beams that support the roof and separate passenger compartment windows. A  pillar first, or most forward, roof support pillar located on either side of the windshield. Also known as " windshield pillar " or " a  post " B pillar center roof support that divides the front and rear doors on four door and passenger wagon models. ON two door models, the B pillar separates the door and rear quarter window or panel. On vans and passenger wagons, the B pillar is behind the front doors C pillar rear roof supporting member on most vehicles. On cuvs or suvs, this pillar separates the rear doors and quarter panel glass D pillar vertical, or sometimes diagonal, roof support member at the extreme rear of the roof or greenhouse structure on mini vans, cuvs or suvs and some sedan body styles
+Cylindrical component, closed at one end, and attached to the crankshaft by a connecting rod. The force of an explosion in the cylinder's combustion chamber forces the closed end of the piston down, causing the connecting rod to move the crankshaft.
+Rotation along an imaginary lateral or transverse axis situated between the front and rear wheels of a vehicle causing the vehicle to move up or down on the side to side axis. Often, during hard braking, the vehicle's nose will pitch down this is called " dive " or " diving ". During acceleration, the rear of the vehicle's pitch is lower. This motion is called " squat " or " squatting "
+Chamber between the throttle body and the passages of an intake manifold used to help promote the even distribution of the intake charge and to enhance airflow and engine performance.
+Flexible, vertical spring wound tube mounted behind the cab and used to support extra  long air hoses and electrical lines
+Frame design that locates the rear axle shafts through the frame rails to allow for a lower step  in height and center of gravity. This design is exclusive to explorer, expedition and sport trac.
+Unit of measure for engine torque commonly abbreviated as lb FT. The commonly used term of foot pounds is more properly a measurement of work rather than torque.
+Power adjustable pedals allow for the forward or rearward adjustment up to three inches of the accelerator and brake pedals through the activation of an instrument panel mounted switch. This is an especially useful feature for drivers of smaller stature, allowing them to comfortably reach the pedals while being able to maintain the required distance from the steering wheel mounted airbag. This feature can be packaged together with an available seat position memory system on certain vehicles for the ultimate in comfort and convenience.
+RPM range over which an engine delivers a substantial portion of its peak power. The power band generally extends from slightly below the engine's torque peak to slightly above its power peak.
+Power takeoff refers to using the vehicle's power train as a power source to perform some work other than moving the vehicle. Examples of this work include operating auxiliary equipment such as a wrecker and snowplow lifts, dump bodies, hydraulic or pneumatic tools and so on. The pto unit is located between the power train and the device it powers. When a vehicle is doing this work while it is not moving, keep in mind that it is also deprived of the cooling benefits airflow provides. Because of this, it is important not to block the front grille or bumper openings. Specific precautions are listed in the body builders layout book. While ford does not offer the actual pto units, ford F series super duty engineers worked closely with two pto after market suppliers parker chelsea and muncie during development of the truck. This work helped create two different ford specific after market units that bolt directly onto the transmission's power takeoff interface the interface is standard on F series super duty models equipped with a manual transmission, optional with automatic transmission.
+Power takeoff pto provision is an added benefit for customers with specific auxiliary power needs. It enables up fitters to supply auxiliary power to hydraulically driven accessories such as dump bodies, sprayers, pumps, generators, etcetera front mounted, front powered equipment is often powered by a direct drive shaft from the front of the engine. The adaptation of the vehicle to allow this installation is called the power takeoff provision. This includes an adapter plate on the engine, and in some instances clearance through the grille or front end sheet metal. An optional front frame extension for mounting equipment is available on all models except the pro loader. The F six hundred and fifty and F seven hundred and fifty extensions are bolted on, while the F 750S extension has an integral extension of the frame rail.
+Name given to the combination of engine, transmission or transaxle and differential rear wheel drive only for any particular model. See the power trains section of this book for details concerning ford power train systems.
+Pcm with obd II was developed to accommodate the goals of achieving mandated emissions control and improving vehicle performance
+Although power to weight ratios May be configured in many ways, they are generally the proportion of the vehicle's curb weight divided by the vehicle's horsepower measured at peak RPM. A vehicle that produces more horsepower or torque than another vehicle of equal weight will have a greater power to weight ratio.
+Pounds per square inch the measurement of pressure that results from a specified amount of gas in a limited volume. For example, the more air that is put into a tire, the greater the psi
+This high technology provides F series super duty with an outstanding four wheel drive system
+Connecting link in an operating mechanism that opens the valve for the duration and lift of the cam, allowing the engine to intake and exhaust the air or fuel mixture. In a conventional layout, the force is transferred to the rocker arms.
+Quiet steel is constructed of steel laminates that absorb sounds and harmonics to help insulate engine noise from the cabin. The F one hundred and fifty and expedition dash panels are made of quiet steel.
+Steering systems.
+Component of the engine cooling system that stores coolant and consists of a series of tubes that allow air to pass through, dissipating excess heat.
+Camera located in the rear of the vehicle
+Drive configuration where the engine power is supplied to the rear wheels via a drive shaft and rear differential assembly.
+Maximum recommended engine revolutions per minute RPM. A tachometer, standard or available on some models, displays a red area to alert the driver that the engine speed is beyond the recommended rate.
+Result of multiplying yield strength and section modulus when comparing frames of the same material, the one with the largest section modulus will be the strongest. When comparing frames of different materials, the frame with the highest RBM has the greater strength.
+Helps audibly alert drivers of certain objects close to the rear of the vehicle within approximately six feet as the driver backs the vehicle up slowly. As the vehicle approaches an object, a warning tone beeps. The beeps increase in frequency as the vehicle gets closer to the object, until it becomes a continuous tone at less than approximately ten inches from the object
+Distance between the ground and a specified point on the vehicle body with properly inflated tires. The lowest point of the bumper is generally used as the vehicle measuring point.
+Simple nonindependent suspension consisting of a rigid transverse member with wheel hubs that are solidly bolted to it. The axle can be attached to the vehicle body by leaf springs or by a combination of suspension arms and links. See hotchkiss design rear axle.
+Set that uses a small gear the pinion gear to turn a larger diameter annular gear the ring gear.
+Ability of the vehicle to maintain traction with, or grip, the pavement while cornering.
+Rotation along an imaginary axis running the length of the vehicle between the driver's side and passenger's side wheels. Roll causes the vehicle to tilt or lean left or right. A stabilizer bar can often counteract the effects of roll.
+Revolutions per minute, the number of engine crankshaft rotations completed in one minute. Configured in thousands, a tachometer will report the engine's RPM to the driver and help alert the driver as to when proper shifting is required.
+EMPTYROW
+EMPTYROW
+There are two manifolds in a car an intake manifold that distributes the fuel air mixture to the cylinders and an exhaust manifold that delivers exhaust out the rear of the car. With wear and tear, manifolds can suffer from cracks and faulty gaskets.
+The manifold heat control valve forces hot exhaust gases up around the base of the carburetor and intake manifold to warm the fuel air mixture. If additional heat is not supplied, the gasoline can easily condense back into a liquid as the fuel air mixture comes in contact with the inner surfaces of the intake manifold. This improper fuel mixture typically causes rough idle, reduced power on acceleration, and engine stall.
+Before the invention of power brakes, cars were designed with manual brakes. They are still the preference of race car, sports car, and performance car drivers because they require more precise interaction with the brake pedal.
+A manual transmission car, also known as a stick shift, is a type of transmission that requires the driver to change gears manually using a clutch pedal. Manual transmissions have the advantage of giving you a little extra power on initial acceleration. They can also offer slightly better gas mileage than automatic transmission vehicles. However, in high traffic conditions, they are more tiresome to drive.
+The master cylinder in your brake system converts non  hydraulic pressure into hydraulic pressure your wheel cylinders use to push your brake pads against the rotors to slow down and stop the vehicle. Problems can occur if there is not enough hydraulic fluid in the cylinder as a result of a leak.
+Motor oil lubricates various parts of your car's engine, thereby reducing friction so that the parts move easier. Engine oil also cleans the engine, inhibits corrosion and helps cool the engine by carrying heat away from moving parts.
+Mounting tires is the act of placing tires on the wheels or rims and installing them onto the axels of the car. When this is done, the wheels require balancing to ensure that there are no spots on the tire that will wear unevenly. This is accomplished using a special machine that determines when the wheel and the center of gravity are identical to the axis of rotation.
+Mpg stands for miles per gallon, a measurement that lets you calculate how many miles you can travel on one gallon of gas. Each car is designed with a maximum MPG capacity, but the actual number of miles your car gets per mile varies greatly due to driving conditions. Driving on city streets or in traffic where you stop and go a lot diminishes the amount of miles per gallon your car will travel.
+The muffler is a device designed to limit the amount of noise emitted from your car's exhaust system. Over time, mufflers can suffer from corrosion or become damaged by rocks and debris in the road because of their placement on the undercarriage of the car.
+Multigrade oil is designed for people living in cold climates where the temperatures drop below freezing. Multigrade oil is thinner in cold temperatures, which allows it to move through the engine better. Conversely, this oil becomes thicker in temperatures above 100AAÂAA F, which helps keep the engine cooler.
+When a car is in neutral, it is temporarily disengaged from the gearbox. This allows you to push a stalled car and it allows you to take your foot off the clutch in a manual transmission vehicle while you are at a stop.
+When a vehicle turns at a rate exactly proportional to the rate at which the steering wheel is turned, it is said to have neutral steering.
+Nitrogen oxide is a toxic by product of internal combustion. When dissolved in moisture in the environment nitrogen oxide causes acid rain and pollution. The catalytic converter in your car helps reduce the amount of nox present in your exhaust.
+The odometer is the instrument on your dashboard that displays how many total miles the vehicle has traveled. It is illegal to tamper with your odometer and display fraudulent mileage to a prospective buyer.
+Oil lubricates various parts of your car's engine, thereby reducing friction so that the parts move easier. Engine oil also cleans the engine, inhibits corrosion and helps cool the engine by carrying heat away from moving parts. Gears and other mechanisms in your car also require oil for lubrication.
+An oil change is the act of removing the used oil in your engine and replacing it with new, clean oil. Over time, oil breaks down and gets dirty. These factors make oil much less slippery and less effective at their job of lubricating engine parts. That's why it's important to change your oil according your car's specifications.
+The oil filter is designed to remove contaminants and debris from your engine's oil so that they don't get circulated into the engine where they can cause damage.
+The oil pump circulates engine oil to the rotating bearings, the sliding pistons, and the camshaft of your car's engine. If your engine is running hot, oil pressure is low, or you're hearing engine noises, there could be a problem with the oil pump.
+The overdrive setting on your car lets you drive at a steady speed while the engine reduces its RPM. This reduces wear on your engine and provides for better fuel efficiency.
+The overhead camshaft is a valvetrain configuration where the camshaft is located above the combustion chambers. This configuration delivers better engine performance and more speed to the vehicle. It is also easier for mechanics to work on this type of configuration.
+The overhead valve is a type of piston engine that places the camshaft within the cylinder block and uses pushrods to move the rocker arms, which in turn opens and closes the valve. While the overhead valve configuration offers comparable performance to the overhead camshaft design when the engine is not pushed to high RPMS, it is a more cumbersome design that requires more mechanical labor when problems arise.
+Overheating is when your car's engine is running too hot. Too little antifreeze can cause this problem, particularly if the antifreeze is leaking or not circulating through the system properly because of a faulty uptake hose. If your engine is overheating, you should pull over, stop the car, and let the engine cool down. If you are not in a position to immediately stop the car, you should turn the heater on, which will temporarily cool the engine a bit until you can pull over and assess the problem.
+Overload shocks are designed for vehicles that carry heavy loads. These shocks provide extra cushioning and spring so that the struts can handle the car's weight and still provide a safe, comfortable ride.
+Oversteer... It looks great in car commercials when the back end of a car is skidding sideways on a shiny surface where there are no obstacles around. But it's not so good for ordinary drivers! Oversteer occurs when the rear tires of a car lose their grip on the road when heading into a turn. When that happens, the back end skids out. To avoid this and the serious damage it can cause, you should approach turns slowly and cautiously, especially in the rain.
+Oxidation is the interaction of oxygen with other substances. Rust is a common side effect of oxidation, and when it comes to cars, oxidation damages paint and the metal beneath it. Sealants on paint help combat this naturally occurring process, but over time oxidation can damage your car's parts and appearance.
+The oxygen sensor is part of your car's emissions control system. It is located in the exhaust pipe and designed to ensure your engine is receiving the correct fuel air mixture by measuring the ratio contained within the exhaust.
+Parking lights, the two lights located on the sides of the front grille and sometimes rear and side panels of the car, were originally designed to offer illumination on cars parked alongside a dark road, so that other drivers could see them. In most cars, the switch that turns on the headlights also turns on the parking lights. Today, these lights are handy for when you need some degree of illumination but don't need the full power of your car's headlight lamps.
+The parking brake, also known as the emergency brake, is designed to keep the car motionless when it is parked. This is particularly important for manual transmission vehicles.
+Pcv stands for positive crankcase ventilation. Unburned fuel vapors, other combustion byproducts, and moisture are contained in the crankcase until they can be filtered and redistributed back into the intake manifold to be reburned by the engine. The main components of this system include a valve, hoses, and an air filter. The PCV valve restricts the amount of air that's siphoned from the crankcase into the intake manifold. The PCV filter introduces clean air through a hose to the engine.
+A pinion is a small gear located in the drivetrain of the car, which moves the larger gear that turns the steering wheel. Pinion gears are also used in rear differentials.
+A piston ring is a ring that fits into a groove on the exterior of the piston. This ring serves to seal the combustion chamber so that gasses can't escape, transfer heat from the piston to the cylinder, and regulate oil consumption. Unless you are putting undue stress on your engine, the piston ring usually lasts the lifetime of your car.
+Power steering minimizes the amount of effort it takes to turn your steering wheel. Nearly all newer model cars have power steering.
+Power steering fluid is a hydraulic fluid used by the pump in your power steering system. It should be checked regularly to make sure there is enough pressure in the pump to support the rack and pinion.
+There are generally two hoses in the power steering system one that takes hydraulic fluid from the pump to the rack, and another that takes fluid from the rack back to the pump. As with any hoses, cracks and leaks can develop over time, thereby compromising your power steering and components.
+The purge valve releases fuel vapors from the canister into the intake. When the valve is faulty, your emissions system will not work properly and this will cause stress on the engine.
+A radial tire is a tire design that utilizes plies arranged at a ninety degree angle to the direction of travel. These plies are strong cords made of polyester, steel and other materials that help the tire hold its shape by preventing the rubber from stretching.
+The radiator transfers heat from the hot liquid coolant, through its tubes, to the air blown through the fan. This process helps cool the engine. Problems that can go wrong with the radiator include leaks in the hoses, leaks in the radiator itself, a faulty fan, or obstructions in the cooling system.
+Made of aluminum or copper, the radiator core is comprised of rows of tubes and serpentine fins that work to transfer heat to the cooling fan.
+Your car's radiator hoses attach from the radiator to the engine, and from the radiator to the waterpump. As with any hoses under the hood, over time hoses can develop leaks at the seal and need to be replaced.
+Rear brakes are typically drum brakes. This type of brakes has more parts than disc brakes and is harder to service, but they are less expensive to manufacture, and they easily incorporate an emergency brake mechanism. With drum brakes, fluid is forced into the wheel cylinder, which pushes the brake shoes against the drum, which is attached to the wheel. This friction causes the wheel and car to stop.
+There are two kinds of rear defrosters one blows hot air against the rear window the other is an application of thin lines crossing through your back window. These lines are actually small heating elements that slowly warm your window from the inside out.
+In rear wheel drive cars, the back wheels do the pushing while the front wheels do the steering. This distributes the load of the car across all four tires. The advantage of having better weight balance overall is that it extends the life of your tires. You also get quicker acceleration and slightly better stopping capability.
+A reservoir is a holding receptacle for liquid. The most important reservoir in your car is the container that holds your coolant for the radiator.
+RPM stands for revolutions per minute. In your car, RPM is used to measure the output of the engine. Anything below eight hundred RPM and your car is in idle. One thousand five thousand RPM indicates standard output for accelerating and driving. Five thousand plus RPM exceeds standard output and May put stress on your engine.
+The rotor is the brake disk that attaches to the wheel of the car. In a disc brake system, the brake pad is pressed against the rotor with a set of calipers. The friction it causes enables the car to slow down and stop. If you let your brake pads wear out without replacing them, you risk damaging the rotor.
+Rust and corrosion inhibitors are chemical compounds that protect against rust and corrosion on the exterior of metal parts and structural components
+R one hundred and thirty four is a type of refrigerant used in car air conditioning systems. It was designed to replace freon, which is now banned because it depletes ozone in the environment.
+EMPTYROW
+EMPTYROW
+Where the driver physically selects the gears themselves.
+A test to check that your car is safe to drive.
+A road that has two or more lanes on each side of a hard shoulder.
+A people carrier. Van like but designed for personal use. They carry more people than a standard car.
+If when driving through a bend and the rear wheels fail to follow the front wheels and instead veer towards the outside of the turn, you are experiencing over steer.
+A crossing with traffic lights that pedestrians can use by pushing a button. Cars must give way to pedestrians while the amber light is flashing.
+Makes turning the wheels a lot easier. Means the car has a separate power source that helps turn the wheels.
+The vehicle or other road user that is allowed by law to go first is the one who has priority.
+A pedestrian crossing that does not have a flashing amber light stage.
+A low bump built into the road designed to slow traffic down.
+Raised strips across the road near a roundabout or junction that change the sound the tires make and warn drivers to slow down. They are also used on motorways to separate the main carriageway from the hard shoulder.
+EMPTYROW
+EMPTYROW
+Part of the US department of transportation whose mission is to save lives, prevent injuries, and reduce vehicle related crashes. The nhtsa oversees critical behavioral and vehicle studies, along with maintaining and distributing data for safety research and statistics
+An offense a driver May be charged with if driving after consuming alcohol and or or other drugs. Also known as driving under the influence, or dui.
+A guide to operating the vehicle, provided by the manufacturer.
+Parking next to a curb in the space between two parked cars.
+A point system assigns point values to traffic violations for each state. When the BMV receives a conviction notice from the court, the offense is entered on your driving record and points are assigned. These points are counted during a specified time period. Once you accumulate a certain number of points, your license May be suspended, you May be required to attend a hearing, take a behavior modification driving course, or undergo a driver assessment re examination
+The privilege of having immediate use of a certain part of a roadway when two or more users of the roadway want to use it at the same time.
+An uncontrolled emotional response by a driver to a traffic situation deliberate tailgating, yelling at other drivers, assaulting another driver. An extreme form of aggressive driving that May be considered as a criminal offense.
+EMPTYROW
+EMPTYROW
+A type of gasoline or fuel that is comprised of eighty five percent methanol and fifteen percent gasoline. This has largely been replaced by E eighty five, a biofuel, as M eighty five is more hazardous to the environment and exceptionally poisonous.
+Also known by the trade name magneride. A type of chassis and suspension technology from general motors. This suspension adapts the shock absorbers to respond in altered terrain or driving conditions. It averages the optimal shock damping in order to improve driving and handling.
+The manufacturer of the vehicle, EG honda.
+On an engine block, this type of bearing supports the crankshaft.
+In order to reduce engine warm up time, this device routes exhaust heat into the intake manifold by using a thermostat to monitor the heat levels.
+When towing an object, these sideview mirrors can be moved further away from a motor vehicle.
+This type of transmission uses a clutch and shift, or gear selector in order to change gears when driving.
+The lubricant or fluids that keep a transmission from running hot.
+The code on an engine designated by a manufacturer to differentiate it from other engines.
+The digital space allowed for map and navigation systems in the computer system of a motor vehicle.
+The supporting programs from a manufacturer to help boost sales and aid in dealer advertising when marketing their vehicles to consumers.
+A type of seat with mechanical support in the passenger and driver seats that provide lumbar and other support with passenger controlled settings.
+When maximum horsepower is reached, this is the speed of the engine.
+When maximum torque is reached, this is the speed of the engine.
+When the rear seats have been folded or removed, this measurement depicts the full cargo volume of a motor vehicle.
+The system that allows a driver to create preset settings for various vehicle systems, such as power seats, mirrors, steering column positions, and others. After setting their preferred placement or functions, the driver can then recall the settings with the push of a button.
+A type of vehicle in which the engine is aft of the passenger compartment, but forward of the rear axle.
+A type of vehicle classification in the united states that is larger than a compact car but smaller than a full size car. Sometimes called an intermediate car. In europe, this type of car is called a " large family car " or the D segment category.
+When a consumer has leased a vehicle, this is the number of miles they are allowed to drive without incurring an excess mileage penalty.
+A type of vehicle classification in the united states that allows for passenger transport in the rear, utilizing two or three rows of seats. In europe and the UK, this is referred to as a people mover or people carrier.
+A type of vehicle designed primarily for urban transportation. Significantly more compact than standard vehicle.
+The product line or brand name of the car, rather than the manufacturer. EG, accord.
+The calendar year in which a particular product line or brand was manufactured and sold.
+An automotive industry term to express the interest rate used when calculating the monthly payment. Equal to the apr of the lease divided by two thousand four hundred. Sometimes called a " lease factor " or " lease fee ".
+The kind of vehicle body that uses thin, shaped joined panels to garner its strength and rigidity. As opposed to other structures which use wider panels for their frame. May be called " unit " or utilized construction.
+The " window sticker " required for all new vehicles sold in the united states. This is a sticker that is attached to the side window with the following information MSRP, engine and transmission specs, standard equipment and warranty details, optional equipment and pricing, city and highway mileage ratings as determined by the environment protection agency, and crash test ratings from the national highway traffic safety administration.
+In a finance or lease contract, the amount of principal and interest to be paid every month.
+The automotive industry abbreviation for " miles per gallon ".
+The manufacturer suggested retail price.
+This is a device meant to reduce the noise from the exhaust pipe of an internal combustion engine.
+This is a type of springs where several of its leads are gathered by steel bands.
+A type of suspension with at least four links or arms, but no struts. Multi  link suspensions provide better flexibility to optimize the vehicle's ride and handling.
+Often abbreviated as the " nhtsa ". This agency in the united states government has the power to order manufacturers to recall or repair vehicles and equipment based on internal investigations about the safety of their products.
+A type of internal combustion engine that runs on natural gas.
+A system which controls the navigation system of a motor vehicle. This May include a touch screen, dial, push button, or voice activation.
+By communicating with GPS, this system can pinpoint the vehicle's location and determine a course on a map stored in the computer system.
+Cornering condition with the front and rear slip angles being roughly the same to aid in perfecting vehicle balance.
+As assigned by the national highway traffic safety administration, this id number is given to a recall.
+As assigned by the national highway traffic safety administration, this id number is given to a technical service bulletin.
+To provide visibility to the roadway and surrounding areas in the dark, this exterior camera uses infrared technology.
+Abbreviation for " national low emission vehicle program ". Enforced by the epa, this program encourages low emissions for light duty vehicles and trucks. The program is opt in by manufacturers as well as states.
+The six chemical compounds that are produced in high temperature combustion. This photochemical smog contains nitrogen and oxygen atoms and is created when those chemicals interact with sunlight.
+How many drive ratios a transmission in a motor vehicle is capable of selecting.
+This system attempts to lessen noise, vibration, and harshness for the passenger compartment of a motor vehicle.
+Original equipment manufacturer. Particularly pertaining to automotive parts, this industry shorthand refers to the manufacturer of the vehicle and parts that are sent from the factory, rather than aftermarket parts.
+This nhtsa agency monitors the effectiveness of a manufacturer's recall campaign, as well as the administration and investigation of said recalls.
+Engine oil
+In the lubricating system of the engine, this canister removes dirt and other abrasives from the motor oil or other lubricant.
+Located in the ring groove closest to the crankcase, the oil ring wipes excess oil from the cylinder wall when the pistons are in motion. The oil is then drained through ring openings to the reservoir on the engine block.
+In an internal combustion engine, the oil pump circulates the oil to the rotating bearings, pistons, and the camshaft. This keeps the bearings running smoothly and aids in the cooling of the engine.
+The system used by the computer to identify malfunctioning components through the display of issue codes. An issue, or trouble, code will be displayed on the dash with a symbol that is lit, such as " check engine " or " service engine soon " code.
+How responsive a steering wheel is to driving conditions when it is centered in the column. Good on center feel occurs when the wheel has a tendency to return to the center after being deflected.
+Outlet or electrical socket that receives 115V AC current from the charging system of the motor vehicle.
+Products that can be added to a standard edition of a vehicle to enhance various qualities, including performance and style. Optional equipment includes items such as sun roof or stereo system.
+Used to control a car that is oversteering and tail fishing, this technique turns the steering wheel away from the direction the car is turning.
+A type of gearset where the output shaft turns faster than the input shaft. Modern transmissions use overdrive to reduce engine RPM and improve the fuel economy.
+In an engine, a type of valvetrain arrangement where the camshaft is in its cylinder heads. The camshaft is placed close to the valves in order to keep the valvetrain components stiff and light. This allows the valves to open and close quickly and the engine to run at a higher RPM.
+On a turbocharged engine, this switch warns the driver of excessive intake pressure, particularly if it May be caused by component malfunction.
+A type of engine whose cylinders have greater bore diameter than stroke length. This gives a bore or stroke ratio greater than one one.
+This sensor in the exhaust stream relays air or fuel ratio information to the control computer so that the computer can make adjustments.
+Abbreviation for " porsche active aerodynamics ". On nine hundred and eleven turbo models, this is a combination of a multistage front spoiler and rear spoiler. The spoilers will extend and react in three different positions.
+Usually parallel to the axle, this long link provides lateral location on a rigid axle.
+A type of vehicle powered by an electric motor and internal combustion engine that are inline. This type of vehicle can be driven in either electric mode, engine mode, or combined mode. The most common type of modern hybrid vehicle.
+This is a system that enables a vehicle to park via laser, radar, or sonar technology.
+Sometimes referred to as " daytime running lights. " these white lights increase visibility to other drivers on the road.
+Sensors that measure the distance to nearby cars or other objects in the drive line. These sensors alert the driver with sound or light.
+Pasm, or porsche active suspension management, is an electronic damping system. This system changes depending on road conditions or driving style. It varies the damping forces with the parameters of the mode chosen by the driver. It reduces pitch and roll, while wheel contact is optimized.
+These settings are stored and recalled with the touch of a button. This can include seat position, mirror adjustments, or other adjustments commonly made by drivers.
+The available volume of space for passengers in both the front and rear of the vehicle.
+Features to provide safety for passengers, the driver, and equipment that are not " active " until there is a need, for instance, in a collision. This includes seat belts, air bags, and the body construction of the vehicle.
+The capacity of a motor vehicle for its occupants and cargo, in pounds. The gross vehicle weight rating GVWR minus its curb weight.
+Sometimes referred to as the " buyout amount ". During a vehicle lease or loan, this is the amount required to be paid to discharge the rest of the lease.
+Positive crankcase ventilation filter or positive crankcase ventilation valve. These devices aid in the venting of combustion gases into the intake system rather than into the atmosphere.
+On nine hundred and eleven turbo S porsche models, this is an active anti  roll system to suppress lateral body movement during cornering. It can also aid in minimizing the lateral instability of the vehicle on an uneven roadway.
+A system that controls the position of gas, brake, and or or clutch pedals.
+A type of combustion chamber that resembled a shallow peaked roof.
+A light duty truck with an enclosed cabin and open cargo area. Primarily a passenger car in the united states, they make up eighteen percent of all total vehicles sold in north america.
+Structures that support the roof, with a  pillars framing the widescreen and successive structures named for letters of the alphabet, EG, B pillar.
+A bearing in the rear of the crankshaft to support the tip of the input shaft on the transmission.
+A sliding valve snugly fitted into a cylinder that moves up and down because of pressure. In an engine, the pistons compress fluids and create fluid pressure.
+The rotation of a car on a horizontal axis. This causes the nose or tail or a motor vehicle to bob up and down. EG, dive and squat.
+A type of gearset that is arranged like the planets around the sun. The central gear is also called a " sun gear " and the circular grouping of gears around it are called " planet gears ". The planet gears are mounted on a rotating carrier. Planetary gearsets are common in automatic transmissions.
+On some motor vehicles, this valve drains condensation from the intake plenum.
+A type of vehicle that can be powered by electricity when plugged into a standard domestic AC power socket.
+Also known as " up  sized wheels. " larger wheels than those that are included with the basic vehicle package.
+This coating reduces the reflected light, or glare, in side view mirrors.
+How much an object resists rotational acceleration. If a mass of an object is distributed far from its rotational axis, the object has a higher polar moment of inertia. When it is close to the rotational axis, it has a lower polar moment of inertia.
+When at least one fuel injector is mounted on the intake ports of each cylinder. Usually the injector is mounted on the intake manifold close to the port.
+When triggered, this system will alert authorities of a collision.
+Systems and devices that aid in protecting the passenger in the aftermath of a collision.
+For torque, the unit of measurement. One pound foot equals the twisting force produced when a one pound force is applied to the end of a one foot long lever.
+The rate at which work is performed. In motor vehicles, this is measured in horsepower.
+An electronic release in the hatch or trunk of a motor vehicle.
+The RPM range over which an engine gives a fraction of its peak power. The band usually extends below the torque peak of an engine to slightly above its power peak.
+A side view mirror that can move closer or farther away from the vehicle.
+Electric or hydraulic system that multiplies the force a driver exerts on the steering wheel.
+The fluid used in a power steering system. This is generally red, pink, or clear.
+The system of hoses and tubes used to carry fluid between the power steering system and other components of the engine.
+This warranty covers the parts that make the engine move, EG, pistons and bearings or other internal parts of the engine.
+Systems that move the passenger seats into a safe position if a precrash condition is detected.
+Using radar or laser technology, this system detects potential collision conditions and causes other safety systems in the motor vehicle to react and deploy cautionary measures. This can include seat belts, applied brakes, etcetera
+A name brand audio system that is provided to the vehicle manufacturer by the audio company.
+A tinted window that has been factory installed. The window tint is created with a mylar covering or smoked glass and obscures the interior view of the vehicle.
+When consumers are paying for vehicles in similar private sales, this is a comparison price.
+Of a tire, its aspect ratio.
+A manufacturer owned car given to employees for company business but later purchased by a dealership. Rental cars May be delineated as " program cars, " but can be verified using a vin check through carfax or other services.
+The unit of measurement for pressure, or pounds per square inch. Atmospheric pressure at sea level is fourteen point seven psi.
+Abbreviation for porsche safety management. A control system for stabilization when pushing the vehicle's performance limits. Especially in wet or low grip surfaces, PSM improves traction through the brake differential and anti  slip regulation.
+When a lessee has the right to purchase a vehicle at the end of the vehicle lease term. The purchase price will be equal to the residual value.
+This valve vents fuel vapors from the charcoal canister to an intake, preventing the canister from being rendered nonfunctional.
+Automotive industry slang for " oversteer ".
+A type of rod that transfers force in compression. Pushrods transfer motion from the cam followers to a more distant part of a valvetrain.
+Partial zero emission vehicle. As designated by the epa, a type of low emissions vehicle that has zero evaporative emissions.
+A steering mechanism that consists of a gear in mesh with a toothed bar, called a " rack. " the ends of the rack are linked to the steered wheels with tie rods. When the gear is rotated by the steering shaft, it moves the rack from side to side turning the wheels.
+The radiator and air conditioning system in a motor vehicle. This system is made up of small diameter tubes and thin, heat conducting fins.
+Tubes that are used to connect the radiator to the engine.
+The sliver of the FM frequency that broadcasts the metadata of the files in news, traffic, and song broadcasts.
+Wipers that are engaged with sensors and adjust wiper speed as the rain conditions increase or decrease.
+Road sensors and communication satellites that dispense road congestion, accidents, and information.
+A cargo cover is an opaque, additional cover or overlay that can cover or hide items in a trunk. This can be used to provide security for valuables or to shield from heat and cold.
+Axles are the units in a motor vehicle that transfer power from the transmission to the wheels. This houses the differential, shats, bearings, seals, and mounts needed to create the power transfer. There May be a need, in some vehicle types, for rear and front axles.
+A type of rear brake in a motor vehicle drum or disc.
+The system which removes frost and condensation from the rear window of a motor vehicle.
+On a motor vehicle, the type of rear door hinged, or sliding.
+The ability of a rear electric motor to do work, as expressed by horsepower, torque, or kilowatts. May refer to an electric or hybrid vehicle.
+What type of an electric motor is present in a hybrid or electric motor vehicle. May refer to a permanent magnet motor or traction motor.
+The system in a motor vehicle used to control the heating and cooling features positioned behind the front row seating.
+The entertainment system of a motor vehicle that is visible to passengers in the rear seating area.
+The type of seating in the rear passenger area bench seats, bucket seats, removable seats, split bench seats, captains chairs or convertible seats.
+Airfoils attached to the trunk lid or liftgate that allow for air flow over and under it. This decreases lift and increases stability at high speeds.
+A form of engine and transmission layout in motor vehicles. The engine drives the rear wheels only. RWD was popular until the late twentieth century and the most common configuration.
+An incentive offered in cash by the manufacturer, which is most commonly applied to the net price of the vehicle.
+The opposite of jounce, this wheel motion extends the suspension in a motor vehicle.
+When a vehicle is found to exhibit a defect or safety issue, recall notices are sent to owners of vehicles by the manufacturer. Dealership service departments are responsible for replacing and repairing parts that have been recalled free of charge.
+Recall
+The steering mechanism where a steering shaft turns a worm gear. This then causes a toothed metal block to move back and forth. In a recirculating track, ball bearings are placed to reduce friction between the worm gear and the block. The teeth rotate a gear connected to the steering arm, and that moves the steering linkage.
+Based on the octane rating, this fuel is what is recommended by the manufacturer of the motor vehicle.
+Recommended max RPMS of an engine. A red line marked on the tachometer will indicate this on a vehicle's dashboard. There are a few variants of redlines a colored selector as well as two lines. When the tachometer shows two lines, one indicates the sustained RPM and the other indicates the maximum RPM.
+In a hybrid or electric vehicle, this assists deceleration when the motor switches from output to generator mode. This will recharge the battery as it converts a portion of the kinetic energy into electrical energy.
+An electronic fob that is used to control the ignition of the vehicle.
+An electronic fob or button that controls the trunk release.
+An electronic fob or button that controls the windows.
+Energy sources that are replenished by natural systems solar power, wind power, hydrogen, and biofuels.
+A set of repair equipment designed to fix issues in a flat tire. May contain emergency tire sealant and other tools necessary for that purpose.
+Compare " actual cash value ". A way to value an insured property using the value of the current property without consideration for condition or depreciation.
+Based on octane rating, the recommended minimum acceptable fuel type.
+A value given to a vehicle by a leasing company based on assumptions of what it will be worth at the end of the lease. This can determine a monthly lease payment.
+System in a motor vehicle that allows power accessories to remain operational after the key has been removed from the ignition.
+When parking in a compact spaces, these side view mirrors can be moved closer to the vehicle to allow for clearance.
+When parallel parking, these mirrors can be tilted downward when a vehicle is in reverse.
+The distance between a point on a vehicle's body and the ground. The reference point May vary between manufacturers and automakers. The distance is often used to measure suspension deflection or the height of the body from the ground.
+Sometimes called a " bump steer, " this is an unfavorable steering technique when a wheel steers as the suspension compresses or extends.
+A simple type of suspension that consists of a rigid transverse member and wheel hubs that are bolted to it. It can be attached to the body by leaf springs or a mix of arms and links.
+How keen a motor vehicle is able to grip the pavement. In contrast to cornering, road holding is more commonly described as lateral acceleration and does not continue in a straight path.
+At a steady speed, the amount of power that driving wheels require to push the motor vehicle down the road. This involves many variables including speed, drag, friction, and rolling resistance.
+A program which can alert a company that offers assistance when a driver or motor vehicle is stranded on the side of a road and inoperable.
+How the body of a motor vehicle rotates on a longitudinal axis. May be called " sway " or " lean, " although these are considered misnomers. The center of gravity for the vehicle is more likely higher than the axis around which it rotates.
+Systems and devices within the motor vehicle that attempts to protect against or altogether prevent damage during rollover accidents.
+On the roof of a motor vehicle, this plastic structure can be used to tie down or contain cargo.
+Airfoils attached to the roof that allow for air flow over and under it. These are primarily attached for aesthetic purposes.
+The contour of the roof on a motor vehicle.
+How many rows of passenger and driver seating there are in a motor vehicle.
+Rear engine rear drive. A type of motor vehicle that is propelled by the wheels at the rear and the engine is aft from the front axle.
+A structural support attached to the vehicle body with rubber isolators that absorb vibration. Engineers reduce transmission of noise and harshness to the vehicle body when they bolt suspension and driveline components laterally.
+A type of tire that can be driven temporarily even if it loses its pneumatic pressure.
+This type of vehicle warranty covers the sheet metal on a motor vehicle that has received damage from rust or corrosion severe enough to create a hole or tear.
+EMPTYROW
+EMPTYROW
+A vehicle with a manual transmission requires a clutch and a gear shifter to change gears.
+A car's navigation system uses global positioning satellites to determine the physical location of the car and plot a course to reach a destination.
+An oil filter is a canister that filters dirt and abrasive materials out of the oil.
+Overdrive is the gearset where the output shaft turns at a faster rate than the input shaft.
+Pound feet is the unit of measurement for torque.
+Power steering uses a hydraulic or electric system for steering, making it easier to move the steering wheel.
+The powertrain is the combination of the engine and transmission.
+A vehicle with remote start has an electronic key fob that can start the ignition from a distance.

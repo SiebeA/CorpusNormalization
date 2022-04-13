@@ -1,15 +1,11 @@
 
 
-
-
-
-
 TODO:
 - fix the phone number deletion
-- Capitalize weekdays
 - fix that the line continues whenever there is not a punct mark.
 - proper name Capitilization e.g. 'ferrari'
-- always punct at BOL
+- always punct at BOL (now it is only with a period)
+- Capitalize weekdays
 
 - fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
 

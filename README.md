@@ -5,6 +5,9 @@
 
 
 TODO:
+- fix the phone number deletion
+- Capitalize weekdays
+- fix that the line continues whenever there is not a punct mark.
 - proper name Capitilization e.g. 'ferrari'
 - always punct at BOL
 
@@ -82,6 +85,7 @@ pip install -r requirements.txt
 - Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
 
 ### Rhoda:
+### Full data anlysis:
 - 0 BOL sentences were not capitalized
 - 509 non BOL sentences were not capitalized
 - 41 EOL had no punct mark.
@@ -237,6 +241,7 @@ However, for some of these 'mistakes' mentioned; if these are consistent, and th
 - 'Check your A/C operation normalized to 'Check your a C operation' -->
 
 <!-- - e.g. `monday–friday, 9:00 a.m.–5:00 p.m.`now to `Monday to friday, nine o'clock until five o'clock `
-- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’; Now to `Twelve thousand to fifteen thousand miles.`
+- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’; Now to `Twelve th
+ousand to fifteen thousand miles.`
 - "the late 20th century" `the late twenty TH` century now to `the late twentieth century`
 - `Magnuson-Moss Warranty Act (15 U.S.C. 2302)` DESIRED `magnuson moss warranty act fifteen, USC. Two thousand three hundred and two.` -->

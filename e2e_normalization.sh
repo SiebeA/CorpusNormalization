@@ -6,6 +6,7 @@
 # - \N\S    corrections of linebreaks, etc.
 # - ANU     Alpha-Numeric combinations
 # - DEP		Deprecated
+# - NUC 	NUmbers-combiations (e.g. phone numbers)
 # - NUO     Numbers-ordinal
 # - NUC     Numbers-Cardinal
 # - PUMA    Punctuation-Marks
@@ -19,8 +20,8 @@ ROOT=$PWD
 LANGUAGE=en
 
 ls -l *.txt # show the user options of file that can be inputted
-read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
-
+# read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
+input0=test.txt
 # echo "The current directory is : $current_dir"
 
 # for automatically naming the output file:
@@ -65,20 +66,20 @@ perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
 # perl -0777 -pi.orig -e "s/ / /g" $input
 
 
-# ANU  
-# '50k' --> '50 k' 
-perl -0777 -pi.orig -e "s/(\d+)([a-z-A-Z])/\1 \2/gi" $input
+# ANU
+
+# '50k' --> '50 k' # CAUSES PROLBEMS WITH PHONE NUMBERS
+# perl -0777 -pi.orig -e "s/(\d+)([a-z-A-Z])/\1 \2/gi" $input
+
 # Converting eg '50k - 44k' --> '50k and 44k'
 perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
 # converting '50k' -- '50 thousand'
 perl -0777 -pi.orig -e "s/(\d+\s*)k/\1 thousand/g" $input
 
 
-
 # PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
 perl -0777 -pi.orig -e "s/(\(|\))//g" $input
-# TODO only numbers
-
+## TODO only numbers
 
 
 # ABR
@@ -91,9 +92,6 @@ perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
 # not working for now:
 # but not a.b.c.d. , for now fix with;
 # perl -pi.orig -e 's/([A-Z]{2,})([a-z])\.$1\U$2/mg' $input
-
-
-
 
 
 # ABR; 'e.g.' --> 'for example'
@@ -170,11 +168,10 @@ perl -0777 -pi.orig -e 's/20th/twentieth/gi' .$output+2_genNorma.txt
 perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output+2_genNorma.txt
 
 
-
-
-
 # echo "salb replacing percentages"
 perl -0777 -pi.orig -e 's/%/ percent/' .$output+2_genNorma.txt
+
+
 
 #===========================================================
 # 3. CURRENCY CONVERSION
@@ -182,11 +179,15 @@ perl -0777 -pi.orig -e 's/%/ percent/' .$output+2_genNorma.txt
 echo "3. Currency conversion..."
 perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
+
+
 #==========================================================
 # 4. GENERIC NORMALIZATION
 #==========================================================
 echo "4. Generic normalization end..."
 perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
+
+
 
 #==========================================================
 # 5. TTS Specific NORMALIZATION
@@ -214,7 +215,7 @@ perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 # perl -0777 -pi.orig -e 's/(\w)$/\L\1/gm' $output+5TTS.txt
 
 
-# DEBUG \n\s Remove empty lines in ASR and TTS:
+# DEBUG \n\s Remove empty lines:
 perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 
 echo

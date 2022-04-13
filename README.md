@@ -1,11 +1,13 @@
 
 
 TODO:
-- fix the phone number deletion
+<!-- - fix the phone number deletion -->
+- proper name Capitilization e.g. 'ferrari' --> Or just hard replace them
+- some phone number combinations are still not well normalized
+- to not write-out phone numbers, such that I can easily spot them with sublime syntax.
 - fix that the line continues whenever there is not a punct mark.
-- proper name Capitilization e.g. 'ferrari'
 - always punct at BOL (now it is only with a period)
-- Capitalize weekdays
+<!-- - Capitalize weekdays -->
 
 - fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
 

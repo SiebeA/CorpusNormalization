@@ -77,10 +77,10 @@ An office within the national highway traffic safety administration that conduct
 A vehicle with high ground clearance outfitted for the rigors of traveling on non  paved roads.
 A cartridge filled canister placed in an engines lubricating system to strain dirt and abrasive materials out of the oil.
 A computer controlled system that identifies malfunctioning or out  of adjustment components under its control through the display of trouble codes. The presence of trouble codes is usually indicated by an intermittently or constantly lit " check engine " or " service engine soon " light.
-An electrical socket receiving 115V AC current produced by a vehicle's charging system.
+An electrical socket receiving one hundred and fifteen V AC current produced by a vehicle's charging system.
 Vehicle windows with a changeover switch that is capable of automatically rolling the window glass completely up or down as well as functioning as a conventional momentary power window switch.
 Equipment that is not included in the manufacturers base configuration of a vehicle.
-A switch used on a turbocharged engine that warns the operator of excessive and potentially harmful intake pressure that May be caused by component malfunction.
+A switch used on a turbocharged engine that warns the operator of excessive and potentially harmful intake pressure that may be caused by component malfunction.
 A handling characteristic of a vehicle that causes it to turn more sharply than the driver intends because the rear wheels are sliding to the outside of the turn.
 In a computer controlled, fuel injected vehicle, a sensor mounted in the exhaust stream that relays air or fuel ratio information to the fuel control computer that allows the computer to make adjustments.
 A vehicle that is powered by an electric motor and an internal combustion engine that are inline. This type of hybrid can be driven on either full electric mode, gasoline engine mode, or combined. This is the most common type of hybrid vehicle currently used today.
@@ -132,7 +132,7 @@ The elements of a vehicles entertainment system accessible to rear seat passenge
 The type of rear seating bench seats, bucket seats, removable seats, split bench seats, captains chairs or seats that convert into a bed.
 An aerodynamic device attached to a vehicles trunk lid or liftgate consisting of one or more airfoils supported by uprights that allows air to flow over it as well as under it, resulting in decreased lift and increased stability at high speeds.
 A cash payment offered as an incentive by the manufacturer to consumers, which is usually applied by the consumer to reduce the net price of a vehicle.
-A recall is a notice sent by a vehicle manufacturer to owners of a vehicle advising them that the vehicle has or May have a serious defect that May compromise the safety of the vehicle and that the service departments of that manufacturer's dealers will make any necessary replacements or repairs free of charge. Ordinarily, recalls affect only a portion of the production run of a given year, make and model.
+A recall is a notice sent by a vehicle manufacturer to owners of a vehicle advising them that the vehicle has or may have a serious defect that may compromise the safety of the vehicle and that the service departments of that manufacturer's dealers will make any necessary replacements or repairs free of charge. Ordinarily, recalls affect only a portion of the production run of a given year, make and model.
 A notice by a manufacturer to the owners of a defective or unsafe vehicle or vehicle component as well as dealers that a recall has occurred.
 The optimal type of fuel based on its octane rating recommended by a vehicles manufacturer.
 A method of assisting the deceleration of a hybrid or electric vehicle in which the vehicles electric motor switches from drive or output mode to generator mode. This recharges the battery by converting a portion of the vehicle's kinetic energy into electrical energy.
@@ -183,7 +183,7 @@ An assembly of tubes and fins that transfer heat from the engine coolant into th
 Windshield wipers whose rate of operation is electronically controlled based on the amount of moisture on the windshield.
 Sensors at the rear of the vehicle detect approaching traffic or pedestrians when backing out of a parking space. May be accompanied by or integrated with a rearview camera.
 A camera mounted at the back of the vehicle that displays a picture on a screen in the dash or rear view mirror of what is behind the car when the transmission is in reverse.
-A drive system that provides power to only the rear wheels of the vehicle. In trucks, this type of powertrain is sometimes referred to as 4X two in comparison to a four wheel drive 4X four system.
+A drive system that provides power to only the rear wheels of the vehicle. In trucks, this type of powertrain is sometimes referred to as four X two in comparison to a four wheel drive four X four system.
 The speed at which the engine crankshaft is turning.
 The quality of the vehicle's movement as it is driven down the road. Based on their intended use, vehicles can have a variety of different ride characteristics. Factors that affect a vehicle's ride include the suspension, steering and brakes.
 When the engine vibrates or shakes while running with the driver's foot off the gas.
@@ -204,16 +204,16 @@ In a lease transaction, the maximum number of miles the vehicle can be driven by
 Fees assessed if lessee drives more than the contracted mileage limit.
 The distance between the ground and the lowest point of the vehicle chassis usually the axle. A vehicle can drive over any object shorter than its minimum ground clearance.
 The money factor is used to determine the lease rate. For all intents and purposes it is the lease equivalent of the interest rate on a conventional loan. The money factor is the current annual percentage rate divided by twenty four. To figure out the equivalent interest rate, multiply the money factor by two thousand four hundred. The money factor usually has two zeroes after the decimal point before the rest of the number, for example zero point zero zero four one three three, so any differences in the figure seem very small, but translated into an interest rate they can make a great difference in the actual finance cost of a lease.
-The price which appears on the label showing the base price, installed options, transportation charge, and fuel economy. Required by law, it May not be removed by anyone other than the purchaser.
+The price which appears on the label showing the base price, installed options, transportation charge, and fuel economy. Required by law, it may not be removed by anyone other than the purchaser.
 A window type opening in the roof of the car that can open or tilt up or down.
 It's insured so why worry? This attitude usually increases the probability of loss or damage.
 The exhaust system device in the tailpipe that reduces engine noise. Some vehicles have more than one muffler along the tailpipe.
 Independent suspension controlled with several link arms that restrict undesired motion of the suspension for a smoother ride and more precise handling.
 An electronic fuel injection method that uses individual injectors to spray fuel directly into each intake port, bypassing the intake manifold. Also called multi  point fuel injection.
-A lessee May choose to pay additional security deposits or monthly payments upfront in exchange for a lower monthly lease payment via a reduced money factor, which reduces the monthly charges.
+A lessee may choose to pay additional security deposits or monthly payments upfront in exchange for a lower monthly lease payment via a reduced money factor, which reduces the monthly charges.
 National hot rod association
 The person or company that is designated as the insured.
-The federal agency that creates safety regulations for cars and trucks, crash tests them, and analyzes safety related defects that May require recalls.
+The federal agency that creates safety regulations for cars and trucks, crash tests them, and analyzes safety related defects that may require recalls.
 The amount owed on a vehicle loan is greater than its market value.
 One of several crash test programs run by nhtsa. Cars are crashed head on into a rigid barrier at thirty five MPH, and instrumented dummies measure crash forces endured by properly restrained occupants. Nhtsa assigns each tested vehicle a score indicating the likelihood of moderate, severe or fatal injury.
 A mixture of nitric acid and methane which is used to fuel top fuel dragsters and funny cars is also called nitro or top fuel.
@@ -230,7 +230,7 @@ Occurs when the rear tires lose adhesion under cornering. In motorsports, this i
 Measures the amount of oxygen in the exhaust.
 Sheet of metal panel that covers the front and rear quarters of the vehicle.
 The chlorofluorocarbon refrigerant, commonly referred to as freon a dupont trademark or CFC twelve, now considered environmentally hazardous but once the key ingredient in automotive air conditioning systems. A refrigerant is a chemical compound that absorbs, carries and releases heat in an air conditioning system.
-The environmentally safe refrigerant now used in air conditioning systems. It requires a slightly bulkier condenser unit than R twelve. Vehicles equipped with R twelve systems can be converted to use R 134A. Since freon is now banned, expensive and hard to obtain, the conversion May be a good idea when an R twelve based system needs recharging, particularly if technicians detect a leak.
+The environmentally safe refrigerant now used in air conditioning systems. It requires a slightly bulkier condenser unit than R twelve. Vehicles equipped with R twelve systems can be converted to use R one hundred and thirty four A. Since freon is now banned, expensive and hard to obtain, the conversion may be a good idea when an R twelve based system needs recharging, particularly if technicians detect a leak.
 The rac motor sports association is recognized by the fia as the governing body of motor sport in great britain.
 The steering wheel is connected to a pinion gear that meshes with a toothed bar, also called a rack or linear gear. As the pinion turns, the rack moves side to side, moving the steering linkage and causing the front wheels to turn left or right. The ends of the rack are linked to the steering wheel with tie rods.
 The copper or aluminum device in front of the engine through which hot engine coolant is circulated and cooled. The liquid is then recirculated back through the engine block to cool it.
@@ -248,7 +248,7 @@ Money to be held until lease end as a security method for all lease obligations.
 Disengages the clutch disc from the flywheel by pressing on the pressure plate release springs.
 The continuation of coverage that is about to expire.
 The amount charged in addition to the depreciation and any amortized costs.
-The estimated value of the vehicle at the end of the lease. Often expressed as a percentage in decimal form. It is based on a vehicle's MSRP. For example, the residual value of a vehicle May be zero point sixty five, or sixty five percent of its MSRP at the end of the lease term. In this example, a car with an MSRP of twenty thousand dollars is estimated to be worth thirteen thousand dollars at the end of the lease term. Residual value May be a negotiable figure. This should be clearly stated in the lease. It is one of the elements used in determining the monthly lease payment and also in deciding whether to buy the vehicle at term end. Also called the walkaway value or guaranteed value.
+The estimated value of the vehicle at the end of the lease. Often expressed as a percentage in decimal form. It is based on a vehicle's MSRP. For example, the residual value of a vehicle may be zero point sixty five, or sixty five percent of its MSRP at the end of the lease term. In this example, a car with an MSRP of twenty thousand dollars is estimated to be worth thirteen thousand dollars at the end of the lease term. Residual value may be a negotiable figure. This should be clearly stated in the lease. It is one of the elements used in determining the monthly lease payment and also in deciding whether to buy the vehicle at term end. Also called the walkaway value or guaranteed value.
 The amount of liability that is assumed but not reinsured by the agency.
 Describes at which speed the engine crankshaft is turning.
 The outer edge of a bare wheel.
@@ -256,13 +256,13 @@ Any chance of loss or damage.
 The body panel that runs beneath a vehicle's doors.
 A protective steel cage to prevent driver injury during a rollover.
 The type of vehicle impact in which the car or truck rolls over on its side, onto its roof, or turns over completely. The biggest cause of injury in a rollover is ejection of the occupant or any part of the occupant. Rollover is a greater risk in any sport utility vehicle because of its high center of gravity than in a minivan, pickup truck or passenger car. Rollover can occur immediately upon impact or in the seconds after an impact, which makes it more difficult to protect occupants with traditional airbags. Inflatable tubular restraints and similar designs that stay inflated longer than traditional airbags will be more effective in rollover situations.
-Under a rule of seventy eight loan, the interest over the entire life of the loan is divided into seventy eight equal pieces. The first monthly payment consists of twelve of these pieces, the next of eleven pieces and the rest principal, the third of ten interest pieces and the rest principal, and so on to the twelfth payment, which includes only one seventy eight of the interest. Under this type of loan, all the interest due is paid during the first year, and all future payments go toward reducing the principal. A rule of seventy eight loan insures that the financier will earn its profit immediately but leaves the borrower with less equity in the early years of the loan. Many dealers advertise that their loans are not of this type.
-This indicates that something May be wrong on the track, but the cars are allowed to stay, running at a reduced speed. A quick check by the officials usually resolves the issue and the green light comes back on.
+Under a rule of seventy eight loan, the interest over the entire life of the loan is divided into seventy eight equal pieces. The first monthly payment consists of twelve of these pieces, the next of eleven pieces and the rest principal, the third of ten interest pieces and the rest principal, and so on to the twelve TH payment, which includes only one seventy eight of the interest. Under this type of loan, all the interest due is paid during the first year, and all future payments go toward reducing the principal. A rule of seventy eight loan insures that the financier will earn its profit immediately but leaves the borrower with less equity in the early years of the loan. Many dealers advertise that their loans are not of this type.
+This indicates that something may be wrong on the track, but the cars are allowed to stay, running at a reduced speed. A quick check by the officials usually resolves the issue and the green light comes back on.
 EMPTYROW
 EMPTYROW
-Oil change intervals vary by manufacturer and engines, so consult your owner's manual or maintenance schedule to see how often to change the oil in your vehicle and what type of oil to use. You May be surprised. We were surprised to learn that the camry's two point five liter engine requires 0W twenty synthetic oil, for instance. Manufacturers suggest you change oil more often for " severe " driving conditions, such as frequent trailer towing, extensive stop go driving or idling in traffic, driving in extreme heat or cold, or frequent short distance driving in which the engine doesn't reach full operating temperature.
+Oil change intervals vary by manufacturer and engines, so consult your owner's manual or maintenance schedule to see how often to change the oil in your vehicle and what type of oil to use. You may be surprised. We were surprised to learn that the camry's two point five liter engine requires zero W twenty synthetic oil, for instance. Manufacturers suggest you change oil more often for " severe " driving conditions, such as frequent trailer towing, extensive stop go driving or idling in traffic, driving in extreme heat or cold, or frequent short distance driving in which the engine doesn't reach full operating temperature.
 Engine oil that's leaked can be amber if it's fresh, brown or if it hasn't been changed for ten thousand miles black, and it will leave slickness on your fingers that's hard to wipe off. Oil can leak from gaskets and seals on the front or rear of an engine, from valve covers or from the oil pan underneath, so there are several possibilities.
-Oil change intervals vary by manufacturer and engines, so consult your owner's manual or maintenance schedule to see how often to change the oil in your vehicle and what type of oil to use. You May be surprised. We were surprised to learn that the camry's two point five liter engine requires 0W twenty synthetic oil, for instance. Manufacturers suggest you change oil more often for " severe " driving conditions, such as frequent trailer towing, extensive stop go driving or idling in traffic, driving in extreme heat or cold, or frequent short distance driving in which the engine doesn't reach full operating temperature.
+Oil change intervals vary by manufacturer and engines, so consult your owner's manual or maintenance schedule to see how often to change the oil in your vehicle and what type of oil to use. You may be surprised. We were surprised to learn that the camry's two point five liter engine requires zero W twenty synthetic oil, for instance. Manufacturers suggest you change oil more often for " severe " driving conditions, such as frequent trailer towing, extensive stop go driving or idling in traffic, driving in extreme heat or cold, or frequent short distance driving in which the engine doesn't reach full operating temperature.
 EMPTYROW
 EMPTYROW
 Firms that are the principal owners of the brand and trade names of more than fifty percent of the products sold by their companies.
@@ -298,7 +298,7 @@ An alphanumerical code to identify a product
 A lettered marking code on tire sidewalls indicating tire manufacturer, plant, tire size, construction type and date of manufacture.
 An abbreviation for microprocessor control unit.
 Any chemical compound of nitrogen and oxygen nox as a by product of combustion that forms smog in the presence of sunlight.
-A non flammable, nonexplosive gas N 2O used as an oxidizing agent with gasoline or methanol to increase the rate and efficiency of combustion, thereby increasing the horsepower.
+A non flammable, nonexplosive gas N two O used as an oxidizing agent with gasoline or methanol to increase the rate and efficiency of combustion, thereby increasing the horsepower.
 A term used for oxygen sensor.
 A molecule of oxygen, an unstable pale  blue gas O three, which is formed by exposure of O two to an electrical discharge. It has a penetrating or pungent odor and a strong oxidizing effect.
 A solid matter, mainly soot from burned carbon, in an internal combustion engine's exhaust.
@@ -306,7 +306,7 @@ A form of solid air pollution such as microscopic solid or liquid matter that fl
 An emission control device in the exhaust system of a diesel engine which is used to capture particulates before they can enter the atmosphere.
 A unit used to measure the amount of contamination in a substance, such as moisture in refrigerant.
 A measurement of the emissions of a motor vehicle given as the number of parts of a particular chemical within one million parts of exhaust gas.
-The weight of the cargo that May be carried by a truck, determined by subtracting the curb weight of the vehicle and one hundred and fifty pounds sixty eight thousandg for each passenger from the gross vehicle weight rating.
+The weight of the cargo that may be carried by a truck, determined by subtracting the curb weight of the vehicle and one hundred and fifty pounds sixty eight thousandg for each passenger from the gross vehicle weight rating.
 An engine part that reciprocates in the cylinder and transfers the force of the expanding gases via the piston pin and connecting rod to the crankshaft.
 A round, caliper component in a disc brake that is moved outward by fluid pressure to press the pads against each rotor face.
 An aluminum or sintered iron component of a drum brake inside a wheel cylinder that supports the cylinder cup.
@@ -331,8 +331,8 @@ Power brakes
 Passenger car
 Revolutions per minute
 Power steering
-Refrigerant 134A, tetrafluoroethane C 2H 2F four
-Refrigerant 152A, difluoroethane C 2H 4F two
+Refrigerant one hundred and thirty four A, tetrafluoroethane C two H two F four
+Refrigerant one hundred and fifty two A, difluoroethane C two H four F two
 Retail price equivalent
 Rear wheel drive
 EMPTYROW
@@ -343,7 +343,7 @@ Manufacturer suggested retail price also known as sticker price
 National automobile dealers association
 National highway traffic safety administration
 National independent automobile dealers association
-A pre  delivery inspection is part of the process of preparing a vehicle for display or delivery. Some manufacturers require proof the pdi has occurred and May compensate a dealer for the service. Also known as make ready, prep, or get ready.
+A pre  delivery inspection is part of the process of preparing a vehicle for display or delivery. Some manufacturers require proof the pdi has occurred and may compensate a dealer for the service. Also known as make ready, prep, or get ready.
 Parts order an invoice generated at the parts counter for the purchase of a part or group of parts
 Repair order a document created when a vehicle is brought in for service contained work performed an related costs
 Rear wheel drive power from the engine is sent to the rear wheels only.
@@ -382,7 +382,7 @@ Gas engine. A british term for gasoline.
 The pigment or what is also known as the tint is the one responsible for the color of the paint.
 A short lever arm splined to the steering gear cross shaft, the pitman arm transmits the steering force from the cross shaft to the steering linkage system.
 Designed to be waterproof and a temporary solution for outdoor protection.
-Plasti dip is a multi purpose, air dry, specialty rubber coating. It can be easily applied by dipping, brushing, or spraying. Plasti dip protective coating is ideal for a broad array of do it yourself projects around the home, garage, garden, and elsewhere. It protects coated items against moisture, acids, abrasion, corrosion, and skidding or slipping, and provides a comfortable, controlled grip. Plasti dip remains flexible and stretchy over time, and will not crack or become brittle in extreme weather conditions. It has been tested and proven in temperatures from 30F to 200F.
+Plasti dip is a multi purpose, air dry, specialty rubber coating. It can be easily applied by dipping, brushing, or spraying. Plasti dip protective coating is ideal for a broad array of do it yourself projects around the home, garage, garden, and elsewhere. It protects coated items against moisture, acids, abrasion, corrosion, and skidding or slipping, and provides a comfortable, controlled grip. Plasti dip remains flexible and stretchy over time, and will not crack or become brittle in extreme weather conditions. It has been tested and proven in temperatures from thirty F to two hundred F.
 An area, filled with air at a pressure that is slightly higher than the surrounding air pressure, such as the chamber just before the blower motor.
 A piece of thin compressible material such as cork, rubber, or soft metal, placed between two mating surfaces to form a seal within the plenum chamber.
 A chamber containing air under pressure.
@@ -444,10 +444,10 @@ Braking system typically employed in hybrids and battery electric vehicles that 
 Remote start refers to any car that can be started without physically being inside the car and using a key to turn the ignition.
 EMPTYROW
 EMPTYROW
-Four wheel drive vehicles apply power to all four vehicles at the same time and there are typically two settings low or high depending on the speed and driving conditions. 4WD differs from awd in that 4WD has set power ratios for each wheel and awd will sense the driving conditions and distribute power the wheels that have the best traction.
-The five step methodology includes seiri or sort where you do a first pass of a process or area and discard anything that is not essential, next is seiton or straighten which puts the remaining items in order, third is seison or shine where the area is cleaned and a process put in place to maintain the cleanliness, fourth is seiketsu or standardize that creates habits to keep things in order and clean and finally is shitsuke or sustain where the procedures developed in the fourth step must be put in place and maintained. 5S methodology is used as a continuous improvement process to make process more efficient and streamlined.
+Four wheel drive vehicles apply power to all four vehicles at the same time and there are typically two settings low or high depending on the speed and driving conditions. Four WD differs from awd in that four WD has set power ratios for each wheel and awd will sense the driving conditions and distribute power the wheels that have the best traction.
+The five step methodology includes seiri or sort where you do a first pass of a process or area and discard anything that is not essential, next is seiton or straighten which puts the remaining items in order, third is seison or shine where the area is cleaned and a process put in place to maintain the cleanliness, fourth is seiketsu or standardize that creates habits to keep things in order and clean and finally is shitsuke or sustain where the procedures developed in the fourth step must be put in place and maintained. Five S methodology is used as a continuous improvement process to make process more efficient and streamlined.
 The eighty or twenty rule, which also goes by the name the principle of factor scarcity or the law of the vital few, says that eighty percent of the results comes from just twenty percent of the actions. This principle is used in the automotive engineering field when doing pareto analysis on quality data from production
-THE 8D problem solving methodology is a process used by automotive engineers to resolve a quality issue and allows the engineering team to identify, correct and stop the problem recurring in the future. The steps in the process include plan, form a team, define the problem, develop a containment plan, identify root cause, implement a permanent corrective action, validate the corrective action, put preventative measures in place and finally celebrate the success with the team.
+THE eight D problem solving methodology is a process used by automotive engineers to resolve a quality issue and allows the engineering team to identify, correct and stop the problem recurring in the future. The steps in the process include plan, form a team, define the problem, develop a containment plan, identify root cause, implement a permanent corrective action, validate the corrective action, put preventative measures in place and finally celebrate the success with the team.
 Machining is the general term for a process of shaping, cutting or changing the physical properties of a material.
 Transmission that requires the driver to manually shift the gears while driving the vehicle using a clutch.
 Max horsepower RPM is therpm when the automobile operates at its max power. Below or above this RPM will decrease power. Usually specified in a specific gear as well.
@@ -511,7 +511,7 @@ Suspension systems front.
 MP three is a compression technology that allows for the shrinking of the size of an audio and or or video file while maintaining excellent sound quality. It is an open standard so no one group controls the technology and those who do have technology interests are compelled to license it. This means that music can be downloaded to a computer quickly and played back at CD quality sound reproduction. MP three stands for mpeg one layer three. Mpeg stands for moving pictures experts group
 Leaf spring with several leaves bundled together.
 Engine design that uses more than one intake and or or exhaust valve per cylinder for increased engine breathing, resulting in increased horsepower and torque, especially at higher engine speeds. For example, a sixteen valve, four cylinder engine provides two intake and two exhaust valves per cylinder.
-Noise, vibration and harshness are sound and ride characteristics occupants May experience while in a moving vehicle.
+Noise, vibration and harshness are sound and ride characteristics occupants may experience while in a moving vehicle.
 Term used by ford and other truck manufacturers to generally categorize the load capacity of a vehicle series and to describe the general, usable cargo capability the vehicle series can expect to handle.
 Octane is the measure of gasoline's ability to resist autoignition, which can cause engine knock
 Device used to measure and register mileage throughout a vehicle's lifetime. Many vehicles also offer " trip odometers " that can be reset to measure distance traveled during any given trip or time period.
@@ -533,10 +533,10 @@ Unit of measure for engine torque commonly abbreviated as lb FT. The commonly us
 Power adjustable pedals allow for the forward or rearward adjustment up to three inches of the accelerator and brake pedals through the activation of an instrument panel mounted switch. This is an especially useful feature for drivers of smaller stature, allowing them to comfortably reach the pedals while being able to maintain the required distance from the steering wheel mounted airbag. This feature can be packaged together with an available seat position memory system on certain vehicles for the ultimate in comfort and convenience.
 RPM range over which an engine delivers a substantial portion of its peak power. The power band generally extends from slightly below the engine's torque peak to slightly above its power peak.
 Power takeoff refers to using the vehicle's power train as a power source to perform some work other than moving the vehicle. Examples of this work include operating auxiliary equipment such as a wrecker and snowplow lifts, dump bodies, hydraulic or pneumatic tools and so on. The pto unit is located between the power train and the device it powers. When a vehicle is doing this work while it is not moving, keep in mind that it is also deprived of the cooling benefits airflow provides. Because of this, it is important not to block the front grille or bumper openings. Specific precautions are listed in the body builders layout book. While ford does not offer the actual pto units, ford F series super duty engineers worked closely with two pto after market suppliers parker chelsea and muncie during development of the truck. This work helped create two different ford specific after market units that bolt directly onto the transmission's power takeoff interface the interface is standard on F series super duty models equipped with a manual transmission, optional with automatic transmission.
-Power takeoff pto provision is an added benefit for customers with specific auxiliary power needs. It enables up fitters to supply auxiliary power to hydraulically driven accessories such as dump bodies, sprayers, pumps, generators, etcetera front mounted, front powered equipment is often powered by a direct drive shaft from the front of the engine. The adaptation of the vehicle to allow this installation is called the power takeoff provision. This includes an adapter plate on the engine, and in some instances clearance through the grille or front end sheet metal. An optional front frame extension for mounting equipment is available on all models except the pro loader. The F six hundred and fifty and F seven hundred and fifty extensions are bolted on, while the F 750S extension has an integral extension of the frame rail.
+Power takeoff pto provision is an added benefit for customers with specific auxiliary power needs. It enables up fitters to supply auxiliary power to hydraulically driven accessories such as dump bodies, sprayers, pumps, generators, etcetera front mounted, front powered equipment is often powered by a direct drive shaft from the front of the engine. The adaptation of the vehicle to allow this installation is called the power takeoff provision. This includes an adapter plate on the engine, and in some instances clearance through the grille or front end sheet metal. An optional front frame extension for mounting equipment is available on all models except the pro loader. The F six hundred and fifty and F seven hundred and fifty extensions are bolted on, while the F seven hundred and fifty S extension has an integral extension of the frame rail.
 Name given to the combination of engine, transmission or transaxle and differential rear wheel drive only for any particular model. See the power trains section of this book for details concerning ford power train systems.
 Pcm with obd II was developed to accommodate the goals of achieving mandated emissions control and improving vehicle performance
-Although power to weight ratios May be configured in many ways, they are generally the proportion of the vehicle's curb weight divided by the vehicle's horsepower measured at peak RPM. A vehicle that produces more horsepower or torque than another vehicle of equal weight will have a greater power to weight ratio.
+Although power to weight ratios may be configured in many ways, they are generally the proportion of the vehicle's curb weight divided by the vehicle's horsepower measured at peak RPM. A vehicle that produces more horsepower or torque than another vehicle of equal weight will have a greater power to weight ratio.
 Pounds per square inch the measurement of pressure that results from a specified amount of gas in a limited volume. For example, the more air that is put into a tire, the greater the psi
 This high technology provides F series super duty with an outstanding four wheel drive system
 Connecting link in an operating mechanism that opens the valve for the duration and lift of the cam, allowing the engine to intake and exhaust the air or fuel mixture. In a conventional layout, the force is transferred to the rocker arms.
@@ -565,7 +565,7 @@ Motor oil lubricates various parts of your car's engine, thereby reducing fricti
 Mounting tires is the act of placing tires on the wheels or rims and installing them onto the axels of the car. When this is done, the wheels require balancing to ensure that there are no spots on the tire that will wear unevenly. This is accomplished using a special machine that determines when the wheel and the center of gravity are identical to the axis of rotation.
 Mpg stands for miles per gallon, a measurement that lets you calculate how many miles you can travel on one gallon of gas. Each car is designed with a maximum MPG capacity, but the actual number of miles your car gets per mile varies greatly due to driving conditions. Driving on city streets or in traffic where you stop and go a lot diminishes the amount of miles per gallon your car will travel.
 The muffler is a device designed to limit the amount of noise emitted from your car's exhaust system. Over time, mufflers can suffer from corrosion or become damaged by rocks and debris in the road because of their placement on the undercarriage of the car.
-Multigrade oil is designed for people living in cold climates where the temperatures drop below freezing. Multigrade oil is thinner in cold temperatures, which allows it to move through the engine better. Conversely, this oil becomes thicker in temperatures above 100AAÂAA F, which helps keep the engine cooler.
+Multigrade oil is designed for people living in cold climates where the temperatures drop below freezing. Multigrade oil is thinner in cold temperatures, which allows it to move through the engine better. Conversely, this oil becomes thicker in temperatures above one hundred AAÂAA F, which helps keep the engine cooler.
 When a car is in neutral, it is temporarily disengaged from the gearbox. This allows you to push a stalled car and it allows you to take your foot off the clutch in a manual transmission vehicle while you are at a stop.
 When a vehicle turns at a rate exactly proportional to the rate at which the steering wheel is turned, it is said to have neutral steering.
 Nitrogen oxide is a toxic by product of internal combustion. When dissolved in moisture in the environment nitrogen oxide causes acid rain and pollution. The catalytic converter in your car helps reduce the amount of nox present in your exhaust.
@@ -599,7 +599,7 @@ Rear brakes are typically drum brakes. This type of brakes has more parts than d
 There are two kinds of rear defrosters one blows hot air against the rear window the other is an application of thin lines crossing through your back window. These lines are actually small heating elements that slowly warm your window from the inside out.
 In rear wheel drive cars, the back wheels do the pushing while the front wheels do the steering. This distributes the load of the car across all four tires. The advantage of having better weight balance overall is that it extends the life of your tires. You also get quicker acceleration and slightly better stopping capability.
 A reservoir is a holding receptacle for liquid. The most important reservoir in your car is the container that holds your coolant for the radiator.
-RPM stands for revolutions per minute. In your car, RPM is used to measure the output of the engine. Anything below eight hundred RPM and your car is in idle. One thousand five thousand RPM indicates standard output for accelerating and driving. Five thousand plus RPM exceeds standard output and May put stress on your engine.
+RPM stands for revolutions per minute. In your car, RPM is used to measure the output of the engine. Anything below eight hundred RPM and your car is in idle. One thousand five thousand RPM indicates standard output for accelerating and driving. Five thousand plus RPM exceeds standard output and may put stress on your engine.
 The rotor is the brake disk that attaches to the wheel of the car. In a disc brake system, the brake pad is pressed against the rotor with a set of calipers. The friction it causes enables the car to slow down and stop. If you let your brake pads wear out without replacing them, you risk damaging the rotor.
 Rust and corrosion inhibitors are chemical compounds that protect against rust and corrosion on the exterior of metal parts and structural components
 R one hundred and thirty four is a type of refrigerant used in car air conditioning systems. It was designed to replace freon, which is now banned because it depletes ozone in the environment.
@@ -619,12 +619,12 @@ Raised strips across the road near a roundabout or junction that change the soun
 EMPTYROW
 EMPTYROW
 Part of the US department of transportation whose mission is to save lives, prevent injuries, and reduce vehicle related crashes. The nhtsa oversees critical behavioral and vehicle studies, along with maintaining and distributing data for safety research and statistics
-An offense a driver May be charged with if driving after consuming alcohol and or or other drugs. Also known as driving under the influence, or dui.
+An offense a driver may be charged with if driving after consuming alcohol and or or other drugs. Also known as driving under the influence, or dui.
 A guide to operating the vehicle, provided by the manufacturer.
 Parking next to a curb in the space between two parked cars.
-A point system assigns point values to traffic violations for each state. When the BMV receives a conviction notice from the court, the offense is entered on your driving record and points are assigned. These points are counted during a specified time period. Once you accumulate a certain number of points, your license May be suspended, you May be required to attend a hearing, take a behavior modification driving course, or undergo a driver assessment re examination
+A point system assigns point values to traffic violations for each state. When the BMV receives a conviction notice from the court, the offense is entered on your driving record and points are assigned. These points are counted during a specified time period. Once you accumulate a certain number of points, your license may be suspended, you may be required to attend a hearing, take a behavior modification driving course, or undergo a driver assessment re examination
 The privilege of having immediate use of a certain part of a roadway when two or more users of the roadway want to use it at the same time.
-An uncontrolled emotional response by a driver to a traffic situation deliberate tailgating, yelling at other drivers, assaulting another driver. An extreme form of aggressive driving that May be considered as a criminal offense.
+An uncontrolled emotional response by a driver to a traffic situation deliberate tailgating, yelling at other drivers, assaulting another driver. An extreme form of aggressive driving that may be considered as a criminal offense.
 EMPTYROW
 EMPTYROW
 A type of gasoline or fuel that is comprised of eighty five percent methanol and fifteen percent gasoline. This has largely been replaced by E eighty five, a biofuel, as M eighty five is more hazardous to the environment and exceptionally poisonous.
@@ -661,7 +661,7 @@ This is a type of springs where several of its leads are gathered by steel bands
 A type of suspension with at least four links or arms, but no struts. Multi  link suspensions provide better flexibility to optimize the vehicle's ride and handling.
 Often abbreviated as the " nhtsa ". This agency in the united states government has the power to order manufacturers to recall or repair vehicles and equipment based on internal investigations about the safety of their products.
 A type of internal combustion engine that runs on natural gas.
-A system which controls the navigation system of a motor vehicle. This May include a touch screen, dial, push button, or voice activation.
+A system which controls the navigation system of a motor vehicle. This may include a touch screen, dial, push button, or voice activation.
 By communicating with GPS, this system can pinpoint the vehicle's location and determine a course on a map stored in the computer system.
 Cornering condition with the front and rear slip angles being roughly the same to aid in perfecting vehicle balance.
 As assigned by the national highway traffic safety administration, this id number is given to a recall.
@@ -679,12 +679,12 @@ Located in the ring groove closest to the crankcase, the oil ring wipes excess o
 In an internal combustion engine, the oil pump circulates the oil to the rotating bearings, pistons, and the camshaft. This keeps the bearings running smoothly and aids in the cooling of the engine.
 The system used by the computer to identify malfunctioning components through the display of issue codes. An issue, or trouble, code will be displayed on the dash with a symbol that is lit, such as " check engine " or " service engine soon " code.
 How responsive a steering wheel is to driving conditions when it is centered in the column. Good on center feel occurs when the wheel has a tendency to return to the center after being deflected.
-Outlet or electrical socket that receives 115V AC current from the charging system of the motor vehicle.
+Outlet or electrical socket that receives one hundred and fifteen V AC current from the charging system of the motor vehicle.
 Products that can be added to a standard edition of a vehicle to enhance various qualities, including performance and style. Optional equipment includes items such as sun roof or stereo system.
 Used to control a car that is oversteering and tail fishing, this technique turns the steering wheel away from the direction the car is turning.
 A type of gearset where the output shaft turns faster than the input shaft. Modern transmissions use overdrive to reduce engine RPM and improve the fuel economy.
 In an engine, a type of valvetrain arrangement where the camshaft is in its cylinder heads. The camshaft is placed close to the valves in order to keep the valvetrain components stiff and light. This allows the valves to open and close quickly and the engine to run at a higher RPM.
-On a turbocharged engine, this switch warns the driver of excessive intake pressure, particularly if it May be caused by component malfunction.
+On a turbocharged engine, this switch warns the driver of excessive intake pressure, particularly if it may be caused by component malfunction.
 A type of engine whose cylinders have greater bore diameter than stroke length. This gives a bore or stroke ratio greater than one one.
 This sensor in the exhaust stream relays air or fuel ratio information to the control computer so that the computer can make adjustments.
 Abbreviation for " porsche active aerodynamics ". On nine hundred and eleven turbo models, this is a combination of a multistage front spoiler and rear spoiler. The spoilers will extend and react in three different positions.
@@ -732,7 +732,7 @@ A name brand audio system that is provided to the vehicle manufacturer by the au
 A tinted window that has been factory installed. The window tint is created with a mylar covering or smoked glass and obscures the interior view of the vehicle.
 When consumers are paying for vehicles in similar private sales, this is a comparison price.
 Of a tire, its aspect ratio.
-A manufacturer owned car given to employees for company business but later purchased by a dealership. Rental cars May be delineated as " program cars, " but can be verified using a vin check through carfax or other services.
+A manufacturer owned car given to employees for company business but later purchased by a dealership. Rental cars may be delineated as " program cars, " but can be verified using a vin check through carfax or other services.
 The unit of measurement for pressure, or pounds per square inch. Atmospheric pressure at sea level is fourteen point seven psi.
 Abbreviation for porsche safety management. A control system for stabilization when pushing the vehicle's performance limits. Especially in wet or low grip surfaces, PSM improves traction through the brake differential and anti  slip regulation.
 When a lessee has the right to purchase a vehicle at the end of the vehicle lease term. The purchase price will be equal to the residual value.
@@ -747,7 +747,7 @@ The sliver of the FM frequency that broadcasts the metadata of the files in news
 Wipers that are engaged with sensors and adjust wiper speed as the rain conditions increase or decrease.
 Road sensors and communication satellites that dispense road congestion, accidents, and information.
 A cargo cover is an opaque, additional cover or overlay that can cover or hide items in a trunk. This can be used to provide security for valuables or to shield from heat and cold.
-Axles are the units in a motor vehicle that transfer power from the transmission to the wheels. This houses the differential, shats, bearings, seals, and mounts needed to create the power transfer. There May be a need, in some vehicle types, for rear and front axles.
+Axles are the units in a motor vehicle that transfer power from the transmission to the wheels. This houses the differential, shats, bearings, seals, and mounts needed to create the power transfer. There may be a need, in some vehicle types, for rear and front axles.
 A type of rear brake in a motor vehicle drum or disc.
 The system which removes frost and condensation from the rear window of a motor vehicle.
 On a motor vehicle, the type of rear door hinged, or sliding.
@@ -777,7 +777,7 @@ A value given to a vehicle by a leasing company based on assumptions of what it 
 System in a motor vehicle that allows power accessories to remain operational after the key has been removed from the ignition.
 When parking in a compact spaces, these side view mirrors can be moved closer to the vehicle to allow for clearance.
 When parallel parking, these mirrors can be tilted downward when a vehicle is in reverse.
-The distance between a point on a vehicle's body and the ground. The reference point May vary between manufacturers and automakers. The distance is often used to measure suspension deflection or the height of the body from the ground.
+The distance between a point on a vehicle's body and the ground. The reference point may vary between manufacturers and automakers. The distance is often used to measure suspension deflection or the height of the body from the ground.
 Sometimes called a " bump steer, " this is an unfavorable steering technique when a wheel steers as the suspension compresses or extends.
 A simple type of suspension that consists of a rigid transverse member and wheel hubs that are bolted to it. It can be attached to the body by leaf springs or a mix of arms and links.
 How keen a motor vehicle is able to grip the pavement. In contrast to cornering, road holding is more commonly described as lateral acceleration and does not continue in a straight path.

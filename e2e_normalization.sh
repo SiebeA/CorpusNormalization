@@ -90,8 +90,6 @@ perl -0777 -pi.orig -e "s/november/November/g" $input
 perl -0777 -pi.orig -e "s/december/December/g" $input
 
 ### ANU
-# '50k' --> '50 k' 
-# perl -0777 -pi.orig -e "s/(\d+)([a-z-A-Z])/\1 \2/gi" $input # CAUSES PROLBEMS WITH PHONE NUMBERS
 
 # Converting eg '50k - 44k' --> '50k and 44k'
 perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
@@ -195,6 +193,9 @@ perl -0777 -pi.orig -e 's/\%/ percent/gim' .$output+2_genNorma.txt
 
 
 
+# ANU
+# '50k' --> '50 k' 
+perl -0777 -pi.orig -e "s/(\d)([a-zA-Z])/\1 \2/gim" .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 #===========================================================
 # 3. CURRENCY CONVERSION
 #==========================================================

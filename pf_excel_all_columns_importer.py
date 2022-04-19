@@ -20,6 +20,7 @@ def xlsx_importerAndScout(file_path):
     """
     import pandas as pd
     sheet_to_df_map = pd.read_excel(file_path, sheet_name=None)
+    a = pd.read_csv('Chandler_FAQ.txt', sep='DELIMITER',header=None,keep_default_na=False)
     print()
     
     for key in sheet_to_df_map.keys():
@@ -36,7 +37,8 @@ def xlsx_importerAndScout(file_path):
 
     for key in sheet_to_df_map.keys():
         df = sheet_to_df_map[key]
-        with open(f'{key}.txt', 'w') as f:
+        file_name = key.replace(" ", "_")
+        with open(f'{file_name}.txt', 'w') as f:
             
         # determining how many columns (strings) are in a row:
         
@@ -46,12 +48,16 @@ def xlsx_importerAndScout(file_path):
                 # concat the columns(stings)
                 string_concatted = ""
                 for string in df.iloc[i]:
-                    string_concatted += str(string) + " "
+                    string_concatted += str(string) + " DELIMITER"
+                    # TODO dirty remove the last 'DELEIMITER'
+                if string_concatted[-9:] == 'DELIMITER':
+                    string_concatted = string_concatted[:-9]
+                        
             
                 if type(string_concatted) == str:
                     # print(i, string_concatted)
                     # some indices, such as #87 are not capped (also not for the manually normalized)
-                    string_concatted = string_concatted.capitalize()
+                    # string_concatted = string_concatted.capitalize()
                     # some strings have '\n', causes them to be printed on a seperate line in the txt file
                     string_concatted = string_concatted.replace("\n", "")
                     f.writelines(string_concatted)
@@ -60,8 +66,6 @@ def xlsx_importerAndScout(file_path):
                     string_concatted = 'EMPTYROW'
                     f.writelines(string_concatted)
                     f.write('\n')
-                    
-            
     
     return sheet_to_df_map  # return the df for importer()
 

@@ -6,20 +6,32 @@ import numpy as np
 import glob
 import os
 os.chdir(os.getcwd())
-print()
-os.chdir("a_files")
-
+try:
+    os.chdir("ATN_input")
+except:
+    pass
 
 dicc = {}
 for file in glob.glob("*.txt"):
     print(file)
-    df = pd.read_csv(file, sep='DELIMITER',header=None,keep_default_na=False)
-    dicc[file] = df
+    try:
+        df = pd.read_csv(file, sep='DELIMITER',header=0,keep_default_na=False ,engine='python' )
+        dicc[file] = df
+    except:
+        print('\n exception: \n')
+        print(file)
+        continue
      
 
+writer = pd.ExcelWriter('output.xlsx')
+
 for key in dicc.keys():
-    df[key]
-    df.to_excel(key, index=(False))
+    # df[key]
+    df = dicc[key]
+    
+    df.to_excel(writer,key) # write to the writer; sheet name == key == old sheet name from pd.read
+
+writer.save()
     
     
 

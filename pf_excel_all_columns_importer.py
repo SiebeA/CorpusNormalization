@@ -20,7 +20,6 @@ def xlsx_importerAndScout(file_path):
     """
     import pandas as pd
     sheet_to_df_map = pd.read_excel(file_path, sheet_name=None)
-    a = pd.read_csv('Chandler_FAQ.txt', sep='DELIMITER',header=None,keep_default_na=False)
     print()
     
     for key in sheet_to_df_map.keys():
@@ -48,10 +47,10 @@ def xlsx_importerAndScout(file_path):
                 # concat the columns(stings)
                 string_concatted = ""
                 for string in df.iloc[i]:
-                    string_concatted += str(string) + " DELIMITER"
+                    string_concatted += str(string) + " DELIMITER "
                     # TODO dirty remove the last 'DELEIMITER'
-                if string_concatted[-9:] == 'DELIMITER':
-                    string_concatted = string_concatted[:-9]
+                if string_concatted[-10:] == 'DELIMITER ':
+                    string_concatted = string_concatted[:-10]
                         
             
                 if type(string_concatted) == str:

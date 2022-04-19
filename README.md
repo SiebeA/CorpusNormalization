@@ -1,7 +1,10 @@
 
 
 TODO:
-<!-- - fix the phone number deletion -->
+- not all EOL are punctuated
+- fix the phone
+- pf excel --> have a row equals goldstandard|raw check
+- number deletion -->
 - proper name Capitilization e.g. 'ferrari' --> Or just hard replace them
 - some phone number combinations are still not well normalized
 - to not write-out phone numbers, such that I can easily spot them with sublime syntax.
@@ -9,6 +12,7 @@ TODO:
 - always punct at BOL (now it is only with a period)
 <!-- - Capitalize weekdays -->
 
+- fix 1006 Bessy, does not break correctly
 - fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
 
 

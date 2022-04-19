@@ -53,6 +53,8 @@ input=.input.txt
 #==========================================================
 
 ### SPY removing special symbols
+perl -0777 -pi.orig -e "s/\ü/u/g" $input
+perl -0777 -pi.orig -e "s/\à/a/g" $input
 perl -0777 -pi.orig -e "s/\•/-/g" $input
 perl -0777 -pi.orig -e "s/\”/'/g" $input
 perl -0777 -pi.orig -e "s/\“/'/g" $input
@@ -85,7 +87,7 @@ perl -0777 -pi.orig -e "s/june/June/g" $input
 perl -0777 -pi.orig -e "s/julY/July/g" $input
 perl -0777 -pi.orig -e "s/august/August/g" $input
 perl -0777 -pi.orig -e "s/september/September/g" $input
-perl -0777 -pi.orig -e "s/oktober/Oktober/g" $input
+perl -0777 -pi.orig -e "s/october/October/g" $input
 perl -0777 -pi.orig -e "s/november/November/g" $input
 perl -0777 -pi.orig -e "s/december/December/g" $input
 
@@ -232,6 +234,17 @@ perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
 perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
 # capitalizing the first letter after a hard punctuation mark.
 perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
+
+
+
+
+perl -0777 -pi.orig -e "s/or or/or/g" $output+5TTS.txt
+
+
+# perl -0777 -pi.orig -e "s/EMPTYROW/ /g" $output+5TTS.txt # deletes the row
+
+
+
 
 
 # DEP PUNCT removing capitilization of last line character

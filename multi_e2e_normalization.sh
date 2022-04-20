@@ -30,7 +30,7 @@ echo $PWD
 # cd /home/siebe.albers/dev/TN_w_IRISA
 
 for input0 in *.txt
-do 
+do
 	echo $input0
 
 
@@ -125,7 +125,7 @@ do
 
 	### ABR
 	perl -pi.orig -e 's/etc\./etcetera/g' $input
-	# eg 'a.k.a' --> "AKA" 
+	# eg 'a.k.a' --> "AKA"
 	perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U$1\U$2\U$3/g' $input
 	# eg 'a.k.'
 	perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
@@ -138,7 +138,7 @@ do
 	### ABR; 'e.g.' --> 'for example'
 	perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
 	# eg 'u.s.'
-	perl -0777 -pi.orig -e "s/u\.s\./, United States/gi" $input
+	perl -0777 -pi.orig -e "s/u\.s\./, USA/gi" $input
 	perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input # (NOTICE THAT IN THIS CASE '\' INSTEAD OF '$' BEFORE A GROUP REF IS REQUIRED?!))
 
 	#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
@@ -193,7 +193,7 @@ do
 	perl -0777 -pi.orig -e 's/(\d\d*)\-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
 
 
-	# ANU 
+	# ANU
 	# splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
 	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gim' .$output+2_genNorma.txt
 	# LEFTOFF
@@ -215,7 +215,7 @@ do
 
 
 	# ANU
-	# '50k' --> '50 k' 
+	# '50k' --> '50 k'
 	perl -0777 -pi.orig -e "s/(\d)([a-zA-Z])/\1 \2/gim" .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 	#===========================================================
 	# 3. CURRENCY CONVERSION
@@ -243,7 +243,7 @@ do
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 
 
-	# ABR 
+	# ABR
 	# TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
 	# perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
@@ -266,9 +266,8 @@ do
 	# perl -0777 -pi.orig -e "s/EMPTYROW/ /g" $output+5TTS.txt # deletes the row
 
 
-
-	# DEP PUNCT removing capitilization of last line character
-	# perl -0777 -pi.orig -e 's/(\w)$/\L\1/gm' $output+5TTS.txt
+	# TODO remove spaces adjacent to '""/quotes'
+	# " (.+) "
 
 
 	# DEBUG \n\s Remove empty lines:

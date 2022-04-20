@@ -2,10 +2,10 @@
 # copy and pasting each cell of each row in two seperate /txt files
 
 
-def xlsx_scout(file_path):
+def xlsx_importerAndScout(file_path):
     import pandas as pd
-    # file_path = "TLZ-281_283]Combined_urls_glossary.xlsx"
-    df = pd.read_excel(file_path, sheet_name)
+    # df = pd.read_excel(file_path, sheet_name)
+    df = pd.read_excel(file_path)
     print()
     print(df.head())
     print()
@@ -104,17 +104,20 @@ if __name__ == '__main__':
     file_path = input("input the file path to the xlsx file ")
     # file_path = 'glos.xlsx'
 
-    # TODO print out the sheet names (need to use xls)
     if file_path.endswith((".xls")):
         import xlrd
         xls_file = xlrd.open_workbook_xls(file_path)
         print()
-        print("These are the available worksheets in the excel file Worksheet name(s)\n: {0} \n".format(xls_file.sheet_names()))
+        print("These are the available worksheets in the excel file Worksheet name(s)\n")
+        sheets = xls_file.sheet_names()
+        for sheet in sheets: print(sheet)
 
     sheet_name = input("input the name of the excel sheet ")
-    # sheet_name = 'Bessy'
+    # TODO option to process all sheets
     print('\n output of the Headers + the first 5 rows of the excel sheet:')
-    df = xlsx_scout(file_path)  # return the df
+    
+    
+    df = xlsx_importerAndScout(file_path)  # !!! FUNCTION return the df
 
     # printing out the columns if there are more than 1 (i.e. there is not a comment on first line)
     if len(df.columns) >1:
@@ -123,17 +126,17 @@ if __name__ == '__main__':
     index = int(input("\nInput the index-number of the column you want to process (starting at 0) "))
     # index = 4
 
-    df = indexSelector(
+    df = indexSelector( # !!! FUNCTION
         df,
         sheet_name,
         index)
-    
+
     output_file_name = "none"
     while output_file_name.lower() not in ['atn', 'gs', 'other']:
         output_file_name = input(
             '\nspecify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) or OTHER  ')  # dep
         if output_file_name.lower() == 'atn':
-            exporter('ATN.txt')
+            exporter('ATN.txt') # !!! FUNCTION
             print('saved under "ATN.txt" ')
         elif output_file_name.lower() == 'gs':
             sheet_name = sheet_name.replace(" ", "_")
@@ -148,6 +151,4 @@ if __name__ == '__main__':
             print(' specify either "ATN" or GS" ')
 
 
-# TODO specifycolum nname instead of iloc
-# TODO print out the name of the sheets
 # TODO verify which column title is copied

@@ -33,10 +33,12 @@ if __name__ == '__main__':
     # list a selection of files that can be inputted:
     import glob
     import os
-    os.chdir(os.getcwd())
+    # os.chdir(os.getcwd())
+    os.chdir('/home/siebe.albers/dev/TN_w_IRISA')
     try:
-        os.chdir("ATN_output")
+        os.chdir("MTN_output")
     except:
+        print('dir change unsuccesful')
         pass
     
     xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
@@ -44,3 +46,5 @@ if __name__ == '__main__':
     Txt_to_xlsx_sheet_converter(xlsx_output_file_name)
     
     print(f' \n \n files saved in {os.getcwd()} \n')
+    
+

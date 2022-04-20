@@ -1,19 +1,42 @@
 
 
-TODO:
+### notable set Normalization parameters
+- U.s. , U.s.a , United States --> USA
+- All Hyphens are removed
+- Proper nouns remain capitalized (including: names of services ,e.g.: )
+-
+
+**Manually** (cannot be automated, mostly because of trade-offs)
+- Phone number digits are written out digit by digit
+
+## TODO:
+- Multiple capitalized word handling? Trade offs?
+- proper name capitalization e.g. 'ferrari' --> Or just hard replace them
+- No space after hard PUNCT and new sentence
 - not all EOL are punctuated
-- fix the phone
 - pf excel --> have a row equals goldstandard|raw check
 - number deletion -->
-- proper name Capitilization e.g. 'ferrari' --> Or just hard replace them
-- some phone number combinations are still not well normalized
-- to not write-out phone numbers, such that I can easily spot them with sublime syntax.
+- some phone number combinations are still not adequately normalized
 - fix that the line continues whenever there is not a punct mark.
 - always punct at BOL (now it is only with a period)
 <!-- - Capitalize weekdays -->
 
+**low priority**
+- Can non BOL cased-words be dealt with?
 - fix 1006 Bessy, does not break correctly
 - fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
+
+
+## Dominic observations:
+| Observation      | expectation |
+| ----------- | ----------- |
+|Magnuson-Moss Warranty Act (15 U.S.C. 2302       |  magnuson moss warranty act fifteen, USC      |
+| 29.92 inhg us and canada      |twenty nine point ninety two inhg us and canada        |
+|The a340-600, at 75.30 m       | The A three hundred forty six hundred, at seventy five point three zero meters       |
+|       |        |
+|       |        |
+|       |        |
+
 
 
 ### Procedure steps:
@@ -38,7 +61,7 @@ TODO:
 
 ___________________
 
-- Post-initial setup for FILE BY FILE
+- Post-initial setup for FILE BY FILE processing
   - `cd /TN_w_IRISA`
   - `source venv/bin/activate` # activate the virtual environment
   - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx, and having column headers on the first row increases convenience level )** `TN_w_IRISA` dir

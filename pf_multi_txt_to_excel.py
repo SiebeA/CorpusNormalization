@@ -1,45 +1,46 @@
-import re
-import pandas as pd
-import numpy as np
 
-# list a selection of files that can be inputted:
-import glob
-import os
-os.chdir(os.getcwd())
-try:
-    os.chdir("ATN_input")
-except:
-    pass
 
-dicc = {}
-for file in glob.glob("*.txt"):
-    print(file)
+# storing all the ATN output txt files as DF's in a DICT:
+def Txt_to_xlsx_sheet_converter(xlsx_output_file_name):
+    dicc = {}
+    for file in glob.glob("*.txt"):
+        # print(file)
+        try:
+            df = pd.read_csv(file, sep='DELIMITER',header=0,keep_default_na=False ,engine='python' )
+            dicc[file] = df
+        except:
+            print('\n exception:')
+            print(file)
+            continue
+    
+    
+    # Creating a xlsx file with dicc[key] as sheet names and their values as the contents
+    writer = pd.ExcelWriter(f'{xlsx_output_file_name}.xlsx') # the sheets will be written in here
+    for key in dicc.keys():
+        df = dicc[key]
+        df.to_excel(writer,key,index=False) # write to the writer; sheet name == key == old sheet name from pd.read
+    writer.save()
+
+
+
+
+# %%
+if __name__ == '__main__':
+    import re
+    import pandas as pd
+    import numpy as np
+
+    # list a selection of files that can be inputted:
+    import glob
+    import os
+    os.chdir(os.getcwd())
     try:
-        df = pd.read_csv(file, sep='DELIMITER',header=0,keep_default_na=False ,engine='python' )
-        dicc[file] = df
+        os.chdir("ATN_output")
     except:
-        print('\n exception: \n')
-        print(file)
-        continue
-     
-
-writer = pd.ExcelWriter('output.xlsx')
-
-for key in dicc.keys():
-    # df[key]
-    df = dicc[key]
+        pass
     
-    df.to_excel(writer,key) # write to the writer; sheet name == key == old sheet name from pd.read
-
-writer.save()
+    xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
+    # FUNCTION call:
+    Txt_to_xlsx_sheet_converter(xlsx_output_file_name)
     
-    
-
-def Exporter(df,file_name):
-    print()
-    df.to_excel(file_name, index=(False))
-    # print(file_name, "   is the excel file with the original 2 txt files, and will be used to calculate the Lehvenstein distance ")
-    print(file_name,'   is the excel file with the raw/ATN sentences and GoldStandard sentences')
-
-Exporter(df=df,file_name='.rawText_vs_GoldenStandard.xlsx')
-
+    print(f' \n \n files saved in {os.getcwd()} \n')

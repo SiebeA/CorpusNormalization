@@ -19,15 +19,26 @@ TODO:
 ### Procedure steps:
 - First time:
   - Clone this `TN_w_IRISA` repo
-  - ```cd /TN_w_IRISA```
+  - `cd /TN_w_IRISA`
+  - `mkdir ATN_input`
   - Optionally but recommended, pip install dependencies in venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+      ```
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install -r requirements.txt
+      ```
 
-- Post-first time:
+- Post-initial setup for MULTI-SHEET_files
+  - `cd /TN_w_IRISA`
+  - `source venv/bin/activate` # activate the virtual environment
+  - Move the `.xls*` file with the sentences that need to be normalized to the `\ATN_input` dir
+  - `bash python3 pf_excel_all_columnsAndSheets_importer.py`
+  - Use the adapted IRISA tool for (ATN) to normalize all `.txt` files in the `/ATN_input` dir.
+  `bash multi_e2e_normalization.sh`
+
+___________________
+
+- Post-initial setup for FILE BY FILE
   - `cd /TN_w_IRISA`
   - `source venv/bin/activate` # activate the virtual environment
   - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx, and having column headers on the first row increases convenience level )** `TN_w_IRISA` dir

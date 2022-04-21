@@ -40,7 +40,8 @@ if __name__ == '__main__':
     except:
         print('dir change unsuccesful')
         pass
-    
+
+    os.chdir('/home/siebe.albers/dev/TN_w_IRISA')    
     xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
     # FUNCTION call:
     Txt_to_xlsx_sheet_converter(xlsx_output_file_name)

@@ -12,6 +12,7 @@
 # - PUMA    Punctuation-Marks
 # - TNO     Time Notation correction
 # - SPLIT   Splitting eg monday-friday' '5am-6am', etc.
+# - URL/EM  URLS, Emails, 
 
 
 #==========================================================
@@ -258,9 +259,13 @@ do
 	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
 
-
 	# removing some other oddities
 	perl -0777 -pi.orig -e "s/or or/or/g" $output+5TTS.txt
+
+
+	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
+	perl -0777 -pi.orig -e "s/delimiter/DELIMITER/gim" $output+5TTS.txt
+
 
 
 	# perl -0777 -pi.orig -e "s/EMPTYROW/ /g" $output+5TTS.txt # deletes the row
@@ -305,6 +310,10 @@ echo
 mv *_ATN.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
 
 printf 'The file(s) are outputted in */ATN_output/ \n\n'
+
+
+# opening the output file:
+xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
 
 
 

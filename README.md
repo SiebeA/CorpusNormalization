@@ -1,15 +1,33 @@
+###### note: this readme is still specific to siebe.albers (dir locations)
+
 - Post-initial setup for MULTI-SHEET_files (UNDER DEV)
   - `cd /TN_w_IRISA`
   - `source venv/bin/activate` # activate the virtual environment
-  -
-  - TODO combine the following commands in 1:
-  - Move the `.xls*` file with the sentences that need to be normalized to the `\EXCEL_files` dir
-  - `python3 pf_excel_all_columnsAndSheets_importer.py`
-    - `.txt` files corresponding to the sheets in the `.xls*` file are outputted in `/ATN_input`
+  ___
+TODO combine the following commands in 1:
+
+  - Copy A `.xls*` file with the sentences that need to be normalized to the `\EXCEL_files` dir:
+    - `cp /home/siebe.albers/Desktop/tlzd-302/domains/checked/{.xlsx} /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/`
+###### .  
+  - Converting each sheet in the inputted xlsx file to a txt file:
+    - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py`
+    <!-- - `.txt` files corresponding to the sheets in the `.xls*` file are outputted in `/ATN_input` -->
   <!-- - Use the adapted IRISA tool for (ATN) to normalize all `.txt` files in the `/ATN_input` dir. -->
-  - `cd ~/dev/TN_w_IRISA/; bash multi_e2e_normalization.sh`
-  - `mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/` move the original files, for conveniencce, to the same folder as the `ATN` files
-  - TODO copy and rename the ATN files to a file with the  MTN extension in the filename
+###### .
+  - ATN the .txt files:
+    - `~/dev/TN_w_IRISA`
+    - `cd ~/dev/TN_w_IRISA/; bash multi_e2e_normalization.sh`
+###### .
+  - move the original files, for convenience, to the same dir as the `ATN` files, and open the dir:
+    - `mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/; xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/`
+    - Move the original xlsx file to the same dir:
+      - `mv ~/dev/TN_w_IRISA/EXCEL_files/*xls* ~/dev/TN_w_IRISA/ATN_output/`
+
+    ###### .
+  - Create a MTN version:
+    - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * ~/dev/TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
+###### .
+
   - `subl *.txt` file in `*ATN_input` + `subl *ATN.txt` file in `*ATN_output`
     - 1 sublime window with 2 tabs open tabs (left the original `.txt`, right the `*ATN.txt`) to manually check the ATN output; keep the original file to the left to see how e.g. (alpha)numeric characters are normalized; the syntax coloring is a visual aid for this purpose.
   - After manually checking: save the *ATN.txt` as *MTN.txt`
@@ -25,7 +43,7 @@
   - move the `mv *.txt */` to `~/dev/TN_w_IRISA/MTN_output` folder -->
   - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction` Move the `MTN` file
   - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/01_auto_tn` move the `ATN` file
-
+___
 ### The Notable set of Normalization parameters
 - Acronyms are put jointly, e.g. CTA, not C T A.
   - plural: CTAs
@@ -73,8 +91,8 @@
   - `mkdir ATN_input`
   - Optionally but recommended, pip install dependencies in venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
       ```
-      python3 -m venv venv
-      source venv/bin/activate
+      python3 -m venv .venv
+      source .venv/bin/activate
       pip install -r requirements.txt
       ```
 

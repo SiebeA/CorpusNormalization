@@ -34,7 +34,7 @@ def xlsx_importerAndScout(file_path):
         try:
             df = sheet_to_df_map[key]
             file_name = key.replace(" ", "_")
-            with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}.txt', 'w') as f:
+            with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}_RAW.txt', 'w') as f:
                 # writing the columns names on the first line of the text file:
                 columns = "" 
                 # & delimit the column names, for conversion to xlsx later:
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     import os
     os.chdir(os.getcwd())
     try:
-        os.chdir("EXCEL_files")
+        os.chdir("/home/siebe.albers/dev/TN_w_IRISA/EXCEL_files")
     except FileNotFoundError:
         pass
     

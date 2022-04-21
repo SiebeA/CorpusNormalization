@@ -1,5 +1,10 @@
 
 NEWTEST
+
+merriam-webster.com DESIRED merriam dash webster dot com
+mail.Ru DESIRED mail dot R U
+harvard.Edu DESIRED harvard dot E D U
+
 11.50B DELIMITER $47.11M 
 100.09M DELIMITER $2.76M 
 
@@ -9,7 +14,7 @@ conversion Rate Optimisation DESIRED conversion Rate Optimization
 
 Customer Lifetime Value (CLV) DELIMITER Is a prediction of the net profit attributed to the entire future relationship with a customer. 
 
-the largest 3rd
+1st 2nd 3rd 12th
 
 process (e.g. a food  DESIRED process, for example, a food
 

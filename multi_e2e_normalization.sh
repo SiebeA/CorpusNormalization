@@ -304,6 +304,10 @@ echo
 # moving the files to the appropiate folder
 mv *_ATN.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
 
+printf 'The file(s) are outputted in */ATN_output/ \n\n'
+
+
+
 
 # mv $output_file_name'+5TTS.txt' $output_file_name+"ATN"
 # rename -vn 's/\+5TTS//' $output_file_name

@@ -1,16 +1,43 @@
+- Post-initial setup for MULTI-SHEET_files (UNDER DEV)
+  - `cd /TN_w_IRISA`
+  - `source venv/bin/activate` # activate the virtual environment
+  -
+  - TODO combine the following commands in 1:
+  - Move the `.xls*` file with the sentences that need to be normalized to the `\EXCEL_files` dir
+  - `python3 pf_excel_all_columnsAndSheets_importer.py`
+    - `.txt` files corresponding to the sheets in the `.xls*` file are outputted in `/ATN_input`
+  <!-- - Use the adapted IRISA tool for (ATN) to normalize all `.txt` files in the `/ATN_input` dir. -->
+  - `cd ~/dev/TN_w_IRISA/; bash multi_e2e_normalization.sh`
+  - `mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/` move the original files, for conveniencce, to the same folder as the `ATN` files
+  - TODO copy and rename the ATN files to a file with the  MTN extension in the filename
+  - `subl *.txt` file in `*ATN_input` + `subl *ATN.txt` file in `*ATN_output`
+    - 1 sublime window with 2 tabs open tabs (left the original `.txt`, right the `*ATN.txt`) to manually check the ATN output; keep the original file to the left to see how e.g. (alpha)numeric characters are normalized; the syntax coloring is a visual aid for this purpose.
+  - After manually checking: save the *ATN.txt` as *MTN.txt`
+  -
+  - TODO move xlsx file to the dir
+  - `cd a_processing/`
+  - `mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/\.xlsx//')` makes a folder that is named after the `*xlsx` file that is being processed
+  - `mv *.txt */` move the text files in the herefore created dir
+  - `cd ~/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py` This writes the `MTN.txt` files to a `.xls*` file with the original filename with `_MTN` appended to it
+  -
+  -
+  <!-- - Move the original `xlsx file` to the `mv *.txt */`
+  - move the `mv *.txt */` to `~/dev/TN_w_IRISA/MTN_output` folder -->
+  - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction` Move the `MTN` file
+  - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/01_auto_tn` move the `ATN` file
 
-
-### notable set Normalization parameters
-- U.s. , U.s.a , United States --> USA
+### The Notable set of Normalization parameters
+- Acronyms are put jointly, e.g. CTA, not C T A.
+  - plural: CTAs
+- Variable forms converted to 1 form:
+  - U.s. , U.s.a , United States --> USA
 - All Hyphens are removed
-- Proper nouns remain capitalized (including: names of services ,e.g.: )
--
+- Proper nouns remain capitalized (including: names of services ,e.g.: 'Tire Rotation' )
 
 **Manually** (cannot be automated, mostly because of trade-offs)
 - Phone number digits are written out digit by digit
 
 ## TODO:
-- Multiple capitalized word handling? Trade offs?
 - proper name capitalization e.g. 'ferrari' --> Or just hard replace them
 - No space after hard PUNCT and new sentence
 - not all EOL are punctuated

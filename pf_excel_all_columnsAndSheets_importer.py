@@ -111,7 +111,7 @@ if __name__ == '__main__':
  
     
     dicc = xlsx_importerAndScout(file_path)  # !!! FUNCTION
-
+    print()
 
 
 

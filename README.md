@@ -6,43 +6,46 @@
   ___
 TODO combine the following commands in 1:
 
-  - Copy A `.xls*` file with the sentences that need to be normalized to the `\EXCEL_files` dir:
-    - `cp /home/siebe.albers/Desktop/tlzd-302/domains/checked/{.xlsx} /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/`
+- Copy A `.xls*` file with the sentences that need to be normalized to the `\EXCEL_files` dir:
+  - `cp /home/siebe.albers/Desktop/tlzd-302/domains/checked/{.xlsx} /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/`
 ###### .  
-  - Converting each sheet in the inputted xlsx file to a txt file:
-    - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py`
-    <!-- - `.txt` files corresponding to the sheets in the `.xls*` file are outputted in `/ATN_input` -->
-  <!-- - Use the adapted IRISA tool for (ATN) to normalize all `.txt` files in the `/ATN_input` dir. -->
+- **Converting each sheet in the inputted xlsx file to a txt file:**
+  - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py`
+
 ###### .
-  - ATN the .txt files:
+  - **ATN the .txt files with the ATN-Tool:**
     - `~/dev/TN_w_IRISA`
     - `cd ~/dev/TN_w_IRISA/; bash multi_e2e_normalization.sh`
 ###### .
-  - move the original files, for convenience, to the same dir as the `ATN` files, and open the dir:
+  - move the original files, for MTN convenience, to the same dir as the `ATN` files, and open the dir:
     - `mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/; xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/`
-    - Move the original xlsx file to the same dir:
-      - `mv ~/dev/TN_w_IRISA/EXCEL_files/*xls* ~/dev/TN_w_IRISA/ATN_output/`
+  - Move the original xlsx file to the same dir:
+    - `mv ~/dev/TN_w_IRISA/EXCEL_files/*xls* ~/dev/TN_w_IRISA/ATN_output/`
 
-    ###### .
+###### .
   - Create a MTN version:
     - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * ~/dev/TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
 ###### .
-
-  - `subl *.txt` file in `*ATN_input` + `subl *ATN.txt` file in `*ATN_output`
+  - Move all the files to the processing folder (and open it in Gnome)
+    - `mv * ~/dev/TN_w_IRISA/a_processing/ ; open ~/dev/TN_w_IRISA/a_processing/`
+###### .
+  - MTN: Open the files in Sublime, for MTN.
     - 1 sublime window with 2 tabs open tabs (left the original `.txt`, right the `*ATN.txt`) to manually check the ATN output; keep the original file to the left to see how e.g. (alpha)numeric characters are normalized; the syntax coloring is a visual aid for this purpose.
-  - After manually checking: save the *ATN.txt` as *MTN.txt`
-  -
-  - TODO move xlsx file to the dir
-  - `cd a_processing/`
-  - `mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/\.xlsx//')` makes a folder that is named after the `*xlsx` file that is being processed
-  - `mv *.txt */` move the text files in the herefore created dir
-  - `cd ~/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py` This writes the `MTN.txt` files to a `.xls*` file with the original filename with `_MTN` appended to it
-  -
-  -
-  <!-- - Move the original `xlsx file` to the `mv *.txt */`
-  - move the `mv *.txt */` to `~/dev/TN_w_IRISA/MTN_output` folder -->
+###### .
+  - makes a folder that is named after the `*xlsx` file that is being processed:
+    - `cd a_processing/`
+    - `mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/\.xlsx//')`
+    - `mv *.xlsx *.txt */` move the txt and xlsx files in the before created dir
+###### .
+  - **Writes the `MTN.txt` files to a `.xls*` file** with the original filename with `_MTN` appended to it:
+    - `cd ~/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py`
+
+###### .
+
+Moving the processed files to the SERVER:
   - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction` Move the `MTN` file
   - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/01_auto_tn` move the `ATN` file
+
 ___
 ### The Notable set of Normalization parameters
 - Acronyms are put jointly, e.g. CTA, not C T A.

@@ -1,18 +1,18 @@
 #!/bin/bash
 
 ### Navigating e2e_normalization:
-# - ABR     corrections of Abbreviations
-#   SPY     Special-Symbols   (®,)
-# - \N\S    corrections of linebreaks, etc.
-# - ANU     Alpha-Numeric combinations
-# - DEP		Deprecated
-# - NUC 	NUmbers-combiations (e.g. phone numbers)
-# - NUO     Numbers-ordinal
-# - NUC     Numbers-Cardinal
-# - PUMA    Punctuation-Marks
-# - TNO     Time Notation correction
-# - SPLIT   Splitting eg monday-friday' '5am-6am', etc.
-# - URL/EM  URLS, Emails, 
+# - ABR     	corrections of Abbreviations
+#   SPY     	Special-Symbols   (®,)
+# - \N\S    	corrections of linebreaks, etc.
+# - ANU     	Alpha-Numeric combinations
+# - DEP			Deprecated
+# - NUC 		NUmbers-combiations (e.g. phone numbers)
+# - NUO     	Numbers-ordinal
+# - NUC     	Numbers-Cardinal
+# - PUMA    	Punctuation-Marks
+# - TNO     	Time Notation correction
+# - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
+# - URL/EM  	URLS, Emails, 
 
 DEBUG=1
 #==========================================================
@@ -24,7 +24,7 @@ LANGUAGE=en
 cd ATN_input
 # debug choose txt file folder instead:
 if [ "$DEBUG" = 1 ]; then
-	echo 'DEBUG IS ON'
+	printf '\n\n\n DEBUG IS ON \n\n'
 	cd /home/siebe.albers/dev/TN_w_IRISA/test
 fi
 
@@ -46,13 +46,11 @@ for input0 in *.txt
 do
 	echo $input0
 
-
 	#==========================================================
 	# # DEBUG comment:
 	#==========================================================
 	# input0=test.txt
 	# echo "The current directory is : $current_dir"
-
 
 	# for automatically naming the output file:
 	output_file_name=$(echo $input0) # store the name of $input0 as a string
@@ -123,12 +121,29 @@ do
 	perl -0777 -pi.orig -e "s/november/November/g" $input
 	perl -0777 -pi.orig -e "s/december/December/g" $input
 
+
+	# SPY
+	perl -0777 -pi.orig -e "s/(\w\s*)\&(\s*\w)/\1 and \2/gim" $input
+
+
+
+
+	# URL/EM
+	perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
+
+
+
 	### ANU
+
+	# million  & billion
+	perl -0777 -pi.orig -e "s/(\d\.\d*)(m)/\1 million/gim" $input
+	perl -0777 -pi.orig -e "s/(\d\.\d*)(b)/\1 billion/gim" $input
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
 	perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
 	# converting '50k' -- '50 thousand'
 	perl -0777 -pi.orig -e "s/(\d+\s*)k\s/\1 thousand/gi" $input
+
 
 
 	# PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
@@ -164,6 +179,10 @@ do
 	### TNO e.g. 4am-5am --> 4am till 5am
 	perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/g' $input
 
+
+
+	### NEW
+	### NEW
 
 
 	#==========================================================
@@ -276,8 +295,14 @@ do
 	perl -0777 -pi.orig -e "s/delimiter/DELIMITER/gim" $output+5TTS.txt
 
 
+	# URL
+	perl -0777 -pi.orig -e "s/([a-z]+)\.([a-z]+)/\L\1 dot \U\2/gim" $output+5TTS.txt
 
-	# perl -0777 -pi.orig -e "s/EMPTYROW/ /g" $output+5TTS.txt # deletes the row
+
+	### ADD NEW replacements:
+	### ADD NEW replacements:
+	### ADD NEW replacements:
+
 
 
 	# TODO remove spaces adjacent to '""/quotes'
@@ -311,12 +336,11 @@ if [ "$DEBUG" = 0 ]; then
 	rm .input*
 	rm .$output_file_name*
 	rm \.*
-
-	rm .*.orig
-	rm *.orig
 fi
 
-
+# Always delete the .orig files:
+rm .*.orig
+rm *.orig
 
 echo
 rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
@@ -329,8 +353,14 @@ mv *_ATN.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
 printf 'The file(s) are outputted in */ATN_output/ \n\n'
 
 
-# opening the output file:
+# opening the output folder:
 xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
+
+if [ "$DEBUG" = 1 ]; then
+	subl /home/siebe.albers/dev/TN_w_IRISA/test/\.*.txt
+	subl /home/siebe.albers/dev/TN_w_IRISA/ATN_output/*.txt
+
+fi
 
 
 

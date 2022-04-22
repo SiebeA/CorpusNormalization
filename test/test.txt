@@ -1,16 +1,10 @@
 
 NEWTEST
+NEWTEST
 
-merriam-webster.com DESIRED merriam dash webster dot com
-mail.Ru DESIRED mail dot R U
-harvard.Edu DESIRED harvard dot E D U
 
-11.50B DELIMITER $47.11M 
-100.09M DELIMITER $2.76M 
 
-P&C
-
-conversion Rate Optimisation DESIRED conversion Rate Optimization
+conversion Rate Optimisation or optimisation DESIRED conversion Rate Optimization
 
 Customer Lifetime Value (CLV) DELIMITER Is a prediction of the net profit attributed to the entire future relationship with a customer. 
 
@@ -18,20 +12,24 @@ Customer Lifetime Value (CLV) DELIMITER Is a prediction of the net profit attrib
 
 process (e.g. a food  DESIRED process, for example, a food
 
-Please send an email to lauren@reverb.com.
 #1 DESIRED Number one.
 
 .3gp .aa .aac .aax .act .aiff .alac .amr .ape .au .awb .dct .dss .dvf .flac .gsm .iklax .ivs .m4a .m4b .m4p .mmf .mp3 .mpc .msv .nmf .nsf .ogg, .oga, .mogg .opus .ra, .rm .raw .sln .tta .voc .vox .wav .wma .wv .webm .8svx
 
-
-
 PASSINGBEFORE
-very three months or every 5,000 kilometres, 
+PASSINGBEFORE
+P&C or p & c
+11.50B DELIMITER $47.11M  AND 00.09M  or  $2.76M 
+British vs American the centre and colour and apologise and analyse and travelled and fuelled
+merriam-webster.com DESIRED merriam dash webster dot com
+Mail lauren@reverb.com. DESIRED Mail lauren at reverb dot com
+mail.Ru DESIRED mail dot R U . AND Harvard.Edu DESIRED harvard dot E D U
+Every three months or every 5,000 kilometres, 
 From august to november on wednesdays and fridays.
 M85 is a blend of 85% methanol and 15% gasoline.
 it is gas/electric or gas/electric.
 John a.k.a. the guy OR john a.k.a alright
-Some ™ ® symbols.
+Some ™ ® symbols that are replaced.
 monday–friday, 9:00 a.m.–5:00 p.m. AND monday-friday, 9:00 a.m.-5:00 p.m.
 it is between 12-55.
 12000-15000 miles.
@@ -51,6 +49,7 @@ It was a bmw a44 series.
 
 
 FAILHIGHPRIORITY
+FAILHIGHPRIORITY
 
 The u.s. is a country as well as u.s.a. as well as United States alright. 
 
@@ -62,6 +61,7 @@ it is from 12-55 DESIRED from twelve to fifty five.
 The phone number is +1 929 555 999 and more HOWEVER +1 929-555 999
 The phone number is 1 929 555 999 and more HOWEVER 1 929-555 999
 
+FAIL_LOWPRIORITY
 FAIL_LOWPRIORITY
 This is a Test to See If word cases outside BOS are dealt with.
 What happens to ; semi colons?

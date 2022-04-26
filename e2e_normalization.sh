@@ -14,7 +14,7 @@
 # - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
 # - URL/EM  	URLS, Emails, 
 
-DEBUG=1
+DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -24,7 +24,7 @@ LANGUAGE=en
 cd ATN_input
 # debug choose txt file folder instead:
 if [ "$DEBUG" = 1 ]; then
-	printf '\n\n\n DEBUG IS ON \n\n'
+	printf '\n\n\n\n DEBUG IS ON____________________________ \n\n\n'
 	cd /home/siebe.albers/dev/TN_w_IRISA/test
 fi
 
@@ -71,7 +71,7 @@ do
 
 
 	echo -n "Starting process at: "; date
-	echo "on input file:"; echo $input0; printf '\n'
+	printf "\n\n on input file: \n\n"; echo $input0; printf '\n'
 
 	# salb don't want to manipulate the original input file, therefore
 	cp $input0 .input.txt

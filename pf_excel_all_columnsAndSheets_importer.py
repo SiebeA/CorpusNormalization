@@ -34,6 +34,7 @@ def xlsx_importerAndScout(file_path):
         try:
             df = sheet_to_df_map[key]
             file_name = key.replace(" ", "_")
+            print('\n The RAW files will be outputted in: \n /ATN_input:\n')
             with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}_RAW.txt', 'w') as f:
                 # writing the columns names on the first line of the text file:
                 columns = "" 
@@ -70,7 +71,7 @@ def xlsx_importerAndScout(file_path):
                         f.writelines(string_concatted)
                         f.write('\n')
         except TypeError:
-            print(f"exceptions: sheet: {sheet}")
+            print(f"exceptions: sheet: {key}")
         
         print(f' \n /home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}.txt')
     
@@ -96,11 +97,11 @@ if __name__ == '__main__':
         print(file)
         
     if len(glob.glob("*.xls*")) ==1:
-        answer = input(f'is this the file you want to process? : \n {file} [y/n] \n')
+        answer = input(f'\n is this the file you want to process? : \n {file} [y/n] \n')
         if answer.lower() in ['y', 'yes']:
             file_path = file
     else:
-        file_path = input("input the file path to the xlsx file ")
+        file_path = input("input the file path to the xlsx file that you want to process")
 
     # if file_path.endswith((".xls")):
     #     import xlrd
@@ -113,43 +114,3 @@ if __name__ == '__main__':
     dicc = xlsx_importerAndScout(file_path)  # !!! FUNCTION
     print()
 
-
-
-
-
-
-
-
-
-
-
-    # # printing out the columns if there are more than 1 (i.e. there is not a comment on first line)
-    # if len(df.columns) >1:
-    #     for i, column in enumerate(df.columns):
-    #         print(i, column)
-    # index = int(input("\nInput the index-number of the column you want to process (starting at 0) "))
-    # # index = 4
-
-    # # df = indexSelector( # !!! FUNCTION
-    # #     df,
-    # #     sheet_name,
-    # #     index)
-
-    # output_file_name = "none"
-    # while output_file_name.lower() not in ['atn', 'gs', 'other']:
-    #     output_file_name = input(
-    #         '\nspecify whether you want to process the sentences for automatic transcript normalization (ATN) or the already normalized sentences that will serve as the goldstandard sentences (GS) or OTHER  ')  # dep
-    #     if output_file_name.lower() == 'atn':
-    #         exporter('ATN.txt') # !!! FUNCTION
-    #         print('saved under "ATN.txt" ')
-    #     elif output_file_name.lower() == 'gs':
-    #         sheet_name = sheet_name.replace(" ", "_")
-    #         exporter(f'goldStandard_{sheet_name}_tts.txt')
-    #         print(f'saved under "goldStandard_{sheet_name}_tts.txt" ')
-    #     elif output_file_name.lower() == 'other':
-    #         file_name_other = str(
-    #             input('specify the name of your output_file, without extension \n'))
-    #         exporter(f'{file_name_other}.txt')
-    #         print(f'saved under "{file_name_other}.txt" ')
-    #     else:
-    #         print(' specify either "ATN" or GS" ')

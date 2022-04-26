@@ -5,13 +5,14 @@
   - `source .venv/bin/activate` # activate the virtual environment
   ___
 
+test
 
-
-  - Copy A .xls* file with the sentences that need to be normalized to the \EXCEL_files dir:
+  - Copy A .xls* file with the sentences that need to be normalized to the `\EXCEL_files` dir:
     - `cp /home/siebe.albers/Desktop/tlzd-302/domains/checked/{.xlsx} /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/`
+      - [from location](file:///home/siebe.albers/Desktop/tlzd-302/domains)
+      - [Dest location](file:///home/siebe.albers/dev/TN_w_IRISA/EXCEL_files)
   - TODO:
     - Loop over  the xlsx files and echo them
-    -
 
 
 The Following commands are automated in the `automate.sh` file:

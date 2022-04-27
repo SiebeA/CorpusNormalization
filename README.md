@@ -15,11 +15,12 @@ test
     - Loop over  the xlsx files and echo them
 
 
-The Following commands are automated in the `automate.sh` file:
+# The Following commands are automated in the `automate.sh` file:
 
 ###### .  
 - **Converting each sheet in the inputted xlsx file to a txt file:**
   - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py`
+  - output in `dd`
 
 ###### .
   - **ATN the .txt files with the ATN-Tool:**

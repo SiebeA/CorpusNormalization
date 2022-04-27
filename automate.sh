@@ -3,6 +3,8 @@
 
 printf "\n Converting the Excel sheetst to separate .txt files..\n"
 python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py
+printf "\n open the folder where the DIRS are stored:"
+open /ATN_input
 
 
 printf "\n cd to **TN_w_IRISA**; ATN the .txt  files: bash e2e_normalization  \n"
@@ -40,4 +42,3 @@ cd ~/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py
 
 # /home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction Move the MTN file
 # /home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/01_auto_tn move the ATN file
-

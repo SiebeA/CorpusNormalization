@@ -34,7 +34,6 @@ def xlsx_importerAndScout(file_path):
         try:
             df = sheet_to_df_map[key]
             file_name = key.replace(" ", "_")
-            print('\n The RAW files will be outputted in: \n /ATN_input:\n')
             with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}_RAW.txt', 'w') as f:
                 # writing the columns names on the first line of the text file:
                 columns = "" 
@@ -72,8 +71,9 @@ def xlsx_importerAndScout(file_path):
                         f.write('\n')
         except TypeError:
             print(f"exceptions: sheet: {key}")
-        
-        print(f' \n /home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}.txt')
+            
+        print('\n The RAW files will be outputted in: \n /ATN_input:\n')
+        # print(f' \n /home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}.txt')
     
     return sheet_to_df_map  # return the df for importer()
 

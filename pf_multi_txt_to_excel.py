@@ -38,13 +38,13 @@ if __name__ == '__main__':
     # os.chdir(os.getcwd())
     os.chdir('/home/siebe.albers/dev/TN_w_IRISA')
     try:
-        os.chdir("a_processing")
+        dirr = os.chdir("a_processing")
         # move the the folder of the respective xlsx file where its sheets are in .txt files:
         folder = glob.glob("*/")[0]
         os.chdir(folder)
         print(f'dir changed to  {os.getcwd()}')
     except:
-        print('dir change unsuccesful')
+        print(f'\n\n !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
         import sys
         sys.exit()
     
@@ -54,6 +54,4 @@ if __name__ == '__main__':
     # !!! FUNCTION call:
     Txt_to_xlsx_sheet_converter(xlsx_output_file_name)
     
-    print(f' \n \n files saved in {os.getcwd()} \n')
-    
-
+    print(f' \n \n files are saved in {os.getcwd()} \n')

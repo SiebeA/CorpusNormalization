@@ -338,6 +338,12 @@ if [ "$DEBUG" = 0 ]; then
 	rm \.*
 fi
 
+
+# TODO handle when there are no . files to be removed.
+# if ! some_command; then
+#     echo "some_command returned an error"
+# fi
+
 # Always delete the .orig files:
 rm .*.orig
 rm *.orig
@@ -347,14 +353,6 @@ rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
 echo 'The end of the ATN normalization program'
 echo
 
-# moving the files to the appropiate folder
-mv *_ATN.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
-
-printf 'The file(s) are outputted in */ATN_output/ \n\n'
-
-
-# opening the output folder:
-xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/
 
 if [ "$DEBUG" = 1 ]; then
 	subl /home/siebe.albers/dev/TN_w_IRISA/test/\.*.txt

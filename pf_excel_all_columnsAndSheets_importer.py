@@ -21,7 +21,7 @@ def xlsx_importerAndScout(file_path):
     import pandas as pd
     sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # store in DIC
     print()
-    
+
     
     for key in sheet_to_df_map.keys():
         sheet_to_df_map[key].columns = range(sheet_to_df_map[key].shape[1]) # # remove the comment on the first line (you cant remove column names, only reset them by range with shape:)
@@ -72,7 +72,7 @@ def xlsx_importerAndScout(file_path):
         except TypeError:
             print(f"exceptions: sheet: {key}")
             
-        print('\n The RAW files will be outputted in: \n /ATN_input:\n')
+    print('\n The RAW files are outputted in: \n /ATN_input:\n')
         # print(f' \n /home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}.txt')
     
     return sheet_to_df_map  # return the df for importer()
@@ -92,7 +92,7 @@ if __name__ == '__main__':
     except FileNotFoundError:
         pass
     
-    print(f'\n pwd == {os.getcwd()}')
+    print(f'\n pwd == {os.getcwd()}: \n')
     for file in glob.glob("*.xls*"):
         print(file)
         
@@ -101,7 +101,7 @@ if __name__ == '__main__':
         if answer.lower() in ['y', 'yes']:
             file_path = file
     else:
-        file_path = input("input the file path to the xlsx file that you want to process")
+        file_path = input("input the file path to the xlsx file that you want to process: \n")
 
     # if file_path.endswith((".xls")):
     #     import xlrd

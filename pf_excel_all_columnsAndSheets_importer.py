@@ -29,7 +29,7 @@ def xlsx_importerAndScout(file_path):
         sheet_to_df_map[key] =  sheet_to_df_map[key].iloc[1:] # drop the first row
         sheet_to_df_map[key] =  sheet_to_df_map[key].reset_index(drop=True) # reset index (0th is back):
         
-    print('\n Hereunder are the outputted text file(s) corresponding to each sheet in the xls* file:')
+    # print('\n Hereunder are the outputted text file(s) corresponding to each sheet in the xls* file:')
     for key in sheet_to_df_map.keys():
         try:
             df = sheet_to_df_map[key]
@@ -88,8 +88,9 @@ if __name__ == '__main__':
     import os
     os.chdir(os.getcwd())
     try:
-        os.chdir("/home/siebe.albers/dev/TN_w_IRISA/EXCEL_files")
+        os.chdir("/home/siebe.albers/dev/TN_w_IRISA/EXCEl_files")
     except FileNotFoundError:
+        print('\n ERROR FILE CHANGING !!!!!!!!!!!!!!! \n')
         pass
     
     print(f'\n pwd == {os.getcwd()}: \n')

@@ -14,7 +14,8 @@ TODO:
   - Copy A .xls* file with the sentences that need to be normalized to the `\EXCEL_files` dir:
       - [from location](file:///home/siebe.albers/Insync/savdelz@gmail.com/GD/tlzd-302_TN/domains)
 )
-      - [Dest location](file:///home/siebe.albers/dev/TN_w_IRISA/EXCEL_files)
+      - [Dest location](file:///home/siebe.albers/dev/TN_w_IRISA/EXCEl_files)
+)
     - `mv Insync/savdelz@gmail.com/GD/tlzd-302_TN/domains/ dev/TN_w_IRISA/EXCEL_files/ && open dev/TN_w_IRISA/EXCEL_files`
 
 

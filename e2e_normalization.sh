@@ -25,7 +25,7 @@ cd ATN_input
 # debug choose txt file folder instead:
 if [ "$DEBUG" = 1 ]; then
 	printf '\n\n\n\n DEBUG IS ON____________________________ \n\n\n'
-	cd /home/siebe.albers/dev/TN_w_IRISA/test
+	cd /home/siebe.albers/dev/TN_w_IRISA/debug
 fi
 
 
@@ -274,7 +274,7 @@ do
 
 	# ABR ACRONYMS
 	# TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
-	perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
+	# perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
@@ -348,7 +348,7 @@ fi
 rm .*.orig
 rm *.orig
 
-echo
+printf "\n (renaming the file to have 'ATN' in the name note that THIS REQUIRES RENAME PACKAGE IN SHELL)"
 rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
 echo 'The end of the ATN normalization program'
 echo

@@ -38,7 +38,7 @@ if __name__ == '__main__':
     # os.chdir(os.getcwd())
     os.chdir('/home/siebe.albers/dev/TN_w_IRISA')
     try:
-        dirr = os.chdir("a_processing")
+        dirr = os.chdir("MTN_input")
         # move the the folder of the respective xlsx file where its sheets are in .txt files:
         folder = glob.glob("*/")[0]
         os.chdir(folder)

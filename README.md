@@ -1,6 +1,57 @@
 ###### note: this readme is still specific to siebe.albers (dir locations)
 
-TODO:
+
+
+## TODO:
+
+- Make a excel file with the following:
+
+- Make a wording out list: (IS THERE A GLOSSARY?)
+  - mph -> miles per hour
+  - kph -> kilometers per hour
+  - inhg -> Inch of mercury
+  - mbar -> millibar
+
+- proper name capitalization e.g. 'ferrari' --> Or just hard replace them
+  - ferrari -> Ferrari
+  - 
+
+- Common-form list
+  - temp -> temp
+  - usa|u.s.|u.s.a. -> United States
+
+
+- No space after hard PUNCT and new sentence
+- not all EOL are punctuated
+- pf excel --> have a row equals goldstandard|raw check
+- number deletion -->
+- some phone number combinations are still not adequately normalized
+- fix that the line continues whenever there is not a punct mark.
+- always punct at BOL (now it is only with a period)
+<!-- - Capitalize weekdays -->
+
+**low priority**
+- Can non BOL cased-words be dealt with?
+- fix 1006 Bessy, does not break correctly
+- fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
+
+
+## Dominic observations:
+| Observation      | expectation |
+| ----------- | ----------- |
+|Magnuson-Moss Warranty Act (15 U.S.C. 2302       |  magnuson moss warranty act fifteen, USC      |
+| 29.92 inhg us and canada      |twenty nine point ninety two inhg us and canada        |
+|The a340-600, at 75.30 m       | The A three hundred forty six hundred, at seventy five point three zero meters       |
+|       |        |
+
+
+
+
+
+
+
+
+TODO Automate.sh
 - Replace {USER} for your respective user-name
 - Replace {}
 
@@ -71,33 +122,6 @@ ___
 
 **Manually** (cannot be automated, mostly because of trade-offs)
 - Phone number digits are written out digit by digit
-
-## TODO:
-- proper name capitalization e.g. 'ferrari' --> Or just hard replace them
-- No space after hard PUNCT and new sentence
-- not all EOL are punctuated
-- pf excel --> have a row equals goldstandard|raw check
-- number deletion -->
-- some phone number combinations are still not adequately normalized
-- fix that the line continues whenever there is not a punct mark.
-- always punct at BOL (now it is only with a period)
-<!-- - Capitalize weekdays -->
-
-**low priority**
-- Can non BOL cased-words be dealt with?
-- fix 1006 Bessy, does not break correctly
-- fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
-
-
-## Dominic observations:
-| Observation      | expectation |
-| ----------- | ----------- |
-|Magnuson-Moss Warranty Act (15 U.S.C. 2302       |  magnuson moss warranty act fifteen, USC      |
-| 29.92 inhg us and canada      |twenty nine point ninety two inhg us and canada        |
-|The a340-600, at 75.30 m       | The A three hundred forty six hundred, at seventy five point three zero meters       |
-|       |        |
-|       |        |
-|       |        |
 
 
 

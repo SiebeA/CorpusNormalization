@@ -47,7 +47,9 @@ mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*_ATN.txt /home/siebe.albers/dev/
 printf 'The ATN file(s) are moved to the */ATN_output/ \n\n' &&
 printf "\n Moving the original files, for MTN convenience, to the same dir/**ATN_output** as the ATN files, and open the dir... \n" &&
 mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/ &&
+#==========================================================
 echo 'TODO here it goes wrong somewhere'
+#==========================================================
 xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/ &&
 printf "\n  Moving the original xlsx file to the same_dir/**ATN_output**... \n" &&
 mv /home/siebe.albers/dev/TN_w_IRISA/EXCEl_files/*xls* /home/siebe.albers/dev/TN_w_IRISA/ATN_output &&
@@ -76,7 +78,7 @@ mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/\.xlsx//') &&
 mv *.xlsx *.txt */ &&
 
 # Moving the folder with the files to MTN_output
-mv /home/siebe.albers/dev/TN_w_IRISA/a_processing/*/ /home/siebe.albers/dev/TN_w_IRISA/MTN_input
+mv /home/siebe.albers/dev/TN_w_IRISA/a_processing/*/ /home/siebe.albers/dev/TN_w_IRISA/MTN_input &&
 
 
 #==========================================================

@@ -88,21 +88,21 @@ if __name__ == '__main__':
     import os
     os.chdir(os.getcwd())
     try:
-        os.chdir("/home/siebe.albers/dev/TN_w_IRISA/EXCEl_files")
+        os.chdir("/home/siebe.albers/dev/TN_w_IRISA/EXCEL_files")
     except FileNotFoundError:
         print('\n ERROR FILE CHANGING !!!!!!!!!!!!!!! \n')
         pass
     
-    print(f'\n pwd == {os.getcwd()}: \n')
+    print(f'\n pwd == {os.getcwd()}: \n\n')
     for file in glob.glob("*.xls*"):
         print(file)
-        
+
     if len(glob.glob("*.xls*")) ==1:
         answer = input(f'\n is this the file you want to process? : \n {file} [y/n] \n')
         if answer.lower() in ['y', 'yes']:
             file_path = file
     else:
-        file_path = input("input the file path to the xlsx file that you want to process: \n")
+        file_path = input("\n input the file path to the xlsx file that you want to process: \n")
 
     # if file_path.endswith((".xls")):
     #     import xlrd

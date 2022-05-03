@@ -4,25 +4,12 @@
 
 ## TODO:
 
-- Make a excel file with the following:
+- Continuously extend the excel file with the form-replacements.
 
-- Make a wording out list: (IS THERE A GLOSSARY?)
-  - mph -> miles per hour
-  - kph -> kilometers per hour
-  - inhg -> Inch of mercury
-  - mbar -> millibar
-
-- proper name capitalization e.g. 'ferrari' --> Or just hard replace them
-  - ferrari -> Ferrari
-  - 
-
-- Common-form list
-  - temp -> temp
-  - usa|u.s.|u.s.a. -> United States
-
+- Processing with 2 xlsx files in the /EXCEL folder does not work, as they are both being forwarded; and then the .txt files of the different excel sheets are all moved to one bundle-folder
 
 - No space after hard PUNCT and new sentence
-- not all EOL are punctuated
+- not all EOL are punctuated?
 - pf excel --> have a row equals goldstandard|raw check
 - number deletion -->
 - some phone number combinations are still not adequately normalized
@@ -52,9 +39,7 @@
 
 
 TODO Automate.sh
-- Replace {USER} for your respective user-name
-- Replace {}
-
+- Replace `{/home/siebe.albers/dev}` for the dir-path in which you cloned the `/TN_w_IRISA`
 
 
 ## Post-initial setup for MULTI-SHEET_files (UNDER DEV):

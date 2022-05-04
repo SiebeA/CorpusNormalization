@@ -51,7 +51,8 @@ def xlsx_importerAndScout(file_path):
                     # concat the columns(stings):
                     string_concatted = ""
                     for string in df.iloc[i]:
-                        string_concatted += str(string) + " DELIMITER "
+                        string_decoded = unidecode.unidecode(str(string)) # remove e.g. accents from chars
+                        string_concatted += str(string_decoded) + " DELIMITER "
                         # TODO dirty remove the last 'DELEIMITER'
                     if string_concatted[-10:] == 'DELIMITER ':
                         string_concatted = string_concatted[:-10]
@@ -82,6 +83,7 @@ def xlsx_importerAndScout(file_path):
 # %%
 if __name__ == '__main__':
     import pandas as pd
+    import unidecode # This lib removes e.g. accents from characters
 
     # printing the xlsx files in the dir, for user input convenience
     import glob

@@ -7,7 +7,7 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     for file in glob.glob(f"*{ATNorMTN}.txt"):
         print(file)
         try:
-            df = pd.read_csv(file, sep='DELIMITER',header=0,keep_default_na=False ,engine='python', index_col=False )
+            df = pd.read_csv(file, sep='|',header=0,keep_default_na=False ,engine='python', index_col=False )
             dicc[file] = df
         except:
             print('\n exception:')
@@ -41,27 +41,28 @@ if __name__ == '__main__':
     #
     # Create 2 branches, one for ATN & one for MTN
     
-    ATN_execute = input('Execute the ATN part of the script? if yes: "y" : ')
-    if ATN_execute =='y':
+    # depc I think it's easier not to ask for this part, as it has to be done every time
+    # ATN_execute = input('Execute the ATN part of the script? if yes: "y" : ')
+    # if ATN_execute =='y':
     
-        # Converting the ATN.txt files to a excel file, where the sheets correspond to the nr. of ATN.txt files:
-        try:
-            dirr = os.chdir("ATN_output")
-            folder = glob.glob("*/")[0]
-            
-            os.chdir(folder)
-            print(f'dir changed to  {os.getcwd()}')
-            # Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="ATN")
-            
-            xlsx_output_file_name = folder[:-1] # '-1' removes the '/'
-            # xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
-           
-            # !!! FUNCTION call:
-            Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="ATN" )
-        except:
-            print(f'\n\n !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
-            import sys
-            sys.exit()
+    # Converting the ATN.txt files to a excel file, where the sheets correspond to the nr. of ATN.txt files:
+    try:
+        dirr = os.chdir("ATN_output")
+        folder = glob.glob("*/")[0]
+        
+        os.chdir(folder)
+        print(f'dir changed to  {os.getcwd()}')
+        # Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="ATN")
+        
+        xlsx_output_file_name = folder[:-1] # '-1' removes the '/'
+        # xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
+       
+        # !!! FUNCTION call:
+        Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="ATN" )
+    except:
+        print(f'\n\n !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
+        import sys
+        sys.exit()
     
     MTN_execute = input('Execute the MTN part of the script? if yes: "y": ')
     if MTN_execute =='y':

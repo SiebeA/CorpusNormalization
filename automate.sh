@@ -52,7 +52,7 @@ mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*_ATN.txt /home/siebe.albers/dev/
 printf 'The ATN file(s) are moved to the */ATN_output/ \n\n' &&
 printf "\n Moving the original files, for MTN convenience, to the same dir/**ATN_output** as the ATN files, and open the dir... \n" &&
 mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/ &&
-xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/ &&
+# xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/ &&
 printf "\n  Copying the original xlsx file to the same_dir/**ATN_output**... \n" &&
 # copy the file, such that 1 copy remains in the /EXCEL* folder (for debugging):
 cp /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/*xls* /home/siebe.albers/dev/TN_w_IRISA/ATN_output &&
@@ -98,6 +98,7 @@ mv *.xlsx *.txt */ &&
 
 
 cd /home/siebe.albers/dev/TN_w_IRISA &&
+xdg-open /home/siebe.albers/dev/TN_w_IRISA/MTN_input && # open it already here, as it can't be done in the pf_multi file
 python3 pf_multi_txt_to_excel.py &&
 
 
@@ -105,7 +106,7 @@ python3 pf_multi_txt_to_excel.py &&
 #==========================================================
 # HUMAN IN THE LOOP
 #==========================================================
-xdg-open /home/siebe.albers/dev/TN_w_IRISA/MTN_input &&
+
 #==========================================================
 # Here, before calling the `python3 pf_multi_txt_to_excel` 
 # command, a Human needs to manually correct the ATN.

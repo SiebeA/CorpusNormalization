@@ -11,9 +11,10 @@
 # - NUC     	Numbers-Cardinal
 # - PUMA    	Punctuation-Marks
 # - PN 		   	Proper Nouns
+# - MREPL 		MASS REPLACEMENTS
 # - TNO     	Time Notation correction
 # - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
-# - URL/EM  	URLS, Emails, 
+# - URL/EM  	URLS, Emails,
 
 DEBUG=0
 #==========================================================
@@ -80,7 +81,7 @@ do
 
 
 	#==========================================================
-	# Replacements before normalization
+	# REPL REPLACEMENTS before normalization
 	#==========================================================
 
 	### SPY removing special symbols
@@ -147,7 +148,6 @@ do
 	perl -0777 -pi.orig -e "s/19th/nineteenth/g" $input
 	perl -0777 -pi.orig -e "s/20th/twentieth/g" $input
 	perl -0777 -pi.orig -e "s/21th/twenty first/g" $input
-
 
 
 
@@ -236,7 +236,7 @@ do
 	perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output+1.txt
 
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
-	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /g' .$output+1.txt
+	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
 
 
 
@@ -333,8 +333,13 @@ do
 	perl -0777 -pi.orig -e "s/([a-z]+)\.([a-z]+)/\L\1 dot \U\2/gim" $output+5TTS.txt
 
 
-	# Meta
-	perl -0777 -pi.orig -e "s/ DELIMITER /DELIMITER/gm" $output+5TTS.txt
+	# quotes: remove spaces arround
+	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\"\1\"/gm" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\'\1\'/gm" $output+5TTS.txt
+
+
+	# Meta replace the delimite
+	perl -0777 -pi.orig -e "s/ DELIMITER /\|/gm" $output+5TTS.txt
 	# perl -0777 -pi.orig -e "s///gim" $output+5TTS.txt
 
 
@@ -342,6 +347,9 @@ do
 	### ADD NEW replacements:
 	### ADD NEW replacements:
 
+	# MREPL ABR
+	perl -0777 -pi.orig -e "s/ US / United States /gm" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ UK / United Kingdom /gm" $output+5TTS.txt
 
 
 	# TODO remove spaces adjacent to '""/quotes'
@@ -353,7 +361,7 @@ do
 		printf '\n\n   \n\n'
 		perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 	fi
-	
+
 
 	echo
 	echo -n "Done. Finished at: "; date

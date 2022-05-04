@@ -4,6 +4,7 @@
 
 ## TODO:
 
+- when a cell only has '\.' its delimitation is messed up
 - remove the space in the excel file
 - Continuously extend the excel file with the form-replacements.
 

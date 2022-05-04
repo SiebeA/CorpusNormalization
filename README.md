@@ -4,6 +4,7 @@
 
 ## TODO:
 
+- remove the space in the excel file
 - Continuously extend the excel file with the form-replacements.
 
 - Processing with 2 xlsx files in the /EXCEL folder does not work, as they are both being forwarded; and then the .txt files of the different excel sheets are all moved to one bundle-folder

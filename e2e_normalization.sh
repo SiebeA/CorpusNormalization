@@ -10,6 +10,7 @@
 # - NUO     	Numbers-ordinal
 # - NUC     	Numbers-Cardinal
 # - PUMA    	Punctuation-Marks
+# - PN 		   	Proper Nouns
 # - TNO     	Time Notation correction
 # - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
 # - URL/EM  	URLS, Emails, 
@@ -24,7 +25,7 @@ LANGUAGE=en
 cd ATN_input
 # debug choose txt file folder instead:
 if [ "$DEBUG" = 1 ]; then
-	printf '\n\n\n\n DEBUG IS ON____________________________ \n\n\n'
+	printf '\n\n\n\n DEBUG IS ON________________________________________________________________________\n\n\n'
 	cd /home/siebe.albers/dev/TN_w_IRISA/debug
 fi
 
@@ -96,6 +97,7 @@ do
 	perl -0777 -pi.orig -e "s/\®//g" $input
 	perl -0777 -pi.orig -e "s/\™//g" $input
 	perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
+	perl -0777 -pi.orig -e "s/\[\d*\]//g" $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e "s/ / /g" $input
 
 	### TNO
@@ -120,6 +122,33 @@ do
 	perl -0777 -pi.orig -e "s/october/October/g" $input
 	perl -0777 -pi.orig -e "s/november/November/g" $input
 	perl -0777 -pi.orig -e "s/december/December/g" $input
+
+
+
+	# # NUC replacement
+	perl -0777 -pi.orig -e "s/1st/first/g" $input
+	perl -0777 -pi.orig -e "s/2nd/second/g" $input
+	perl -0777 -pi.orig -e "s/3rd/third/g" $input
+	perl -0777 -pi.orig -e "s/4th/fourth/g" $input
+	perl -0777 -pi.orig -e "s/5th/fifth/g" $input
+	perl -0777 -pi.orig -e "s/6th/sixth/g" $input
+	perl -0777 -pi.orig -e "s/7th/seventh/g" $input
+	perl -0777 -pi.orig -e "s/8th/eighth/g" $input
+	perl -0777 -pi.orig -e "s/9th/ninth/g" $input
+	perl -0777 -pi.orig -e "s/10th/tenth/g" $input
+	perl -0777 -pi.orig -e "s/11th/eleventh/g" $input
+	perl -0777 -pi.orig -e "s/12th/twelfth/g" $input
+	perl -0777 -pi.orig -e "s/13th/thirteenth/g" $input
+	perl -0777 -pi.orig -e "s/14th/fourteenth/g" $input
+	perl -0777 -pi.orig -e "s/15th/fifteenth/g" $input
+	perl -0777 -pi.orig -e "s/16th/sixteenth/g" $input
+	perl -0777 -pi.orig -e "s/17th/seventeenth/g" $input
+	perl -0777 -pi.orig -e "s/18th/eighteenth/g" $input
+	perl -0777 -pi.orig -e "s/19th/nineteenth/g" $input
+	perl -0777 -pi.orig -e "s/20th/twentieth/g" $input
+	perl -0777 -pi.orig -e "s/21th/twenty first/g" $input
+
+
 
 
 	# SPY
@@ -207,7 +236,7 @@ do
 	perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output+1.txt
 
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
-	perl -pi.orig -e 's/(\d+)-(\d+)/\1 and \2 /g' .$output+1.txt
+	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /g' .$output+1.txt
 
 
 
@@ -272,13 +301,18 @@ do
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 
 
+	# proper nouns #PN # I put this here, not at $input, because if the word is all capped, then it will later be reversed to all lower-case
+	perl -0777 -pi.orig -e "s/american/American/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/english/English/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
+
+
 	# ABR ACRONYMS
 	# TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
 	# perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
-
 
 
 	# capitalizing the first letter of a new line:
@@ -297,6 +331,11 @@ do
 
 	# URL
 	perl -0777 -pi.orig -e "s/([a-z]+)\.([a-z]+)/\L\1 dot \U\2/gim" $output+5TTS.txt
+
+
+	# Meta
+	perl -0777 -pi.orig -e "s/ DELIMITER /DELIMITER/gm" $output+5TTS.txt
+	# perl -0777 -pi.orig -e "s///gim" $output+5TTS.txt
 
 
 	### ADD NEW replacements:
@@ -355,9 +394,10 @@ echo
 
 
 if [ "$DEBUG" = 1 ]; then
-	subl /home/siebe.albers/dev/TN_w_IRISA/test/\.*.txt
-	subl /home/siebe.albers/dev/TN_w_IRISA/ATN_output/*.txt
 
+	subl /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt
+	rm /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # delete it afterwards, otherwise next time it will be input for ATN
+	# subl /home/siebe.albers/dev/TN_w_IRISA/debug/\.*.txt
 fi
 
 

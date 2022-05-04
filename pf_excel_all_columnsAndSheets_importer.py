@@ -19,7 +19,7 @@ def xlsx_importerAndScout(file_path):
 
     """
     import pandas as pd
-    sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # store in DIC
+    sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # store in DICy
     print()
 
     
@@ -37,11 +37,11 @@ def xlsx_importerAndScout(file_path):
             with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}_RAW.txt', 'w') as f:
                 # writing the columns names on the first line of the text file:
                 columns = "" 
-                # & delimit the column names, for conversion to xlsx later:
+                # & delimit the COLUMNS names, for conversion to xlsx later:
                 for column in list(df.columns):
                     columns+=str(column) + " DELIMITER "
-                if columns[-10:] == 'DELIMITER ':
-                    columns = columns[:-10]
+                if columns[-11:] == ' DELIMITER ': # delete the final delimiter mark
+                    columns = columns[:-11]
                 f.writelines(columns+"\n")
                 
             # determining how many columns (strings) are in a row:
@@ -54,8 +54,8 @@ def xlsx_importerAndScout(file_path):
                         string_decoded = unidecode.unidecode(str(string)) # remove e.g. accents from chars
                         string_concatted += str(string_decoded) + " DELIMITER "
                         # TODO dirty remove the last 'DELEIMITER'
-                    if string_concatted[-10:] == 'DELIMITER ':
-                        string_concatted = string_concatted[:-10]
+                    if string_concatted[-11:] == ' DELIMITER ':
+                        string_concatted = string_concatted[:-11]
                             
                 
                     if type(string_concatted) == str:

@@ -7,7 +7,7 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     for file in glob.glob(f"*{ATNorMTN}.txt"):
         print(file)
         try:
-            df = pd.read_csv(file, sep='DELIMITER',header=0,keep_default_na=False ,engine='python' )
+            df = pd.read_csv(file, sep='DELIMITER',header=0,keep_default_na=False ,engine='python', index_col=False )
             dicc[file] = df
         except:
             print('\n exception:')

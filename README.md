@@ -44,7 +44,7 @@ TODO Automate.sh
 
 ## Post-initial setup for MULTI-SHEET_files (UNDER DEV):
   - `cd /home/siebe.albers/dev/TN_w_IRISA`
-  - `source .venv/bin/activate` # activate the virtual environment
+  - `source ~/dev/.venv_TN_w_IRISA/bin/activate` # activate the virtual environment
 
 
   - Copy A .xls* file with the sentences that need to be normalized to the `\EXCEL_files` dir:
@@ -118,7 +118,7 @@ ___
   - Optionally but recommended, pip install dependencies in venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
       ```
       python3 -m venv .venv
-      source .venv/bin/activate
+      source ~/dev/.venv_TN_w_IRISA/bin/activate
       pip install -r requirements.txt
       ```
 

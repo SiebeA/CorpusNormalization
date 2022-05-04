@@ -28,7 +28,7 @@ mkdir  /home/siebe.albers/dev/TN_w_IRISA/a_processing &&
 
 
 # activate venv:
-source /home/siebe.albers/dev/TN_w_IRISA/.venv/bin/activate &&
+source ~/dev/.venv_TN_w_IRISA/bin/activate &&
 
 #==========================================================
 # PF excel to TXT

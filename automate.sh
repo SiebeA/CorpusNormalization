@@ -93,12 +93,16 @@ mv /home/siebe.albers/dev/TN_w_IRISA/a_processing/*/ /home/siebe.albers/dev/TN_w
 # for the ATN version:
 cd /home/siebe.albers/dev/TN_w_IRISA/ATN_output &&
 mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/_copy/_ATN/g' -e 's/.xlsx//g') && #sed1 replaces space for underscore sed2 removes copy in filename
+
 # move all the files to the dir, denoted with '/':
 mv *.xlsx *.txt */ &&
 
 
 cd /home/siebe.albers/dev/TN_w_IRISA &&
 xdg-open /home/siebe.albers/dev/TN_w_IRISA/MTN_input && # open it already here, as it can't be done in the pf_multi file
+
+
+# writing the .txt files to corresponding sheets in a excel file;
 python3 pf_multi_txt_to_excel.py &&
 
 

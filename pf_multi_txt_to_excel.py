@@ -7,10 +7,10 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     for file in glob.glob(f"*{ATNorMTN}.txt"):
         print(file)
         try:
-            df = pd.read_csv(file, sep='|',header=0,keep_default_na=False ,engine='python', index_col=False )
+            df = pd.read_csv(file, sep='|',header=0,keep_default_na=False ,engine='python', index_col=False, on_bad_lines='skip' )
             dicc[file] = df
         except:
-            print('\n exception:')
+            print('\n___________________________ exception:')
             print(file)
             continue
     
@@ -60,9 +60,16 @@ if __name__ == '__main__':
         # !!! FUNCTION call:
         Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="ATN" )
     except:
-        print(f'\n\n !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
+        print(f'\n\n __________________________________________!!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
         import sys
         sys.exit()
+    
+    # store a copy of the ATN excel file in MTN input, as it can be convenient by checking the text in a excel sheet
+    import subprocess
+    try:
+        subprocess.run("cp /home/siebe.albers/dev/TN_w_IRISA/ATN_output/*/*ATN.xls* /home/siebe.albers/dev/TN_w_IRISA/MTN_input/*", shell=True)
+    except FileNotFoundError:
+        print('_______except FileNotFoundError')
     
     MTN_execute = input('Execute the MTN part of the script? if yes: "y": ')
     if MTN_execute =='y':
@@ -75,7 +82,7 @@ if __name__ == '__main__':
             os.chdir(folder)
             print(f'dir changed to  {os.getcwd()}')
         except:
-            print(f'\n\n !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
+            print(f'\n\n ___________________________________ !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
             import sys
             sys.exit()
         

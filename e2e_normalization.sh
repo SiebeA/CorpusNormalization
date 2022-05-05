@@ -16,7 +16,7 @@
 # - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
 # - URL/EM  	URLS, Emails,
 
-DEBUG=0
+DEBUG=1
 #==========================================================
 # Input setup
 #==========================================================
@@ -152,13 +152,13 @@ do
 
 
 
-	# NUO
+	# NUC-1
 	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
 	perl -0777 -pi.orig -e "s/(\d\d)(\d\d)/\1 hundred and \2/gm" $input
 	perl -0777 -pi.orig -e "s/10 hundred /one thousand and /gm" $input
+	perl -0777 -pi.orig -e "s/20 hundred /two thousand and /gm" $input
+	perl -0777 -pi.orig -e "s/ and and/ and /gm" $input # occasional consequence of the former
 	perl -0777 -pi.orig -e "s/ and and zero //gm" $input # occasional consequence of the former
-
-
 
 
 	# SPY
@@ -347,7 +347,7 @@ do
 
 	# quotes: remove spaces arround
 	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\"\1\"/gm" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\'\1\'/gm" $output+5TTS.txt
+	# perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\'\1\'/gm" $output+5TTS.txt
 
 
 	# Meta replace the delimite
@@ -359,9 +359,19 @@ do
 	### ADD NEW replacements:
 	### ADD NEW replacements:
 
-	# MREPL ABR
-	perl -0777 -pi.orig -e "s/ US / United States /gm" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ UK / United Kingdom /gm" $output+5TTS.txt
+
+	# perl -0777 -pi.orig -e "s///gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ bce\.* / BCE /gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ ad\.* / A D /gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ ce\.* / C E /gim" $output+5TTS.txt
+
+	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
+	perl -0777 -pi.orig -e "s/ (USA)([\.\,\!]*)/ United States\2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*)/ United States\2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom\2/gim" $output+5TTS.txt
+
+	# NUC-2
+	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
 
 
 	# TODO remove spaces adjacent to '""/quotes'
@@ -415,8 +425,10 @@ echo
 
 if [ "$DEBUG" = 1 ]; then
 
-	subl /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt
+	perl -0777 -pi.orig -e "s/(DESIRED )/\1\n/gim" /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
+	subl -f /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # delete it afterwards, otherwise next time it will be input for ATN
+	rm /home/siebe.albers/dev/TN_w_IRISA/debug/*.orig
 	# subl /home/siebe.albers/dev/TN_w_IRISA/debug/\.*.txt
 fi
 

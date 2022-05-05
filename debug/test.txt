@@ -1,29 +1,20 @@
 
 NEWTEST
 NEWTEST
-
-
-by W.E.B. Du Bois DESIRED by W E B Du Bois
-
-During 1969 and 1477 and 1077 DESIRED During nineteen hundred and sixty nine and fourteen hundred and sevnty seven and one thousand seventy seven.
-1000–12	alright.
-
-Foo 1349–53	bar DESIRED Foo thirteen hundred and forty nine to fifty three.
-
-
-containing " obscene, " " filthy, " or " inappropriate " material.
 7th – 4th century BCE DESIRED seventh to fourth century BCE.
 1st 2nd 3rd 12th
 conversion Rate Optimisation or optimisation DESIRED conversion Rate Optimization
 Customer Lifetime Value (CLV) DELIMITER Is a prediction of the net profit attributed to the entire future relationship with a customer.
 process (e.g. a food  DESIRED process, for example, a food
+
 #1 DESIRED Number one.
+
 .3gp .aa .aac .aax .act .aiff .alac .amr .ape .au .awb .dct .dss .dvf .flac .gsm .iklax .ivs .m4a .m4b .m4p .mmf .mp3 .mpc .msv .nmf .nsf .ogg, .oga, .mogg .opus .ra, .rm .raw .sln .tta .voc .vox .wav .wma .wv .webm .8svx
 
+by W.E.B. Du Bois PROBLEM I dont know which ones are problematic for pronunciaton.
 SLIPPINGTHROUGH
 SLIPPINGTHROUGH
-The Decameron Giovanni Boccaccio  1353
-
+1000–12	alright. DESIRED One thousand to one thousand and twelve.
 
 
 FAILHIGHPRIORITY
@@ -38,7 +29,15 @@ The phone number is 1 929 555 999 and more HOWEVER 1 929-555
 
 PASSINGBEFORE
 PASSINGBEFORE
-
+Year 1349–53 alright DESIRED Year thirteen hundred and forty nine to fifty three alright.
+containing " obscene, " " filthy, " or " inappropriate " material.
+That's bce and BCE. DESIRED That's BCE and BCE.
+On July 12, 2007 DESIRED On July twelve, two thousand and seven.
+During 1969 and 1477 and 1077 DESIRED During nineteen hundred and sixty nine and fourteen hundred and seventy seven and one thousand and seventy seven.
+The year 1353 DESIRED The year thirteen hundred and fifty three. 
+First century ce DESIRED Frist century C E.
+First century ad DESIRED Frist century A D.
+Also in the US. And in the US alright. And in the UK alright. What about the USA? Yes the USA alright. 
 Banned in the United States until 1959. DESIRED ... until nineteen fifty nine
 [33] [2] DESIRED
 the american empire and the english class # proper nouns

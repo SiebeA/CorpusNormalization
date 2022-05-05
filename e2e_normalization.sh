@@ -6,7 +6,7 @@
 # - \N\S    	corrections of linebreaks, etc.
 # - ANU     	Alpha-Numeric combinations
 # - DEP			Deprecated
-# - NUC 		NUmbers-combiations (e.g. phone numbers)
+# - NUCO 		NUmbers-combiations (e.g. phone numbers)
 # - NUO     	Numbers-ordinal
 # - NUC     	Numbers-Cardinal
 # - PUMA    	Punctuation-Marks
@@ -16,7 +16,7 @@
 # - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
 # - URL/EM  	URLS, Emails,
 
-DEBUG=0
+DEBUG=1
 #==========================================================
 # Input setup
 #==========================================================
@@ -126,7 +126,7 @@ do
 
 
 
-	# # NUC replacement
+	# # NUO replacement
 	perl -0777 -pi.orig -e "s/1st/first/g" $input
 	perl -0777 -pi.orig -e "s/2nd/second/g" $input
 	perl -0777 -pi.orig -e "s/3rd/third/g" $input
@@ -148,6 +148,12 @@ do
 	perl -0777 -pi.orig -e "s/19th/nineteenth/g" $input
 	perl -0777 -pi.orig -e "s/20th/twentieth/g" $input
 	perl -0777 -pi.orig -e "s/21th/twenty first/g" $input
+
+
+
+	# NUO
+	perl -0777 -pi.orig -e "s/(\d+)\./\1/g" $input # separate numbers from periods, as this messes up the wording-out of numbers
+
 
 
 

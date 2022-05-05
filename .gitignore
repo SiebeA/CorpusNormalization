@@ -3,7 +3,7 @@ ATN_input/
 ATN_output/
 EXCEL_files/
 EXCEl_files/
-MTN_output/
+MTN_output/*
 MTN_input/
 
 \.gitignore*

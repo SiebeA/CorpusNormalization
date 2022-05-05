@@ -16,7 +16,7 @@
 # - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
 # - URL/EM  	URLS, Emails,
 
-DEBUG=1
+DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -148,11 +148,15 @@ do
 	perl -0777 -pi.orig -e "s/19th/nineteenth/g" $input
 	perl -0777 -pi.orig -e "s/20th/twentieth/g" $input
 	perl -0777 -pi.orig -e "s/21th/twenty first/g" $input
+	# perl -0777 -pi.orig -e "s/ / /g" $input
 
 
 
 	# NUO
-	perl -0777 -pi.orig -e "s/(\d+)\./\1/g" $input # separate numbers from periods, as this messes up the wording-out of numbers
+	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
+	perl -0777 -pi.orig -e "s/(\d\d)(\d\d)/\1 hundred and \2/gm" $input
+	perl -0777 -pi.orig -e "s/10 hundred /one thousand and /gm" $input
+	perl -0777 -pi.orig -e "s/ and and zero //gm" $input # occasional consequence of the former
 
 
 
@@ -309,7 +313,9 @@ do
 
 	# proper nouns #PN # I put this here, not at $input, because if the word is all capped, then it will later be reversed to all lower-case
 	perl -0777 -pi.orig -e "s/american/American/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/america/America/g" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/english/English/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/england/England/g" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
 
 

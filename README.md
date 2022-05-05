@@ -1,5 +1,8 @@
 ###### note: this readme is still specific to siebe.albers (dir locations)
 
+Make it specific to your local dir:
+- replace: `/home/siebe.albers/dev/`
+- for the: /{dir} in which you cloned the `/TN_w_IRISA`
 
 
 ## TODO:
@@ -46,7 +49,7 @@ TODO Automate.sh
 
 ## Post-initial setup for MULTI-SHEET_files (UNDER DEV):
   - `cd /home/siebe.albers/dev/TN_w_IRISA`
-  - `source ~/dev/.venv_TN_w_IRISA/bin/activate` # activate the virtual environment
+  - `source /home/siebe.albers/dev/.venv_TN_w_IRISA/bin/activate` # activate the virtual environment
 
 
   - Copy A .xls* file with the sentences that need to be normalized to the `\EXCEL_files` dir:
@@ -66,20 +69,20 @@ TODO Automate.sh
 
 ###### .
   - **ATN the .txt files with the ATN-Tool:**
-    - `~/dev/TN_w_IRISA`  
-    - `cd ~/dev/TN_w_IRISA/; bash e2e_normalization.sh`
+    - `/home/siebe.albers/dev/TN_w_IRISA`  
+    - `cd /home/siebe.albers/dev/TN_w_IRISA/; bash e2e_normalization.sh`
 ###### .
   - move the original files, for MTN convenience, to the same dir as the `ATN` files, and open the dir:
     - `mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/; xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/`
   - Move the original xlsx file to the same dir:
-    - `mv ~/dev/TN_w_IRISA/EXCEL_files/*xls* ~/dev/TN_w_IRISA/ATN_output/`
+    - `mv /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/*xls* /home/siebe.albers/dev/TN_w_IRISA/ATN_output/`
 
 ###### .
   - Create a MTN version:
-    - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * ~/dev/TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
+    - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * /home/siebe.albers/dev/TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
 ###### .
   - Move all the files to the processing folder (and open it in Gnome)
-    - `mv * ~/dev/TN_w_IRISA/a_processing/ ; open ~/dev/TN_w_IRISA/a_processing/`
+    - `mv * /home/siebe.albers/dev/TN_w_IRISA/a_processing/ ; open /home/siebe.albers/dev/TN_w_IRISA/a_processing/`
 ###### .
   - MTN: Open the files in Sublime, for MTN.
     - 1 sublime window with 2 tabs open tabs (left the original `.txt`, right the `*ATN.txt`) to manually check the ATN output; keep the original file to the left to see how e.g. (alpha)numeric characters are normalized; the syntax coloring is a visual aid for this purpose.
@@ -90,7 +93,7 @@ TODO Automate.sh
     - `mv *.xlsx *.txt */` # move the txt and xlsx files in the before created dir
 ###### .
   - **PF call** **Writes the MTN.txt files to a .xls* file** with the original filename with `_MTN` appended to it:
-    - `cd ~/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py`
+    - `cd /home/siebe.albers/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py`
 
 ###### .
 
@@ -119,9 +122,10 @@ ___
   - `mkdir ATN_input`
   - Optionally but recommended, pip install dependencies in venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
       ```
-      python3 -m venv .venv
-      source ~/dev/.venv_TN_w_IRISA/bin/activate
-      pip install -r requirements.txt
+python3 -m venv .venv_TN_w_IRISA &&
+source /home/siebe.albers/dev/.venv_TN_w_IRISA/bin/activate &&
+cd /home/siebe.albers/dev/TN_w_IRISA
+pip install -r requirements.txt &&
       ```
 
 - Post-initial setup for MULTI-SHEET_files

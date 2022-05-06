@@ -1,22 +1,23 @@
 #!/bin/bash
 
 ### Navigating e2e_normalization:
-# - ABR     	corrections of Abbreviations
-#   SPY     	Special-Symbols   (®,)
-# - \N\S    	corrections of linebreaks, etc.
-# - ANU     	Alpha-Numeric combinations
-# - DEP			Deprecated
-# - NUCO 		NUmbers-combiations (e.g. phone numbers)
-# - NUO     	Numbers-ordinal
-# - NUC     	Numbers-Cardinal
-# - PUMA    	Punctuation-Marks
-# - PN 		   	Proper Nouns
-# - MREPL 		MASS REPLACEMENTS
-# - TNO     	Time Notation correction
-# - SPLIT   	Splitting eg monday-friday' '5am-6am', etc.
-# - URL/EM  	URLS, Emails,
+# - ABR     									corrections of Abbreviations
+#   SPY     									Special-Symbols   (®,)
+# - \N\S    									corrections of linebreaks, etc.
+# - ANU | ANUC | ANO     			Alpha-Numeric combinations
+# - DEP												deprecated
+# - NUCO 											Numbers-combiations (e.g. phone numbers)
+# - NUO     									Numbers-ordinal
+# - NUC     									Numbers-Cardinal
+# - PUMA    									Punctuation-Marks
+# - PN 		   									Proper Nouns
+# - MREPL 										MASS REPLACEMENTS
+# - TNO     									Time Notation correction
+# - SPLIT   									Splitting eg monday-friday' '5am-6am', etc.
+# - URL/EM  									URLS, Emails,
 
-DEBUG=1
+# RDEBUG
+DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -127,15 +128,6 @@ do
 
 
 	# # NUO replacement
-	perl -0777 -pi.orig -e "s/1st/first/g" $input
-	perl -0777 -pi.orig -e "s/2nd/second/g" $input
-	perl -0777 -pi.orig -e "s/3rd/third/g" $input
-	perl -0777 -pi.orig -e "s/4th/fourth/g" $input
-	perl -0777 -pi.orig -e "s/5th/fifth/g" $input
-	perl -0777 -pi.orig -e "s/6th/sixth/g" $input
-	perl -0777 -pi.orig -e "s/7th/seventh/g" $input
-	perl -0777 -pi.orig -e "s/8th/eighth/g" $input
-	perl -0777 -pi.orig -e "s/9th/ninth/g" $input
 	perl -0777 -pi.orig -e "s/10th/tenth/g" $input
 	perl -0777 -pi.orig -e "s/11th/eleventh/g" $input
 	perl -0777 -pi.orig -e "s/12th/twelfth/g" $input
@@ -148,6 +140,15 @@ do
 	perl -0777 -pi.orig -e "s/19th/nineteenth/g" $input
 	perl -0777 -pi.orig -e "s/20th/twentieth/g" $input
 	perl -0777 -pi.orig -e "s/21th/twenty first/g" $input
+	perl -0777 -pi.orig -e "s/1st/first/g" $input
+	perl -0777 -pi.orig -e "s/2nd/second/g" $input
+	perl -0777 -pi.orig -e "s/3rd/third/g" $input
+	perl -0777 -pi.orig -e "s/4th/fourth/g" $input
+	perl -0777 -pi.orig -e "s/5th/fifth/g" $input
+	perl -0777 -pi.orig -e "s/6th/sixth/g" $input
+	perl -0777 -pi.orig -e "s/7th/seventh/g" $input
+	perl -0777 -pi.orig -e "s/8th/eighth/g" $input
+	perl -0777 -pi.orig -e "s/9th/ninth/g" $input
 	# perl -0777 -pi.orig -e "s/ / /g" $input
 
 
@@ -372,6 +373,12 @@ do
 
 	# NUC-2
 	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
+
+
+	# ANUC e.g. 7th – 4th century BCE and 12th-55th century -- Not working
+	# perl -0777 -pi.orig -e "s/(\d\d*th)\s*([–|-])(\s*\d\d*th)/\1 to \2/gim" $output+5TTS.txt # occasional consequence NUC-1
+
+
 
 
 	# TODO remove spaces adjacent to '""/quotes'

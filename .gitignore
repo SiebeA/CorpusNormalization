@@ -6,6 +6,9 @@ EXCEl_files/
 MTN_output/*
 MTN_input/
 
+bin/
+lib/
+
 \.gitignore*
 
 

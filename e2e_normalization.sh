@@ -17,7 +17,7 @@
 # - URL/EM  									URLS, Emails,
 
 # RDEBUG
-DEBUG=0
+DEBUG=1
 #==========================================================
 # Input setup
 #==========================================================
@@ -45,7 +45,7 @@ ls -l --sort=time *.txt # show the user options of file that can be inputted
 
 
 
-for input0 in *.txt
+for input0 in *.txt # .r1
 do
 	echo $input0
 
@@ -169,7 +169,7 @@ do
 
 
 	# URL/EM
-	perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
+	# perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
 
 
 
@@ -368,7 +368,7 @@ do
 
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
 	perl -0777 -pi.orig -e "s/ (USA)([\.\,\!]*)/ United States\2/gim" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*)/ United States\2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*)/ United States\2/gm" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom\2/gim" $output+5TTS.txt
 
 	# NUC-2

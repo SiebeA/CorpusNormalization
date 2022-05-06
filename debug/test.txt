@@ -2,21 +2,24 @@
 NEWTEST
 NEWTEST
 
+blal
+
+The U.S.C. alright. 
+
+- nan
+- Department of Defense DoD
+- fifteen hundred and zero
+
 18th – 17th century BCE
-
 That's bce and BCE. Later there was a.d. and ad but no ce alright.  DESIRED That's BCE and BCE.
-
 7th – 4th century BCE and 12th-55th century AD. DESIRED seventh to fourth century BCE.
+#1 DESIRED Number one.
 1st 2nd 3rd 12th
 conversion Rate Optimisation or optimisation DESIRED conversion Rate Optimization
 Customer Lifetime Value (CLV) DELIMITER Is a prediction of the net profit attributed to the entire future relationship with a customer.
 process (e.g. a food  DESIRED process, for example, a food
 
-#1 DESIRED Number one.
 
-.3gp .aa .aac .aax .act .aiff .alac .amr .ape .au .awb .dct .dss .dvf .flac .gsm .iklax .ivs .m4a .m4b .m4p .mmf .mp3 .mpc .msv .nmf .nsf .ogg, .oga, .mogg .opus .ra, .rm .raw .sln .tta .voc .vox .wav .wma .wv .webm .8svx
-
-by W.E.B. Du Bois PROBLEM I dont know which ones are problematic for pronunciaton.
 SLIPPINGTHROUGH
 SLIPPINGTHROUGH
 1000–12	alright. DESIRED One thousand to one thousand and twelve.
@@ -34,6 +37,8 @@ The phone number is 1 929 555 999 and more HOWEVER 1 929-555
 
 PASSINGBEFORE
 PASSINGBEFORE
+The non-fiction books
+of drug use, owing
 Year 1349–53 alright DESIRED Year thirteen hundred and forty nine to fifty three alright.
 containing " obscene, " " filthy, " or " inappropriate " material.
 On July 12, 2007 DESIRED On July twelve, two thousand and seven.
@@ -67,18 +72,20 @@ It is about 50k.
 It is e.g. the boy.
 Check your A/C or a/c alright.
 It will be 4am-5am tomorrow.
+
+PHONENUMBERS
 PHONENUMBERS
 phone (605) 545-2950.
-The phone number is +1-929-552-443.
-The phone number is 1-929-552-443.
-The phone number is +1 and more.
-LINE
+The phone number is +1-929-552-443 OR The phone number is 1-929-552-443 OR The phone number is +1 and more.
 It was a bmw a44 series.
 
 
 
 FAIL_LOWPRIORITY
 FAIL_LOWPRIORITY
+
+.3gp .aa .aac .aax .act .aiff .alac .amr .ape .au .awb .dct .dss .dvf .flac .gsm .iklax .ivs .m4a .m4b .m4p .mmf .mp3 .mpc .msv .nmf .nsf .ogg, .oga, .mogg .opus .ra, .rm .raw .sln .tta .voc .vox .wav .wma .wv .webm .8svx
+by W.E.B. Du Bois PROBLEM I dont know which ones are problematic for pronunciaton.
 This is a Test to See If word cases outside BOS are dealt with.
 What happens to ; semi colons?
 Again.

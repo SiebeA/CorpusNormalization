@@ -433,10 +433,9 @@ echo
 if [ "$DEBUG" = 1 ]; then
 
 	perl -0777 -pi.orig -e "s/(DESIRED )/\1\n/gim" /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
-	subl -f /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt
-	rm /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # delete it afterwards, otherwise next time it will be input for ATN
+	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.test_ATN.txt
+	rename 's/test/\.test/' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # rename, adding a period such that it will not be included in the loop at .r1
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/*.orig
-	# subl /home/siebe.albers/dev/TN_w_IRISA/debug/\.*.txt
 fi
 
 

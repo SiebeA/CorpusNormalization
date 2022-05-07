@@ -2,9 +2,7 @@
 NEWTEST
 NEWTEST
 
-blal
 
-The U.S.C. alright. 
 
 - nan
 - Department of Defense DoD
@@ -37,6 +35,7 @@ The phone number is 1 929 555 999 and more HOWEVER 1 929-555
 
 PASSINGBEFORE
 PASSINGBEFORE
+The U.S.C. alright. 
 The non-fiction books
 of drug use, owing
 Year 1349–53 alright DESIRED Year thirteen hundred and forty nine to fifty three alright.
@@ -72,6 +71,9 @@ It is about 50k.
 It is e.g. the boy.
 Check your A/C or a/c alright.
 It will be 4am-5am tomorrow.
+PASSINGBEFOREBUTTURNEDOFFFORNOW
+Acronyms: LASER UUSR BMW US alright OR a LASER the UUSR a BMW and the US alright.
+
 
 PHONENUMBERS
 PHONENUMBERS

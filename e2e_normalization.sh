@@ -1,19 +1,19 @@
 #!/bin/bash
 
 ### Navigating e2e_normalization:
-# - ABR     									corrections of Abbreviations
-#   SPY     									Special-Symbols   (®,)
-# - \N\S    									corrections of linebreaks, etc.
+# - ABR     									corrections of Abbreviations 	(Acronyms, Initialisms)
 # - ANU | ANUC | ANO     			Alpha-Numeric combinations
+# - \N\S    									corrections of linebreaks, etc.
 # - DEP												deprecated
-# - NUCO 											Numbers-combiations (e.g. phone numbers)
+# - MREPL 										MASS REPLACEMENTS
+# - NUCO 											Numbers-combiations 				(e.g. phone numbers)
 # - NUO     									Numbers-ordinal
 # - NUC     									Numbers-Cardinal
 # - PUMA    									Punctuation-Marks
 # - PN 		   									Proper Nouns
-# - MREPL 										MASS REPLACEMENTS
 # - TNO     									Time Notation correction
-# - SPLIT   									Splitting eg monday-friday' '5am-6am', etc.
+# - SPLIT   									Splitting ANUC 							eg monday-friday' '5am-6am', etc.
+#   SPY     									Special-Symbols   (®,)
 # - URL/EM  									URLS, Emails,
 
 # RDEBUG
@@ -194,7 +194,7 @@ do
 	### ABR
 	perl -pi.orig -e 's/etc\./etcetera/g' $input
 	# eg 'a.k.a' --> "AKA"
-	perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U$1\U$2\U$3/g' $input
+	perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U\1\U\2\U\3/g' $input
 	# eg 'a.k.'
 	perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
 
@@ -204,6 +204,8 @@ do
 
 
 	### ABR; 'e.g.' --> 'for example'
+	perl -0777 -pi.orig -e "s/u\.s\./, USA/gi" $input
+
 	perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
 	# eg 'u.s.'
 	perl -0777 -pi.orig -e "s/u\.s\./, USA/gi" $input
@@ -320,9 +322,13 @@ do
 	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
 
 
-	# ABR ACRONYMS
-	# TODO replacing e.g. 'BMW --> B M W' (sed does not support lookbehinds)
-	# perl -pe 's/\b(?<![A-Z]\s)[A-Z]{2,}\b(?!\s[A-Z][A-Z])/REPLACED/g' temp
+	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
+	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 /g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z]) / \1 \2 \3 /g" $output+5TTS.txt # -> B M W
+
+
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
@@ -367,9 +373,9 @@ do
 	perl -0777 -pi.orig -e "s/ ce\.* / C E /gim" $output+5TTS.txt
 
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
-	perl -0777 -pi.orig -e "s/ (USA)([\.\,\!]*)/ United States\2/gim" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*)/ United States\2/gm" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom\2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ (USA)([\.\,\!]*)/ United States \2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*) / United States \2/gm" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom \2/gim" $output+5TTS.txt
 
 	# NUC-2
 	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1

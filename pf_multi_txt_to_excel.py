@@ -1,16 +1,22 @@
 
+# for debugging:
+examine = 1
 
 # storing all the ATN output txt files as DF's in a DICT:
 def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     print(f'\n pwd == {os.getcwd()}')
     dicc = {}
-    for file in glob.glob(f"*{ATNorMTN}.txt"):
+    for i, file in enumerate(glob.glob(f"*{ATNorMTN}.txt")):
         print(file)
+        if i == examine: # I can use this for a breakpoint, for when a particular row doesn't get processed adq
+            print(i)
         try:
-            df = pd.read_csv(file, sep='|',header=0,keep_default_na=False ,engine='python', index_col=False, on_bad_lines='skip' )
+            df = pd.read_csv(file, sep='|',header=0,keep_default_na=False ,engine='python', index_col=False, quotechar="'") # this fuxes the big that e.g. skipped: 'banned_books*' row 158: 'True true furgan*'i
             dicc[file] = df
         except:
-            print('\n___________________________ exception:')
+            print('\n____________________________________________________________!!!!!!!!!!!!!! exception (on bad lines ==skip):')
+            df = pd.read_csv(file, sep='|',header=0,keep_default_na=False ,engine='python', index_col=False, on_bad_lines='skip',quotechar="'")
+            dicc[file] = df
             print(file)
             continue
     

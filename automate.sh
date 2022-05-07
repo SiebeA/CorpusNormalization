@@ -42,7 +42,7 @@ python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer
 # e2e ATN
 #==========================================================
 # printf "\n cd to **TN_w_IRISA**; ATN the .txt  files: bash e2e_normalization  \n" &&
-cd /home/siebe.albers/dev/TN_w_IRISA/ && 
+cd /home/siebe.albers/dev/TN_w_IRISA/ &&
 bash e2e_normalization.sh &&
 # Files are now in /ATN_output
 
@@ -85,11 +85,11 @@ printf " making two bundle_folders (ATN & MTN) that are named after the *xlsx fi
 cd /home/siebe.albers/dev/TN_w_IRISA/a_processing &&
 mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/_copy/_MTN/g' -e 's/.xlsx//g') && #sed1 replaces space for underscore sed2 removes copy in filename sed3 removes the extension from the folder-name.
 
-# move all the files to the dir, denoted with '/':
+# move all the files, the RAW/ORIGINAL included to the dir, denoted with '/':
 mv *.xlsx *.txt */ &&
 # Moving the bundle_folder with the files to MTN_output
 mv /home/siebe.albers/dev/TN_w_IRISA/a_processing/*/ /home/siebe.albers/dev/TN_w_IRISA/MTN_input &&
-# 
+#
 # for the ATN version:
 cd /home/siebe.albers/dev/TN_w_IRISA/ATN_output &&
 mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/_copy/_ATN/g' -e 's/.xlsx//g') && #sed1 replaces space for underscore sed2 removes copy in filename
@@ -112,7 +112,7 @@ python3 pf_multi_txt_to_excel.py &&
 #==========================================================
 
 #==========================================================
-# Here, before calling the `python3 pf_multi_txt_to_excel` 
+# Here, before calling the `python3 pf_multi_txt_to_excel`
 # command, a Human needs to manually correct the ATN.
 #==========================================================
 

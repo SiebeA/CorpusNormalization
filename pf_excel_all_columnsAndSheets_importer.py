@@ -56,7 +56,7 @@ def xlsx_importerAndScout(file_path):
                             string = string.capitalize() # capitalize first letter of a string
                         except AttributeError:
                             print(f'AttributeError, (probably a empty cell) for {file} {key}  :')
-                            print(df.iloc[i])
+                            print(df.iloc[i][0])
                         string_decoded = unidecode.unidecode(str(string)) # remove e.g. accents from chars
                         string_concatted += str(string_decoded) + " DELIMITER "
                         # TODO dirty remove the last 'DELEIMITER'

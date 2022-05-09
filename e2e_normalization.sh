@@ -17,7 +17,7 @@
 # - URL/EM  									URLS, Emails,
 
 # RDEBUG
-DEBUG=1
+DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -47,7 +47,6 @@ ls -l --sort=time *.txt # show the user options of file that can be inputted
 
 for input0 in *.txt # .r1
 do
-	echo SIEBE
 	echo $input0 Is the input file
 
 	#==========================================================
@@ -104,6 +103,10 @@ do
 	# perl -0777 -pi.orig -e "s/ / /g" $input
 
 
+	# Ordening
+	perl -0777 -pi.orig -e "s/(\d+)\)/\1./g" $input
+
+
 	## create a intermediary text file for debugging (observing former replacements)
 
 	# Siebe learning purposes:
@@ -148,6 +151,13 @@ do
 	perl -0777 -pi.orig -e "s/november/November/g" $input
 	perl -0777 -pi.orig -e "s/december/December/g" $input
 
+
+	### Linguistic
+	perl -0777 -pi.orig -e "s/n\./Noun./gi" $input
+	perl -0777 -pi.orig -e "s/v\./Verb./gi" $input
+	perl -0777 -pi.orig -e "s/adj\./Adjective./gi" $input
+	perl -0777 -pi.orig -e "s/adv.\./Adverb/gi" $input
+	perl -0777 -pi.orig -e "s/prep.\./Adverb/gi" $input
 
 
 	# # NUO replacement
@@ -404,7 +414,8 @@ do
 	perl -0777 -pi.orig -e "s/ hundred and zero / hundred \2/gm" $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
 
-
+	# 'nan'
+	perl -0777 -pi.orig -e "s/^nan$/-\2/gm" $output+5TTS.txt
 
 
 

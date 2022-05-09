@@ -31,6 +31,7 @@ def xlsx_importerAndScout(file_path):
         
     # print('\n Hereunder are the outputted text file(s) corresponding to each sheet in the xls* file:')
     for key in sheet_to_df_map.keys():
+        print(key)
         try:
             df = sheet_to_df_map[key]
             file_name = key.replace(" ", "_")
@@ -52,7 +53,7 @@ def xlsx_importerAndScout(file_path):
                     string_concatted = ""
                     for string in df.iloc[i]:
                         try:
-                            string = string.title() # capitalize first letter of a string
+                            string = string.capitalize() # capitalize first letter of a string
                         except AttributeError:
                             print(f'AttributeError, (probably a empty cell) for {file} {key}  :')
                             print(df.iloc[i])

@@ -47,7 +47,8 @@ ls -l --sort=time *.txt # show the user options of file that can be inputted
 
 for input0 in *.txt # .r1
 do
-	echo $input0
+	echo SIEBE
+	echo $input0 Is the input file
 
 	#==========================================================
 	# # DEBUG comment:
@@ -61,8 +62,7 @@ do
 	# output_file_name=$(sed 's/raw_//' <<< $output_file_name)
 	output_file_name=$(echo $output_file_name | perl -pe 's/.txt//')
 	echo
-	echo 'the output file name:'
-	echo $output_file_name
+	echo the output file name: $output_file_name
 	echo
 	# and use that for naming the$output file names:
 	output=$output_file_name
@@ -87,6 +87,7 @@ do
 
 	### SPY removing special symbols
 	perl -0777 -pi.orig -e "s/\ü/u/g" $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
+
 	perl -0777 -pi.orig -e "s/\à/a/g" $input
 	perl -0777 -pi.orig -e "s/\•/-/g" $input
 	perl -0777 -pi.orig -e "s/\”/'/g" $input
@@ -102,7 +103,29 @@ do
 	perl -0777 -pi.orig -e "s/\[\d*\]//g" $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e "s/ / /g" $input
 
-	### TNO
+
+	## create a intermediary text file for debugging (observing former replacements)
+
+	# Siebe learning purposes:
+		# What the perl commands like hereabove do:
+		 # They operate in the $PWD == /home/siebe.albers/dev/TN_w_IRISA/debug
+		 # $input here is simple a string, in this case: 'input.txt'
+		 # So the perl command manipulates the $PWD+$input== /home/siebe.albers/dev/TN_w_IRISA/debug/input.txt
+		# therefore, there is not a variable in here that contains the text file contents in itself; this script rather refers to the correct filepaths, where the perl command are executed.
+		# therefore, if you want to create an intermediary file, a copy has to be made of the referred to file, so NOT:
+# echo $input >> siebe.txt # this does not work as '$input' == 'input.txt'
+# BUT:
+	cp $input .siebe.txt
+
+	# ANUC (has to be done before TNO-1 replaceements
+	perl -0777 -pi.orig -e "s/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/\1 to \3 /gim" $input
+
+	# SPY
+	perl -0777 -pi.orig -e "s/(\#)\s*(\d+)/number \2/gim" $input
+
+
+
+	### TNO-1
 	# capitalizing weekdays
 	perl -0777 -pi.orig -e "s/monday/Monday/g" $input
 	perl -0777 -pi.orig -e "s/tuesday/Tuesday/g" $input
@@ -378,11 +401,10 @@ do
 	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom \2/gim" $output+5TTS.txt
 
 	# NUC-2
+	perl -0777 -pi.orig -e "s/ hundred and zero / hundred \2/gm" $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
 
 
-	# ANUC e.g. 7th – 4th century BCE and 12th-55th century -- Not working
-	# perl -0777 -pi.orig -e "s/(\d\d*th)\s*([–|-])(\s*\d\d*th)/\1 to \2/gim" $output+5TTS.txt # occasional consequence NUC-1
 
 
 

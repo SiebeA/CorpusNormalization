@@ -4,24 +4,18 @@ NEWTEST
 
 
 
-- nan
-- Department of Defense DoD
-- fifteen hundred and zero
+nan # perhaps just delete in excel files
 
-18th – 17th century BCE
-That's bce and BCE. Later there was a.d. and ad but no ce alright.  DESIRED That's BCE and BCE.
-7th – 4th century BCE and 12th-55th century AD. DESIRED seventh to fourth century BCE.
-#1 DESIRED Number one.
-1st 2nd 3rd 12th
-conversion Rate Optimisation or optimisation DESIRED conversion Rate Optimization
+conversion Rate Optimisation or optimisation DESIRED conversion Rate Optimization # problem with cased words
+
+
+
 Customer Lifetime Value (CLV) DELIMITER Is a prediction of the net profit attributed to the entire future relationship with a customer.
 process (e.g. a food  DESIRED process, for example, a food
-
 
 SLIPPINGTHROUGH
 SLIPPINGTHROUGH
 1000–12	alright. DESIRED One thousand to one thousand and twelve.
-
 
 FAILHIGHPRIORITY
 FAILHIGHPRIORITY
@@ -35,6 +29,12 @@ The phone number is 1 929 555 999 and more HOWEVER 1 929-555
 
 PASSINGBEFORE
 PASSINGBEFORE
+
+1st 2nd 3rd 12th
+#1 OR # 22 alright. DESIRED Number one OR number twenty two alright.
+7th – 4th century BCE and 12th-55th century AD. DESIRED seventh to fourth century BCE.
+That's bce and BCE. Later there was a.d. and ad but no ce alright.  DESIRED That's BCE and BCE.
+- In the year 1500 alright. 
 The U.S.C. alright. 
 The non-fiction books
 of drug use, owing
@@ -85,7 +85,7 @@ It was a bmw a44 series.
 
 FAIL_LOWPRIORITY
 FAIL_LOWPRIORITY
-
+- Department of Defense DoD
 .3gp .aa .aac .aax .act .aiff .alac .amr .ape .au .awb .dct .dss .dvf .flac .gsm .iklax .ivs .m4a .m4b .m4p .mmf .mp3 .mpc .msv .nmf .nsf .ogg, .oga, .mogg .opus .ra, .rm .raw .sln .tta .voc .vox .wav .wma .wv .webm .8svx
 by W.E.B. Du Bois PROBLEM I dont know which ones are problematic for pronunciaton.
 This is a Test to See If word cases outside BOS are dealt with.
@@ -98,3 +98,24 @@ an audio and/or video
 Or 115V of power DESIRED Or one hundred and fifteen volts of power.
 atmospheric pressure at sea level is 14.7 `psi` AND 'psi' AND psi.
 The car-brand honda is very notorious.
+
+
+BRITISHUS # perhaps leave them as is, and then use the excel spelling check to spot whenever exceptions have ocurred, as the conditions to when they happen (non BOL cased word) are rare.
+The organisation and the Organisation. 
+
+
+Organisation alright?
+The colour of it.
+The colour.
+The colour.. # now it is not normalized
+Colour of it
+The Colour of it.
+
+flavour 	flavor.
+humour 		humor.
+labour 		labor.
+neighbour 	neighbor.
+
+analyse 	Analyse	analyze.
+breathalyse 	breathalyze.
+paralyse 		paralyze.

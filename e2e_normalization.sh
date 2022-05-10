@@ -17,7 +17,7 @@
 # - URL/EM  									URLS, Emails,
 
 # RDEBUG
-DEBUG=0
+DEBUG=1
 #==========================================================
 # Input setup
 #==========================================================
@@ -152,12 +152,19 @@ do
 	perl -0777 -pi.orig -e "s/december/December/g" $input
 
 
-	### Linguistic
-	perl -0777 -pi.orig -e "s/n\./Noun./gi" $input
-	perl -0777 -pi.orig -e "s/v\./Verb./gi" $input
-	perl -0777 -pi.orig -e "s/adj\./Adjective./gi" $input
-	perl -0777 -pi.orig -e "s/adv.\./Adverb/gi" $input
-	perl -0777 -pi.orig -e "s/prep.\./Adverb/gi" $input
+	## Linguistic
+	## only as BOL:
+	# perl -0777 -pi.orig -e "s/^n\./Noun./gim" $input
+	# perl -0777 -pi.orig -e "s/^v\./Verb./gim" $input
+	# perl -0777 -pi.orig -e "s/^adj\./Adjective./gim" $input
+	# perl -0777 -pi.orig -e "s/^adv.\./Adverb/gim" $input
+	# perl -0777 -pi.orig -e "s/^prep.\.//gim" $input
+	## Anywhere:
+	perl -0777 -pi.orig -e "s/\bn\./Noun./gim" $input
+	perl -0777 -pi.orig -e "s/\bv\./Verb./gim" $input
+	perl -0777 -pi.orig -e "s/\badj\./Adjective./gim" $input
+	perl -0777 -pi.orig -e "s/\badv.\./Adverb/gim" $input
+	perl -0777 -pi.orig -e "s/\bprep.\.//gim" $input
 
 
 	# # NUO replacement
@@ -355,6 +362,8 @@ do
 	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
 
 
+
+
 	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
 	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /g" $output+5TTS.txt
@@ -402,7 +411,7 @@ do
 
 	# perl -0777 -pi.orig -e "s///gim" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ bce\.* / BCE /gim" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ ad\.* / A D /gim" $output+5TTS.txt
+	# perl -0777 -pi.orig -e "s/ ad\.* / A D /gim" $output+5TTS.txt # too sensitive
 	perl -0777 -pi.orig -e "s/ ce\.* / C E /gim" $output+5TTS.txt
 
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
@@ -418,7 +427,7 @@ do
 	perl -0777 -pi.orig -e "s/^nan$/-\2/gm" $output+5TTS.txt
 
 
-
+	cp $output+5TTS.txt A
 
 	# TODO remove spaces adjacent to '""/quotes'
 	# " (.+) "

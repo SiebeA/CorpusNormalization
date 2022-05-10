@@ -38,7 +38,7 @@ echo $PWD
 echo
 
 echo 'These are the files in the dir:'
-ls -l --sort=time *.txt # show the user options of file that can be inputted
+ls -l --sort=time *.txt | grep *'.txt' # show the user options of file that can be inputted
 # ls -l --sort=time *.txt # show the user options of file that can be inputted
 # read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
 # cd /home/siebe.albers/dev/TN_w_IRISA
@@ -270,8 +270,10 @@ do
 	#==========================================================
 	# 1 TOKENIZATION
 	#==========================================================
+
 	echo "1. Tokenization..."
 	perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
+	# cp .$output+1.txt .A
 
 	#==========================================================
 	# Corrections after 1. Tokenization:
@@ -295,10 +297,14 @@ do
 
 
 	#=========================================================
-	# "  2. GENERIC NORMALIZATION               "
+	# "  2. GENERIC NORMALIZATION           "
+	# "  	/home/siebe.albers/dev/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
+	# "  2. Functions: (Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
 	#==========================================================
+
 	echo "2. Generic normalization start..."
 	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$output+2_genNorma.txt
+	cp .$output+2_genNorma.txt .A # adding for convenience
 
 
 	# 12-15 --? 12 to 15
@@ -383,7 +389,7 @@ do
 
 
 	# removing some other oddities
-	perl -0777 -pi.orig -e "s/or or/or/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/or or /or/g" $output+5TTS.txt
 
 
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
@@ -427,7 +433,6 @@ do
 	perl -0777 -pi.orig -e "s/^nan$/-\2/gm" $output+5TTS.txt
 
 
-	cp $output+5TTS.txt A
 
 	# TODO remove spaces adjacent to '""/quotes'
 	# " (.+) "
@@ -468,9 +473,7 @@ fi
 #     echo "some_command returned an error"
 # fi
 
-# Always delete the .orig files:
-rm .*.orig
-rm *.orig
+
 
 printf "\n (renaming the file to have 'ATN' in the name note that THIS REQUIRES RENAME PACKAGE IN SHELL)"
 rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
@@ -487,6 +490,8 @@ if [ "$DEBUG" = 1 ]; then
 fi
 
 
+# Always delete the .orig files: (dont seem to be produced anymore?)
+rm /home/siebe.albers/dev/TN_w_IRISA/debug/\.*.orig
 
 
 # mv $output_file_name'+5TTS.txt' $output_file_name+"ATN"

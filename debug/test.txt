@@ -2,14 +2,7 @@
 NEWTEST
 NEWTEST
 
-v. to help someone commit a crime, including helping them escape from police or plan the crime.
-adj. physically capable of working at a job or in the military. It is often used to describe a person as capable of earning a living and, therefore, of paying alimony or child support.
-n. the termination of pregnancy by various means, including medical surgery, before the fetus is able to sustain independent life. Until 1973 abortion was considered a crime (by the mother and the doctor) unless performed by physicians to protect the life of the mother, a phrase often broadly interp...
-
-
-
-Term DELIMITER Explanation
-A fortiori DELIMITER (ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
+Work done by a lawyer without compensation, for the public good: a lawyer's pro bono work.
 
 
 nan # perhaps just delete in excel files
@@ -38,6 +31,9 @@ The phone number is 1 929 555 999 and more HOWEVER 1 929-555
 PASSINGBEFORE
 PASSINGBEFORE
 
+organise and Organise.
+n. is a noun.
+An ad hoc OR ad-hoc case.
 1) n. # convert orderning by numbers
 1st 2nd 3rd 12th
 #1 OR # 22 alright. DESIRED Number one OR number twenty two alright.

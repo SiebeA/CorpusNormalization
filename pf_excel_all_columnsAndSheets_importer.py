@@ -1,6 +1,7 @@
 # a program that reads two columsn of two xlsx in alternation, copy and \
 # copy and pasting each cell of each row in two seperate /txt files
 
+examine = 64
 
 def xlsx_importerAndScout(file_path):
     """
@@ -37,32 +38,35 @@ def xlsx_importerAndScout(file_path):
             file_name = key.replace(" ", "_")
             with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}_RAW.txt', 'w') as f:
                 # writing the columns names on the first line of the text file:
-                columns = "" 
+                columns = ""
                 # & delimit the COLUMNS names, for conversion to xlsx later:
                 for column in list(df.columns):
                     columns+=str(column) + " DELIMITER "
                 if columns[-11:] == ' DELIMITER ': # delete the final delimiter mark
                     columns = columns[:-11]
                 f.writelines(columns+"\n")
-                
-            # determining how many columns (strings) are in a row:
             
+            # determining how many columns (strings) are in a row:
+
                 for i in range(0,len(df)):
+                    if i == examine:
+                        print(i)
                     df.iloc[i].shape[0]
                     # concat the columns(stings):
                     string_concatted = ""
                     for string in df.iloc[i]:
                         try:
-                            string = string[0].upper()+string[1:] # Only captialize the first char, but unlike capitalize(), the other charactersa re not uncased
-                        except AttributeError:
-                            print(f'AttributeError, (probably a empty cell) for {file} {key}  :')
+                            string = str(string)[0].upper()+str(string)[1:] # Only captialize the first char, but unlike capitalize(), the other charactersa re not uncased
+                        # except AttributeError:
+                        except:
+                            print(f'--------------------------------------------------------------------------, (probably a empty cell) for {file} {key}  :')
                             print(df.iloc[i][0])
                         string_decoded = unidecode.unidecode(str(string)) # remove e.g. accents from chars
                         string_concatted += str(string_decoded) + " DELIMITER "
                         # TODO dirty remove the last 'DELEIMITER'
                     if string_concatted[-11:] == ' DELIMITER ':
                         string_concatted = string_concatted[:-11]
-                            
+                    
                 
                     if type(string_concatted) == str:
                         # print(i, string_concatted)

@@ -53,7 +53,7 @@ def xlsx_importerAndScout(file_path):
                     string_concatted = ""
                     for string in df.iloc[i]:
                         try:
-                            string = string.capitalize() # capitalize first letter of a string
+                            string = string[0].upper()+string[1:] # Only captialize the first char, but unlike capitalize(), the other charactersa re not uncased
                         except AttributeError:
                             print(f'AttributeError, (probably a empty cell) for {file} {key}  :')
                             print(df.iloc[i][0])

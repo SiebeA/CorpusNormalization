@@ -3507,7 +3507,8 @@ woollen => woolen
 worshipping => worshiping
 yodelled => yodeled
 yodelling => yodeling
-# salb adding capitilizationed versions
+
+# salb adding upper cased uk-us replacements
 Abolitionise => Abolitionize
 Abridgement => Abridgment
 Abridgements => Abridgments

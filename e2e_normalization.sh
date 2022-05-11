@@ -16,18 +16,22 @@
 #   SPY     									Special-Symbols   (®,)
 # - URL/EM  									URLS, Emails,
 
+# - SPECIFIC									Specific manipulations for a file/domain
+
 # RDEBUG
 DEBUG=1
 #==========================================================
 # Input setup
 #==========================================================
+# cp $input .siebe.txt
+
 ROOT=$PWD
 LANGUAGE=en
 
 cd ATN_input
 # debug choose txt file folder instead:
 if [ "$DEBUG" = 1 ]; then
-	printf '\n\n\n\n DEBUG IS ON________________________________________________________________________\n\n\n'
+	printf '\n\n\n\n DEBUG IS ON_______________________________________________________________________\n\n\n'
 	cd /home/siebe.albers/dev/TN_w_IRISA/debug
 fi
 
@@ -81,8 +85,22 @@ do
 
 
 	#==========================================================
-	# REPL REPLACEMENTS before normalization
+	# MREPL REPLACEMENTS before normalization
 	#==========================================================
+	# cp $input .A.txt
+	cp $input .1.before_MREPL.txt
+
+
+
+	# SPECIFIC for `legal`
+	printf '\n\n ____________________________________________________________________SPECIFIC on \n\n'
+	perl -0777 -pi.orig -e "s/^\(.+\) //m" $input # removing the e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
+
+
+
+	### PUMA-1 Punctuation-marks
+	perl -0777 -pi.orig -e "s/(\D)\:/\1,/gm" $input
+
 
 	### SPY removing special symbols
 	perl -0777 -pi.orig -e "s/\ü/u/g" $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
@@ -191,6 +209,10 @@ do
 	perl -0777 -pi.orig -e "s/9th/ninth/g" $input
 	# perl -0777 -pi.orig -e "s/ / /g" $input
 
+	###
+	###
+	cp $input .2after_MREPL.txt
+
 
 
 	# NUC-1
@@ -216,13 +238,21 @@ do
 	### ANU
 
 	# million  & billion
+
+	perl -0777 -pi.orig -e "s/(\d+)(\.)(\d+)/\1 point \3/gim" $input
+
+
+
 	perl -0777 -pi.orig -e "s/(\d\.\d*)(m)/\1 million/gim" $input
-	perl -0777 -pi.orig -e "s/(\d\.\d*)(b)/\1 billion/gim" $input
+	perl -0777 -pi.orig -e "s/(\d)(b)/\1 billion/gim" $input
+	# perl -0777 -pi.orig -e "s/(\d\.\d*)(b)/\1 billion/gim" $input
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
 	perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
 	# converting '50k' -- '50 thousand'
 	perl -0777 -pi.orig -e "s/(\d+\s*)k\s/\1 thousand/gi" $input
+
+
 
 
 
@@ -258,8 +288,16 @@ do
 	# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
 
 
-	### TNO e.g. 4am-5am --> 4am till 5am
+	### TNO-2
+	perl -0777 -pi.orig -e "s/(\d)\:00/\1/gm" $input # e.g. 10:00 a.m to 10 a.m
+
+	perl -0777 -pi.orig -e "s/(\d)(\:)(0)([1-9])/\1 oh \4/gm" $input # e.g. '10:04' --> 10 oh 4
+
+
+	#e.g. 4am-5am --> 4am until 5am
 	perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/g' $input
+
+	perl -0777 -pi.orig -e 's/(\d)(a\.m\.\s*|am\s*)-(\d*)(:|\w+)/$1\U$2 \Luntil \U$3\U$4/gim' $input
 
 
 
@@ -270,10 +308,10 @@ do
 	#==========================================================
 	# 1 TOKENIZATION
 	#==========================================================
+	# cp .$output+1.txt .A
 
 	echo "1. Tokenization..."
 	perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
-	# cp .$output+1.txt .A
 
 	#==========================================================
 	# Corrections after 1. Tokenization:
@@ -294,17 +332,22 @@ do
 	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
 
 
-
-
 	#=========================================================
 	# "  2. GENERIC NORMALIZATION           "
 	# "  	/home/siebe.albers/dev/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
 	# "  2. Functions: (Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
 	#==========================================================
+	# cp .$output+2.txt .A.txt
 
 	echo "2. Generic normalization start..."
 	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$output+2_genNorma.txt
-	cp .$output+2_genNorma.txt .A # adding for convenience
+
+	cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
+
+
+	# TNO-2
+	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
+
 
 
 	# 12-15 --? 12 to 15
@@ -334,9 +377,14 @@ do
 	# ANU
 	# '50k' --> '50 k'
 	perl -0777 -pi.orig -e "s/(\d)([a-zA-Z])/\1 \2/gim" .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
+
+
+
+	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 	#===========================================================
 	# 3. CURRENCY CONVERSION
 	#==========================================================
+	# cp .$output+1.txt .A
 	echo "3. Currency conversion..."
 	perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
@@ -345,6 +393,8 @@ do
 	#==========================================================
 	# 4. GENERIC NORMALIZATION
 	#==========================================================
+	# cp .$output+1.txt .A
+
 	# !!! salb some issues that are in here:
 	 # - Semi colons are getting replaced by commas
 
@@ -356,6 +406,8 @@ do
 	#==========================================================
 	# 5. TTS Specific NORMALIZATION
 	#==========================================================
+	# cp .$output+1.txt .A
+
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 
@@ -461,6 +513,7 @@ done
 # DEBUG: (Comment out)
 
 if [ "$DEBUG" = 0 ]; then
+	printf '\n\n _________________Debug == 0 / off'
 	printf '\n\n cleaning up some obsolete files in the dir:\n\n'
 	rm .input*
 	rm .$output_file_name*
@@ -482,10 +535,12 @@ echo
 
 
 if [ "$DEBUG" = 1 ]; then
+	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.ATN.txt
 
 	perl -0777 -pi.orig -e "s/(DESIRED )/\1\n/gim" /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
-	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.test_ATN.txt
-	rename 's/test/\.test/' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # rename, adding a period such that it will not be included in the loop at .r1
+
+	rename 's/test_ATN/.ATN/' test_ATN.txt
+
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/*.orig
 fi
 

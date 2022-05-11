@@ -2,12 +2,16 @@
 NEWTEST
 NEWTEST
 
-Work done by a lawyer without compensation, for the public good: a lawyer's pro bono work.
+
+
+
+
+
+11.50B or $11.50B DELIMITER $47.11M  ANDAND 00.09M  or  $2.76M
 
 
 nan # perhaps just delete in excel files
 
-conversion Rate Optimisation or optimisation DESIRED conversion Rate Optimization # problem with cased words
 
 
 
@@ -25,12 +29,27 @@ THE AMERICAN LANGUAGE
 The u.s. is a country as well as u.s.a. as well as United States alright.
 "excessive idling"
 it is from 12-55 DESIRED from twelve to fifty five.
-The phone number is +1 929 555 999 and more HOWEVER +1 929-555 999
-The phone number is 1 929 555 999 and more HOWEVER 1 929-555
+The phone number is +1 929 555 999 and more HOWEVER +1 929-555 999 DESIRED The phone number is 1 929 555 999 and more HOWEVER 1 929-555
 
 PASSINGBEFORE
 PASSINGBEFORE
 
+Refrigerant 134A, tetrafluoroethane C 2H 2F four.
+It will be 4am-5am tomorrow.
+At 10:00 a.m.
+at 10:00 am
+At 10:54 a.m. DESRED At ten fifty four AM
+At 10:04 a.m. DESIRED At ten oh four AM
+At 10:30 a.m. DESIRED At ten thirty AM
+At 1:00 a.m. ANDAND 
+At 1:54 a.m. DESRED
+At 1:04 a.m. DESIRED
+At 1:30 a.m. DESIRED
+monday–friday, 9:00 a.m.–5:00 p.m.
+monday–friday, 9:00 a.m.-5:00 p.m. 
+monday-friday 9-5 a.m.
+(ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
+Work done by a lawyer without compensation, for the public good: a lawyer's pro bono work. # replacing comma for column
 organise and Organise.
 n. is a noun.
 An ad hoc OR ad-hoc case.
@@ -56,18 +75,16 @@ The years were 1969-1975. DESIRED The years were nineteen sixty nine to nineteen
 every 5,000-10,000 miles DESIRED every five thousand to ten thousand miles.
 Sumer and Akkadian Empire
 P&C or p & c
-11.50B DELIMITER $47.11M  AND 00.09M  or  $2.76M
 British vs American the centre and colour and apologise and analyse and travelled and fuelled
 merriam-webster.com DESIRED merriam dash webster dot com
 Mail lauren@reverb.com. DESIRED Mail lauren at reverb dot com
-mail.Ru DESIRED mail dot R U . AND Harvard.Edu DESIRED harvard dot E D U
+mail.Ru DESIRED mail dot R U . ANDAND Harvard.Edu DESIRED harvard dot E D U
 Every three months or every 5,000 kilometres,
 From august to november on wednesdays and fridays.
 M85 is a blend of 85% methanol and 15% gasoline.
 it is gas/electric or gas/electric.
 John a.k.a. the guy OR john a.k.a alright
 Some ™ ® symbols that are replaced.
-monday–friday, 9:00 a.m.–5:00 p.m. AND monday-friday, 9:00 a.m.-5:00 p.m.
 it is between 12-55.
 12000-15000 miles.
 Between 5,000-10,000 dollars.
@@ -75,7 +92,6 @@ It is between 50k-44k.
 It is about 50k.
 It is e.g. the boy.
 Check your A/C or a/c alright.
-It will be 4am-5am tomorrow.
 PASSINGBEFOREBUTTURNEDOFFFORNOW
 Acronyms: LASER UUSR BMW US alright OR a LASER the UUSR a BMW and the US alright.
 
@@ -98,10 +114,9 @@ What happens to ; semi colons?
 Again.
 What happens to ; this?
 gas N 2O used. But what about K 20 then? BECAUSE the former is a letter, not a 'zero'.
-Refrigerant 134A, tetrafluoroethane C 2H 2F four.
 an audio and/or video
 Or 115V of power DESIRED Or one hundred and fifteen volts of power.
-atmospheric pressure at sea level is 14.7 `psi` AND 'psi' AND psi.
+atmospheric pressure at sea level is 14.7 `psi` ANDAND 'psi' ANDAND psi.
 The car-brand honda is very notorious.
 
 

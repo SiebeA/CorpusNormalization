@@ -132,7 +132,7 @@ $VERBOSE && print STDERR `date "+%d/%m/%y %H:%M:%S"`." -- Expansion and tagging.
 $VERBOSE && print STDERR ".";
 	url(\$TEXT);
 	$TEXT =~ s/_/ /mg;
-	date_and_time(\$TEXT);
+	# date_and_time(\$TEXT);
 $VERBOSE && print STDERR ".";
 # #271
 	currencies(\$TEXT);

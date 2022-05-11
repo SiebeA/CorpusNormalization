@@ -238,11 +238,6 @@ do
 	### ANU
 
 	# million  & billion
-
-	perl -0777 -pi.orig -e "s/(\d+)(\.)(\d+)/\1 point \3/gim" $input
-
-
-
 	perl -0777 -pi.orig -e "s/(\d\.\d*)(m)/\1 million/gim" $input
 	perl -0777 -pi.orig -e "s/(\d)(b)/\1 billion/gim" $input
 	# perl -0777 -pi.orig -e "s/(\d\.\d*)(b)/\1 billion/gim" $input

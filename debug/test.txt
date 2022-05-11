@@ -7,7 +7,9 @@ NEWTEST
 nan # perhaps just delete in excel files
 
 
-Customer Lifetime Value (CLV) DESIRED Customer lifetime value C L V.
+Customer Lifetime Value (CLV) 
+Customer Lifetime Value (CLV)
+
 
 SLIPPINGTHROUGH
 SLIPPINGTHROUGH
@@ -25,6 +27,7 @@ The phone number is +1 929 555 999 and more HOWEVER +1 929-555 999 DESIRED The p
 PASSINGBEFORE
 PASSINGBEFORE
 
+CLV and CLV and CLV and C L V.
 11.50B
 $11.50B
 $47.11M

@@ -178,11 +178,12 @@ do
 	# perl -0777 -pi.orig -e "s/^adv.\./Adverb/gim" $input
 	# perl -0777 -pi.orig -e "s/^prep.\.//gim" $input
 	## Anywhere:
-	perl -0777 -pi.orig -e "s/\bn\./Noun./gim" $input
-	perl -0777 -pi.orig -e "s/\bv\./Verb./gim" $input
-	perl -0777 -pi.orig -e "s/\badj\./Adjective./gim" $input
-	perl -0777 -pi.orig -e "s/\badv.\./Adverb/gim" $input
-	perl -0777 -pi.orig -e "s/\bprep.\.//gim" $input
+	perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[vV]\./Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
+	perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
+	perl -0777 -pi.orig -e "s/\bn\./Noun./gm" $input
+	perl -0777 -pi.orig -e "s/\badj\./Adjective./gm" $input
+	perl -0777 -pi.orig -e "s/\badv.\./Adverb/gm" $input
+	perl -0777 -pi.orig -e "s/\bprep.\.//gm" $input
 
 
 	# # NUO replacement
@@ -269,12 +270,12 @@ do
 
 
 	### ABR; 'e.g.' --> 'for example'
-	perl -0777 -pi.orig -e "s/u\.s\./, USA/gi" $input
-
 	perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
 	# eg 'u.s.'
-	perl -0777 -pi.orig -e "s/u\.s\./, USA/gi" $input
-	perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input # (NOTICE THAT IN THIS CASE '\' INSTEAD OF '$' BEFORE A GROUP REF IS REQUIRED?!))
+	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" $input
+	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" $input
+	perl -0777 -pi.orig -e "s/u\.s\.a\./United States/gi" $input
+	perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input
 
 	#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
 	perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U\1\U\2/g' $input # g flag necessary here!!
@@ -375,20 +376,38 @@ do
 
 
 
+	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
+	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z]) / \1 \2 \3 /gm" .$output+2_genNorma.txt # -> B M W
+	# same but for the ones that are BOL (idk how to do this in one line)
+	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z]) / \1 \2 \3 /gm" .$output+2_genNorma.txt # -> B M W
+	# # with period ending
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\.|$/ \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])\.|$/ \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])\.|$/ \1 \2 \3 /gm" .$output+2_genNorma.txt # -> B M W
+
+
+
+
+
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 	#===========================================================
 	# 3. CURRENCY CONVERSION
 	#==========================================================
-	# cp .$output+1.txt .A
+	# cp .$output+1.txt .A.txt
 	echo "3. Currency conversion..."
 	perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
 
-
+	# cp .$output+3currencyFix.txt .A.txt
 	#==========================================================
 	# 4. GENERIC NORMALIZATION
 	#==========================================================
-	# cp .$output+1.txt .A
+	# cp .$output+1.txt .A.txt
 
 	# !!! salb some issues that are in here:
 	 # - Semi colons are getting replaced by commas
@@ -398,10 +417,11 @@ do
 
 
 
+	cp .$output+4generalNorm.txt .A.txt
 	#==========================================================
 	# 5. TTS Specific NORMALIZATION
 	#==========================================================
-	# cp .$output+1.txt .A
+	# cp .$output+1.txt .A.txt
 
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
@@ -413,15 +433,6 @@ do
 	perl -0777 -pi.orig -e "s/english/English/g" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/england/England/g" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
-
-
-
-
-	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
-	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /g" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 /g" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z]) / \1 \2 \3 /g" $output+5TTS.txt # -> B M W
 
 
 

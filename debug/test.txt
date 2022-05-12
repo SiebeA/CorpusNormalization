@@ -1,14 +1,9 @@
 
 NEWTEST
 NEWTEST
-
-
-
 nan # perhaps just delete in excel files
 
-
-Customer Lifetime Value (CLV) 
-Customer Lifetime Value (CLV)
+The u.s. is a country as well as u.s.a. as well as United States alright.
 
 
 SLIPPINGTHROUGH
@@ -18,16 +13,17 @@ SLIPPINGTHROUGH
 FAILHIGHPRIORITY
 FAILHIGHPRIORITY
 
-THE AMERICAN LANGUAGE
-The u.s. is a country as well as u.s.a. as well as United States alright.
-"excessive idling"
+
+
+PASSINGBEFORE
+PASSINGBEFORE
+
 it is from 12-55 DESIRED from twelve to fifty five.
-The phone number is +1 929 555 999 and more HOWEVER +1 929-555 999 DESIRED The phone number is 1 929 555 999 and more HOWEVER 1 929-555
+THE AMERICAN LANGUAGE
+"excessive idling"
 
-PASSINGBEFORE
-PASSINGBEFORE
 
-CLV and CLV and CLV and C L V.
+CLV and CLV and CLV. and C L V. Or (CLV) or (CLV).
 11.50B
 $11.50B
 $47.11M

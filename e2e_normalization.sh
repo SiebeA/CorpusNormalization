@@ -378,17 +378,12 @@ do
 
 	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z]) / \1 \2 \3 /gm" .$output+2_genNorma.txt # -> B M W
-	# same but for the ones that are BOL (idk how to do this in one line)
-	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z])([A-Z]) / \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z]) / \1 \2 \3 /gm" .$output+2_genNorma.txt # -> B M W
-	# # with period ending
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\.|$/ \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])\.|$/ \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])\.|$/ \1 \2 \3 /gm" .$output+2_genNorma.txt # -> B M W
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
+
+	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 /gm" .$output+2_genNorma.txt # 3 letter ABR
+	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm" .$output+2_genNorma.txt # for when ABR occurs BOL
+
 
 
 
@@ -417,7 +412,7 @@ do
 
 
 
-	cp .$output+4generalNorm.txt .A.txt
+	# cp .$output+4generalNorm.txt .A.txt
 	#==========================================================
 	# 5. TTS Specific NORMALIZATION
 	#==========================================================

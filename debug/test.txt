@@ -3,6 +3,17 @@ NEWTEST
 NEWTEST
 nan # perhaps just delete in excel files
 
+Intellectual property (IP)	IP refers to
+
+(CFAs)
+
+1) the...
+
+(eg under a will or trust).
+
+the honourable agreement.
+
+
 
 
 SLIPPINGTHROUGH
@@ -17,6 +28,10 @@ FAILHIGHPRIORITY
 PASSINGBEFORE
 PASSINGBEFORE
 
+A legal adviser; a term used to refer to lawyers in a case.
+gas/electric alright
+the and/or alright # can mess up the former regex
+mutually-selected arbitrator or panel
 The u.s. is a country as well as u.s.a. as well as United States alright.
 it is from 12-55 DESIRED from twelve to fifty five.
 THE AMERICAN LANGUAGE

@@ -19,7 +19,7 @@
 # - SPECIFIC									Specific manipulations for a file/domain
 
 # RDEBUG
-DEBUG=1
+DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -92,15 +92,16 @@ do
 
 
 	# SPECIFIC for `legal`
-	printf '\n\n _________________________________________________________________SPECIFIC on \n\n'
+	printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# printf '\n  \n'
-	printf '\n for `legal*`  \n'
 	perl -0777 -pi.orig -e "s/^\(.+\) //m" $input # removing the e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
+	printf '\n for `legal*`  \n\n\n'
 
 
 
 	### PUMA-1 Punctuation-marks
-	perl -0777 -pi.orig -e "s/(\D)\:/\1,/gm" $input
+	perl -0777 -pi.orig -e "s/(\D)\:/\1,/gm" $input # comma for colon
+	perl -0777 -pi.orig -e "s/(\D)\;/\1,/gm" $input # comma for semi-colon
 
 
 	### SPY removing special symbols
@@ -261,10 +262,14 @@ do
 
 	#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
 	perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U\1\U\2/g' $input # g flag necessary here!!
+
+	# because 'or' is used in the following regex-replacement, 'or' cases need to be replaced first
+	perl -0777 -pi.orig -e 's/ and\/or / and or /g' $input # g flag necessary here!!
 	# e.g. for "gas/electric":
 	perl -0777 -pi.orig -e 's/(\s\w{2,})\/(\w{2,})/$1 or $2/g' $input # g flag necessary here!!
 	# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
 
+	cp $input .A.txt
 
 	### TNO-2
 	perl -0777 -pi.orig -e "s/(\d)\:00/\1/gm" $input # e.g. 10:00 a.m to 10 a.m
@@ -377,7 +382,7 @@ do
 	echo "3. Currency conversion..."
 	perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
-	# cp .$output+3currencyFix.txt .A.txt
+	cp .$output+3currencyFix.txt .39_after_Currency.txt
 	#==========================================================
 	# 4. GENERIC NORMALIZATION
 	#==========================================================
@@ -415,7 +420,7 @@ do
 	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
 	# removing some other oddities
-	perl -0777 -pi.orig -e "s/or or /or/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/ or or /or/g" $output+5TTS.txt
 
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
 	perl -0777 -pi.orig -e "s/delimiter/DELIMITER/gim" $output+5TTS.txt
@@ -509,11 +514,6 @@ if [ "$DEBUG" = 1 ]; then
 
 	rm .input.txt
 fi
-
-
-# Always delete the .orig files: (dont seem to be produced anymore?)
-rm /home/siebe.albers/dev/TN_w_IRISA/debug/\.*.orig
-
 
 # mv $output_file_name'+5TTS.txt' $output_file_name+"ATN"
 # rename -vn 's/\+5TTS//' $output_file_name

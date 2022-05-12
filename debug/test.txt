@@ -3,7 +3,6 @@ NEWTEST
 NEWTEST
 nan # perhaps just delete in excel files
 
-The u.s. is a country as well as u.s.a. as well as United States alright.
 
 
 SLIPPINGTHROUGH
@@ -18,11 +17,10 @@ FAILHIGHPRIORITY
 PASSINGBEFORE
 PASSINGBEFORE
 
+The u.s. is a country as well as u.s.a. as well as United States alright.
 it is from 12-55 DESIRED from twelve to fifty five.
 THE AMERICAN LANGUAGE
 "excessive idling"
-
-
 CLV and CLV and CLV. and C L V. Or (CLV) or (CLV).
 11.50B
 $11.50B

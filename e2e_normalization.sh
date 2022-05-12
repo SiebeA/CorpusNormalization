@@ -87,7 +87,7 @@ do
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
 	# cp $input .A.txt
-	cp $input .00.before_MREPL.txt
+	cp $input .00_input_before_MREPL.txt
 
 
 
@@ -204,7 +204,12 @@ do
 
 	###
 	###
-	cp $input .01_after_MREPL.txt
+	cp $input .01_Input_after_MREPL.txt
+
+
+	### ABR; 'e.g.' --> 'for example'
+	perl -0777 -pi.orig -e "s/e\.g\./,for example/gi" $input
+
 
 
 	# NUC-1
@@ -253,14 +258,6 @@ do
 	# but not a.b.c.d. , for now fix with;
 	# perl -pi.orig -e 's/([A-Z]{2,})([a-z])\.$1\U$2/mg' $input
 
-
-	### ABR; 'e.g.' --> 'for example'
-	perl -0777 -pi.orig -e "s/e\.g\./, for example/gi" $input
-	# eg 'u.s.'
-	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" $input
-	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" $input
-	perl -0777 -pi.orig -e "s/u\.s\.a\./United States/gi" $input
-	perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" $input
 
 	#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
 	perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U\1\U\2/g' $input # g flag necessary here!!
@@ -361,6 +358,16 @@ do
 
 	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 /gm" .$output+2_genNorma.txt # 3 letter ABR
 	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm" .$output+2_genNorma.txt # for when ABR occurs BOL
+
+
+	# eg 'u.s.'
+	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/u\.s\.a\./United States/gi" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/ U S A / United States /gi" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" .$output+2_genNorma.txt
+
+
 
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 	#===========================================================

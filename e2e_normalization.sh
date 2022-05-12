@@ -83,17 +83,18 @@ do
 	cp $input0 .input.txt
 	input=.input.txt
 
-
 	#==========================================================
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
 	# cp $input .A.txt
-	cp $input .1.before_MREPL.txt
+	cp $input .00.before_MREPL.txt
 
 
 
 	# SPECIFIC for `legal`
-	printf '\n\n ____________________________________________________________________SPECIFIC on \n\n'
+	printf '\n\n _________________________________________________________________SPECIFIC on \n\n'
+	# printf '\n  \n'
+	printf '\n for `legal*`  \n'
 	perl -0777 -pi.orig -e "s/^\(.+\) //m" $input # removing the e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
 
 
@@ -136,14 +137,12 @@ do
 		# therefore, if you want to create an intermediary file, a copy has to be made of the referred to file, so NOT:
 # echo $input >> siebe.txt # this does not work as '$input' == 'input.txt'
 # BUT:
-	cp $input .siebe.txt
 
 	# ANUC (has to be done before TNO-1 replaceements
 	perl -0777 -pi.orig -e "s/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/\1 to \3 /gim" $input
 
 	# SPY
 	perl -0777 -pi.orig -e "s/(\#)\s*(\d+)/number \2/gim" $input
-
 
 
 	### TNO-1
@@ -171,13 +170,6 @@ do
 
 
 	## Linguistic
-	## only as BOL:
-	# perl -0777 -pi.orig -e "s/^n\./Noun./gim" $input
-	# perl -0777 -pi.orig -e "s/^v\./Verb./gim" $input
-	# perl -0777 -pi.orig -e "s/^adj\./Adjective./gim" $input
-	# perl -0777 -pi.orig -e "s/^adv.\./Adverb/gim" $input
-	# perl -0777 -pi.orig -e "s/^prep.\.//gim" $input
-	## Anywhere:
 	perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[vV]\./Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
 	perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
 	perl -0777 -pi.orig -e "s/\bn\./Noun./gm" $input
@@ -212,8 +204,7 @@ do
 
 	###
 	###
-	cp $input .2after_MREPL.txt
-
+	cp $input .01_after_MREPL.txt
 
 
 	# NUC-1
@@ -229,11 +220,8 @@ do
 	perl -0777 -pi.orig -e "s/(\w\s*)\&(\s*\w)/\1 and \2/gim" $input
 
 
-
-
 	# URL/EM
 	# perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
-
 
 
 	### ANU
@@ -247,9 +235,6 @@ do
 	perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
 	# converting '50k' -- '50 thousand'
 	perl -0777 -pi.orig -e "s/(\d+\s*)k\s/\1 thousand/gi" $input
-
-
-
 
 
 	# PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
@@ -296,11 +281,7 @@ do
 	perl -0777 -pi.orig -e 's/(\d)(a\.m\.\s*|am\s*)-(\d*)(:|\w+)/$1\U$2 \Luntil \U$3\U$4/gim' $input
 
 
-
-	### NEW
-	### NEW
-
-
+	cp $input .02_afterInputManipulations_before1Tokenization.txt
 	#==========================================================
 	# 1 TOKENIZATION
 	#==========================================================
@@ -317,7 +298,6 @@ do
 	perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output+1.txt
 
 
-
 	perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output+1.txt
 
 
@@ -328,6 +308,7 @@ do
 	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
 
 
+	cp .$output+1.txt .19_after1Tokenization.txt
 	#=========================================================
 	# "  2. GENERIC NORMALIZATION           "
 	# "  	/home/siebe.albers/dev/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
@@ -343,7 +324,6 @@ do
 
 	# TNO-2
 	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
-
 
 
 	# 12-15 --? 12 to 15
@@ -374,8 +354,6 @@ do
 	# '50k' --> '50 k'
 	perl -0777 -pi.orig -e "s/(\d)([a-zA-Z])/\1 \2/gim" .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 
-
-
 	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
 	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
@@ -384,11 +362,6 @@ do
 	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 /gm" .$output+2_genNorma.txt # 3 letter ABR
 	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm" .$output+2_genNorma.txt # for when ABR occurs BOL
 
-
-
-
-
-
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 	#===========================================================
 	# 3. CURRENCY CONVERSION
@@ -396,7 +369,6 @@ do
 	# cp .$output+1.txt .A.txt
 	echo "3. Currency conversion..."
 	perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
-
 
 	# cp .$output+3currencyFix.txt .A.txt
 	#==========================================================
@@ -410,9 +382,7 @@ do
 	echo "4. Generic normalization end..."
 	perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
 
-
-
-	# cp .$output+4generalNorm.txt .A.txt
+	cp .$output+4generalNorm.txt .49_after_4_GenNormalization.txt
 	#==========================================================
 	# 5. TTS Specific NORMALIZATION
 	#==========================================================
@@ -429,34 +399,26 @@ do
 	perl -0777 -pi.orig -e "s/england/England/g" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
 
-
-
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
-
 
 	# capitalizing the first letter of a new line:
 	perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
 	# capitalizing the first letter after a hard punctuation mark.
 	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
-
 	# removing some other oddities
 	perl -0777 -pi.orig -e "s/or or /or/g" $output+5TTS.txt
-
 
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
 	perl -0777 -pi.orig -e "s/delimiter/DELIMITER/gim" $output+5TTS.txt
 
-
 	# URL
 	perl -0777 -pi.orig -e "s/([a-z]+)\.([a-z]+)/\L\1 dot \U\2/gim" $output+5TTS.txt
-
 
 	# quotes: remove spaces arround
 	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\"\1\"/gm" $output+5TTS.txt
 	# perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\'\1\'/gm" $output+5TTS.txt
-
 
 	# Meta replace the delimite
 	perl -0777 -pi.orig -e "s/ DELIMITER /\|/gm" $output+5TTS.txt
@@ -472,16 +434,13 @@ do
 	perl -0777 -pi.orig -e "s/ bce\.* / BCE /gim" $output+5TTS.txt
 	# perl -0777 -pi.orig -e "s/ ad\.* / A D /gim" $output+5TTS.txt # too sensitive
 	perl -0777 -pi.orig -e "s/ ce\.* / C E /gim" $output+5TTS.txt
-
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
 	perl -0777 -pi.orig -e "s/ (USA)([\.\,\!]*)/ United States \2/gim" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*) / United States \2/gm" $output+5TTS.txt
 	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom \2/gim" $output+5TTS.txt
-
 	# NUC-2
 	perl -0777 -pi.orig -e "s/ hundred and zero / hundred \2/gm" $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
-
 	# 'nan'
 	perl -0777 -pi.orig -e "s/^nan$/-\2/gm" $output+5TTS.txt
 
@@ -496,14 +455,9 @@ do
 		printf '\n\n   \n\n'
 		perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 	fi
-
-
 	echo
 	echo -n "Done. Finished at: "; date
-
-
 	# rename 's/\+5TTS//g' ATN_input/$output_file_name
-
 done
 
 
@@ -543,6 +497,10 @@ if [ "$DEBUG" = 1 ]; then
 	rename 's/test_ATN/.ATN/' test_ATN.txt
 
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/*.orig
+
+	rm /home/siebe.albers/dev/TN_w_IRISA/debug/\.test*
+
+	rm .input.txt
 fi
 
 

@@ -90,11 +90,12 @@ do
 	cp $input .00_input_before_MREPL.txt
 
 
+	cp $input .A.txt
 
 	# SPECIFIC for `legal`
 	printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# printf '\n  \n'
-	perl -0777 -pi.orig -e "s/^\(.+\) //m" $input # removing the e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
+	perl -0777 -pi.orig -e 's/(DELIMITER)\s*\(.+\)//gm' $input # removing the e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
 	printf '\n for `legal*`  \n\n\n'
 
 
@@ -171,12 +172,29 @@ do
 
 
 	## Linguistic
-	perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[vV]\./Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
-	perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
-	perl -0777 -pi.orig -e "s/\bn\./Noun./gm" $input
-	perl -0777 -pi.orig -e "s/\badj\./Adjective./gm" $input
-	perl -0777 -pi.orig -e "s/\badv.\./Adverb/gm" $input
-	perl -0777 -pi.orig -e "s/\bprep.\.//gm" $input
+	# perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[vV]/Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
+	# perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
+	# perl -0777 -pi.orig -e "s/\bn\./Noun./gm" $input
+	# perl -0777 -pi.orig -e "s/\badj\./Adjective./gm" $input
+	# perl -0777 -pi.orig -e "s/\badv.\./Adverb/gm" $input
+	# perl -0777 -pi.orig -e "s/\bprep.\.//gm" $input
+	# # BOL
+	# perl -0777 -pi.orig -e "s/^[vV]\./Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
+	# perl -0777 -pi.orig -e "s/^[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
+	# perl -0777 -pi.orig -e "s/^badj\./Adjective./gim" $input
+	# perl -0777 -pi.orig -e "s/\badv.\./Adverb/gim" $input
+	# perl -0777 -pi.orig -e "s^prep.\.//gim" $input
+
+	# cp $input .A.txt
+
+	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
+	perl -0777 -pi.orig -e "s/\b[Vv]\.* / Verb. /gm" $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic
+	perl -0777 -pi.orig -e "s/\b[Nn]\.* / Noun. /gm" $input
+	perl -0777 -pi.orig -e "s/\b[aA]dj\.* \b/Adjective. /gm" $input
+	perl -0777 -pi.orig -e "s/\b[Aa]dv\.* /Adverb /gm" $input
+	perl -0777 -pi.orig -e "s/\b[Pp]rep\.* / /gm" $input
+
+
 
 
 	# # NUO replacement
@@ -269,7 +287,6 @@ do
 	perl -0777 -pi.orig -e 's/(\s\w{2,})\/(\w{2,})/$1 or $2/g' $input # g flag necessary here!!
 	# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
 
-	cp $input .A.txt
 
 	### TNO-2
 	perl -0777 -pi.orig -e "s/(\d)\:00/\1/gm" $input # e.g. 10:00 a.m to 10 a.m
@@ -284,6 +301,7 @@ do
 
 
 	cp $input .02_afterInputManipulations_before1Tokenization.txt
+	# cp $input .A.txt
 	#==========================================================
 	# 1 TOKENIZATION
 	#==========================================================
@@ -426,7 +444,7 @@ do
 	perl -0777 -pi.orig -e "s/delimiter/DELIMITER/gim" $output+5TTS.txt
 
 	# URL
-	perl -0777 -pi.orig -e "s/([a-z]+)\.([a-z]+)/\L\1 dot \U\2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e "s/([a-z]{2,})\.([a-z]{2,})/\L\1 dot \U\2/gim" $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
 
 	# quotes: remove spaces arround
 	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\"\1\"/gm" $output+5TTS.txt
@@ -455,6 +473,13 @@ do
 	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
 	# 'nan'
 	perl -0777 -pi.orig -e "s/^nan$/-\2/gm" $output+5TTS.txt
+
+
+
+	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
+	perl -0777 -pi.orig -e "s/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm" $output+5TTS.txt
+
+
 
 
 

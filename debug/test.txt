@@ -3,6 +3,31 @@ NEWTEST
 NEWTEST
 nan # perhaps just delete in excel files
 
+
+Term DELIMITER Explanation
+A fortiori DELIMITER (ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
+A priori assumption DELIMITER (ah-pree-ory) n. from Latin, an assumption that is true without further proof or need to prove it. It is assumed the sun will come up tomorrow. However, it has a negative side: an a priori assumption made without question on the basis that no analysis or study is necessary, can be mental laziness wh...
+A.k.a. DELIMITER Prep. abbreviation for "also known as" when someone uses different initials, a nickname, a maiden or married name. Example: Harold G. Snodgrass, a.k.a. Harry Snodgrass, a.k.a. H. G. Snodgrass, a.k.a. "Snuffy the Snod."
+Ab initio DELIMITER Prep. lawyer Latin for "from the start," as "it was legal ab initio."
+Abandon DELIMITER V. to intentionally and permanently give up, surrender, leave, desert or relinquish all interest or ownership in property, a home or other premises, a right of way, and even a spouse, family, or children. The word is often used in situations to determine whether a tenant has left his/her apartment a...
+Abandoned property DELIMITER N. property left behind (often by a tenant) intentionally and permanently when it appears that the former owner (or tenant) does not intend to come back, pick it up, or use it. Examples may include possessions left in a house after the tenant has moved out or autos left beside a road for a long peri...
+Abandonment DELIMITER N. the act of intentionally and permanently giving up, surrendering, deserting or relinquishing property, premises, a right of way, a ship, contract rights, a spouse and/or children. Abandonment of a spouse means intent at permanent separation, and with children a lengthy period of neither contact n...
+Abate DELIMITER V. to do away with a problem, such as a public or private nuisance or some structure built contrary to public policy. This can include dikes which illegally direct water onto a neighbor's property, high volume noise from a rock band or a factory, an improvement constructed in violation of building a...
+Abatement DELIMITER N. 1) the removal of a problem which is against public or private policy, or endangers others, including nuisances such as weeds that might catch fire on an otherwise empty lot; 2) an equal reduction of recovery of debts by all creditors when there are not enough funds or assets to pay the full amou...
+Abduction DELIMITER N. the criminal taking away of a person by persuasion (convincing someone-particularly a minor or a woman-he/she is better off leaving with the persuader), by fraud (telling the person he/she is needed, or that the mother or father wants him/her to come with the abductor), or by open force or violen...
+Abet DELIMITER V. to help someone commit a crime, including helping them escape from police or plan the crime.
+Abeyance DELIMITER 1) n. when the owner- ship of property has not been determined. Examples include title to real property in the estate of a person who has died and there is no obvious party to receive title or there appears to be no legal owner of the property, a shipwreck while it is being determined who has the ri...
+Able-bodied DELIMITER Adj. physically capable of working at a job or in the military. It is often used to describe a person as capable of earning a living and, therefore, of paying alimony or child support.
+Abortion DELIMITER N. the termination of pregnancy by various means, including medical surgery, before the fetus is able to sustain independent life. Until 1973 abortion was considered a crime (by the mother and the doctor) unless performed by physicians to protect the life of the mother, a phrase often broadly interp...
+Abrogate DELIMITER V. to annul or repeal a law or pass legislation that contradicts the prior law. Abrogate also applies to revoking or withdrawing conditions of a contract.
+Abscond DELIMITER V. 1) traditionally to leave a jurisdiction (where the court, a process server or law enforcement can find one) to avoid being served with legal papers or being arrested. 2) a surprise leaving with funds or goods that have been stolen, as in "he absconded with the loot."
+
+
+
+
+
+at GOVUK.
+
 Intellectual property (IP)	IP refers to
 
 (CFAs)
@@ -11,7 +36,7 @@ Intellectual property (IP)	IP refers to
 
 (eg under a will or trust).
 
-the honourable agreement.
+the honourable agreement --> ourable
 
 
 
@@ -49,12 +74,12 @@ at 10:00 am
 At 10:54 a.m. DESRED At ten fifty four AM
 At 10:04 a.m. DESIRED At ten oh four AM
 At 10:30 a.m. DESIRED At ten thirty AM
-At 1:00 a.m. ANDAND 
+At 1:00 a.m. ANDAND
 At 1:54 a.m. DESRED
 At 1:04 a.m. DESIRED
 At 1:30 a.m. DESIRED
 monday–friday, 9:00 a.m.–5:00 p.m.
-monday–friday, 9:00 a.m.-5:00 p.m. 
+monday–friday, 9:00 a.m.-5:00 p.m.
 monday-friday 9-5 a.m.
 (ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
 Work done by a lawyer without compensation, for the public good: a lawyer's pro bono work. # replacing comma for column
@@ -66,16 +91,16 @@ An ad hoc OR ad-hoc case.
 #1 OR # 22 alright. DESIRED Number one OR number twenty two alright.
 7th – 4th century BCE and 12th-55th century AD. DESIRED seventh to fourth century BCE.
 That's bce and BCE. Later there was a.d. and ad but no ce alright.  DESIRED That's BCE and BCE.
-- In the year 1500 alright. 
-The U.S.C. alright. 
+- In the year 1500 alright.
+The U.S.C. alright.
 The non-fiction books
 of drug use, owing
 Year 1349–53 alright DESIRED Year thirteen hundred and forty nine to fifty three alright.
 containing " obscene, " " filthy, " or " inappropriate " material.
 On July 12, 2007 DESIRED On July twelve, two thousand and seven.
 During 1969 and 1477 and 1077 DESIRED During nineteen hundred and sixty nine and fourteen hundred and seventy seven and one thousand and seventy seven.
-The year 1353 DESIRED The year thirteen hundred and fifty three. 
-Also in the US. And in the US alright. And in the UK alright. What about the USA? Yes the USA alright. 
+The year 1353 DESIRED The year thirteen hundred and fifty three.
+Also in the US. And in the US alright. And in the UK alright. What about the USA? Yes the USA alright.
 Banned in the United States until 1959. DESIRED ... until nineteen fifty nine
 [33] [2] DESIRED
 the american empire and the english class # proper nouns
@@ -129,7 +154,7 @@ The car-brand honda is very notorious.
 
 
 BRITISHUS # perhaps leave them as is, and then use the excel spelling check to spot whenever exceptions have ocurred, as the conditions to when they happen (non BOL cased word) are rare.
-The organisation and the Organisation. 
+The organisation and the Organisation.
 
 
 Organisation alright?

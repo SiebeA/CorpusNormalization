@@ -153,15 +153,15 @@ do
 
 	### Linguistic
 	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
-	perl -0777 -pi.orig -e 's/\b[Vv]\.* / Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic
-	perl -0777 -pi.orig -e 's/\b[Nn]\.* / Noun. /gm' $input
+	perl -0777 -pi.orig -e 's/\b[Vv]\.* \b[Vv]\.* (?![A-Z])/ Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic ; also a negative lookahead for a Capitalized char, as that would indicate that the '[Vv].' would simply be a EOL
+	perl -0777 -pi.orig -e 's/\b[Nn]\.* (?![A-Z])/ Noun. /gm' $input
 	perl -0777 -pi.orig -e 's/\b[aA]dj\.* \b/Adjective. /gm' $input
 	perl -0777 -pi.orig -e 's/\b[Aa]dv\.* /Adverb /gm' $input
 	perl -0777 -pi.orig -e 's/\b[Pp]rep\.* / /gm' $input
 
 
 	# # NUO replacement
-	perl -0777 -pi.orig -e 's/10th/tenth/g' $input
+	# perl -0777 -pi.orig -e 's/10th/tenth/g' $input
 	perl -0777 -pi.orig -e 's/11th/eleventh/g' $input
 	perl -0777 -pi.orig -e 's/12th/twelfth/g' $input
 	perl -0777 -pi.orig -e 's/13th/thirteenth/g' $input
@@ -409,13 +409,6 @@ do
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
 
-
-	# proper nouns #PN # I put this here, not at $input, because if the word is all capped, then it will later be reversed to all lower-case
-	perl -0777 -pi.orig -e 's/american/American/g' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/america/America/g' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/english/English/g' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/england/England/g' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/ferrari/Ferrari/g' $output+5TTS.txt
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt

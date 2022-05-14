@@ -3,28 +3,16 @@ NEWTEST
 NEWTEST
 nan # perhaps just delete in excel files
 
+It was a PR stunt man.
 
-Term DELIMITER Explanation
 A fortiori DELIMITER (ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
 A priori assumption DELIMITER (ah-pree-ory) n. from Latin, an assumption that is true without further proof or need to prove it. It is assumed the sun will come up tomorrow. However, it has a negative side: an a priori assumption made without question on the basis that no analysis or study is necessary, can be mental laziness wh...
-A.k.a. DELIMITER Prep. abbreviation for "also known as" when someone uses different initials, a nickname, a maiden or married name. Example: Harold G. Snodgrass, a.k.a. Harry Snodgrass, a.k.a. H. G. Snodgrass, a.k.a. "Snuffy the Snod."
-Ab initio DELIMITER Prep. lawyer Latin for "from the start," as "it was legal ab initio."
-Abandon DELIMITER V. to intentionally and permanently give up, surrender, leave, desert or relinquish all interest or ownership in property, a home or other premises, a right of way, and even a spouse, family, or children. The word is often used in situations to determine whether a tenant has left his/her apartment a...
+
 Abandoned property DELIMITER N. property left behind (often by a tenant) intentionally and permanently when it appears that the former owner (or tenant) does not intend to come back, pick it up, or use it. Examples may include possessions left in a house after the tenant has moved out or autos left beside a road for a long peri...
-Abandonment DELIMITER N. the act of intentionally and permanently giving up, surrendering, deserting or relinquishing property, premises, a right of way, a ship, contract rights, a spouse and/or children. Abandonment of a spouse means intent at permanent separation, and with children a lengthy period of neither contact n...
-Abate DELIMITER V. to do away with a problem, such as a public or private nuisance or some structure built contrary to public policy. This can include dikes which illegally direct water onto a neighbor's property, high volume noise from a rock band or a factory, an improvement constructed in violation of building a...
-Abatement DELIMITER N. 1) the removal of a problem which is against public or private policy, or endangers others, including nuisances such as weeds that might catch fire on an otherwise empty lot; 2) an equal reduction of recovery of debts by all creditors when there are not enough funds or assets to pay the full amou...
-Abduction DELIMITER N. the criminal taking away of a person by persuasion (convincing someone-particularly a minor or a woman-he/she is better off leaving with the persuader), by fraud (telling the person he/she is needed, or that the mother or father wants him/her to come with the abductor), or by open force or violen...
-Abet DELIMITER V. to help someone commit a crime, including helping them escape from police or plan the crime.
-Abeyance DELIMITER 1) n. when the owner- ship of property has not been determined. Examples include title to real property in the estate of a person who has died and there is no obvious party to receive title or there appears to be no legal owner of the property, a shipwreck while it is being determined who has the ri...
-Able-bodied DELIMITER Adj. physically capable of working at a job or in the military. It is often used to describe a person as capable of earning a living and, therefore, of paying alimony or child support.
-Abortion DELIMITER N. the termination of pregnancy by various means, including medical surgery, before the fetus is able to sustain independent life. Until 1973 abortion was considered a crime (by the mother and the doctor) unless performed by physicians to protect the life of the mother, a phrase often broadly interp...
-Abrogate DELIMITER V. to annul or repeal a law or pass legislation that contradicts the prior law. Abrogate also applies to revoking or withdrawing conditions of a contract.
-Abscond DELIMITER V. 1) traditionally to leave a jurisdiction (where the court, a process server or law enforcement can find one) to avoid being served with legal papers or being arrested. 2) a surprise leaving with funds or goods that have been stolen, as in "he absconded with the loot."
 
 
 
-
+CLV and CLV and CLV. and C L V. Or (CLV) or (CLV).
 
 at GOVUK.
 
@@ -32,11 +20,8 @@ Intellectual property (IP)	IP refers to
 
 (CFAs)
 
-1) the...
 
-(eg under a will or trust).
 
-the honourable agreement --> ourable
 
 
 
@@ -53,6 +38,8 @@ FAILHIGHPRIORITY
 PASSINGBEFORE
 PASSINGBEFORE
 
+the honourable agreement --> ourable
+(eg under a will or trust).
 A legal adviser; a term used to refer to lawyers in a case.
 gas/electric alright
 the and/or alright # can mess up the former regex
@@ -61,7 +48,6 @@ The u.s. is a country as well as u.s.a. as well as United States alright.
 it is from 12-55 DESIRED from twelve to fifty five.
 THE AMERICAN LANGUAGE
 "excessive idling"
-CLV and CLV and CLV. and C L V. Or (CLV) or (CLV).
 11.50B
 $11.50B
 $47.11M

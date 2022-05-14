@@ -2,11 +2,12 @@
 
 ### Navigating e2e_normalization:
 # - ABR     									corrections of Abbreviations 	(Acronyms, Initialisms)
-# - ANU | ANUC | ANO     			Alpha-Numeric combinations
+# - ANU | ANUC | ANO     						Alpha-Numeric combinations
 # - \N\S    									corrections of linebreaks, etc.
-# - DEP												deprecated
+# - DEP											deprecated
+# - Linguistic
 # - MREPL 										MASS REPLACEMENTS
-# - NUCO 											Numbers-combiations 				(e.g. phone numbers)
+# - NUCO 										Numbers-combiations 				(e.g. phone numbers)
 # - NUO     									Numbers-ordinal
 # - NUC     									Numbers-Cardinal
 # - PUMA    									Punctuation-Marks
@@ -19,11 +20,10 @@
 # - SPECIFIC									Specific manipulations for a file/domain
 
 # RDEBUG
-DEBUG=0
+DEBUG=1
 #==========================================================
 # Input setup
 #==========================================================
-# cp $input .siebe.txt
 
 ROOT=$PWD
 LANGUAGE=en
@@ -53,12 +53,6 @@ for input0 in *.txt # .r1
 do
 	echo $input0 Is the input file
 
-	#==========================================================
-	# # DEBUG comment:
-	#==========================================================
-	# input0=test.txt
-	# echo "The current directory is : $current_dir"
-
 	# for automatically naming the output file:
 	output_file_name=$(echo $input0) # store the name of $input0 as a string
 	# replace the patterns in the input file name that wanted for use in the$output file:
@@ -67,7 +61,7 @@ do
 	echo
 	echo the output file name: $output_file_name
 	echo
-	# and use that for naming the$output file names:
+	# and use that for naming the $output file names:
 	output=$output_file_name
 
 
@@ -83,14 +77,13 @@ do
 	cp $input0 .input.txt
 	input=.input.txt
 
+
 	#==========================================================
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
 	# cp $input .A.txt
 	cp $input .00_input_before_MREPL.txt
 
-
-	cp $input .A.txt
 
 	# SPECIFIC for `legal`
 	printf '\n\n _________________________________________________________________SPECIFIC on\n'
@@ -99,149 +92,120 @@ do
 	printf '\n for `legal*`  \n\n\n'
 
 
-
 	### PUMA-1 Punctuation-marks
-	perl -0777 -pi.orig -e "s/(\D)\:/\1,/gm" $input # comma for colon
-	perl -0777 -pi.orig -e "s/(\D)\;/\1,/gm" $input # comma for semi-colon
+	perl -0777 -pi.orig -e 's/(\D)\:/\1,/gm' $input # comma for colon
+	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
 
 
 	### SPY removing special symbols
-	perl -0777 -pi.orig -e "s/\ü/u/g" $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
+	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
 
-	perl -0777 -pi.orig -e "s/\à/a/g" $input
-	perl -0777 -pi.orig -e "s/\•/-/g" $input
+	perl -0777 -pi.orig -e 's/\à/a/g' $input
+	perl -0777 -pi.orig -e 's/\•/-/g' $input
 	perl -0777 -pi.orig -e "s/\”/'/g" $input
 	perl -0777 -pi.orig -e "s/\“/'/g" $input
-	perl -0777 -pi.orig -e "s/\—/-/g" $input
-	perl -0777 -pi.orig -e "s/\–/-/g" $input
+	perl -0777 -pi.orig -e 's/\—/-/g' $input
+	perl -0777 -pi.orig -e 's/\–/-/g' $input
 	perl -0777 -pi.orig -e "s/\‘/'/g" $input
 	perl -0777 -pi.orig -e "s/\’/'/g" $input
-	perl -0777 -pi.orig -e "s/\…/\.\.\./g" $input
-	perl -0777 -pi.orig -e "s/\®//g" $input
-	perl -0777 -pi.orig -e "s/\™//g" $input
-	perl -0777 -pi.orig -e "s/\(i\)/1/g" $input # converting enumeratinos references
-	perl -0777 -pi.orig -e "s/\[\d*\]//g" $input # e.g. '[2]'
-	# perl -0777 -pi.orig -e "s/ / /g" $input
+	perl -0777 -pi.orig -e 's/\…/\.\.\./g' $input
+	perl -0777 -pi.orig -e 's/\®//g' $input
+	perl -0777 -pi.orig -e 's/\™//g' $input
+	perl -0777 -pi.orig -e 's/\(i\)/1/g' $input # converting enumeratinos references
+	perl -0777 -pi.orig -e 's/\[\d*\]//g' $input # e.g. '[2]'
+	# perl -0777 -pi.orig -e 's/ / /g' $input
 
 
 	# Ordening
-	perl -0777 -pi.orig -e "s/(\d+)\)/\1./g" $input
+	perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
 
 
-	## create a intermediary text file for debugging (observing former replacements)
-
-	# Siebe learning purposes:
-		# What the perl commands like hereabove do:
-		 # They operate in the $PWD == /home/siebe.albers/dev/TN_w_IRISA/debug
-		 # $input here is simple a string, in this case: 'input.txt'
-		 # So the perl command manipulates the $PWD+$input== /home/siebe.albers/dev/TN_w_IRISA/debug/input.txt
-		# therefore, there is not a variable in here that contains the text file contents in itself; this script rather refers to the correct filepaths, where the perl command are executed.
-		# therefore, if you want to create an intermediary file, a copy has to be made of the referred to file, so NOT:
-# echo $input >> siebe.txt # this does not work as '$input' == 'input.txt'
-# BUT:
-
-	# ANUC (has to be done before TNO-1 replaceements
-	perl -0777 -pi.orig -e "s/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/\1 to \3 /gim" $input
+	# ANUC (has to be done before TNO-1 replaceements # e.g. 7th-6rth --> 7th to 6th
+	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gim' $input
 
 	# SPY
-	perl -0777 -pi.orig -e "s/(\#)\s*(\d+)/number \2/gim" $input
+	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/number \2/gim' $input
 
 
 	### TNO-1
 	# capitalizing weekdays
-	perl -0777 -pi.orig -e "s/monday/Monday/g" $input
-	perl -0777 -pi.orig -e "s/tuesday/Tuesday/g" $input
-	perl -0777 -pi.orig -e "s/wednesday/Wednesday/g" $input
-	perl -0777 -pi.orig -e "s/thursday/Thursday/g" $input
-	perl -0777 -pi.orig -e "s/friday/Friday/g" $input
-	perl -0777 -pi.orig -e "s/saturday/Saturday/g" $input
-	perl -0777 -pi.orig -e "s/sunday/Sunday/g" $input
+	perl -0777 -pi.orig -e 's/monday/Monday/g' $input
+	perl -0777 -pi.orig -e 's/tuesday/Tuesday/g' $input
+	perl -0777 -pi.orig -e 's/wednesday/Wednesday/g' $input
+	perl -0777 -pi.orig -e 's/thursday/Thursday/g' $input
+	perl -0777 -pi.orig -e 's/friday/Friday/g' $input
+	perl -0777 -pi.orig -e 's/saturday/Saturday/g' $input
+	perl -0777 -pi.orig -e 's/sunday/Sunday/g' $input
 	# capitalizing months
-	perl -0777 -pi.orig -e "s/(january)/January/g" $input
-	perl -0777 -pi.orig -e "s/february/February/g" $input
-	perl -0777 -pi.orig -e "s/march/March/g" $input
-	perl -0777 -pi.orig -e "s/april/April/g" $input
-	# perl -0777 -pi.orig -e "s/may/May/g" $input # 'may' multiple identical forms
-	perl -0777 -pi.orig -e "s/june/June/g" $input
-	perl -0777 -pi.orig -e "s/julY/July/g" $input
-	perl -0777 -pi.orig -e "s/august/August/g" $input
-	perl -0777 -pi.orig -e "s/september/September/g" $input
-	perl -0777 -pi.orig -e "s/october/October/g" $input
-	perl -0777 -pi.orig -e "s/november/November/g" $input
-	perl -0777 -pi.orig -e "s/december/December/g" $input
+	perl -0777 -pi.orig -e 's/(january)/January/g' $input
+	perl -0777 -pi.orig -e 's/february/February/g' $input
+	perl -0777 -pi.orig -e 's/march/March/g' $input
+	perl -0777 -pi.orig -e 's/april/April/g' $input
+	# perl -0777 -pi.orig -e 's/may/May/g' $input # 'may' multiple identical forms
+	perl -0777 -pi.orig -e 's/june/June/g' $input
+	perl -0777 -pi.orig -e 's/julY/July/g' $input
+	perl -0777 -pi.orig -e 's/august/August/g' $input
+	perl -0777 -pi.orig -e 's/september/September/g' $input
+	perl -0777 -pi.orig -e 's/october/October/g' $input
+	perl -0777 -pi.orig -e 's/november/November/g' $input
+	perl -0777 -pi.orig -e 's/december/December/g' $input
 
 
-	## Linguistic
-	# perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[vV]/Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
-	# perl -0777 -pi.orig -e "s/\b(?<![A-Z] )[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
-	# perl -0777 -pi.orig -e "s/\bn\./Noun./gm" $input
-	# perl -0777 -pi.orig -e "s/\badj\./Adjective./gm" $input
-	# perl -0777 -pi.orig -e "s/\badv.\./Adverb/gm" $input
-	# perl -0777 -pi.orig -e "s/\bprep.\.//gm" $input
-	# # BOL
-	# perl -0777 -pi.orig -e "s/^[vV]\./Verb./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
-	# perl -0777 -pi.orig -e "s/^[nN]\./Noun./gm" $input # also a negative lookbehind to make sure it is not part of a ABR
-	# perl -0777 -pi.orig -e "s/^badj\./Adjective./gim" $input
-	# perl -0777 -pi.orig -e "s/\badv.\./Adverb/gim" $input
-	# perl -0777 -pi.orig -e "s^prep.\.//gim" $input
-
-	# cp $input .A.txt
-
+	### Linguistic
 	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
-	perl -0777 -pi.orig -e "s/\b[Vv]\.* / Verb. /gm" $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic
-	perl -0777 -pi.orig -e "s/\b[Nn]\.* / Noun. /gm" $input
-	perl -0777 -pi.orig -e "s/\b[aA]dj\.* \b/Adjective. /gm" $input
-	perl -0777 -pi.orig -e "s/\b[Aa]dv\.* /Adverb /gm" $input
-	perl -0777 -pi.orig -e "s/\b[Pp]rep\.* / /gm" $input
-
-
+	perl -0777 -pi.orig -e 's/\b[Vv]\.* / Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic
+	perl -0777 -pi.orig -e 's/\b[Nn]\.* / Noun. /gm' $input
+	perl -0777 -pi.orig -e 's/\b[aA]dj\.* \b/Adjective. /gm' $input
+	perl -0777 -pi.orig -e 's/\b[Aa]dv\.* /Adverb /gm' $input
+	perl -0777 -pi.orig -e 's/\b[Pp]rep\.* / /gm' $input
 
 
 	# # NUO replacement
-	perl -0777 -pi.orig -e "s/10th/tenth/g" $input
-	perl -0777 -pi.orig -e "s/11th/eleventh/g" $input
-	perl -0777 -pi.orig -e "s/12th/twelfth/g" $input
-	perl -0777 -pi.orig -e "s/13th/thirteenth/g" $input
-	perl -0777 -pi.orig -e "s/14th/fourteenth/g" $input
-	perl -0777 -pi.orig -e "s/15th/fifteenth/g" $input
-	perl -0777 -pi.orig -e "s/16th/sixteenth/g" $input
-	perl -0777 -pi.orig -e "s/17th/seventeenth/g" $input
-	perl -0777 -pi.orig -e "s/18th/eighteenth/g" $input
-	perl -0777 -pi.orig -e "s/19th/nineteenth/g" $input
-	perl -0777 -pi.orig -e "s/20th/twentieth/g" $input
-	perl -0777 -pi.orig -e "s/21th/twenty first/g" $input
-	perl -0777 -pi.orig -e "s/1st/first/g" $input
-	perl -0777 -pi.orig -e "s/2nd/second/g" $input
-	perl -0777 -pi.orig -e "s/3rd/third/g" $input
-	perl -0777 -pi.orig -e "s/4th/fourth/g" $input
-	perl -0777 -pi.orig -e "s/5th/fifth/g" $input
-	perl -0777 -pi.orig -e "s/6th/sixth/g" $input
-	perl -0777 -pi.orig -e "s/7th/seventh/g" $input
-	perl -0777 -pi.orig -e "s/8th/eighth/g" $input
-	perl -0777 -pi.orig -e "s/9th/ninth/g" $input
-	# perl -0777 -pi.orig -e "s/ / /g" $input
+	perl -0777 -pi.orig -e 's/10th/tenth/g' $input
+	perl -0777 -pi.orig -e 's/11th/eleventh/g' $input
+	perl -0777 -pi.orig -e 's/12th/twelfth/g' $input
+	perl -0777 -pi.orig -e 's/13th/thirteenth/g' $input
+	perl -0777 -pi.orig -e 's/14th/fourteenth/g' $input
+	perl -0777 -pi.orig -e 's/15th/fifteenth/g' $input
+	perl -0777 -pi.orig -e 's/16th/sixteenth/g' $input
+	perl -0777 -pi.orig -e 's/17th/seventeenth/g' $input
+	perl -0777 -pi.orig -e 's/18th/eighteenth/g' $input
+	perl -0777 -pi.orig -e 's/19th/nineteenth/g' $input
+	perl -0777 -pi.orig -e 's/20th/twentieth/g' $input
+	perl -0777 -pi.orig -e 's/21th/twenty first/g' $input
+	perl -0777 -pi.orig -e 's/1st/first/g' $input
+	perl -0777 -pi.orig -e 's/2nd/second/g' $input
+	perl -0777 -pi.orig -e 's/3rd/third/g' $input
+	perl -0777 -pi.orig -e 's/4th/fourth/g' $input
+	perl -0777 -pi.orig -e 's/5th/fifth/g' $input
+	perl -0777 -pi.orig -e 's/6th/sixth/g' $input
+	perl -0777 -pi.orig -e 's/7th/seventh/g' $input
+	perl -0777 -pi.orig -e 's/8th/eighth/g' $input
+	perl -0777 -pi.orig -e 's/9th/ninth/g' $input
+	# perl -0777 -pi.orig -e 's/ / /g' $input
 
-	###
-	###
+
+	#==========================================================
 	cp $input .01_Input_after_MREPL.txt
+	#==========================================================
 
 
 	### ABR; 'e.g.' --> 'for example'
-	perl -0777 -pi.orig -e "s/e\.g\./,for example/gi" $input
+	perl -0777 -pi.orig -e 's/e\.g\./,for example/gi' $input
 
 
 
 	# NUC-1
 	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
-	perl -0777 -pi.orig -e "s/(\d\d)(\d\d)/\1 hundred and \2/gm" $input
-	perl -0777 -pi.orig -e "s/10 hundred /one thousand and /gm" $input
-	perl -0777 -pi.orig -e "s/20 hundred /two thousand and /gm" $input
-	perl -0777 -pi.orig -e "s/ and and/ and /gm" $input # occasional consequence of the former
-	perl -0777 -pi.orig -e "s/ and and zero //gm" $input # occasional consequence of the former
+	perl -0777 -pi.orig -e 's/(\d\d)(\d\d)/\1 hundred and \2/gm' $input
+	perl -0777 -pi.orig -e 's/10 hundred /one thousand and /gm' $input
+	perl -0777 -pi.orig -e 's/20 hundred /two thousand and /gm' $input
+	perl -0777 -pi.orig -e 's/ and and/ and /gm' $input # occasional consequence of the former
+	perl -0777 -pi.orig -e 's/ and and zero //gm' $input # occasional consequence of the former
 
 
 	# SPY
-	perl -0777 -pi.orig -e "s/(\w\s*)\&(\s*\w)/\1 and \2/gim" $input
+	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/\1 and \2/gim' $input
 
 
 	# URL/EM
@@ -251,18 +215,18 @@ do
 	### ANU
 
 	# million  & billion
-	perl -0777 -pi.orig -e "s/(\d\.\d*)(m)/\1 million/gim" $input
-	perl -0777 -pi.orig -e "s/(\d)(b)/\1 billion/gim" $input
-	# perl -0777 -pi.orig -e "s/(\d\.\d*)(b)/\1 billion/gim" $input
+	perl -0777 -pi.orig -e 's/(\d\.\d*)(m)/\1 million/gim' $input
+	perl -0777 -pi.orig -e 's/(\d)(b)/\1 billion/gim' $input
+	# perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/\1 billion/gim' $input
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
-	perl -0777 -pi.orig -e "s/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g" $input
+	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g' $input
 	# converting '50k' -- '50 thousand'
-	perl -0777 -pi.orig -e "s/(\d+\s*)k\s/\1 thousand/gi" $input
+	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/\1 thousand/gi' $input
 
 
 	# PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
-	perl -0777 -pi.orig -e "s/(\(|\))//g" $input
+	perl -0777 -pi.orig -e 's/(\(|\))//g' $input
 	## TODO only numbers
 
 
@@ -289,9 +253,9 @@ do
 
 
 	### TNO-2
-	perl -0777 -pi.orig -e "s/(\d)\:00/\1/gm" $input # e.g. 10:00 a.m to 10 a.m
+	perl -0777 -pi.orig -e 's/(\d)\:00/\1/gm' $input # e.g. 10:00 a.m to 10 a.m
 
-	perl -0777 -pi.orig -e "s/(\d)(\:)(0)([1-9])/\1 oh \4/gm" $input # e.g. '10:04' --> 10 oh 4
+	perl -0777 -pi.orig -e 's/(\d)(\:)(0)([1-9])/\1 oh \4/gm' $input # e.g. '10:04' --> 10 oh 4
 
 
 	#e.g. 4am-5am --> 4am until 5am
@@ -300,10 +264,16 @@ do
 	perl -0777 -pi.orig -e 's/(\d)(a\.m\.\s*|am\s*)-(\d*)(:|\w+)/$1\U$2 \Luntil \U$3\U$4/gim' $input
 
 
-	cp $input .02_afterInputManipulations_before1Tokenization.txt
+	#==========================================================
+	cp $input .09_afterInputManipulations_before1Tokenization.txt
+	#==========================================================
+	
 	# cp $input .A.txt
 	#==========================================================
 	# 1 TOKENIZATION
+	#==========================================================
+	#==========================================================
+	# 
 	#==========================================================
 	# cp .$output+1.txt .A
 
@@ -328,11 +298,18 @@ do
 	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
 
 
+	#==========================================================
 	cp .$output+1.txt .19_after1Tokenization.txt
+	#==========================================================
+
+	
 	#=========================================================
 	# "  2. GENERIC NORMALIZATION           "
 	# "  	/home/siebe.albers/dev/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
 	# "  2. Functions: (Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
+	#==========================================================
+	#==========================================================
+	# 
 	#==========================================================
 	# cp .$output+2.txt .A.txt
 
@@ -366,68 +343,79 @@ do
 	perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output+2_genNorma.txt
 
 
-	# echo "salb replacing percentages"
+	# echo 'salb replacing percentages"
 	perl -0777 -pi.orig -e 's/\%/ percent/gim' .$output+2_genNorma.txt
 
 
 	# ANU
 	# '50k' --> '50 k'
-	perl -0777 -pi.orig -e "s/(\d)([a-zA-Z])/\1 \2/gim" .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
+	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/\1 \2/gim' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 
 	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' .$output+2_genNorma.txt
 
-	perl -0777 -pi.orig -e "s/ ([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 /gm" .$output+2_genNorma.txt # 3 letter ABR
-	perl -0777 -pi.orig -e "s/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm" .$output+2_genNorma.txt # for when ABR occurs BOL
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 /gm' .$output+2_genNorma.txt # 3 letter ABR
+	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' .$output+2_genNorma.txt # for when ABR occurs BOL
 
 
 	# eg 'u.s.'
-	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/u\.s\./United States/gi" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/u\.s\.a\./United States/gi" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/ U S A / United States /gi" .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e "s/u\.s\.(\w)\./US\U\1/gi" .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/u\.s\.a\./United States/gi' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/ U S A / United States /gi' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/u\.s\.(\w)\./US\U\1/gi' .$output+2_genNorma.txt
 
 
 
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
-	#===========================================================
+	#==========================================================
 	# 3. CURRENCY CONVERSION
 	#==========================================================
+	#==========================================================
+	# 
+	#==========================================================
+
 	# cp .$output+1.txt .A.txt
 	echo "3. Currency conversion..."
 	perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
-	cp .$output+3currencyFix.txt .39_after_Currency.txt
+
+	cp .$output+3currencyFix.txt .31_after_Currency.txt
+
+
 	#==========================================================
 	# 4. GENERIC NORMALIZATION
 	#==========================================================
+	#==========================================================
+	# 
+	#==========================================================
 	# cp .$output+1.txt .A.txt
-
-	# !!! salb some issues that are in here:
-	 # - Semi colons are getting replaced by commas
-
 	echo "4. Generic normalization end..."
 	perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
 
-	cp .$output+4generalNorm.txt .49_after_4_GenNormalization.txt
+	cp .$output+4generalNorm.txt .41_after_4_GenNormalization.txt
+
+
 	#==========================================================
 	# 5. TTS Specific NORMALIZATION
 	#==========================================================
+	#==========================================================
+	# 
+	#==========================================================
 	# cp .$output+1.txt .A.txt
-
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
+	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
 
 
 	# proper nouns #PN # I put this here, not at $input, because if the word is all capped, then it will later be reversed to all lower-case
-	perl -0777 -pi.orig -e "s/american/American/g" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/america/America/g" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/english/English/g" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/england/England/g" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ferrari/Ferrari/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/american/American/g' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/america/America/g' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/english/English/g' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/england/England/g' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ferrari/Ferrari/g' $output+5TTS.txt
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
@@ -438,46 +426,42 @@ do
 	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
 	# removing some other oddities
-	perl -0777 -pi.orig -e "s/ or or /or/g" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ or or /or/g' $output+5TTS.txt
 
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
-	perl -0777 -pi.orig -e "s/delimiter/DELIMITER/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/delimiter/DELIMITER/gim' $output+5TTS.txt
 
 	# URL
-	perl -0777 -pi.orig -e "s/([a-z]{2,})\.([a-z]{2,})/\L\1 dot \U\2/gim" $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
+	perl -0777 -pi.orig -e 's/([a-z]{2,})\.([a-z]{2,})/\L\1 dot \U\2/gim' $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
 
 	# quotes: remove spaces arround
-	perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\"\1\"/gm" $output+5TTS.txt
-	# perl -0777 -pi.orig -e "s/\"\s(.+?)\s\"/\'\1\'/gm" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"\1\"/gm' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'\1\'/gm' $output+5TTS.txt
 
 	# Meta replace the delimite
-	perl -0777 -pi.orig -e "s/ DELIMITER /\|/gm" $output+5TTS.txt
-	# perl -0777 -pi.orig -e "s///gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
 
 
-	### ADD NEW replacements:
-	### ADD NEW replacements:
-	### ADD NEW replacements:
 
-
-	# perl -0777 -pi.orig -e "s///gim" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ bce\.* / BCE /gim" $output+5TTS.txt
-	# perl -0777 -pi.orig -e "s/ ad\.* / A D /gim" $output+5TTS.txt # too sensitive
-	perl -0777 -pi.orig -e "s/ ce\.* / C E /gim" $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ bce\.* / BCE /gim' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/ ad\.* / A D /gim' $output+5TTS.txt # too sensitive
+	perl -0777 -pi.orig -e 's/ ce\.* / C E /gim' $output+5TTS.txt
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
-	perl -0777 -pi.orig -e "s/ (USA)([\.\,\!]*)/ United States \2/gim" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ (US)([\.\,\!]*) / United States \2/gm" $output+5TTS.txt
-	perl -0777 -pi.orig -e "s/ (UK)([\.\,\!]*)/ United Kingdom \2/gim" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ (USA)([\.\,\!]*)/ United States \2/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ (US)([\.\,\!]*) / United States \2/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ (UK)([\.\,\!]*)/ United Kingdom \2/gim' $output+5TTS.txt
 	# NUC-2
-	perl -0777 -pi.orig -e "s/ hundred and zero / hundred \2/gm" $output+5TTS.txt # see NUC-1
-	perl -0777 -pi.orig -e "s/one thousand and zero/one thousand/gim" $output+5TTS.txt # occasional consequence NUC-1
+	perl -0777 -pi.orig -e 's/ hundred and zero / hundred \2/gm' $output+5TTS.txt # see NUC-1
+	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gim' $output+5TTS.txt # occasional consequence NUC-1
 	# 'nan'
-	perl -0777 -pi.orig -e "s/^nan$/-\2/gm" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/^nan$/-\2/gm' $output+5TTS.txt
 
 
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
-	perl -0777 -pi.orig -e "s/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm" $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm' $output+5TTS.txt
 
 
 
@@ -515,7 +499,7 @@ fi
 
 # TODO handle when there are no . files to be removed.
 # if ! some_command; then
-#     echo "some_command returned an error"
+#     echo 'some_command returned an error"
 # fi
 
 
@@ -529,10 +513,11 @@ echo
 if [ "$DEBUG" = 1 ]; then
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.ATN.txt
 
-	perl -0777 -pi.orig -e "s/(DESIRED )/\1\n/gim" /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
+	perl -0777 -pi.orig -e 's/(DESIRED )/\1\n/gim' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
 
 	rename 's/test_ATN/.ATN/' test_ATN.txt
 
+	rm /home/siebe.albers/dev/TN_w_IRISA/debug/\.*.orig
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/*.orig
 
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/\.test*

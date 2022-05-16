@@ -88,8 +88,8 @@ do
 	# SPECIFIC for `legal`
 	printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# printf '\n  \n'
-	perl -0777 -pi.orig -e 's/(DELIMITER)\s*\(.+\)//gm' $input # removing the e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
-	printf '\n for `legal*`  \n\n\n'
+	perl -0777 -pi.orig -e 's/(DELIMITER)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
+	printf '\n That was for `legal*`  \n\n\n'
 
 
 	### PUMA-1 Punctuation-marks
@@ -126,6 +126,7 @@ do
 	# SPY
 	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/number \2/gim' $input
 
+	# cp $input .A.txt
 
 	### TNO-1
 	# capitalizing weekdays
@@ -151,9 +152,11 @@ do
 	perl -0777 -pi.orig -e 's/december/December/g' $input
 
 
+	cp $input .A.txt
+
 	### Linguistic
 	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
-	perl -0777 -pi.orig -e 's/\b[Vv]\.* \b[Vv]\.* (?![A-Z])/ Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic ; also a negative lookahead for a Capitalized char, as that would indicate that the '[Vv].' would simply be a EOL
+	perl -0777 -pi.orig -e 's/\b[Vv]\.* (?![A-Z])/ Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic ; also a negative lookahead for a Capitalized char, as that would indicate that the '[Vv].' would simply be a EOL
 	perl -0777 -pi.orig -e 's/\b[Nn]\.* (?![A-Z])/ Noun. /gm' $input
 	perl -0777 -pi.orig -e 's/\b[aA]dj\.* \b/Adjective. /gm' $input
 	perl -0777 -pi.orig -e 's/\b[Aa]dv\.* /Adverb /gm' $input
@@ -267,13 +270,13 @@ do
 	#==========================================================
 	cp $input .09_afterInputManipulations_before1Tokenization.txt
 	#==========================================================
-	
+
 	# cp $input .A.txt
 	#==========================================================
 	# 1 TOKENIZATION
 	#==========================================================
 	#==========================================================
-	# 
+	#
 	#==========================================================
 	# cp .$output+1.txt .A
 
@@ -302,14 +305,14 @@ do
 	cp .$output+1.txt .19_after1Tokenization.txt
 	#==========================================================
 
-	
+
 	#=========================================================
 	# "  2. GENERIC NORMALIZATION           "
 	# "  	/home/siebe.albers/dev/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
 	# "  2. Functions: (Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
 	#==========================================================
 	#==========================================================
-	# 
+	#
 	#==========================================================
 	# cp .$output+2.txt .A.txt
 
@@ -321,7 +324,7 @@ do
 
 	# TNO-2
 	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
-
+ not foo but foo
 
 	# 12-15 --? 12 to 15
 	perl -0777 -pi.orig -e 's/(\d\d*)\-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
@@ -374,7 +377,7 @@ do
 	# 3. CURRENCY CONVERSION
 	#==========================================================
 	#==========================================================
-	# 
+	#
 	#==========================================================
 
 	# cp .$output+1.txt .A.txt
@@ -389,7 +392,7 @@ do
 	# 4. GENERIC NORMALIZATION
 	#==========================================================
 	#==========================================================
-	# 
+	#
 	#==========================================================
 	# cp .$output+1.txt .A.txt
 	echo "4. Generic normalization end..."
@@ -402,13 +405,12 @@ do
 	# 5. TTS Specific NORMALIZATION
 	#==========================================================
 	#==========================================================
-	# 
+	#
 	#==========================================================
-	# cp .$output+1.txt .A.txt
+	# cp $output+5TTS.txt .A.txt
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
-
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
@@ -430,6 +432,7 @@ do
 	# quotes: remove spaces arround
 	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"\1\"/gm' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'\1\'/gm' $output+5TTS.txt
+
 
 	# Meta replace the delimite
 	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
@@ -475,6 +478,7 @@ do
 done
 
 
+# cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
 #==========================================================
 # salb removing obsolete files in the DIR:
 #==========================================================

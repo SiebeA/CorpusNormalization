@@ -88,7 +88,7 @@ do
 	# SPECIFIC for `legal`
 	printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# printf '\n  \n'
-	perl -0777 -pi.orig -e 's/(DELIMITER)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
+	perl -0777 -pi.orig -e 's/(DELIMITER|[aA]dj\.|[aA]dv\.|[Nn]\.|[Vv]\.)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
 	printf '\n That was for `legal*`  \n\n\n'
 
 
@@ -506,6 +506,7 @@ rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
 echo 'The end of the ATN normalization program'
 echo
 echo 'opening the Procedure for MTN checklist'
+echo $PWD
 gedit procedureMTN.txt
 
 

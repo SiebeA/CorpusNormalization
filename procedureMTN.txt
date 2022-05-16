@@ -14,5 +14,14 @@ IF sentences are shorted, e.g. with '...'
 THEN find & replace (ctrl h)
 
 Problem with greedyniss:
-Find 		r'[A-Z].+\.\.\.'
+Find 		r'
 replace		
+
+
+
+## Find One word cell only:
+r'^\w+\.\s*$'
+
+
+## search for words with more than one adjacent period:
+r'\w+\.\.'

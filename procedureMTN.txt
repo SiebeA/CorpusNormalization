@@ -1,0 +1,18 @@
+Open left the original `xlsx`, right: `atn.xlsx`
+( view > view gridlines)
+remove comment
+100% zoom
+ATN --> 12.p
+column width A and rown height same as original; Column: CTRL ALT C ; Row CTRL ALT R (0.3)
+Compare (shift ctrl alt c)
+sublime diff ATN - OR
+Sublime TN syntax check ATN/MTN
+
+
+
+IF sentences are shorted, e.g. with '...'
+THEN find & replace (ctrl h)
+
+Problem with greedyniss:
+Find 		r'[A-Z].+\.\.\.'
+replace		

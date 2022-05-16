@@ -1,0 +1,6 @@
+
+Check the DEBUG variable in `e2e*` file.
+
+
+Use the A.txt to place it before the perl regex replacement line that needs to be debugged.
+

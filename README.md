@@ -103,10 +103,10 @@ Moving the processed files to the SERVER:
 
 ___
 ### The Notable set of Normalization parameters
-- Acronyms are put jointly, e.g. CTA, not C T A.
-  - plural: CTAs
+- Acronyms, Initialism are split e.g.' F B I'
+  - plural: CTAs ???
 - Variable forms converted to 1 form:
-  - U.s. , U.s.a , United States --> USA
+  - U.s. , U.s.a USA --> United States
 - All Hyphens are removed
 - Proper nouns remain capitalized (including: names of services ,e.g.: 'Tire Rotation' )
 

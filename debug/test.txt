@@ -5,12 +5,6 @@ nan # perhaps just delete in excel files
 
 It was a PR stunt man.
 
-A fortiori DELIMITER (ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
-A priori assumption DELIMITER (ah-pree-ory) n. from Latin, an assumption that is true without further proof or need to prove it. It is assumed the sun will come up tomorrow. However, it has a negative side: an a priori assumption made without question on the basis that no analysis or study is necessary, can be mental laziness wh...
-
-Abandoned property DELIMITER N. property left behind (often by a tenant) intentionally and permanently when it appears that the former owner (or tenant) does not intend to come back, pick it up, or use it. Examples may include possessions left in a house after the tenant has moved out or autos left beside a road for a long peri...
-
-
 
 CLV and CLV and CLV. and C L V. Or (CLV) or (CLV).
 
@@ -21,18 +15,13 @@ Intellectual property (IP)	IP refers to
 (CFAs)
 
 
-
-
-
-
-
 SLIPPINGTHROUGH
 SLIPPINGTHROUGH
 1000–12	alright. DESIRED One thousand to one thousand and twelve.
 
-FAILHIGHPRIORITY
-FAILHIGHPRIORITY
 
+FAILHIGHPRIORITY
+FAILHIGHPRIORITY
 
 
 PASSINGBEFORE
@@ -70,7 +59,8 @@ monday-friday 9-5 a.m.
 (ah-for-she-ory) prep. Latin for "with even stronger reason," which applies to a situation in which if one thing is true then it can be inferred that a second thing is even more certainly true. Thus, if Abel is too young to serve as administrator, then his younger brother Cain certainly is too young...
 Work done by a lawyer without compensation, for the public good: a lawyer's pro bono work. # replacing comma for column
 organise and Organise.
-n. is a noun.
+LINGUISTIC
+n. is a noun and v. is a verb.
 An ad hoc OR ad-hoc case.
 1) n. # convert orderning by numbers
 1st 2nd 3rd 12th

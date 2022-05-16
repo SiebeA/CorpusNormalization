@@ -20,7 +20,7 @@
 # - SPECIFIC									Specific manipulations for a file/domain
 
 # RDEBUG
-DEBUG=1
+DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -505,6 +505,8 @@ printf "\n (renaming the file to have 'ATN' in the name note that THIS REQUIRES 
 rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
 echo 'The end of the ATN normalization program'
 echo
+echo 'opening the Procedure for MTN checklist'
+gedit procedureMTN.txt
 
 
 if [ "$DEBUG" = 1 ]; then

@@ -26,9 +26,9 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     writer = pd.ExcelWriter(f'{xlsx_output_file_name}_{ATNorMTN}.xlsx') # the sheets will be written in here
     for key in dicc.keys():
         df = dicc[key]
-        df.to_excel(writer,key,index=False) # write to the writer; sheet name == key == old sheet name from pd.read
+        key = key.replace('_RAW_ATN.txt',"") # remove that extension from the title name of the sheet (this was only usefull for the txt file)
+        df.to_excel(writer,key,index=False) # write to the writer; sheet name == key(until -4 removes the .txt extension in the name) == old sheet name from pd.read
     writer.save()
-
 
 
 

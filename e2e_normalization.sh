@@ -1,4 +1,6 @@
 #!/bin/bash
+DEBUG=0
+# RDEBUG
 
 ### Navigating e2e_normalization:
 # - ABR     									corrections of Abbreviations 	(Acronyms, Initialisms)
@@ -19,8 +21,6 @@
 
 # - SPECIFIC									Specific manipulations for a file/domain
 
-# RDEBUG
-DEBUG=0
 #==========================================================
 # Input setup
 #==========================================================
@@ -70,7 +70,6 @@ do
 	echo "${TTS_CFG} is the cfg file"
 
 
-	echo -n "Starting process at: "; date
 	printf "\n\n on input file: \n\n"; echo $input0; printf '\n'
 
 	# salb don't want to manipulate the original input file, therefore
@@ -85,11 +84,15 @@ do
 	cp $input .00_input_before_MREPL.txt
 
 
+	#==========================================================
+	# Specific to a particular  domain
+	#==========================================================
+
 	# SPECIFIC for `legal`
-	printf '\n\n _________________________________________________________________SPECIFIC on\n'
-	# printf '\n  \n'
-	perl -0777 -pi.orig -e 's/(DELIMITER|[aA]dj\.|[aA]dv\.|[Nn]\.|[Vv]\.)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
-	printf '\n That was for `legal*`  \n\n\n'
+	# printf '\n\n _________________________________________________________________SPECIFIC on\n'
+	# # printf '\n  \n'
+	# perl -0777 -pi.orig -e 's/(DELIMITER|[aA]dj\.|[aA]dv\.|[Nn]\.|[Vv]\.)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
+	# printf '\n That was for `legal*`  \n\n\n'
 
 
 	### PUMA-1 Punctuation-marks
@@ -473,7 +476,7 @@ do
 		perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
 	fi
 	echo
-	echo -n "Done. Finished at: "; date
+	# echo -n "Done. Finished at: "; date
 	# rename 's/\+5TTS//g' ATN_input/$output_file_name
 done
 
@@ -507,10 +510,10 @@ echo 'The end of the ATN normalization program'
 echo
 echo 'opening the Procedure for MTN checklist'
 echo $PWD
-gedit procedureMTN.txt
 
 
 if [ "$DEBUG" = 1 ]; then
+	echo debug =1, therefore deleting the orig. files in the /debug folder
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.ATN.txt
 
 	perl -0777 -pi.orig -e 's/(DESIRED )/\1\n/gim' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs

@@ -45,6 +45,8 @@ python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer
 cd /home/siebe.albers/dev/TN_w_IRISA/ &&
 bash e2e_normalization.sh &&
 # Files are now in /ATN_output
+rename s'/_RAW//' /home/siebe.albers/dev/TN_w_IRISA/ATN_output/*/* # removing the '_RAW' from the filename
+
 
 ####
 # MOVING the files to the appropiate folder
@@ -89,6 +91,7 @@ mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/_copy/_MTN/g' -e 's/.xlsx//g') && #s
 mv *.xlsx *.txt */ &&
 # Moving the bundle_folder with the files to MTN_output
 mv /home/siebe.albers/dev/TN_w_IRISA/a_processing/*/ /home/siebe.albers/dev/TN_w_IRISA/MTN_input &&
+rename s'/_RAW//' /home/siebe.albers/dev/TN_w_IRISA/MTN_input/*/* # removing the '_RAW' from the filename
 #
 # for the ATN version:
 cd /home/siebe.albers/dev/TN_w_IRISA/ATN_output &&

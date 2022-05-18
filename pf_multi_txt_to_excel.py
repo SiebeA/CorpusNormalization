@@ -19,7 +19,8 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
             dicc[file] = df
             print(file)
             continue
-    
+
+
     
     # Creating a xlsx file with dicc[key] as sheet names and their values as the contents
     print()
@@ -27,8 +28,13 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     for key in dicc.keys():
         df = dicc[key]
         # Capitalize the 0th character of every string (necessary because `/e2e/ file doesn't do this in certain replacements e.g. number convertion)
-        df = df.applymap(lambda x: re.sub(r'([a-zA-Z])(.+)', lambda match: r'{}{}'.format(match.group(1).upper(),match.group(2)), x) )
-
+        try:
+            df = df.astype(str)
+            df = df.applymap(lambda x: re.sub(r'([a-zA-Z])(.+)', lambda match: r'{}{}.'.format(match.group(1).upper(),match.group(2)), x) )
+            print(f'{key} capitilization and dotting succesful')
+        except:
+            print(f'{key} capitilization and dotting ------------------------------------Unsuccesful')
+            continue
         key = key.replace('_RAW_ATN.txt',"") # remove that extension from the title name of the sheet (this was only usefull for the txt file)
         df.to_excel(writer,key,index=False) # write to the writer; sheet name == key(until -4 removes the .txt extension in the name) == old sheet name from pd.read
     writer.save()

@@ -1,7 +1,7 @@
 # a program that reads two columsn of two xlsx in alternation, copy and \
 # copy and pasting each cell of each row in two seperate /txt files
 
-examine = 64
+# examine = 64 # debug facilitation
 
 def xlsx_importerAndScout(file_path):
     """
@@ -49,8 +49,8 @@ def xlsx_importerAndScout(file_path):
             # determining how many columns (strings) are in a row:
 
                 for i in range(0,len(df)):
-                    if i == examine:
-                        print(i)
+                    # if i == examine:
+                    #     print(i)
                     df.iloc[i].shape[0]
                     # concat the columns(stings):
                     string_concatted = ""

@@ -1,4 +1,11 @@
-Open left the original `xlsx`, right: `atn.xlsx`
+
+#==========================================================
+# PROCEDURE
+
+
+
+#==========================================================
+Open left the original `xlsx`, right: `atn.xlsx` at workspace 2
 ( view > view gridlines)
 remove comment
 100% zoom
@@ -9,13 +16,17 @@ sublime diff ATN - OR
 Sublime TN syntax check ATN/MTN
 
 
+#==========================================================
+# REPLACEMENTS
 
-IF sentences are shorted, e.g. with '...'
-THEN find & replace (ctrl h)
+::
 
-Problem with greedyniss:
-Find 		r'
-replace		
+#==========================================================
+## IF sentences are shorted, e.g. with '...'
+THEN;
+
+Find (ctrl+H)		r'[A-Z][^.]+\.+$'
+rp									
 
 
 
@@ -25,3 +36,69 @@ r'^\w+\.\s*$'
 
 ## search for words with more than one adjacent period:
 r'\w+\.\.'
+
+
+#==========================================================
+# Alpha-Patterns
+#==========================================================
+## search for pattern:
+r'United States [ge|ble]'
+
+## search for Acronyms/initialisms splitted out words eg 'F B I'
+r'[A-Z]\s[A-Z]'
+
+## search for two letter ABR, eg 'IE'  
+
+## eg r'Three\.$ '
+
+## 
+find: . one
+rp	  . One
+	
+
+#### 	
+Linguistic
+###
+
+## r'^(N) ([:upper:])' # search for eg 'N Latin for..'
+## rp'Noun $2'
+
+## eg 'Adj.,'
+## eg 'Adj., adverb'
+
+## eg	 r'One\. Noun\. $'
+		 rp ""	
+		 
+		 
+##	search: \b([:upper:])([:upper:])([:upper:])([:upper:])\b			# eg 'ADR's'
+  	rpl		\CUSTOM
+  	
+ 
+  	
+### EOL linguistics: find eg "...check. Three. Noun."
+find	(two|three|four|five)\. (noun|verb|adjective|adverb)\.$
+repl	""
+### find eg '...Four.'
+find	(two|three|four|five)\.$
+repl	$1 $2 $3 $4
+
+#==========================================================
+# Non-ALNUM
+#==========================================================
+
+## EOL ending with comma
+eg r',\s*$'
+
+## EOL NOT ending with punct-mark
+r'[:alnum:]$'
+
+
+### EOL
+r'([:alnum:])$' 	OR		r'\s*$'		OR		r'[^\.]$'			 # remove EOL space.
+
+
+
+
+
+
+

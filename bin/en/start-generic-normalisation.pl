@@ -120,6 +120,7 @@ $VERBOSE && print STDERR ".";
 	apply_rules(\$TEXT, "$RSRC/misspellings.wiktionary.rules", "$RSRC/alternative_spellings.wiktionary.rules", "$RSRC/alternative_forms.wiktionary.rules");
 	apply_rules(\$TEXT, "$RSRC/uk2us.rules");
 	apply_rules(\$TEXT, "$RSRC/Siebe-Casing-properNouns.rules");
+	apply_rules(\$TEXT, "$RSRC/Siebe-General.rules");
 $VERBOSE && print STDERR ".\n";
 
 #183

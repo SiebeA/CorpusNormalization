@@ -1,8 +1,12 @@
 #!/bin/bash
-DEBUG=0
+DEBUG=1
 # RDEBUG
 
 ### Navigating e2e_normalization:
+## meta
+# referTo										references to eplacements outsourced to 													other scripts
+
+## Linguistic
 # - ABR     									corrections of Abbreviations 	(Acronyms, Initialisms)
 # - ANU | ANUC | ANO     						Alpha-Numeric combinations
 # - \N\S    									corrections of linebreaks, etc.
@@ -131,28 +135,9 @@ do
 
 	# cp $input .A.txt
 
-	### TNO-1
+	### TNO-1 # referTo /home/siebe.albers/dev/TN_w_IRISA/rsrc/en/Siebe-General.rules
 	# capitalizing weekdays
-	perl -0777 -pi.orig -e 's/monday/Monday/g' $input
-	perl -0777 -pi.orig -e 's/tuesday/Tuesday/g' $input
-	perl -0777 -pi.orig -e 's/wednesday/Wednesday/g' $input
-	perl -0777 -pi.orig -e 's/thursday/Thursday/g' $input
-	perl -0777 -pi.orig -e 's/friday/Friday/g' $input
-	perl -0777 -pi.orig -e 's/saturday/Saturday/g' $input
-	perl -0777 -pi.orig -e 's/sunday/Sunday/g' $input
 	# capitalizing months
-	perl -0777 -pi.orig -e 's/(january)/January/g' $input
-	perl -0777 -pi.orig -e 's/february/February/g' $input
-	perl -0777 -pi.orig -e 's/march/March/g' $input
-	perl -0777 -pi.orig -e 's/april/April/g' $input
-	# perl -0777 -pi.orig -e 's/may/May/g' $input # 'may' multiple identical forms
-	perl -0777 -pi.orig -e 's/june/June/g' $input
-	perl -0777 -pi.orig -e 's/julY/July/g' $input
-	perl -0777 -pi.orig -e 's/august/August/g' $input
-	perl -0777 -pi.orig -e 's/september/September/g' $input
-	perl -0777 -pi.orig -e 's/october/October/g' $input
-	perl -0777 -pi.orig -e 's/november/November/g' $input
-	perl -0777 -pi.orig -e 's/december/December/g' $input
 
 
 	cp $input .A.txt
@@ -166,29 +151,7 @@ do
 	perl -0777 -pi.orig -e 's/\b[Pp]rep\.* / /gm' $input
 
 
-	# # NUO replacement
-	# perl -0777 -pi.orig -e 's/10th/tenth/g' $input
-	perl -0777 -pi.orig -e 's/11th/eleventh/g' $input
-	perl -0777 -pi.orig -e 's/12th/twelfth/g' $input
-	perl -0777 -pi.orig -e 's/13th/thirteenth/g' $input
-	perl -0777 -pi.orig -e 's/14th/fourteenth/g' $input
-	perl -0777 -pi.orig -e 's/15th/fifteenth/g' $input
-	perl -0777 -pi.orig -e 's/16th/sixteenth/g' $input
-	perl -0777 -pi.orig -e 's/17th/seventeenth/g' $input
-	perl -0777 -pi.orig -e 's/18th/eighteenth/g' $input
-	perl -0777 -pi.orig -e 's/19th/nineteenth/g' $input
-	perl -0777 -pi.orig -e 's/20th/twentieth/g' $input
-	perl -0777 -pi.orig -e 's/21th/twenty first/g' $input
-	perl -0777 -pi.orig -e 's/1st/first/g' $input
-	perl -0777 -pi.orig -e 's/2nd/second/g' $input
-	perl -0777 -pi.orig -e 's/3rd/third/g' $input
-	perl -0777 -pi.orig -e 's/4th/fourth/g' $input
-	perl -0777 -pi.orig -e 's/5th/fifth/g' $input
-	perl -0777 -pi.orig -e 's/6th/sixth/g' $input
-	perl -0777 -pi.orig -e 's/7th/seventh/g' $input
-	perl -0777 -pi.orig -e 's/8th/eighth/g' $input
-	perl -0777 -pi.orig -e 's/9th/ninth/g' $input
-	# perl -0777 -pi.orig -e 's/ / /g' $input
+	# # NUO replacement referTo
 
 
 	#==========================================================

@@ -6,6 +6,8 @@ DEBUG=1
 ## meta
 # referTo										references to eplacements outsourced to 													other scripts
 
+# backReplacements					replacing something first then replace the 													replacement eg '-' -> 'dashdash' ... 'dashdash' '-'
+
 ## Linguistic
 # - ABR     									corrections of Abbreviations 	(Acronyms, Initialisms)
 # - ANU | ANUC | ANO     						Alpha-Numeric combinations
@@ -102,6 +104,9 @@ do
 	### PUMA-1 Punctuation-marks
 	perl -0777 -pi.orig -e 's/(\D)\:/\1,/gm' $input # comma for colon
 	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
+	#NUO
+	
+	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
 
 	### SPY removing special symbols
@@ -109,22 +114,25 @@ do
 
 
 
-	perl -0777 -pi.orig -e 's/\à/a/g' $input
-	perl -0777 -pi.orig -e 's/\•/-/g' $input
-	perl -0777 -pi.orig -e "s/\”/'/g" $input
-	perl -0777 -pi.orig -e "s/\“/'/g" $input
-	perl -0777 -pi.orig -e 's/\—/-/g' $input
-	perl -0777 -pi.orig -e 's/\–/-/g' $input
-	perl -0777 -pi.orig -e "s/\‘/'/g" $input
-	perl -0777 -pi.orig -e "s/\’/'/g" $input
-	perl -0777 -pi.orig -e 's/\…/\.\.\./g' $input
-	perl -0777 -pi.orig -e 's/\®//g' $input
-	perl -0777 -pi.orig -e 's/\™//g' $input
-	perl -0777 -pi.orig -e 's/\(i\)/1/g' $input # converting enumeratinos references
-	perl -0777 -pi.orig -e 's/\[\d*\]//g' $input # e.g. '[2]'
+	perl -0777 -pi.orig -e 's/\à/a/gim' $input
+	perl -0777 -pi.orig -e 's/\•/-/gim' $input
+	perl -0777 -pi.orig -e "s/\”/'/gim" $input
+	perl -0777 -pi.orig -e "s/\“/'/gim" $input
+	perl -0777 -pi.orig -e 's/\—/-/gim' $input
+	perl -0777 -pi.orig -e 's/\–/-/gim' $input
+	perl -0777 -pi.orig -e "s/\‘/'/gim" $input
+	perl -0777 -pi.orig -e "s/\’/'/gim" $input
+	perl -0777 -pi.orig -e 's/\…/\.\.\./gim' $input
+	perl -0777 -pi.orig -e 's/\®//gim' $input
+	perl -0777 -pi.orig -e 's/\™//gim' $input
+	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeratinos references
+	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e 's/ / /g' $input
 
-	perl -0777 -pi.orig -e 's/^\-$/DASHDASH/gim' $input
+
+	perl -0777 -pi.orig -e 's/^-$/DASHDASH/gim' $input
+
+
 
 	# Ordening
 	perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
@@ -427,6 +435,13 @@ do
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
 	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm' $output+5TTS.txt
+
+
+
+	# backReplacements
+	perl -0777 -pi.orig -e 's/^DASHDASH$/-/gim' $output+5TTS.txt
+
+
 
 
 

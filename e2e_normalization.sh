@@ -84,7 +84,7 @@ do
 	#==========================================================
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
-	# cp $input .A.txt
+	#cp $input .A.txt
 	cp $input .00_input_before_MREPL.txt
 
 
@@ -107,6 +107,8 @@ do
 	### SPY removing special symbols
 	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
 
+
+
 	perl -0777 -pi.orig -e 's/\à/a/g' $input
 	perl -0777 -pi.orig -e 's/\•/-/g' $input
 	perl -0777 -pi.orig -e "s/\”/'/g" $input
@@ -122,6 +124,7 @@ do
 	perl -0777 -pi.orig -e 's/\[\d*\]//g' $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e 's/ / /g' $input
 
+	perl -0777 -pi.orig -e 's/^\-$/DASHDASH/gim' $input
 
 	# Ordening
 	perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
@@ -133,14 +136,13 @@ do
 	# SPY
 	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/number \2/gim' $input
 
-	# cp $input .A.txt
+	#cp $input .A.txt
 
 	### TNO-1 # referTo /home/siebe.albers/dev/TN_w_IRISA/rsrc/en/Siebe-General.rules
 	# capitalizing weekdays
 	# capitalizing months
 
 
-	cp $input .A.txt
 
 	### Linguistic
 	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
@@ -182,15 +184,16 @@ do
 
 
 	### ANU
-
 	# million  & billion
-	perl -0777 -pi.orig -e 's/(\d\.\d*)(m)/\1 million/gim' $input
-	perl -0777 -pi.orig -e 's/(\d)(b)/\1 billion/gim' $input
+	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)/\1 million/gim' $input
+	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)/\1 billion/gim' $input
 	# perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/\1 billion/gim' $input
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
 	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g' $input
 	# converting '50k' -- '50 thousand'
+
+	perl -0777 -pi.orig -e 's/\$(\d+\s*)k/$1 thousand dollars/gi' $input
 	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/\1 thousand/gi' $input
 
 
@@ -237,7 +240,7 @@ do
 	cp $input .09_afterInputManipulations_before1Tokenization.txt
 	#==========================================================
 
-	# cp $input .A.txt
+	#cp $input .A.txt
 	#==========================================================
 	# 1 TOKENIZATION
 	#==========================================================

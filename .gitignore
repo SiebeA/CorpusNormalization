@@ -5,6 +5,8 @@ EXCEL_files/
 EXCEl_files/
 MTN_output/*
 MTN_input/
+debug/test.txt
+procedureMTN.txt
 
 bin/
 lib/

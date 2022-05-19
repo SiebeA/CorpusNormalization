@@ -30,6 +30,9 @@ def xlsx_importerAndScout(file_path):
         sheet_to_df_map[key] =  sheet_to_df_map[key].iloc[1:] # drop the first row
         sheet_to_df_map[key] =  sheet_to_df_map[key].reset_index(drop=True) # reset index (0th is back):
         
+    #
+    # FOR THE HEADERS:
+    #
     # print('\n Hereunder are the outputted text file(s) corresponding to each sheet in the xls* file:')
     for key in sheet_to_df_map.keys():
         print(key)
@@ -47,7 +50,9 @@ def xlsx_importerAndScout(file_path):
                 f.writelines(columns+"\n")
             
             # determining how many columns (strings) are in a row:
-
+        
+    #
+    # FOR THE ROWS:
                 for i in range(0,len(df)):
                     # if i == examine:
                     #     print(i)

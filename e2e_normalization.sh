@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=1
+DEBUG=0
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -129,9 +129,10 @@ do
 	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e 's/ / /g' $input
 
+	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gim' $input
 
-	perl -0777 -pi.orig -e 's/^-$/DASHDASH/gim' $input
 
+	# cp $input .A.txt
 
 
 	# Ordening
@@ -142,7 +143,8 @@ do
 	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gim' $input
 
 	# SPY
-	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/number \2/gim' $input
+	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number \2/gim' $input
+	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber \2/gim' $input
 
 	#cp $input .A.txt
 
@@ -411,7 +413,7 @@ do
 	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'\1\'/gm' $output+5TTS.txt
 
 
-	# Meta replace the delimite
+	# backReplace DELIMITER for 
 	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
 
@@ -439,7 +441,7 @@ do
 
 
 	# backReplacements
-	perl -0777 -pi.orig -e 's/^DASHDASH$/-/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gim' $output+5TTS.txt
 
 
 
@@ -462,7 +464,7 @@ do
 done
 
 
-# cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
+	# cp $output+5TTS.txt .A.txt
 #==========================================================
 # salb removing obsolete files in the DIR:
 #==========================================================

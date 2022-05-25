@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=0
+DEBUG=1
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -94,18 +94,21 @@ do
 	# Specific to a particular  domain
 	#==========================================================
 
-	# SPECIFIC for `legal`
+	# SPECIFIC for `legal` (dictionary)
 	# printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# # printf '\n  \n'
 	# perl -0777 -pi.orig -e 's/(DELIMITER|[aA]dj\.|[aA]dv\.|[Nn]\.|[Vv]\.)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
 	# printf '\n That was for `legal*`  \n\n\n'
 
 
+	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
+
+
 	### PUMA-1 Punctuation-marks
 	perl -0777 -pi.orig -e 's/(\D)\:/\1,/gm' $input # comma for colon
 	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
 	#NUO
-	
+
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
 
@@ -127,17 +130,18 @@ do
 	perl -0777 -pi.orig -e 's/\™//gim' $input
 	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeratinos references
 	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
-	# perl -0777 -pi.orig -e 's/ / /g' $input
+	# perl -0777 -pi.orig -e 's/ / /gm' $input
+	# cp $input .A.txt
 
 	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gim' $input
-
-
-	# cp $input .A.txt
 
 
 	# Ordening
 	perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
 
+
+	perl -0777 -pi.orig -e 's/\w+\(\w*\)//g' $input #solving brackets
+	cp $input .A.txt
 
 	# ANUC (has to be done before TNO-1 replaceements # e.g. 7th-6rth --> 7th to 6th
 	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gim' $input
@@ -155,12 +159,14 @@ do
 
 
 	### Linguistic
+	# printf '\n\n _________________________________________________________________SPECIFIC on for Dictionaries\n'
+	# # printf '\n  \n'
 	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
-	perl -0777 -pi.orig -e 's/\b[Vv]\.* (?![A-Z])/ Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic ; also a negative lookahead for a Capitalized char, as that would indicate that the '[Vv].' would simply be a EOL
-	perl -0777 -pi.orig -e 's/\b[Nn]\.* (?![A-Z])/ Noun. /gm' $input
-	perl -0777 -pi.orig -e 's/\b[aA]dj\.* \b/Adjective. /gm' $input
-	perl -0777 -pi.orig -e 's/\b[Aa]dv\.* /Adverb /gm' $input
-	perl -0777 -pi.orig -e 's/\b[Pp]rep\.* / /gm' $input
+	# perl -0777 -pi.orig -e 's/\b[Vv]\.* (?![A-Z])/ Verb. /gm' $input # a negative lookbehind to make sure it is not following of a ABR ; however since DELIMITER is prefix for ATN, this is problematic ; also a negative lookahead for a Capitalized char, as that would indicate that the '[Vv].' would simply be a EOL
+	# perl -0777 -pi.orig -e 's/\b[Nn]\.* (?![A-Z])/ Noun. /gm' $input
+	# perl -0777 -pi.orig -e 's/\b[aA]dj\.* \b/Adjective. /gm' $input
+	# perl -0777 -pi.orig -e 's/\b[Aa]dv\.* /Adverb /gm' $input
+	# perl -0777 -pi.orig -e 's/\b[Pp]rep\.* / /gm' $input
 
 
 	# # NUO replacement referTo
@@ -207,7 +213,7 @@ do
 	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/\1 thousand/gi' $input
 
 
-	# PUMA: removing brackets solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
+	# PUMA: removing brackets/paranthes solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
 	perl -0777 -pi.orig -e 's/(\(|\))//g' $input
 	## TODO only numbers
 
@@ -303,7 +309,6 @@ do
 
 	# TNO-2
 	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
- not foo but foo
 
 	# 12-15 --? 12 to 15
 	perl -0777 -pi.orig -e 's/(\d\d*)\-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
@@ -335,10 +340,12 @@ do
 
 	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
+	# cp .$output+2_genNorma.txt .A.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 \6 /gm' .$output+2_genNorma.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' .$output+2_genNorma.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' .$output+2_genNorma.txt
 
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 /gm' .$output+2_genNorma.txt # 3 letter ABR
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 \3 /gm' .$output+2_genNorma.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
 	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' .$output+2_genNorma.txt # for when ABR occurs BOL
 
 
@@ -413,7 +420,7 @@ do
 	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'\1\'/gm' $output+5TTS.txt
 
 
-	# backReplace DELIMITER for 
+	# backReplace DELIMITER for
 	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
 

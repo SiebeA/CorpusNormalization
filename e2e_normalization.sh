@@ -135,9 +135,11 @@ do
 
 	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gim' $input
 
+	# brackets parenthes splitting from word
+	perl -0777 -pi.orig -e 's/(\w+)(\(.*\))/$1 $2/gm' $input
 
 	# Ordening
-	perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
+	# perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
 
 
 	perl -0777 -pi.orig -e 's/\w+\(\w*\)//g' $input #solving brackets

@@ -79,7 +79,7 @@ my $STEP = 0;
 
 
 #106
- 		
+
 #############################################################
 # particularités
 #############################################################
@@ -122,12 +122,13 @@ $VERBOSE && print STDERR ".";
 	apply_rules(\$TEXT, "$RSRC/Siebe-Casing-properNouns.rules");
 	apply_rules(\$TEXT, "$RSRC/Siebe-DaysMonths.rules");
 	apply_rules(\$TEXT, "$RSRC/Siebe-Numbers.rules");
+	apply_rules(\$TEXT, "$RSRC/Siebe-Abbreviations.rules");
 $VERBOSE && print STDERR ".\n";
 
 #183
 
 
-  	
+
 #############################################################
 $VERBOSE && print STDERR `date "+%d/%m/%y %H:%M:%S"`." -- Expansion and tagging.";
 	apply_rules(\$TEXT, "$RSRC/abbreviations.rules");
@@ -152,7 +153,7 @@ $VERBOSE && print STDERR ".\n";
 
 
 
-  	
+
 #############################################################
 $VERBOSE && print STDERR `date "+%d/%m/%y %H:%M:%S"`." -- Proper names processing.";
 	apply_rules(\$TEXT, "$RSRC/propername-apostrophe-removal.wikipedia.rules", "$RSRC/propername-apostrophe-blanking.wikipedia.rules");
@@ -199,5 +200,3 @@ EOF
 }
 
 #e#o#f#
-
-

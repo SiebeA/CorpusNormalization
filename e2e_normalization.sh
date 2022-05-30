@@ -143,7 +143,6 @@ do
 
 
 	perl -0777 -pi.orig -e 's/\w+\(\w*\)//g' $input #solving brackets
-	cp $input .A.txt
 
 	# ANUC (has to be done before TNO-1 replaceements # e.g. 7th-6rth --> 7th to 6th
 	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gim' $input
@@ -221,11 +220,11 @@ do
 
 
 	### ABR
-	perl -pi.orig -e 's/etc\./etcetera/g' $input
-	# eg 'a.k.a' --> "AKA"
-	perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U\1\U\2\U\3/g' $input
-	# eg 'a.k.'
-	perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
+	# perl -pi.orig -e 's/etc\./etcetera/g' $input
+	# # eg 'a.k.a' --> "AKA"
+	# perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U\1\U\2\U\3/g' $input
+	# # eg 'a.k.'
+	# perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
 
 	# not working for now:
 	# but not a.b.c.d. , for now fix with;
@@ -287,9 +286,10 @@ do
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
 	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
 
+	cp .$output+1.txt .A.txt
 
 	#==========================================================
-	cp .$output+1.txt .19_after1Tokenization.txt
+	cp .$output+1.txt .19_after1Tokenization.txt # better be called: before_genNORMA
 	#==========================================================
 
 
@@ -301,7 +301,7 @@ do
 	#==========================================================
 	#
 	#==========================================================
-	# cp .$output+2.txt .A.txt
+	# cp .$output+2_genNorma.txt .A.txt
 
 	echo "2. Generic normalization start..."
 	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$output+2_genNorma.txt
@@ -346,9 +346,11 @@ do
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 \6 /gm' .$output+2_genNorma.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' .$output+2_genNorma.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' .$output+2_genNorma.txt
-
 	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 \3 /gm' .$output+2_genNorma.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
 	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' .$output+2_genNorma.txt # for when ABR occurs BOL
+
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' .$output+2_genNorma.txt
+
 
 
 	# eg 'u.s.'
@@ -429,7 +431,7 @@ do
 
 
 	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/ bce\.* / BCE /gim' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/ bce\.* / BCE /gim' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's/ ad\.* / A D /gim' $output+5TTS.txt # too sensitive
 	perl -0777 -pi.orig -e 's/ ce\.* / C E /gim' $output+5TTS.txt
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.

@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=0
+DEBUG=1
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -117,6 +117,7 @@ do
 
 
 
+	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gim' $input
 	perl -0777 -pi.orig -e 's/\à/a/gim' $input
 	perl -0777 -pi.orig -e 's/\•/-/gim' $input
 	perl -0777 -pi.orig -e "s/\”/'/gim" $input
@@ -128,6 +129,7 @@ do
 	perl -0777 -pi.orig -e 's/\…/\.\.\./gim' $input
 	perl -0777 -pi.orig -e 's/\®//gim' $input
 	perl -0777 -pi.orig -e 's/\™//gim' $input
+	perl -0777 -pi.orig -e 's/™//gim' $input
 	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeratinos references
 	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e 's/ / /gm' $input
@@ -289,7 +291,7 @@ do
 	# cp .$output+1.txt .A.txt
 
 	#==========================================================
-	cp .$output+1.txt .19_after1Tokenization.txt # better be called: before_genNORMA
+	cp .$output+1.txt .19_after1TokenizationBeforeStartGenericNorm.txt # better be called: before_genNORMA
 	#==========================================================
 
 
@@ -453,6 +455,7 @@ do
 
 	# backReplacements
 	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\TRIPPLEGUILLEMET/\>\>\>/gim' $output+5TTS.txt
 
 
 

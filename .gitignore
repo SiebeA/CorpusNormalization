@@ -1,13 +1,12 @@
 #folders
 ATN_input/
 ATN_output/
-EXCEL_files/
-EXCEl_files/
-MTN_output/*
+# EXCEL_files/
+# MTN_output/*
 MTN_input/
-debug/test.txt
-procedureMTN.txt
-links/
+# debug/test.txt
+# procedureMTN.txt
+[lL]inks/
 
 bin/
 lib/

@@ -1,8 +1,10 @@
+\bUS\b => United States
+\bUSA\b => United States
+\bUK\b => United Kingdom
 i\.e\. => for instance
-IE => for instance
+\bIE\b => for instance
+
 [eE]\.[gG]\. for example
 [aA]\.[kK]\.[aA]\. also known as
 bce\.* => BCE
 bce => BCE
-siebe => jelle
-Siebe => jelle

@@ -117,6 +117,7 @@ $VERBOSE && print STDERR ".";
 $VERBOSE && print STDERR ".";
 	$TEXT = first_letter($TEXT);
 $VERBOSE && print STDERR ".";
+	apply_rules(\$TEXT, "$RSRC/units2.lst");
 	apply_rules(\$TEXT, "$RSRC/misspellings.wiktionary.rules", "$RSRC/alternative_spellings.wiktionary.rules", "$RSRC/alternative_forms.wiktionary.rules");
 	apply_rules(\$TEXT, "$RSRC/uk2us.rules");
 	apply_rules(\$TEXT, "$RSRC/Siebe-Casing-properNouns.rules");

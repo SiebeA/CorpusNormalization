@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=1
+DEBUG=0
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -202,8 +202,8 @@ do
 
 	### ANU
 	# million  & billion
-	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)/\1 million/gim' $input
-	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)/\1 billion/gim' $input
+	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)(\s)/$1 million /gim' $input
+	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)(\s)/$1 billion /gim' $input
 	# perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/\1 billion/gim' $input
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
@@ -286,7 +286,7 @@ do
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
 	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
 
-	cp .$output+1.txt .A.txt
+	# cp .$output+1.txt .A.txt
 
 	#==========================================================
 	cp .$output+1.txt .19_after1Tokenization.txt # better be called: before_genNORMA
@@ -354,11 +354,11 @@ do
 
 
 	# eg 'u.s.'
-	perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/u\.s\.a\./United States/gi' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/ U S A / United States /gi' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/u\.s\.(\w)\./US\U\1/gi' .$output+2_genNorma.txt
+	# perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
+	# perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
+	# perl -0777 -pi.orig -e 's/u\.s\.a\./United States /gi' .$output+2_genNorma.txt
+	# perl -0777 -pi.orig -e 's/ U S A / United States /gi' .$output+2_genNorma.txt
+	# perl -0777 -pi.orig -e 's/u\.s\.(\w)\./US\U\1/gi' .$output+2_genNorma.txt
 
 
 
@@ -435,9 +435,9 @@ do
 	# perl -0777 -pi.orig -e 's/ ad\.* / A D /gim' $output+5TTS.txt # too sensitive
 	perl -0777 -pi.orig -e 's/ ce\.* / C E /gim' $output+5TTS.txt
 	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
-	perl -0777 -pi.orig -e 's/ (USA)([\.\,\!]*)/ United States \2/gim' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/ (US)([\.\,\!]*) / United States \2/gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/ (UK)([\.\,\!]*)/ United Kingdom \2/gim' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/ (USA)([\.\,\!]*) / United States \2/gim' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/ (US)([\.\,\!]*) / United States \2/gm' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/ (UK)([\.\,\!]*) / United Kingdom \2/gim' $output+5TTS.txt
 	# NUC-2
 	perl -0777 -pi.orig -e 's/ hundred and zero / hundred \2/gm' $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gim' $output+5TTS.txt # occasional consequence NUC-1

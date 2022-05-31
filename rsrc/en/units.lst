@@ -5,7 +5,8 @@ pt	point
 nm	nanometer
 µm	micrometer
 mm	millimeter
-cm	centimeter
+cm =>	centimeter
+cM =>	centimeter
 dm	decimeter
 m	meter
 dam	decameter

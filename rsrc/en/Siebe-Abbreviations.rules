@@ -1,5 +1,12 @@
 \bUS\b => United States
-\bUSA\b => United States
+u\.s\.(a\.)* => United States 			# 'u.s' 'u.s.a.' -> 'United States'
+# U\.S\.(A\.)* => United States
+\busa\b => United States
+\bUSA\b => United States # so perl replacements here are Case Sensitive
+
+ cM|\bC M\b|CM => centimeters
+
+
 \bUK\b => United Kingdom
 i\.e\. => for instance
 \bIE\b => for instance

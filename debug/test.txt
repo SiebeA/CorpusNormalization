@@ -1,12 +1,26 @@
 
 NEWTEST
 
+develop x rays >>> NOT 'develop the tenth rays'
+
+21st >>> NOT twenty one ST
+1990s >>> NOT nineteen hundred and ninety S
+
+, etc.
+
+aka
+Smith (a.k.a. metalsmith)
+
+, etc.) >>> et cetera
+
+
+
 how many cM or CM or C M alright, but not C Mtest.
 
 
 The u.s. or the u.s.a. alright.
 The U.S. or the U.S.A. alright
-The usa and the USA alright. 
+The usa and the USA alright.
 
 
 

@@ -3,7 +3,7 @@ ATN_input/
 ATN_output/
 # EXCEL_files/
 # MTN_output/*
-MTN_input/
+MTN_input/*/
 # debug/test.txt
 # procedureMTN.txt
 [lL]inks/

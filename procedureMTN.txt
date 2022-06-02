@@ -9,8 +9,8 @@ r'\s\s'					/ 	r'\s' 	# double space
 r'\bU S\b				/ 	United States
 E U						/ 	European Union
 U K						/ 	United Kingdom
-et cetera
-DELIMITER				/
+et cetera				/ 	etcetera
+DELIMITER				/	
 r'Nan$|Nan\.|Nan\b'				/ 			# NOT eg: 'Nannie'
 
 

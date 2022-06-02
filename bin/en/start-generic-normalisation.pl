@@ -124,6 +124,7 @@ $VERBOSE && print STDERR ".";
 	apply_rules(\$TEXT, "$RSRC/Siebe-DaysMonths.rules");
 	apply_rules(\$TEXT, "$RSRC/Siebe-Numbers.rules");
 	apply_rules(\$TEXT, "$RSRC/Siebe-Abbreviations.rules");
+	
 $VERBOSE && print STDERR ".\n";
 
 #183

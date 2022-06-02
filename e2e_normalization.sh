@@ -27,7 +27,7 @@ DEBUG=1
 # - SPECIFIC									Specific manipulations for a file/domain
 
 #==========================================================
-# Input setup
+# Input setup ^ File handling
 #==========================================================
 
 ROOT=$PWD
@@ -82,6 +82,9 @@ do
 	input=.input.txt
 
 
+
+
+
 	#==========================================================
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
@@ -89,10 +92,8 @@ do
 	cp $input .09_input_before_MassRepacements.txt
 
 
-	#==========================================================
 	# Specific to a particular  domain
 	#==========================================================
-
 	# SPECIFIC for `legal` (dictionary)
 	# printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# # printf '\n  \n'
@@ -104,7 +105,6 @@ do
 	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gim' $input
 	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gim' $input
 
-
 	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
 
 	### PUMA-1 Punctuation-marks
@@ -112,11 +112,15 @@ do
 	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
-
+ 	# transfering to IRISA regex: r'(^\t.+\\)(.+\/)(.+)'
 	### SPY removing special symbols
 	# perl -0777 -pi.orig -e 's///gim' $input
-	perl -0777 -pi.orig -e 's///gim' $input
-	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
+	# coordinates:
+	perl -0777 -pi.orig -e 's/°/degrees/gim' $input
+	perl -0777 -pi.orig -e 's/′/minutes/gim' $input
+	perl -0777 -pi.orig -e 's/″/seconds/gim' $input
+	# general:
+	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 fla	g: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
 	perl -0777 -pi.orig -e 's/\à/a/gim' $input
 	perl -0777 -pi.orig -e 's/\•/-/gim' $input
 	perl -0777 -pi.orig -e "s/\”/'/gim" $input
@@ -131,7 +135,7 @@ do
 	perl -0777 -pi.orig -e 's/™//gim' $input
 	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeration references
 	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
-	# perl -0777 -pi.orig -e 's/ / /gm' $input
+	perl -0777 -pi.orig -e 's/ / /gm' $input
 	# cp $input .A.txt
 
 	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gim' $input
@@ -175,7 +179,7 @@ do
 
 
 	#==========================================================
-	cp $input .05_Input_after_MREPL.txt
+	cp $input .05_Input_after_MassReplacements.txt
 	#==========================================================
 
 

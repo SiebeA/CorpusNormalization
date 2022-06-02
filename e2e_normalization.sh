@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=0
+DEBUG=1
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -24,7 +24,6 @@ DEBUG=0
 # - SPLIT   									Splitting ANUC 							eg monday-friday' '5am-6am', etc.
 #   SPY     									Special-Symbols   (®,)
 # - URL/EM  									URLS, Emails,
-
 # - SPECIFIC									Specific manipulations for a file/domain
 
 #==========================================================
@@ -87,7 +86,7 @@ do
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
 	#cp $input .A.txt
-	cp $input .00_input_before_MREPL.txt
+	cp $input .09_input_before_MassRepacements.txt
 
 
 	#==========================================================
@@ -100,24 +99,24 @@ do
 	# perl -0777 -pi.orig -e 's/(DELIMITER|[aA]dj\.|[aA]dv\.|[Nn]\.|[Vv]\.)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
 	# printf '\n That was for `legal*`  \n\n\n'
 
+	# backReplacements
+	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gim' $input
+	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gim' $input
+	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gim' $input
+
 
 	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
-
 
 	### PUMA-1 Punctuation-marks
 	perl -0777 -pi.orig -e 's/(\D)\:/\1,/gm' $input # comma for colon
 	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
-	#NUO
-
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
 
 	### SPY removing special symbols
+	# perl -0777 -pi.orig -e 's///gim' $input
+	perl -0777 -pi.orig -e 's///gim' $input
 	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 flag: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
-
-
-
-	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gim' $input
 	perl -0777 -pi.orig -e 's/\à/a/gim' $input
 	perl -0777 -pi.orig -e 's/\•/-/gim' $input
 	perl -0777 -pi.orig -e "s/\”/'/gim" $input
@@ -130,7 +129,7 @@ do
 	perl -0777 -pi.orig -e 's/\®//gim' $input
 	perl -0777 -pi.orig -e 's/\™//gim' $input
 	perl -0777 -pi.orig -e 's/™//gim' $input
-	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeratinos references
+	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeration references
 	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
 	# perl -0777 -pi.orig -e 's/ / /gm' $input
 	# cp $input .A.txt
@@ -176,7 +175,7 @@ do
 
 
 	#==========================================================
-	cp $input .01_Input_after_MREPL.txt
+	cp $input .05_Input_after_MREPL.txt
 	#==========================================================
 
 
@@ -202,11 +201,7 @@ do
 	# perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
 
 
-	### ANU
-	# million  & billion
-	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)(\s)/$1 million /gim' $input
-	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)(\s)/$1 billion /gim' $input
-	# perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/\1 billion/gim' $input
+
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
 	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g' $input
@@ -266,32 +261,38 @@ do
 	#==========================================================
 	#
 	#==========================================================
-	# cp .$output+1.txt .A
+	# cp .$output+1_afterTokenization.txt .A
 
 	echo "1. Tokenization..."
-	perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
+	perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1_afterTokenization.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
 
 	#==========================================================
 	# Corrections after 1. Tokenization:
 	#==========================================================
 
+	### ANU
+	# million  & billion
+	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)(\s)/$1 million /gim' .$output+1_afterTokenization.txt
+	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)(\s)/$1 billion /gim' .$output+1_afterTokenization.txt
+	perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/\1 billion/gim' .$output+1_afterTokenization.txt
+
 	# fixing line breaks done by IRISA, causing line length difference between ATN ^ MTN/raw
-	perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output+1.txt
+	perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output+1_afterTokenization.txt
 
 
-	perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output+1.txt
+	perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output+1_afterTokenization.txt
 
 
 	# \n\s replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
-	perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output+1.txt
+	perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output+1_afterTokenization.txt
 
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
-	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1.txt
+	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1_afterTokenization.txt
 
-	# cp .$output+1.txt .A.txt
+	# cp .$output+1_afterTokenization.txt .A.txt
 
 	#==========================================================
-	cp .$output+1.txt .19_after1TokenizationBeforeStartGenericNorm.txt # better be called: before_genNORMA
+	cp .$output+1_afterTokenization.txt .19_BeforeStartGenericNorm.txt # better be called: before_genNORMA
 	#==========================================================
 
 
@@ -306,7 +307,7 @@ do
 	# cp .$output+2_genNorma.txt .A.txt
 
 	echo "2. Generic normalization start..."
-	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1.txt > .$output+2_genNorma.txt
+	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1_afterTokenization.txt > .$output+2_genNorma.txt
 
 	cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
 
@@ -354,16 +355,6 @@ do
 	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' .$output+2_genNorma.txt
 
 
-
-	# eg 'u.s.'
-	# perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
-	# perl -0777 -pi.orig -e 's/u\.s\./United States/gi' .$output+2_genNorma.txt
-	# perl -0777 -pi.orig -e 's/u\.s\.a\./United States /gi' .$output+2_genNorma.txt
-	# perl -0777 -pi.orig -e 's/ U S A / United States /gi' .$output+2_genNorma.txt
-	# perl -0777 -pi.orig -e 's/u\.s\.(\w)\./US\U\1/gi' .$output+2_genNorma.txt
-
-
-
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 	#==========================================================
 	# 3. CURRENCY CONVERSION
@@ -372,7 +363,7 @@ do
 	#
 	#==========================================================
 
-	# cp .$output+1.txt .A.txt
+	# cp .$output+1_afterTokenization.txt .A.txt
 	echo "3. Currency conversion..."
 	perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
 
@@ -386,7 +377,7 @@ do
 	#==========================================================
 	#
 	#==========================================================
-	# cp .$output+1.txt .A.txt
+	# cp .$output+1_afterTokenization.txt .A.txt
 	echo "4. Generic normalization end..."
 	perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
 
@@ -430,16 +421,8 @@ do
 	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
 
-
-
-	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
-	# perl -0777 -pi.orig -e 's/ bce\.* / BCE /gim' $output+5TTS.txt
-	# perl -0777 -pi.orig -e 's/ ad\.* / A D /gim' $output+5TTS.txt # too sensitive
 	perl -0777 -pi.orig -e 's/ ce\.* / C E /gim' $output+5TTS.txt
-	# MREPL ABR ; replacing e.g. US. | US \w  for 'United States', regardless whether followed by hard punct.
-	# perl -0777 -pi.orig -e 's/ (USA)([\.\,\!]*) / United States \2/gim' $output+5TTS.txt
-	# perl -0777 -pi.orig -e 's/ (US)([\.\,\!]*) / United States \2/gm' $output+5TTS.txt
-	# perl -0777 -pi.orig -e 's/ (UK)([\.\,\!]*) / United Kingdom \2/gim' $output+5TTS.txt
+
 	# NUC-2
 	perl -0777 -pi.orig -e 's/ hundred and zero / hundred \2/gm' $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gim' $output+5TTS.txt # occasional consequence NUC-1
@@ -456,15 +439,17 @@ do
 	# backReplacements
 	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gim' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\TRIPPLEGUILLEMET/\>\>\>/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\HORIZONTALLINE/_______________________________/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\STIPPELLINE/---/gim' $output+5TTS.txt
 
 
 
 
-
-
-
-	# TODO remove spaces adjacent to '""/quotes'
-	# " (.+) "
+	# Remove empty lines when DEBUG is ON:
+	if [ "$DEBUG" = 1 ]; then
+		printf '\n\n   \n\n'
+		perl -0777 -pi.orig -e s'/^\s*\n//mg;' $output+5TTS.txt
+	fi
 
 
 	# Remove empty lines when DEBUG is off:

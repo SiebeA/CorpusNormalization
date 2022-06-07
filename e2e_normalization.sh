@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=1
+DEBUG=0
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -315,6 +315,8 @@ do
 
 	cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
 
+	# remove TAGS
+	perl -0777 -pi.orig -e 's/\<.+?\>//gm' .$output+2_genNorma.txt # Ungreedy
 
 	# TNO-2
 	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
@@ -433,6 +435,21 @@ do
 	# 'nan'
 	perl -0777 -pi.orig -e 's/^nan$/-\2/gm' $output+5TTS.txt
 
+
+	#==========================================================
+	# Replace 'slippingthrough' list here
+	#==========================================================
+	# cp $output+5TTS.txt .A.txt
+
+	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
+
+	# perl -0777 -pi.orig -e 's/\,\././gm' $output+5TTS.txt # comma-period... regex does NOT find the patterns
+	perl -0777 -pi.orig -e 's/zero hundred and/zero/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/  / /gm' $output+5TTS.txt # 2 spaces (\s\s) for 1
+	perl -0777 -pi.orig -e 's/et cetera/etcetera/gm' $output+5TTS.txt
+	# cp $output+5TTS.txt .A.txt
+	perl -0777 -pi.orig -e 's/ \< U R L//gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/U R L //gm' $output+5TTS.txt
 
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+

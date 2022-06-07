@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=0
+DEBUG=1
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -303,7 +303,7 @@ do
 	#=========================================================
 	# "  2. GENERIC NORMALIZATION           "
 	# "  	/home/siebe.albers/dev/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
-	# "  2. Functions: (Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
+	# "  2. Functions: (URLs, Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
 	#==========================================================
 	#==========================================================
 	#
@@ -317,6 +317,8 @@ do
 
 	# remove TAGS
 	perl -0777 -pi.orig -e 's/\<.+?\>//gm' .$output+2_genNorma.txt # Ungreedy
+
+	# perl -0777 -pi.orig -e 's/^ //gm' .$output+2_genNorma.txt # removing BOL space
 
 	# TNO-2
 	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
@@ -348,17 +350,6 @@ do
 	# ANU
 	# '50k' --> '50 k'
 	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/\1 \2/gim' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
-
-	# ABR ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
-	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
-	# cp .$output+2_genNorma.txt .A.txt
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 \6 /gm' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 \3 /gm' .$output+2_genNorma.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
-	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' .$output+2_genNorma.txt # for when ABR occurs BOL
-
-	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' .$output+2_genNorma.txt
 
 
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
@@ -400,6 +391,18 @@ do
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
+
+
+	# ABR-3 ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
+	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
+	cp $output+5TTS.txt .A.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 \6 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 \3 /gm' $output+5TTS.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
+	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' $output+5TTS.txt # for when ABR occurs BOL
+
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' $output+5TTS.txt
 
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt

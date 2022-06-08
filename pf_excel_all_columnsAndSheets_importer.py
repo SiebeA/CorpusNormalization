@@ -20,16 +20,24 @@ def xlsx_importerAndScout(file_path):
 
     """
     import pandas as pd
-    sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # store in DICy
+    sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # reads the Excel file and store the separate sheets in a Dic
     print()
 
     
+    commentFirstLine = input('does the excel file have comments on the first row, ie the headers are not on row 1? [y if yes] ')
     for key in sheet_to_df_map.keys():
-        sheet_to_df_map[key].columns = range(sheet_to_df_map[key].shape[1]) # # remove the comment on the first line (you cant remove column names, only reset them by range with shape:)
-        sheet_to_df_map[key].columns = sheet_to_df_map[key].iloc[0] # change column names to the first row
-        sheet_to_df_map[key] =  sheet_to_df_map[key].iloc[1:] # drop the first row
-        sheet_to_df_map[key] =  sheet_to_df_map[key].reset_index(drop=True) # reset index (0th is back):
         
+        try:
+            if commentFirstLine == 'y':
+                sheet_to_df_map[key].columns = range(sheet_to_df_map[key].shape[1]) # # remove the comment on the first line (you cant remove column names, only reset them by range with shape:)
+                sheet_to_df_map[key].columns = sheet_to_df_map[key].iloc[0] # change column names to the first row
+            sheet_to_df_map[key] =  sheet_to_df_map[key].iloc[1:] # drop the first row
+            sheet_to_df_map[key] =  sheet_to_df_map[key].reset_index(drop=True) # reset index (0th is back):
+        except IndexError:
+            print('INDEXERROR, for: \n')
+            print(key)
+            print()
+
     #
     # FOR THE HEADERS:
     #

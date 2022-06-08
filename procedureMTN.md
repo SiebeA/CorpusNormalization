@@ -1,19 +1,36 @@
 #==========================================================
+# Troubleshoot
+#==========================================================
+
+- ATN nr of rows != ORIGINAL nr of rows
+	- 'K' after an number
+
+
+#==========================================================
 # Slipping through: 
 #==========================================================
-[clarification needed] 	/ 
+
+
 ,.						/ 	.
-r'zero hundred and'		/ 	r'zero'
-r'point zero.'			/ 	r'\.'	# a period
+DELIMITER				/	
 r'\s\s'					/ 	r'\s' 	# double space
+r'\[.+\]' 				/ 			# eg '[clarification needed]'
+None.					/
+
+
+<!--r'zero hundred and'		/ 	r'zero'-->
+<!--r'point zero.'			/ 	r'\.'	# a period-->
+<!--et cetera				/ 	etcetera-->
+
+
 r'\bU S\b				/ 	United States
 E U						/ 	European Union
 U K						/ 	United Kingdom
-et cetera				/ 	etcetera
-DELIMITER				/	
-r'Nan$|Nan\.|Nan\b'				/ 			# NOT eg: 'Nannie'
+r'\bNan\b'				/
 
 
+# combined:
+r'None\.|  |DELIMITER|\.\.|'
 
 
 #==========================================================

@@ -31,6 +31,17 @@ XX => the 20th
 19th => nineteenth
 20th => twentieth
 21th => twenty first
+21st => twenty first
+22th => twenty second
+22nd => twenty second
+
+50s => fifties
+60s => sixties
+70s => seventies
+80s => eighties
+90s => nineties
+00s => zeroes
+
 1st => first
 2nd => second
 3rd => third

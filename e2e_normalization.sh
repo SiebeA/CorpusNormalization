@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=1
+DEBUG=0
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -10,12 +10,12 @@ DEBUG=1
 
 ## Linguistic
 # - ABR     									corrections of Abbreviations 	(Acronyms, Initialisms)
-# - ANU | ANUC | ANO     						Alpha-Numeric combinations
+# - ANU				     						Alpha-Numeric combinations
 # - \N\S    									corrections of linebreaks, etc.
-# - DEP											deprecated
+# - DEP												deprecated
 # - Linguistic
 # - MREPL 										MASS REPLACEMENTS
-# - NUCO 										Numbers-combiations 				(e.g. phone numbers)
+# - NUCO 											Numbers-combiations 				(e.g. phone numbers)
 # - NUO     									Numbers-ordinal
 # - NUC     									Numbers-Cardinal
 # - PUMA    									Punctuation-Marks
@@ -25,6 +25,7 @@ DEBUG=1
 #   SPY     									Special-Symbols   (®,)
 # - URL/EM  									URLS, Emails,
 # - SPECIFIC									Specific manipulations for a file/domain
+# - # \SPECIFIC for
 
 #==========================================================
 # Input setup ^ File handling
@@ -94,7 +95,7 @@ do
 
 	# Specific to a particular  domain
 	#==========================================================
-	# SPECIFIC for `legal` (dictionary)
+	# \SPECIFIC for `legal` (dictionary)
 	# printf '\n\n _________________________________________________________________SPECIFIC on\n'
 	# # printf '\n  \n'
 	# perl -0777 -pi.orig -e 's/(DELIMITER|[aA]dj\.|[aA]dv\.|[Nn]\.|[Vv]\.)\s*\(.+\)/$1/gm' $input # removing the parentheses e.g. "(ah-for-she-ory) prep. Latin" text in paranthesis
@@ -116,9 +117,13 @@ do
 	### SPY removing special symbols
 	# perl -0777 -pi.orig -e 's///gim' $input
 	# coordinates:
-	perl -0777 -pi.orig -e 's/°/degrees/gim' $input
-	perl -0777 -pi.orig -e 's/′/minutes/gim' $input
-	perl -0777 -pi.orig -e 's/″/seconds/gim' $input
+
+	# cp $input .A.txt
+	# \SPECIFIC for geometry, coordinates
+	perl -0777 -pi.orig -e 's/°/ degrees, /gim' $input
+	perl -0777 -pi.orig -e 's/′/ minutes, /gim' $input
+	perl -0777 -pi.orig -e 's/″/ and, seconds /gim' $input
+
 	# general:
 	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 fla	g: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
 	perl -0777 -pi.orig -e 's/\à/a/gim' $input
@@ -157,10 +162,9 @@ do
 	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber \2/gim' $input
 
 	#cp $input .A.txt
+	perl -0777 -pi.orig -e 's/\W(\-)(\d+)(?!\d*\:|pm|am|\s*p\.*m|\s*a\.*m)/minus $2/gm' $input #eg '-73' -> 'minus 73' NOT eg '9:00am-5:00pm'
 
-	### TNO-1 # referTo /home/siebe.albers/dev/TN_w_IRISA/rsrc/en/Siebe-General.rules
-	# capitalizing weekdays
-	# capitalizing months
+
 
 
 
@@ -333,6 +337,8 @@ do
 	# LEFTOFF
 
 
+
+
 	# PUNCT SPLIT e.g. 'monday-friday' --> 'monday to friday'
 	perl -0777 -pi.orig -e 's/(\w{3,}day)\-(\w{3,}day)/$1 to $2/gi' .$output+2_genNorma.txt
 
@@ -348,7 +354,7 @@ do
 
 
 	# ANU
-	# '50k' --> '50 k'
+	# \d\k '50k' --> '50 k'
 	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/\1 \2/gim' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 
 
@@ -395,22 +401,12 @@ do
 
 	# ABR-3 ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
-	cp $output+5TTS.txt .A.txt
+	# cp $output+5TTS.txt .A.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 \6 /gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 \3 /gm' $output+5TTS.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
 	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' $output+5TTS.txt # for when ABR occurs BOL
-
-	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' $output+5TTS.txt
-
-	# PUMA removing space between punctution
-	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
-
-	# capitalizing the first letter of a new line:
-	perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
-	# capitalizing the first letter after a hard punctuation mark.
-	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 
 	# removing some other oddities
 	perl -0777 -pi.orig -e 's/ or or /or/g' $output+5TTS.txt
@@ -446,10 +442,10 @@ do
 
 	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
 
-	# perl -0777 -pi.orig -e 's/\,\././gm' $output+5TTS.txt # comma-period... regex does NOT find the patterns
+	perl -0777 -pi.orig -e 's/\s*\,\s*\././gm' $output+5TTS.txt # comma-period \,\.
 	perl -0777 -pi.orig -e 's/zero hundred and/zero/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/  / /gm' $output+5TTS.txt # 2 spaces (\s\s) for 1
-	perl -0777 -pi.orig -e 's/et cetera/etcetera/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/et cetera/etcetera/gim' $output+5TTS.txt
 	# cp $output+5TTS.txt .A.txt
 	perl -0777 -pi.orig -e 's/ \< U R L//gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/U R L //gm' $output+5TTS.txt
@@ -457,6 +453,25 @@ do
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
 	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm' $output+5TTS.txt
+
+
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' $output+5TTS.txt
+
+	# PUMA removing space between punctution
+	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
+
+	# capitalizing the first letter of a new line:
+	perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
+	# capitalizing the first letter after a hard punctuation mark.
+	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
+
+	# when there is an space before a EOL PUNCT-mark
+	perl -0777 -pi.orig -e 's/ $//gm' $output+5TTS.txt
+	# space after a BOL
+	perl -0777 -pi.orig -e 's/^ //gm' $output+5TTS.txt
+
+	# adding period \. when there is no hard-PUNCT EOL
+	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))$/\1./gm' $output+5TTS.txt
 
 
 

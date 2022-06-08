@@ -25,7 +25,9 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
     # Creating a xlsx file with dicc[key] as sheet names and their values as the contents
     print()
     writer = pd.ExcelWriter(f'{xlsx_output_file_name}_{ATNorMTN}.xlsx') # the sheets will be written in here
-    for key in dicc.keys():
+    import collections
+    od = collections.OrderedDict(sorted(dicc.items()))
+    for key in od:
         df = dicc[key]
         # Capitalize the 0th character of every string (necessary because `/e2e/ file doesn't do this in certain replacements e.g. number convertion)
         try:

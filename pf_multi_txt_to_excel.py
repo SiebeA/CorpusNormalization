@@ -32,10 +32,10 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
         # Capitalize the 0th character of every string (necessary because `/e2e/ file doesn't do this in certain replacements e.g. number convertion)
         try:
             df = df.astype(str)
-            df = df.applymap(lambda x: re.sub(r'([a-zA-Z])(.+)', lambda match: r'{}{}.'.format(match.group(1).upper(),match.group(2)), x) )
-            print(f'{key} capitilization and dotting succesful')
+            df = df.applymap(lambda x: re.sub(r'([a-zA-Z])(.+)', lambda match: r'{}{}'.format(match.group(1).upper(),match.group(2)), x) )
+            print(f'{key} capitilization succesful')
         except:
-            print(f'{key} capitilization and dotting ------------------------------------Unsuccesful')
+            print(f'{key} capitilization------------------------------------Unsuccesful')
             continue
         key = key.replace('_RAW_ATN.txt',"") # remove that extension from the title name of the sheet (this was only usefull for the txt file)
         df.to_excel(writer,key,index=False) # write to the writer; sheet name == key(until -4 removes the .txt extension in the name) == old sheet name from pd.read
@@ -88,29 +88,29 @@ if __name__ == '__main__':
     except FileNotFoundError:
         print('_______except FileNotFoundError')
     
-    MTN_execute = input('Execute the MTN part of the script? if yes: "y": ')
-    if MTN_execute =='y':
+    # MTN_execute = input('Execute the MTN part of the script? if yes: "y": ')
+    # if MTN_execute =='y':
     
-        # Converting the MTN.txt files to a excel file, where the sheets correspond to the nr. of MTN.txt files:
-        try:
-            dirr = os.chdir("MTN_input")
-            # move the the folder of the respective xlsx file where its sheets are in .txt files:
-            folder = glob.glob("*/")[0]
-            os.chdir(folder)
-            print(f'dir changed to  {os.getcwd()}')
-        except:
-            print(f'\n\n ___________________________________ !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
-            import sys
-            sys.exit()
+    #     # Converting the MTN.txt files to a excel file, where the sheets correspond to the nr. of MTN.txt files:
+    #     try:
+    #         dirr = os.chdir("MTN_input")
+    #         # move the the folder of the respective xlsx file where its sheets are in .txt files:
+    #         folder = glob.glob("*/")[0]
+    #         os.chdir(folder)
+    #         print(f'dir changed to  {os.getcwd()}')
+    #     except:
+    #         print(f'\n\n ___________________________________ !!!!!!!!!! dir change to \n{dirr}\n unsuccesful \n\n\n')
+    #         import sys
+    #         sys.exit()
         
-        xlsx_output_file_name = folder[:-1]
-        # xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
+    #     xlsx_output_file_name = folder[:-1]
+    #     # xlsx_output_file_name = input("Specify the name of the xlsx_output_file (without ex): \n")
        
-        # !!! FUNCTION call:
-        Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="MTN" )
-        print(f' \n \n files are saved in {os.getcwd()} \n')
+    #     # !!! FUNCTION call:
+    #     Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN="MTN" )
+    #     print(f' \n \n files are saved in {os.getcwd()} \n')
         
         
         
-    else:
-        print('\n for another time then\n')
+    # else:
+    #     print('\n for another time then\n')

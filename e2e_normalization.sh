@@ -109,6 +109,7 @@ do
 	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
 
 	### PUMA-1 Punctuation-marks
+	# cp $input .A.txt
 	perl -0777 -pi.orig -e 's/(\D)\:/\1,/gm' $input # comma for colon
 	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
@@ -419,7 +420,6 @@ do
 	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
 
-	perl -0777 -pi.orig -e 's/ ce\.* / C E /gim' $output+5TTS.txt
 
 	# NUC-2
 	perl -0777 -pi.orig -e 's/ hundred and zero / hundred \2/gm' $output+5TTS.txt # see NUC-1
@@ -434,13 +434,18 @@ do
 	# cp $output+5TTS.txt .A.txt
 
 	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
-
-	perl -0777 -pi.orig -e 's/\s*\,\s*\././gm' $output+5TTS.txt # comma-period \,\.
+	perl -0777 -pi.orig -e 's/\s*\,$/./gm' $output+5TTS.txt # comma-period \,\.    # does not work when sentence ends with a comma
+	perl -0777 -pi.orig -e 's/\s*\,\s*\././gm' $output+5TTS.txt # comma-period \,\.    # does not work when sentence ends with a comma
 	perl -0777 -pi.orig -e 's/zero hundred and/zero/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/  / /gm' $output+5TTS.txt # 2 spaces (\s\s) for 1
 	perl -0777 -pi.orig -e 's/et cetera/etcetera/gim' $output+5TTS.txt
 	# cp $output+5TTS.txt .A.txt
+	perl -0777 -pi.orig -e 's/\bU S\b/United States/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\bE U\b/European Union/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\bU K\b/United Kingdom/gm' $output+5TTS.txt
 
+
+	# perl -0777 -pi.orig -e 's/\s{2,}/ /gim' $output+5TTS.txt # 2 or more spaces \s for one space
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
 	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm' $output+5TTS.txt
@@ -448,18 +453,6 @@ do
 
 	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' $output+5TTS.txt
 
-	# PUMA removing space between punctution
-	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
-
-	# capitalizing the first letter of a new line:
-	perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
-	# capitalizing the first letter after a hard punctuation mark.
-	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
-
-	# when there is an space before a EOL PUNCT-mark
-	perl -0777 -pi.orig -e 's/ $//gm' $output+5TTS.txt
-	# space after a BOL
-	perl -0777 -pi.orig -e 's/^ //gm' $output+5TTS.txt
 
 	# adding period \. when there is no hard-PUNCT EOL
 	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))$/\1./gm' $output+5TTS.txt
@@ -471,7 +464,24 @@ do
 	perl -0777 -pi.orig -e 's/\STIPPELLINE/---/gim' $output+5TTS.txt
 
 
+	# PUMA PUNCT SPACE
+	# PUMA removing space between punctution
+	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
 
+	# capitalizing the first letter of a new line:
+	perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
+	# capitalizing the first letter after a hard punctuation mark.
+	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
+	# cp $output+5TTS.txt .A.txt
+
+	perl -0777 -pi.orig -e 's/ $//gm' $output+5TTS.txt # when there is an space before a EOL PUNCT-mark
+	perl -0777 -pi.orig -e 's/ \|/|/gm' $output+5TTS.txt # when there is an space before a DELIMTIER
+
+	perl -0777 -pi.orig -e 's/^ //gm' $output+5TTS.txt # space after a BOL
+	perl -0777 -pi.orig -e 's/\| /|/gm' $output+5TTS.txt # when there is an space after a DELIMTIER
+	# cp $output+5TTS.txt .A1.txt
+	perl -0777 -pi.orig -e 's/\bNan\b//gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\bNone\b//gm' $output+5TTS.txt
 
 	# Remove empty lines when DEBUG is ON:
 	if [ "$DEBUG" = 1 ]; then

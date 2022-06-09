@@ -1,6 +1,6 @@
 \bUS\b => United States
 u\.s\.(a\.)* => United States 			# 'u.s' 'u.s.a.' -> 'United States'
-# U\.S\.(A\.)* => United States
+U\.S\.(A\.)* => United States
 \busa\b => United States
 \bUSA\b => United States # so perl replacements here are Case Sensitive
 
@@ -8,12 +8,15 @@ u\.s\.(a\.)* => United States 			# 'u.s' 'u.s.a.' -> 'United States'
 
 
 \bUK\b => United Kingdom
+
 i\.e\. => , for instance,
 e\.g\. => , for example,
 \bIE\b => , for instance,
-
 [eE]\.[gG]\. for example
 [aA]\.[kK]\.[aA]\. also known as
+
+[aA]\.[Dd]\. => AD
 bce\.* => BCE
 bce => BCE
-[aA]\.[Dd]\. => AD
+ ce\.* => CE
+

@@ -186,12 +186,6 @@ do
 	cp $input .05_Input_after_MassReplacements.txt
 	#==========================================================
 
-
-	### ABR; 'e.g.' --> 'for example'
-	perl -0777 -pi.orig -e 's/e\.g\./,for example/gi' $input
-
-
-
 	# NUC-1
 	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
 	perl -0777 -pi.orig -e 's/(\d\d)(\d\d)/\1 hundred and \2/gm' $input
@@ -393,7 +387,6 @@ do
 	#==========================================================
 	#
 	#==========================================================
-	# cp $output+5TTS.txt .A.txt
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
@@ -447,8 +440,6 @@ do
 	perl -0777 -pi.orig -e 's/  / /gm' $output+5TTS.txt # 2 spaces (\s\s) for 1
 	perl -0777 -pi.orig -e 's/et cetera/etcetera/gim' $output+5TTS.txt
 	# cp $output+5TTS.txt .A.txt
-	perl -0777 -pi.orig -e 's/ \< U R L//gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/U R L //gm' $output+5TTS.txt
 
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
@@ -472,8 +463,6 @@ do
 
 	# adding period \. when there is no hard-PUNCT EOL
 	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))$/\1./gm' $output+5TTS.txt
-
-
 
 	# backReplacements
 	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gim' $output+5TTS.txt

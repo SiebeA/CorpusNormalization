@@ -33,7 +33,7 @@ def Txt_to_xlsx_sheet_converter(xlsx_output_file_name, ATNorMTN):
         try:
             df = df.astype(str)
             df = df.applymap(lambda x: re.sub(r'([a-zA-Z])(.+)', lambda match: r'{}{}'.format(match.group(1).upper(),match.group(2)), x) )
-            print(f'{key} capitilization succesful')
+            # print(f'{key} capitalization succesful')
         except:
             print(f'{key} capitilization------------------------------------Unsuccesful')
             continue

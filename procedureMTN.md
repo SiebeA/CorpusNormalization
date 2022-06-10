@@ -4,6 +4,7 @@
 
 - ATN nr of rows != ORIGINAL nr of rows
 	- 'K' after an number
+- Extra sheet, eg with source
 
 
 #==========================================================
@@ -11,26 +12,32 @@
 #==========================================================
 
 
-,.						/ 	.
+### Phone numbers
+eg '605) 545-2950'
+
+### probably not solved:
+y hundred				/		# e.g 'thirty hundred'
+r'None\.'				/
 DELIMITER				/	
-r'\s\s'					/ 	r'\s' 	# double space
+
+
+### probably solved:
+,.						/ 	.
+'^ | $'		/	# space after BOL | space before EOL
+'billion'
+r'\s{2,}					/ 	r'\s' 	# double space
 r'\[.+\]' 				/ 			# eg '[clarification needed]'
-None.					/
-
-
+r'\bU S\b				/ 	United States
+E U						/ 	European Union
+U K						/ 	United Kingdom
+r'\bNan\b'				/
 <!--r'zero hundred and'		/ 	r'zero'-->
 <!--r'point zero.'			/ 	r'\.'	# a period-->
 <!--et cetera				/ 	etcetera-->
 
 
-r'\bU S\b				/ 	United States
-E U						/ 	European Union
-U K						/ 	United Kingdom
-r'\bNan\b'				/
-
-
 # combined:
-r'None\.|  |DELIMITER|\.\.|'
+r'None\.|  |DELIMITER|\.\.|\[.+\]|\s{2,}|^ |'
 
 
 #==========================================================
@@ -40,7 +47,11 @@ r'None\.|  |DELIMITER|\.\.|'
 
 #==========================================================
 1. implement headers in OR file
-2. get rid of text in next columns.
+2. get rid of text that is incorreclty split into the following column
+- ATN at top screen - ORIG at bottom screen
+- Open Sublime > 2 screens > copy ATN (all columns) into the right sublime tab;
+	copy the ORIGINAL in the left tab
+  Compare to view/clipboard (ctrl-shift-p "compare")
 
 
 3:

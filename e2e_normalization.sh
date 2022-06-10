@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=0
+DEBUG=1
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -90,7 +90,7 @@ do
 	# MREPL REPLACEMENTS before normalization
 	#==========================================================
 	#cp $input .A.txt
-	cp $input .09_input_before_MassRepacements.txt
+	cp $input .01_input_before_MassRepacements.txt
 
 
 	# Specific to a particular  domain
@@ -102,6 +102,7 @@ do
 	# printf '\n That was for `legal*`  \n\n\n'
 
 	# backReplacements
+	perl -0777 -pi.orig -e 's///gm' $input
 	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gim' $input
 	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gim' $input
 	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gim' $input
@@ -268,6 +269,7 @@ do
 
 	echo "1. Tokenization..."
 	perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1_afterTokenization.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
+	cp .$output+1_afterTokenization.txt .10_afterTokenization.txt
 
 	#==========================================================
 	# Corrections after 1. Tokenization:
@@ -311,7 +313,6 @@ do
 
 	echo "2. Generic normalization start..."
 	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1_afterTokenization.txt > .$output+2_genNorma.txt
-
 	cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
 
 	# remove TAGS

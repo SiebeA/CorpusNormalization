@@ -1,25 +1,34 @@
 NEWTEST
+_________________________
 
-à and more.
-• and more.
-this ” that.
-“
-—
-–
-‘
-’
-and siebe.
-no trademark ® correct?
-yes ™ alright.
+Differential(s)
+---
+3000 miles >>> NOT thirty hundred.
+3,000 miles.
+at 100k miles.
+between 50k - 75k miles.
+---
+# does not break well:
+1. Log on to your MyHyundai account. 2. Click on the "Schedule Service" link below the vehicle you wish to take to the Hyundai dealership. 3. The name of your preferred Hyundai dealership will be displayed in the top left corner of the new webpage. Make sure that this is the correct Hyundai dealership. (If this is incorrect, click "Change Dealer". Enter your zip code and click on your desired Hyundai dealership.) 4. After your preferred dealer is visible, confirm the mileage of your vehicle by clicking the "Update" link below "My Current Odometer". 5. Once the current mileage is confirmed you can see the next service recommended by Hyundai in the Service Timeline. Choose the appropriate service and click the blue "Schedule Service" button. 6. The next screen prompts you to confirm the maintenance service selected, choose additional individual services or repairs if necessary, or describe the concern you have with your vehicle. Once you have done so, click "Next". 8. Select your appointment time, choose a specific service advisor if you have a preference, and select your transportation option. Once you have done so, click "Next". 9. A page with a summary of the appointment details will appear. If everything appears correct, click "Book it!" 10. You will then receive a confirmation email.
+
 
 ---
-25°11′50.0″N 55°16′26.6″E ; DESIRED twenty five degrees, eleven minutes, fifty point zero seconds North. 
-41°24’12.2″N
-__________________
+www.google.com, www.burby.com
+How long should I alright >>> NOT 'the first'.
 ---
-develop X rays >>> NOT 'develop the tenth rays'
-21st >>> NOT twenty one ST
-1990s >>> NOT nineteen hundred and ninety S
+U S or the US, or the U.S. or the U.S.A. or the u.s.a. alright.
+ test.  # BOL space.
+ test . # EOL space.
+alright   three spaces.
+---
+Is where one business makes a commercial transaction with another. This typically occurs when a business is sourcing materials for their production process (e.g. a food manufacturer purchasing salt).
+
+
+abandonment etc. but
+---
+www.google.com
+This refers to as permanent redirection from one URL to another
+
 , etc.
 aka
 Smith (a.k.a. metalsmith)
@@ -32,9 +41,26 @@ _________________________
 it was about 55 cM alright
 How many cm was it?
 
-PASSINGHEREUNDER 
-_________________________
-_________Linebreaks________________ 
+PASSINGHEREUNDER_________________________
+21st.
+1990s.
+2000s.
+---
+develop X rays >>> NOT 'develop the tenth rays' # roman-numbers-conversion
+---
+# coordinates
+25°11′50.0″N 55°16′26.6″E ; >>> twenty five degrees, eleven minutes, fifty point zero seconds
+---
+# slippingthrough replacements:
+A hundred and zero alright.
+and,.
+et cetera alright.
+---
+-73%.
+monday–friday, 9:00 a.m.-5:00 p.m.
+---
+a.d. and a.d. alright AD alright.
+_________Linebreaks________________
 Cargill	Minnesota	Food, Drink & Tobacco	$114.7 B	155,000
 Koch Industries	Kansas	Multicompany	$110 Be	120,000
 ---

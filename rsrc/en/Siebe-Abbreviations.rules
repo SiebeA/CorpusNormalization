@@ -9,12 +9,17 @@ U\.S\.(A\.)* => United States
 
 \bUK\b => United Kingdom
 
+
+\ba\.*k\.*a\.*  => also known as
+etc\. => etcetera
 i\.e\. => , for instance,
 e\.g\. => , for example,
 \bIE\b => , for instance,
 [eE]\.[gG]\. for example
 [aA]\.[kK]\.[aA]\. also known as
 
+
+# Time-Eras
 [aA]\.[Dd]\. => AD
 bce\.* => BCE
 bce => BCE

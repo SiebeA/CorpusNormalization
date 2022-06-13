@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=1
+DEBUG=0
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -21,7 +21,7 @@ DEBUG=1
 # - PUMA    									Punctuation-Marks
 # - PN 		   									Proper Nouns
 # - TNO     									Time Notation correction
-# - SPLIT   									Splitting ANUC 							eg monday-friday' '5am-6am', etc.
+# - SPLIT   									Splitting ANU					eg monday-friday' '5am-6am', etc.
 #   SPY     									Special-Symbols   (®,)
 # - URL/EM  									URLS, Emails,
 # - SPECIFIC									Specific manipulations for a file/domain
@@ -187,10 +187,11 @@ do
 	#==========================================================
 	cp $input .05_Input_after_MassReplacements.txt
 	#==========================================================
+	# cp $input .A.txt
 
 	# NUC-1
 	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
-	perl -0777 -pi.orig -e 's/(\d\d)(\d\d)/\1 hundred and \2/gm' $input
+	perl -0777 -pi.orig -e 's/([1-9][1-9])(\d\d)/\1 hundred and \2/gm' $input # eg '1350' > '13 hundred and 50', NO MATCH:'3000'
 	perl -0777 -pi.orig -e 's/10 hundred /one thousand and /gm' $input
 	perl -0777 -pi.orig -e 's/20 hundred /two thousand and /gm' $input
 	perl -0777 -pi.orig -e 's/ and and/ and /gm' $input # occasional consequence of the former
@@ -205,15 +206,15 @@ do
 	# perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
 
 
-
-
+	cp $input .A.txt
 	# Converting eg '50k - 44k' --> '50k and 44k'
 	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g' $input
 	# converting '50k' -- '50 thousand'
 
 	perl -0777 -pi.orig -e 's/\$(\d+\s*)k/$1 thousand dollars/gi' $input
-	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/\1 thousand/gi' $input
+	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/\1 thousand /gi' $input
 
+	perl -0777 -pi.orig -e "s/\(s\)//gm" $input # removing eg '(s)' in 'car(s)'
 
 	# PUMA: removing brackets/paranthes solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
 	perl -0777 -pi.orig -e 's/(\(|\))//g' $input

@@ -103,9 +103,9 @@ do
 
 	# backReplacements
 	perl -0777 -pi.orig -e 's///gm' $input
-	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gim' $input
-	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gim' $input
-	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gim' $input
+	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gm' $input
+	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gm' $input
+	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gm' $input
 
 	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
 
@@ -117,35 +117,35 @@ do
 
  	# transfering to IRISA regex: r'(^\t.+\\)(.+\/)(.+)'
 	### SPY removing special symbols
-	# perl -0777 -pi.orig -e 's///gim' $input
+	# perl -0777 -pi.orig -e 's///gm' $input
 	# coordinates:
 
 	# cp $input .A.txt
 	# \SPECIFIC for geometry, coordinates
-	perl -0777 -pi.orig -e 's/°/ degrees, /gim' $input
-	perl -0777 -pi.orig -e 's/′/ minutes, /gim' $input
-	perl -0777 -pi.orig -e 's/″/ and, seconds /gim' $input
+	perl -0777 -pi.orig -e 's/°/ degrees, /gm' $input
+	perl -0777 -pi.orig -e 's/′/ minutes, /gm' $input
+	perl -0777 -pi.orig -e 's/″/ and, seconds /gm' $input
 
 	# general:
 	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 fla	g: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
-	perl -0777 -pi.orig -e 's/\à/a/gim' $input
-	perl -0777 -pi.orig -e 's/\•/-/gim' $input
-	perl -0777 -pi.orig -e "s/\”/'/gim" $input
-	perl -0777 -pi.orig -e "s/\“/'/gim" $input
-	perl -0777 -pi.orig -e 's/\—/-/gim' $input
-	perl -0777 -pi.orig -e 's/\–/-/gim' $input
-	perl -0777 -pi.orig -e "s/\‘/'/gim" $input
-	perl -0777 -pi.orig -e "s/\’/'/gim" $input
-	perl -0777 -pi.orig -e 's/\…/\.\.\./gim' $input
-	perl -0777 -pi.orig -e 's/\®//gim' $input
-	perl -0777 -pi.orig -e 's/\™//gim' $input
-	perl -0777 -pi.orig -e 's/™//gim' $input
-	perl -0777 -pi.orig -e 's/\(i\)/1/gim' $input # converting enumeration references
-	perl -0777 -pi.orig -e 's/\[\d*\]//gim' $input # e.g. '[2]'
+	perl -0777 -pi.orig -e 's/\à/a/gm' $input
+	perl -0777 -pi.orig -e 's/\•/-/gm' $input
+	perl -0777 -pi.orig -e "s/\”/'/gm" $input
+	perl -0777 -pi.orig -e "s/\“/'/gm" $input
+	perl -0777 -pi.orig -e 's/\—/-/gm' $input
+	perl -0777 -pi.orig -e 's/\–/-/gm' $input
+	perl -0777 -pi.orig -e "s/\‘/'/gm" $input
+	perl -0777 -pi.orig -e "s/\’/'/gm" $input
+	perl -0777 -pi.orig -e 's/\…/\.\.\./gm' $input
+	perl -0777 -pi.orig -e 's/\®//gm' $input
+	perl -0777 -pi.orig -e 's/\™//gm' $input
+	perl -0777 -pi.orig -e 's/™//gm' $input
+	perl -0777 -pi.orig -e 's/\(i\)/1/gm' $input # converting enumeration references
+	perl -0777 -pi.orig -e 's/\[\d*\]//gm' $input # e.g. '[2]'
 	perl -0777 -pi.orig -e 's/ / /gm' $input
 	# cp $input .A.txt
 
-	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gim' $input
+	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gm' $input
 
 	# brackets parenthes splitting from word
 	perl -0777 -pi.orig -e 's/(\w+)(\(.*\))/$1 $2/gm' $input
@@ -157,11 +157,11 @@ do
 	perl -0777 -pi.orig -e 's/\w+\(\w*\)//g' $input #solving brackets
 
 	# ANUC (has to be done before TNO-1 replaceements # e.g. 7th-6rth --> 7th to 6th
-	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gim' $input
+	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gm' $input
 
 	# SPY
-	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number \2/gim' $input
-	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber \2/gim' $input
+	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number \2/gm' $input
+	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber \2/gm' $input
 
 	#cp $input .A.txt
 	perl -0777 -pi.orig -e 's/\W(\-)(\d+)(?!\d*\:|pm|am|\s*p\.*m|\s*a\.*m)/minus $2/gm' $input #eg '-73' -> 'minus 73' NOT eg '9:00am-5:00pm'
@@ -199,7 +199,7 @@ do
 
 
 	# SPY
-	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/\1 and \2/gim' $input
+	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/\1 and \2/gm' $input
 
 
 	# URL/EM
@@ -251,7 +251,7 @@ do
 	#e.g. 4am-5am --> 4am until 5am
 	perl -0777 -pi.orig -e 's/(a\.m\.\s*|am\s*)-(\d*)(:|\w)/$1 until $2$3/g' $input
 
-	perl -0777 -pi.orig -e 's/(\d)(a\.m\.\s*|am\s*)-(\d*)(:|\w+)/$1\U$2 \Luntil \U$3\U$4/gim' $input
+	perl -0777 -pi.orig -e 's/(\d)(a\.m\.\s*|am\s*)-(\d*)(:|\w+)/$1\U$2 \Luntil \U$3\U$4/gm' $input
 
 
 	#==========================================================
@@ -329,7 +329,7 @@ do
 
 	# ANU
 	# splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
-	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gim' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gm' .$output+2_genNorma.txt
 	# LEFTOFF
 
 
@@ -346,12 +346,12 @@ do
 
 
 	# echo 'salb replacing percentages"
-	perl -0777 -pi.orig -e 's/\%/ percent/gim' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/\%/ percent/gm' .$output+2_genNorma.txt
 
 
 	# ANU
 	# \d\k '50k' --> '50 k'
-	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/\1 \2/gim' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
+	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/\1 \2/gm' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 
 
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
@@ -407,10 +407,10 @@ do
 	perl -0777 -pi.orig -e 's/ or or /or/g' $output+5TTS.txt
 
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
-	perl -0777 -pi.orig -e 's/delimiter/DELIMITER/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/delimiter/DELIMITER/gm' $output+5TTS.txt
 
 	# URL
-	perl -0777 -pi.orig -e 's/([a-z]{2,})\.([a-z]{2,})/\L\1 dot \U\2/gim' $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
+	perl -0777 -pi.orig -e 's/([a-z]{2,})\.([a-z]{2,})/\L\1 dot \U\2/gm' $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
 
 	# quotes: remove spaces arround
 	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"\1\"/gm' $output+5TTS.txt
@@ -418,13 +418,13 @@ do
 
 
 	# backReplace DELIMITER for
-	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gm' $output+5TTS.txt
-	# perl -0777 -pi.orig -e 's///gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gim' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
 
 
 	# NUC-2
 	perl -0777 -pi.orig -e 's/ hundred and zero / hundred \2/gm' $output+5TTS.txt # see NUC-1
-	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gim' $output+5TTS.txt # occasional consequence NUC-1
+	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gm' $output+5TTS.txt # occasional consequence NUC-1
 	# 'nan'
 	perl -0777 -pi.orig -e 's/^nan$/-\2/gm' $output+5TTS.txt
 
@@ -439,14 +439,14 @@ do
 	perl -0777 -pi.orig -e 's/\s*\,\s*\././gm' $output+5TTS.txt # comma-period \,\.    # does not work when sentence ends with a comma
 	perl -0777 -pi.orig -e 's/zero hundred and/zero/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/  / /gm' $output+5TTS.txt # 2 spaces (\s\s) for 1
-	perl -0777 -pi.orig -e 's/et cetera/etcetera/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/et cetera/etcetera/gm' $output+5TTS.txt
 	# cp $output+5TTS.txt .A.txt
 	perl -0777 -pi.orig -e 's/\bU S\b/United States/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\bE U\b/European Union/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\bU K\b/United Kingdom/gm' $output+5TTS.txt
 
 
-	# perl -0777 -pi.orig -e 's/\s{2,}/ /gim' $output+5TTS.txt # 2 or more spaces \s for one space
+	# perl -0777 -pi.orig -e 's/\s{2,}/ /gm' $output+5TTS.txt # 2 or more spaces \s for one space
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
 	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm' $output+5TTS.txt
@@ -460,10 +460,10 @@ do
 	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))\|/$1./gm' $output+5TTS.txt # for when I've used "\|" as a EOL
 
 	# backReplacements
-	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gim' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/\TRIPPLEGUILLEMET/\>\>\>/gim' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/\HORIZONTALLINE/_______________________________/gim' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/\STIPPELLINE/---/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\TRIPPLEGUILLEMET/\>\>\>/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\HORIZONTALLINE/_______________________________/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\STIPPELLINE/---/gm' $output+5TTS.txt
 
 
 	# PUMA PUNCT SPACE
@@ -537,7 +537,7 @@ if [ "$DEBUG" = 1 ]; then
 	echo debug =1, therefore deleting the orig. files in the /debug folder
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.ATN.txt
 
-	perl -0777 -pi.orig -e 's/(DESIRED )/\1\n/gim' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
+	perl -0777 -pi.orig -e 's/(DESIRED )/\1\n/gm' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
 
 	rename 's/test_ATN/.ATN/' test_ATN.txt
 

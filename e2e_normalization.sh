@@ -456,10 +456,8 @@ do
 
 
 	# adding period \. when there is no hard-PUNCT EOL
-	cp $output+5TTS.txt .A.txt
 	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))$/$1./gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))\|/$1./gm' $output+5TTS.txt # for when I've used "\|" as a EOL
-	cp $output+5TTS.txt .A1.txt
 
 	# backReplacements
 	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gim' $output+5TTS.txt
@@ -484,7 +482,6 @@ do
 	perl -0777 -pi.orig -e 's/^ //gm' $output+5TTS.txt # space after a BOL
 	perl -0777 -pi.orig -e 's/\| /|/gm' $output+5TTS.txt # when there is an space after a DELIMTIER
 	perl -0777 -pi.orig -e 's/\bNan\b\.*//gm' $output+5TTS.txt # LEARNING PURPOSES (LP) word boundary \b before a \. dot
-	cp $output+5TTS.txt .A2.txt
 	perl -0777 -pi.orig -e 's/\bNone\b//gm' $output+5TTS.txt
 
 	# Remove empty lines when DEBUG is ON:

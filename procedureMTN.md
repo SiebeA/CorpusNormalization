@@ -6,11 +6,44 @@
 	- 'K' after an number
 - Extra sheet, eg with source
 
+#==========================================================
+# PROCEDURE
+
+::
+
+#==========================================================
+- implement headers in OR file
+- get rid of text that is incorreclty split into the following column
+- un-UPPERCASE
+- EOL PUNCT:
+	r'[^\.\?\!]$' 			/ r'&.'
+
+- ATN at top screen - ORIG at bottom screen
+- Open Sublime > 2 screens > copy ATN (all columns) into the right sublime tab;
+	copy the ORIGINAL in the left tab
+  Compare to view/clipboard (ctrl-shift-p "compare")
+
+
+3:
+Open left the original `xlsx`, right: `atn.xlsx` at workspace 2
+	(sometimes) : Lowercase + sentence case column(s) in ORIGINAL/left
+	(view > view gridlines)
+	remove comment on ORIGINAL file left
+	100% zoom
+	ATN --> 12.p
+column width A and rown height same as original; Column: CTRL ALT C ; Row CTRL ALT R (0.3)
+
+!!! Compare (shift ctrl alt c)
+
+sublime diff ATN - OR
+Sublime TN syntax check ATN/MTN
 
 #==========================================================
 # Slipping through: 
 #==========================================================
 
+###
+r'[^\.\?\!]$' 			/ r'&.'	# EOL punct
 
 ### Phone numbers
 eg '605) 545-2950'
@@ -37,36 +70,7 @@ r'\bNan\b'				/
 
 
 # combined:
-r'None\.|  |DELIMITER|\.\.|\[.+\]|\s{2,}|^ |'
-
-
-#==========================================================
-# PROCEDURE
-
-::
-
-#==========================================================
-1. implement headers in OR file
-2. get rid of text that is incorreclty split into the following column
-- ATN at top screen - ORIG at bottom screen
-- Open Sublime > 2 screens > copy ATN (all columns) into the right sublime tab;
-	copy the ORIGINAL in the left tab
-  Compare to view/clipboard (ctrl-shift-p "compare")
-
-
-3:
-Open left the original `xlsx`, right: `atn.xlsx` at workspace 2
-	(sometimes) : Lowercase + sentence case column(s) in ORIGINAL/left
-	(view > view gridlines)
-	remove comment on ORIGINAL file left
-	100% zoom
-	ATN --> 12.p
-column width A and rown height same as original; Column: CTRL ALT C ; Row CTRL ALT R (0.3)
-
-!!! Compare (shift ctrl alt c)
-
-sublime diff ATN - OR
-Sublime TN syntax check ATN/MTN
+r'None\.|  |DELIMITER|\.\.|\[.+\]|\s{2,}|^ |billion'
 
 
 #==========================================================

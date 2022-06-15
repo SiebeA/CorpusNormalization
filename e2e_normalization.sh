@@ -111,8 +111,8 @@ do
 
 	### PUMA-1 Punctuation-marks
 	# cp $input .A.txt
-	perl -0777 -pi.orig -e 's/(\D)\:/\1,/gm' $input # comma for colon
-	perl -0777 -pi.orig -e 's/(\D)\;/\1,/gm' $input # comma for semi-colon
+	perl -0777 -pi.orig -e 's/(\D)\:/$1,/gm' $input # comma for colon
+	perl -0777 -pi.orig -e 's/(\D)\;/$1,/gm' $input # comma for semi-colon
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
  	# transfering to IRISA regex: r'(^\t.+\\)(.+\/)(.+)'
@@ -151,7 +151,7 @@ do
 	perl -0777 -pi.orig -e 's/(\w+)(\(.*\))/$1 $2/gm' $input
 
 	# Ordening
-	# perl -0777 -pi.orig -e 's/(\d+)\)/\1./g' $input
+	# perl -0777 -pi.orig -e 's/(\d+)\)/$1./g' $input
 
 
 	perl -0777 -pi.orig -e 's/\w+\(\w*\)//g' $input #solving brackets
@@ -160,8 +160,8 @@ do
 	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gm' $input
 
 	# SPY
-	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number \2/gm' $input
-	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber \2/gm' $input
+	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number $2/gm' $input
+	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber $2/gm' $input
 
 	#cp $input .A.txt
 	perl -0777 -pi.orig -e 's/\W(\-)(\d+)(?!\d*\:|pm|am|\s*p\.*m|\s*a\.*m)/minus $2/gm' $input #eg '-73' -> 'minus 73' NOT eg '9:00am-5:00pm'
@@ -191,7 +191,7 @@ do
 
 	# NUC-1
 	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
-	perl -0777 -pi.orig -e 's/([1-9][1-9])(\d\d)/\1 hundred and \2/gm' $input # eg '1350' > '13 hundred and 50', NO MATCH:'3000'
+	perl -0777 -pi.orig -e 's/([1-9][1-9])(\d\d)/$1 hundred and $2/gm' $input # eg '1350' > '13 hundred and 50', NO MATCH:'3000'
 	perl -0777 -pi.orig -e 's/10 hundred /one thousand and /gm' $input
 	perl -0777 -pi.orig -e 's/20 hundred /two thousand and /gm' $input
 	perl -0777 -pi.orig -e 's/ and and/ and /gm' $input # occasional consequence of the former
@@ -199,19 +199,19 @@ do
 
 
 	# SPY
-	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/\1 and \2/gm' $input
+	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/$1 and $2/gm' $input
 
 
 	# URL/EM
-	# perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/\1 dash \2/gm' $input
+	# perl -0777 -pi.orig -e 's/([a-z]+)\-([a-z]+)/$1 dash $2/gm' $input
 
 
 	# Converting eg '50k - 44k' --> '50k and 44k'
-	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/\1 and \3/g' $input
+	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/$1 and $3/g' $input
 	# converting '50k' -- '50 thousand'
 
 	perl -0777 -pi.orig -e 's/\$(\d+\s*)k/$1 thousand dollars/gi' $input
-	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/\1 thousand /gi' $input
+	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/$1 thousand /gi' $input
 
 	perl -0777 -pi.orig -e "s/\(s\)//gm" $input # removing eg '(s)' in 'car(s)'
 
@@ -223,7 +223,7 @@ do
 	### ABR
 	# perl -pi.orig -e 's/etc\./etcetera/g' $input
 	# # eg 'a.k.a' --> "AKA"
-	# perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U\1\U\2\U\3/g' $input
+	# perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U$1\U$2\U$3/g' $input
 	# # eg 'a.k.'
 	# perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
 
@@ -233,7 +233,7 @@ do
 
 
 	#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
-	perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U\1\U\2/g' $input # g flag necessary here!!
+	perl -0777 -pi.orig -e 's/(\s\w{1})\/(\w{1}\s)/\U$1\U$2/g' $input # g flag necessary here!!
 
 	# because 'or' is used in the following regex-replacement, 'or' cases need to be replaced first
 	perl -0777 -pi.orig -e 's/ and\/or / and or /g' $input # g flag necessary here!!
@@ -243,9 +243,9 @@ do
 
 
 	### TNO-2
-	perl -0777 -pi.orig -e 's/(\d)\:00/\1/gm' $input # e.g. 10:00 a.m to 10 a.m
+	perl -0777 -pi.orig -e 's/(\d)\:00/$1/gm' $input # e.g. 10:00 a.m to 10 a.m
 
-	perl -0777 -pi.orig -e 's/(\d)(\:)(0)([1-9])/\1 oh \4/gm' $input # e.g. '10:04' --> 10 oh 4
+	perl -0777 -pi.orig -e 's/(\d)(\:)(0)([1-9])/$1 oh $4/gm' $input # e.g. '10:04' --> 10 oh 4
 
 
 	#e.g. 4am-5am --> 4am until 5am
@@ -279,20 +279,20 @@ do
 	# million  & billion
 	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)(\s)/$1 million /gim' .$output+1_afterTokenization.txt
 	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)(\s)/$1 billion /gim' .$output+1_afterTokenization.txt
-	perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/\1 billion/gim' .$output+1_afterTokenization.txt
+	perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/$1 billion/gim' .$output+1_afterTokenization.txt
 
 	# fixing line breaks done by IRISA, causing line length difference between ATN ^ MTN/raw
-	perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/\1 \2/' .$output+1_afterTokenization.txt
+	perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/$1 $2/' .$output+1_afterTokenization.txt
 
 
-	perl -pi.orig -e 's/(\w)(\s-\s)(\w)/\1: \3/g' .$output+1_afterTokenization.txt
+	perl -pi.orig -e 's/(\w)(\s-\s)(\w)/$1: $3/g' .$output+1_afterTokenization.txt
 
 
 	# \n\s replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
 	perl -pi.orig -e 's/(\b\s\(\.[0-9]+\)\s\b)//g' .$output+1_afterTokenization.txt
 
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
-	perl -pi.orig -e 's/(\d+)-(\d+)/\1 to \2 /gm' .$output+1_afterTokenization.txt
+	perl -pi.orig -e 's/(\d+)-(\d+)/$1 to $2 /gm' .$output+1_afterTokenization.txt
 
 	# cp .$output+1_afterTokenization.txt .A.txt
 
@@ -329,7 +329,7 @@ do
 
 	# ANU
 	# splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
-	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U\1 \2/gm' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U$1 $2/gm' .$output+2_genNorma.txt
 	# LEFTOFF
 
 
@@ -351,7 +351,7 @@ do
 
 	# ANU
 	# \d\k '50k' --> '50 k'
-	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/\1 \2/gm' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
+	perl -0777 -pi.orig -e 's/(\d)([a-zA-Z])/$1 $2/gm' .$output+2_genNorma.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
 
 
 	cp .$output+2_genNorma.txt .29_BeforeCurrency.txt # CAUSES PROLBEMS WITH PHONE NUMBERS
@@ -397,11 +397,11 @@ do
 	# ABR-3 ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
 	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
 	# cp $output+5TTS.txt .A.txt
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 \6 /gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 \5 /gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ \1 \2 \3 \4 /gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 \3 /gm' $output+5TTS.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
-	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ \1 \2 \3 /gm' $output+5TTS.txt # for when ABR occurs BOL
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ $1 $2 $3 $4 $5 $6 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ $1 $2 $3 $4 $5 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ $1 $2 $3 $4 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])\.*([A-Z])(\.|\b)/ $1 $2 $3 /gm' $output+5TTS.txt # 3 letter ABR, with periods inbetween option (eg P.H.D.)
+	perl -0777 -pi.orig -e 's/^([A-Z])([A-Z])([A-Z] )/ $1 $2 $3 /gm' $output+5TTS.txt # for when ABR occurs BOL
 
 	# removing some other oddities
 	perl -0777 -pi.orig -e 's/ or or /or/g' $output+5TTS.txt
@@ -410,11 +410,11 @@ do
 	perl -0777 -pi.orig -e 's/delimiter/DELIMITER/gm' $output+5TTS.txt
 
 	# URL
-	perl -0777 -pi.orig -e 's/([a-z]{2,})\.([a-z]{2,})/\L\1 dot \U\2/gm' $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
+	perl -0777 -pi.orig -e 's/([a-z]{2,})\.([a-z]{2,})/\L$1 dot \U$2/gm' $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
 
 	# quotes: remove spaces arround
-	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"\1\"/gm' $output+5TTS.txt
-	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'\1\'/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"$1\"/gm' $output+5TTS.txt
+	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'$1\'/gm' $output+5TTS.txt
 
 
 	# backReplace DELIMITER for
@@ -423,10 +423,10 @@ do
 
 
 	# NUC-2
-	perl -0777 -pi.orig -e 's/ hundred and zero / hundred \2/gm' $output+5TTS.txt # see NUC-1
+	perl -0777 -pi.orig -e 's/ hundred and zero / hundred $2/gm' $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gm' $output+5TTS.txt # occasional consequence NUC-1
 	# 'nan'
-	perl -0777 -pi.orig -e 's/^nan$/-\2/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/^nan$/-$2/gm' $output+5TTS.txt
 
 
 	#==========================================================
@@ -449,10 +449,10 @@ do
 	# perl -0777 -pi.orig -e 's/\s{2,}/ /gm' $output+5TTS.txt # 2 or more spaces \s for one space
 
 	# PUNCT e.g. 'initio|lawyer' --> initio|Lawyer or initio|One .+
-	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/\1\U\2\L\3/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/(\w+\|)([a-z])(\w+)/$1\U$2\L$3/gm' $output+5TTS.txt
 
 
-	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ \1 \2 /gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\b([A-Z])\.*([A-Z])(\.|\b)/ $1 $2 /gm' $output+5TTS.txt
 
 
 	# adding period \. when there is no hard-PUNCT EOL
@@ -537,7 +537,7 @@ if [ "$DEBUG" = 1 ]; then
 	echo debug =1, therefore deleting the orig. files in the /debug folder
 	rm /home/siebe.albers/dev/TN_w_IRISA/debug/.ATN.txt
 
-	perl -0777 -pi.orig -e 's/(DESIRED )/\1\n/gm' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
+	perl -0777 -pi.orig -e 's/(DESIRED )/$1\n/gm' /home/siebe.albers/dev/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
 
 	rename 's/test_ATN/.ATN/' test_ATN.txt
 

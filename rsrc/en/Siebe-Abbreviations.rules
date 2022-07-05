@@ -12,9 +12,9 @@ U\.S\.(A\.)* => United States
 
 \ba\.*k\.*a\.*  => also known as
 etc\. => etcetera
-i\.e\. => , for instance,
+i\.e\. => , that is,
+\bIE\b => , that is,
 e\.g\. => , for example,
-\bIE\b => , for instance,
 [eE]\.[gG]\. for example
 [aA]\.[kK]\.[aA]\. also known as
 

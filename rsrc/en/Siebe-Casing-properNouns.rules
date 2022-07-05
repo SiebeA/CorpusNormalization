@@ -1,7 +1,16 @@
 american => American
 AMERICAN => American
 english => English
-ferrari => Ferrari
 english => English
 england => England
 united kingdom => United Kingdom
+
+honda => Honda
+ferrari => Ferrari
+hyundai => Hyundai
+toyota => Toyota
+chevrolet => Chevrolet
+chevy => Chevy
+ford => Ford
+nissan => Nissan
+

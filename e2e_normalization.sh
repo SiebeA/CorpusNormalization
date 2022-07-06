@@ -5,7 +5,6 @@ DEBUG=1
 ### Navigating e2e_normalization:
 ## meta
 # referTo										references to eplacements outsourced to 													other scripts
-
 # backReplacements					replacing something first then replace the 													replacement eg '-' -> 'dashdash' ... 'dashdash' '-'
 
 ## Linguistic
@@ -93,6 +92,7 @@ do
 	#cp $input .A.txt
 	cp $input .01_input_before_MassRepacements.txt
 
+	# cp $input .A.txt
 
 	# Specific to a particular  domain
 	#==========================================================
@@ -115,18 +115,14 @@ do
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
  	# transfering to IRISA regex: r'(^\t.+\\)(.+\/)(.+)'
-	### SPY removing special symbols
-	# perl -0777 -pi.orig -e 's///gm' $input
-	# coordinates:
-
-	# cp $input .A.txt
-	# \SPECIFIC for geometry, coordinates
+	## SPY removing special symbols
+		# \SPECIFIC for geometry, coordinates
 	perl -0777 -pi.orig -e 's/°F/ degrees Fahrenheit/gmi' $input
 	perl -0777 -pi.orig -e 's/°/ degrees, /gm' $input
 	perl -0777 -pi.orig -e 's/′/ minutes, /gm' $input
 	perl -0777 -pi.orig -e 's/″/ and, seconds /gm' $input
 
-	# general:
+		# general:
 	perl -0777 -pi.orig -e 's/\ü/u/g' $input # #( the 0777 fla	g: https://stackoverflow.com/questions/71556049/regex-does-not-match-in-perl-while-it-does-in-other-programs # it processes all as one string, not one line per # salb replacing e.g. 'US Value - The', as lines are broken, as a consequence, there will be more lines than the `/goldenStandard`)
 	perl -0777 -pi.orig -e 's/\à/a/gm' $input
 	perl -0777 -pi.orig -e 's/\•/-/gm' $input
@@ -145,6 +141,7 @@ do
 	perl -0777 -pi.orig -e 's/ / /gm' $input
 	# perl -0777 -pi.orig -e 's///gm' $input
 	# cp $input .A.txt
+
 
 	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gm' $input
 
@@ -207,8 +204,8 @@ do
 	perl -0777 -pi.orig -e 's/ and and zero //gm' $input # occasional consequence of the former
 
 
-	# SPY
-	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/$1 and $2/gm' $input
+	# SPY - ALPHA combi
+	perl -0777 -pi.orig -e 's/(\w\s*)\&(\s*\w)/$1 and $2/gm' $input # e.g. 'p&c' --> 'p and c'
 
 
 	# URL/EM
@@ -228,18 +225,6 @@ do
 	# PUMA: removing brackets/paranthes solving eg '(605) \d+' ie phone-nr-digit deletion of bracketed digits
 	perl -0777 -pi.orig -e 's/(\(|\))//g' $input
 	## TODO only numbers
-
-
-	### ABR
-	# perl -pi.orig -e 's/etc\./etcetera/g' $input
-	# # eg 'a.k.a' --> "AKA"
-	# perl -pi.orig -e 's/(\w)\.(\w)\.(\w)\.*/\U$1\U$2\U$3/g' $input
-	# # eg 'a.k.'
-	# perl -pi.orig -e 's/(\w)\.(\w)\./\U$1\U$2/g' $input
-
-	# not working for now:
-	# but not a.b.c.d. , for now fix with;
-	# perl -pi.orig -e 's/([A-Z]{2,})([a-z])\.$1\U$2/mg' $input
 
 
 	#e.g. 'A/C' --> 'AC' TROUBLESHOOT ; make sure the regex is targeting a file where the pattern will not be removed by other manipulations
@@ -266,7 +251,6 @@ do
 	#==========================================================
 	cp $input .09_afterInputManipulations_before1Tokenization.txt
 	#==========================================================
-
 	#cp $input .A.txt
 	#==========================================================
 	# 1 TOKENIZATION
@@ -340,13 +324,6 @@ do
 	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U$1 $2/gm' .$output+2_genNorma.txt
 	# LEFTOFF
 
-
-	# NUO e.g. '20th' --> 'twentieth'
-	perl -0777 -pi.orig -e 's/19th/nineteenth/gi' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/20th/twentieth/gi' .$output+2_genNorma.txt
-	perl -0777 -pi.orig -e 's/21th/twenty first/gi' .$output+2_genNorma.txt
-
-
 	# echo 'salb replacing percentages"
 	perl -0777 -pi.orig -e 's/\%/ percent/gm' .$output+2_genNorma.txt
 
@@ -388,10 +365,7 @@ do
 	cp .$output+4generalNorm.txt .41_after_4_GenNormalization.txt
 
 	# URL
-	cp .$output+4generalNorm.txt .A.txt
 	perl -0777 -pi.orig -e 's/\b([a-zA-Z]{2,})\.([a-zA-Z]{2,})\b/\L$1 dot \U$2/gm' .$output+4generalNorm.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
-	cp .$output+4generalNorm.txt .AA.txt
-
 
 	#==========================================================
 	# 5. TTS Specific NORMALIZATION
@@ -457,17 +431,10 @@ do
 	# cp $output+5TTS.txt .A.txt
 
 
-	## ABR`# probably need to transfer this to another script
-	perl -0777 -pi.orig -e 's/\bU S (?![A-Z])/United States/gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/\bE U\b/European Union/gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/\bU K\b/United Kingdom/gm' $output+5TTS.txt
-
 	# replacements of Initialisms to Acronyms:
 	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\bA P P\b/APP/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\bZ I P\b/ZIP/gm' $output+5TTS.txt
-
-
 
 	# perl -0777 -pi.orig -e 's/\s{2,}/ /gm' $output+5TTS.txt # 2 or more spaces \s for one space
 

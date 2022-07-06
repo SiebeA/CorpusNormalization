@@ -1,4 +1,38 @@
 #==========================================================
+# Slipping through: 
+#==========================================================
+
+t.me # example of one letter emails						### Emails
+r'[^\.\?\!]$' 			/ r'&.'	# EOL punct				### Punctuation
+dollars dollars		/ dollars
+eg '605) 545-2950'										### Phone numbers
+r'None\.'				/
+DELIMITER				/	
+r'(?<![A-Z]) S (?![A-Z])'		/ 	# 'interest(s)' 'interest S'>
+
+
+### probably NOT slipping through ANYMORE
+thousand and zero		
+y hundred				/		# e.g 'thirty hundred'
+,.						/ 	.
+'^ | $'		/	# space after BOL | space before EOL
+'billion'
+r'\s{2,}					/ 	r'\s' 	# double space
+r'\[.+\]' 				/ 			# eg '[clarification needed]'
+r'\bU S\b				/ 	United States
+E U						/ 	European Union
+U K						/ 	United Kingdom
+r'\bNan\b'				/
+r'zero hundred and'		/ 	r'zero'
+r'point zero.'			/ 	r'\.'	# a period
+et cetera				/ 	etcetera
+
+
+# combined:
+r'None\.|  |DELIMITER|\.\.|\[.+\]|\s{2,}|^ |billion'
+
+
+#==========================================================
 # Troubleshoot
 #==========================================================
 
@@ -12,7 +46,7 @@
 ::
 
 #==========================================================
-- implement headers in OR file
+- implement headers in Original file
 - get rid of text that is incorreclty split into the following column
 - un-UPPERCASEf
 - EOL PUNCT:
@@ -25,17 +59,8 @@
 
 
 3:
-Open left the original `xlsx`, right: `atn.xlsx` at workspace 2
-	(sometimes) : Lowercase + sentence case column(s) in ORIGINAL/left
-	(view > view gridlines)
-	remove comment on ORIGINAL file left
-	100% zoom
-	ATN --> 12.p
-column width A and rown height same as original; Column: CTRL ALT C ; Row CTRL ALT R (0.3)
-
-!!! Compare (shift ctrl alt c)
-
-sublime diff ATN - OR
+libreoffice: Compare (shift ctrl alt c)
+sublime: compare ATN - OR
 Sublime TN syntax check ATN/MTN
 
 
@@ -51,46 +76,6 @@ r'([A-Z]{2,})' / 	r'\L$1'	# IN SELECTION  # 	'BATTLOWwarning' > 'battlowwarning'
 
 r'([A-Z])  '	/ r'$1 '    # double spaces after [A-Z]
 r'  ([A-Z])'	/ r' $1'    # double spaces before [A-Z]
-
-#==========================================================
-# Slipping through: 
-#==========================================================
-
-###
-r'[^\.\?\!]$' 			/ r'&.'	# EOL punct
-dollars dollars		/ dollars
-
-### Phone numbers
-eg '605) 545-2950'
-
-### Emails
-t.me # example of one letter emails
-
-### probably slipping though
-r'None\.'				/
-DELIMITER				/	
-r'(?<![A-Z]) S (?![A-Z])'		/ 			# 'interest(s)' 'interest S'			>
-
-
-### probably NOT slipping through:
-thousand and zero		
-y hundred				/		# e.g 'thirty hundred'
-,.						/ 	.
-'^ | $'		/	# space after BOL | space before EOL
-'billion'
-r'\s{2,}					/ 	r'\s' 	# double space
-r'\[.+\]' 				/ 			# eg '[clarification needed]'
-r'\bU S\b				/ 	United States
-E U						/ 	European Union
-U K						/ 	United Kingdom
-r'\bNan\b'				/
-<!--r'zero hundred and'		/ 	r'zero'-->
-<!--r'point zero.'			/ 	r'\.'	# a period-->
-<!--et cetera				/ 	etcetera-->
-
-
-# combined:
-r'None\.|  |DELIMITER|\.\.|\[.+\]|\s{2,}|^ |billion'
 
 
 #==========================================================

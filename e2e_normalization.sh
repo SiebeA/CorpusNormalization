@@ -14,6 +14,7 @@ DEBUG=1
 # - \N\S    									corrections of linebreaks, etc.
 # - DEP												deprecated
 # - Linguistic
+# - LB												Line Break issues
 # - MREPL 										MASS REPLACEMENTS
 # - NUCO 											Numbers-combiations 				(e.g. phone numbers)
 # - NUO     									Numbers-ordinal
@@ -102,11 +103,9 @@ do
 	# printf '\n That was for `legal*`  \n\n\n'
 
 	# backReplacements
-	perl -0777 -pi.orig -e 's///gm' $input
 	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gm' $input
 	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gm' $input
 	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gm' $input
-
 	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
 
 	### PUMA-1 Punctuation-marks
@@ -122,6 +121,7 @@ do
 
 	# cp $input .A.txt
 	# \SPECIFIC for geometry, coordinates
+	perl -0777 -pi.orig -e 's/°F/ degrees Fahrenheit/gmi' $input
 	perl -0777 -pi.orig -e 's/°/ degrees, /gm' $input
 	perl -0777 -pi.orig -e 's/′/ minutes, /gm' $input
 	perl -0777 -pi.orig -e 's/″/ and, seconds /gm' $input
@@ -143,21 +143,32 @@ do
 	perl -0777 -pi.orig -e 's/\(i\)/1/gm' $input # converting enumeration references
 	perl -0777 -pi.orig -e 's/\[\d*\]//gm' $input # e.g. '[2]'
 	perl -0777 -pi.orig -e 's/ / /gm' $input
+	# perl -0777 -pi.orig -e 's///gm' $input
 	# cp $input .A.txt
 
 	perl -0777 -pi.orig -e 's/DELIMITER - DELIMITER/DELIMITER DASHDASH DELIMITER/gm' $input
 
-	# brackets parenthes splitting from word
-	perl -0777 -pi.orig -e 's/(\w+)(\(.*\))/$1 $2/gm' $input
+
+
+	## LB Replacements to prevent bad linebreaking to happen by the Tokenizer (`basic-tokenizer.pl`)
+	perl -0777 -pi.orig -e 's/\(\-\)//gm' $input # '(-)' causes line to break
+	perl -0777 -pi.orig -e 's/(\w+)(\(.*\))/$1 $2/gm' $input # brackets parenthes splitting from word
+	perl -0777 -pi.orig -e 's/(\w+)\s-\s(\w+)/$1-$2/gm' $input # e.g. 'Treadwear - Wear' is line split
+
 
 	# Ordening
 	# perl -0777 -pi.orig -e 's/(\d+)\)/$1./g' $input
 
-
 	perl -0777 -pi.orig -e 's/\w+\(\w*\)//g' $input #solving brackets
 
-	# ANUC (has to be done before TNO-1 replaceements # e.g. 7th-6rth --> 7th to 6th
+	# ANUC (has to be done before TNO-1 replaceements # e.g. 7th-6rth --> 7th \to 6th
 	perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gm' $input
+
+	# ANUC PUNCT
+	perl -0777 -pi.orig -e 's/(years)*\s*\/\s*(\d+)/$1 or $2/g' $input # e.g. '10-year/100'|'years / 36,000 miles.' --> '10-year or 100'|'years or 36,000 miles.'
+
+	# PUNCT SPLIT e.g. 'monday-friday' --> 'monday to friday'
+	perl -0777 -pi.orig -e 's/(\w{3,}day)\s*\-\s*(\w{3,}day)/$1 to $2/gi' $input
 
 	# SPY
 	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number $2/gm' $input
@@ -168,9 +179,8 @@ do
 
 
 
-
-
-	### Linguistic
+	## Context-specific replacements (only activate when the context is present, if not, don't activate as these replacements have recall/sensitivity tradeoffs)
+	# context: Linguistic
 	# printf '\n\n _________________________________________________________________SPECIFIC on for Dictionaries\n'
 	# # printf '\n  \n'
 	# without period, as, I think, pf_to_text manipulates in such a way that it removes it.
@@ -187,7 +197,6 @@ do
 	#==========================================================
 	cp $input .05_Input_after_MassReplacements.txt
 	#==========================================================
-	# cp $input .A.txt
 
 	# NUC-1
 	# separating year-numbers, that are otherwise worded as e.g. 1350 'one thousand three hundred fifty
@@ -210,8 +219,9 @@ do
 	perl -0777 -pi.orig -e 's/(\d+\s*k)(\s*-\s*)(\d+\s*k)/$1 and $3/g' $input
 	# converting '50k' -- '50 thousand'
 
-	perl -0777 -pi.orig -e 's/\$(\d+\s*)k/$1 thousand dollars/gi' $input
-	perl -0777 -pi.orig -e 's/(\d+\s*)k\s/$1 thousand /gi' $input
+	perl -0777 -pi.orig -e 's/\$(\d+\s*)k/$1 thousand dollars/gmi' $input
+	perl -0777 -pi.orig -e 's/(\d+\s*)k$/$1 thousand\n/gmi' $input # eg '$108.46K' > '$108.46 thousand ' for when its EOL, otherwise it doesnt break
+	perl -0777 -pi.orig -e 's/(\d+\s*)k\s*/$1 thousand /gmi' $input # eg '$108.46K' > '$108.46 thousand '
 
 	perl -0777 -pi.orig -e "s/\(s\)//gm" $input # removing eg '(s)' in 'car(s)'
 
@@ -240,7 +250,6 @@ do
 	# e.g. for "gas/electric":
 	perl -0777 -pi.orig -e 's/(\s\w{2,})\/(\w{2,})/$1 or $2/g' $input # g flag necessary here!!
 	# perl -0777 -pi.orig -e 's/siebe/test/' .$output+2_genNorma.txt
-
 
 	### TNO-2
 	perl -0777 -pi.orig -e 's/(\d)\:00/$1/gm' $input # e.g. 10:00 a.m to 10 a.m
@@ -279,13 +288,10 @@ do
 	# million  & billion
 	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)(\s)/$1 million /gim' .$output+1_afterTokenization.txt
 	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(b)(\s)/$1 billion /gim' .$output+1_afterTokenization.txt
-	perl -0777 -pi.orig -e 's/(\d\.\d*)(b)/$1 billion/gim' .$output+1_afterTokenization.txt
+	perl -0777 -pi.orig -e 's/ (\d\.\d*)(b)/$1 billion/gim' .$output+1_afterTokenization.txt #
 
 	# fixing line breaks done by IRISA, causing line length difference between ATN ^ MTN/raw
 	perl -0777 -pi.orig -e 's/([a-z])\n\s([a-z])/$1 $2/' .$output+1_afterTokenization.txt
-
-
-	perl -pi.orig -e 's/(\w)(\s-\s)(\w)/$1: $3/g' .$output+1_afterTokenization.txt
 
 
 	# \n\s replacing e.g. '(.20)', the line will be broken (despite having LINEBREAK off in IRISa)
@@ -294,7 +300,8 @@ do
 	# PUMA NUO eg '5,000-10,000' --> '5,000 and 10,000'
 	perl -pi.orig -e 's/(\d+)-(\d+)/$1 to $2 /gm' .$output+1_afterTokenization.txt
 
-	# cp .$output+1_afterTokenization.txt .A.txt
+
+	perl -pi.orig -e 's/\b([A-Z][a-z]+?)([A-Z][a-z]+?)\b/$1 $2/gm' .$output+1_afterTokenization.txt
 
 	#==========================================================
 	cp .$output+1_afterTokenization.txt .19_BeforeStartGenericNorm.txt # better be called: before_genNORMA
@@ -309,7 +316,6 @@ do
 	#==========================================================
 	#
 	#==========================================================
-	# cp .$output+2_genNorma.txt .A.txt
 
 	echo "2. Generic normalization start..."
 	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1_afterTokenization.txt > .$output+2_genNorma.txt
@@ -323,20 +329,16 @@ do
 	# TNO-2
 	perl -0777 -pi.orig -e 's/(\d\s*AM)-|–(\d)/$1 until $2/gm' .$output+2_genNorma.txt
 
-	# 12-15 --? 12 to 15
-	perl -0777 -pi.orig -e 's/(\d\d*)\-(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
+	# cp .$output+2_genNorma.txt .A.txt
+	# 12-15 --? 12 \to 15
+	perl -0777 -pi.orig -e 's/(\d\d*)\s*\-\s*(\d\d*)/$1 to $2/' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/(\d\d*)\s*\-\s*(present)/$1 to $2/' .$output+2_genNorma.txt
 
 
 	# ANU
 	# splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
 	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U$1 $2/gm' .$output+2_genNorma.txt
 	# LEFTOFF
-
-
-
-
-	# PUNCT SPLIT e.g. 'monday-friday' --> 'monday to friday'
-	perl -0777 -pi.orig -e 's/(\w{3,}day)\-(\w{3,}day)/$1 to $2/gi' .$output+2_genNorma.txt
 
 
 	# NUO e.g. '20th' --> 'twentieth'
@@ -376,8 +378,12 @@ do
 	#==========================================================
 	#
 	#==========================================================
+
+
+	perl -0777 -pi.orig -e 's/(\d)\,(\d)/$1 , $2/gm' .$output+3currencyFix.txt # to PREVENT: e.g. 'X, 8, 8 Plus' --> 'X. , eighty-eight Plus'
+
 	# cp .$output+1_afterTokenization.txt .A.txt
-	echo "4. Generic normalization end..."
+	echo "4. Generic normalization end..." # e.g. NUMBMERS are WORDED OUT,
 	perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
 
 	cp .$output+4generalNorm.txt .41_after_4_GenNormalization.txt
@@ -392,11 +398,17 @@ do
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
-
-
-	# ABR-3 ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
-	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
 	# cp $output+5TTS.txt .A.txt
+
+
+	## ABR-3 ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
+
+	# excluding list e.g. 'NOT'
+	perl -0777 -pi.orig -e 's/\bNOT\b/not/gm' $output+5TTS.txt # 'NOT'
+
+
+
+	# It can be done like this: begin with a \d-char Abreviation, and work the way down:
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ $1 $2 $3 $4 $5 $6 /gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])\s/ $1 $2 $3 $4 $5 /gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/ ([A-Z])([A-Z])([A-Z])([A-Z])\s/ $1 $2 $3 $4 /gm' $output+5TTS.txt
@@ -406,6 +418,7 @@ do
 	# removing some other oddities
 	perl -0777 -pi.orig -e 's/ or or /or/g' $output+5TTS.txt
 
+	# cp $output+5TTS.txt .A.txt
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
 	perl -0777 -pi.orig -e 's/delimiter/DELIMITER/gm' $output+5TTS.txt
 
@@ -416,21 +429,21 @@ do
 	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"$1\"/gm' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\'$1\'/gm' $output+5TTS.txt
 
-
 	# backReplace DELIMITER for
-	perl -0777 -pi.orig -e 's/ DELIMITER /\|/gim' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/ \.*DELIMITER /\|/gim' $output+5TTS.txt
 	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
 
-
 	# NUC-2
-	perl -0777 -pi.orig -e 's/ hundred and zero / hundred $2/gm' $output+5TTS.txt # see NUC-1
+	perl -0777 -pi.orig -e 's/ hundred and zero[\s\.]/ hundred $2/gm' $output+5TTS.txt # see NUC-1
 	perl -0777 -pi.orig -e 's/one thousand and zero/one thousand/gm' $output+5TTS.txt # occasional consequence NUC-1
+
+	perl -0777 -pi.orig -e 's/dollars dollars/dollars/gm' $output+5TTS.txt # occasional consequence NUC-1
 	# 'nan'
 	perl -0777 -pi.orig -e 's/^nan$/-$2/gm' $output+5TTS.txt
 
 
 	#==========================================================
-	# Replace 'slippingthrough' list here
+	# Replace 'slippingthrough-1' list here that aren't affacted by the space replacements later
 	#==========================================================
 	# cp $output+5TTS.txt .A.txt
 
@@ -440,10 +453,20 @@ do
 	perl -0777 -pi.orig -e 's/zero hundred and/zero/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/  / /gm' $output+5TTS.txt # 2 spaces (\s\s) for 1
 	perl -0777 -pi.orig -e 's/et cetera/etcetera/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/dot com dot/dot com./gmi' $output+5TTS.txt
 	# cp $output+5TTS.txt .A.txt
-	perl -0777 -pi.orig -e 's/\bU S\b/United States/gm' $output+5TTS.txt
+
+
+	## ABR`# probably need to transfer this to another script
+	perl -0777 -pi.orig -e 's/\bU S (?![A-Z])/United States/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\bE U\b/European Union/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\bU K\b/United Kingdom/gm' $output+5TTS.txt
+
+	# replacements of Initialisms to Acronyms:
+	# perl -0777 -pi.orig -e 's///gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\bA P P\b/APP/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\bZ I P\b/ZIP/gm' $output+5TTS.txt
+
 
 
 	# perl -0777 -pi.orig -e 's/\s{2,}/ /gm' $output+5TTS.txt # 2 or more spaces \s for one space
@@ -457,9 +480,10 @@ do
 
 	# adding period \. when there is no hard-PUNCT EOL
 	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))$/$1./gm' $output+5TTS.txt
-	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))\|/$1./gm' $output+5TTS.txt # for when I've used "\|" as a EOL
+	perl -0777 -pi.orig -e 's/((?<![\.\?\!\n]))\|/$1.\|/gm' $output+5TTS.txt # for when I've used "\|" as a EOL
+	# cat $output+5TTS.txt # LP this is easy for debugging, prints the state of the file at this time in terminal
 
-	# backReplacements
+	# backReplacements:
 	perl -0777 -pi.orig -e 's/\|Dashdash\|/|-|/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\TRIPPLEGUILLEMET/\>\>\>/gm' $output+5TTS.txt
 	perl -0777 -pi.orig -e 's/\HORIZONTALLINE/_______________________________/gm' $output+5TTS.txt
@@ -470,19 +494,25 @@ do
 	# PUMA removing space between punctution
 	perl -0777 -pi.orig -e 's/(\s)([\.\!\,\?\;])/$2/g' $output+5TTS.txt
 
+
+
 	# capitalizing the first letter of a new line:
 	perl -0777 -pi.orig -e 's/(^[a-z])/\U$1/gm' $output+5TTS.txt
 	# capitalizing the first letter after a hard punctuation mark.
 	perl -0777 -pi.orig -e 's/([\.\?\!]\s*)([a-z])/$1\U$2/g' $output+5TTS.txt
 	# cp $output+5TTS.txt .A.txt
 
+	perl -0777 -pi.orig -e 's/  / /g' $output+5TTS.txt # removing double-spaces \\s\\s
 	perl -0777 -pi.orig -e 's/ $//gm' $output+5TTS.txt # when there is an space before a EOL PUNCT-mark
-	perl -0777 -pi.orig -e 's/ \|/|/gm' $output+5TTS.txt # when there is an space before a DELIMTIER
+	perl -0777 -pi.orig -e 's/ \|/|/gm' $output+5TTS.txt # when there is an space before a DELIMITER
 
+
+	## slippingthrough-2
 	perl -0777 -pi.orig -e 's/^ //gm' $output+5TTS.txt # space after a BOL
-	perl -0777 -pi.orig -e 's/\| /|/gm' $output+5TTS.txt # when there is an space after a DELIMTIER
+	perl -0777 -pi.orig -e 's/\| /|/gm' $output+5TTS.txt # when there is an space after a DELIMITER
 	perl -0777 -pi.orig -e 's/\bNan\b\.*//gm' $output+5TTS.txt # LEARNING PURPOSES (LP) word boundary \b before a \. dot
 	perl -0777 -pi.orig -e 's/\bNone\b//gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/,,/,/gm' $output+5TTS.txt
 
 	# Remove empty lines when DEBUG is ON:
 	if [ "$DEBUG" = 1 ]; then

@@ -14,7 +14,7 @@
 #==========================================================
 - implement headers in OR file
 - get rid of text that is incorreclty split into the following column
-- un-UPPERCASE
+- un-UPPERCASEf
 - EOL PUNCT:
 	r'[^\.\?\!]$' 			/ r'&.'
 
@@ -38,23 +38,43 @@ column width A and rown height same as original; Column: CTRL ALT C ; Row CTRL A
 sublime diff ATN - OR
 Sublime TN syntax check ATN/MTN
 
+
+# replace
+
+
+r'(^.+\?(?!\t))'		\ $1\t		# inserting an tab after the question"
+"
+
+r'([A-Z])\s' 	/ 	r'$1''		# eg 'B A T T L O W' 'BATTLOWwarning' 	, then;
+r'([A-Z]{2,})' / 	r'\L$1'	# IN SELECTION  # 	'BATTLOWwarning' > 'battlowwarning'
+
+
+r'([A-Z])  '	/ r'$1 '    # double spaces after [A-Z]
+r'  ([A-Z])'	/ r' $1'    # double spaces before [A-Z]
+
 #==========================================================
 # Slipping through: 
 #==========================================================
 
 ###
 r'[^\.\?\!]$' 			/ r'&.'	# EOL punct
+dollars dollars		/ dollars
 
 ### Phone numbers
 eg '605) 545-2950'
 
-### probably not solved:
-y hundred				/		# e.g 'thirty hundred'
+### Emails
+t.me # example of one letter emails
+
+### probably slipping though
 r'None\.'				/
 DELIMITER				/	
+r'(?<![A-Z]) S (?![A-Z])'		/ 			# 'interest(s)' 'interest S'			>
 
 
-### probably solved:
+### probably NOT slipping through:
+thousand and zero		
+y hundred				/		# e.g 'thirty hundred'
 ,.						/ 	.
 '^ | $'		/	# space after BOL | space before EOL
 'billion'

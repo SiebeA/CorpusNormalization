@@ -1,22 +1,35 @@
+
+# !!! when SPACE, use '\s' not ' '
+
+
+# Proper Nouns
 \bUS\b => United States
 u\.s\.(a\.)* => United States 			# 'u.s' 'u.s.a.' -> 'United States'
 U\.S\.(A\.)* => United States
 \busa\b => United States
 \bUSA\b => United States # so perl replacements here are Case Sensitive
-
- cM|\bC M\b|CM => centimeters
-
-
 \bUK\b => United Kingdom
 
 
+# Measurements
+ cM|\bC M\b|CM => centimeters
+
+
+# Abbreviations
 \ba\.*k\.*a\.*  => also known as
 etc\. => etcetera
+ie\s\. => , that is,
 i\.e\. => , that is,
 \bIE\b => , that is,
 e\.g\. => , for example,
 [eE]\.[gG]\. for example
 [aA]\.[kK]\.[aA]\. also known as
+
+
+# Time notations
+\bp\.m\.  => P M
+\ba\.m\.  => A M
+
 
 
 # Time-Eras

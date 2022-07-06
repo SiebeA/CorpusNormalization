@@ -382,11 +382,15 @@ do
 
 	perl -0777 -pi.orig -e 's/(\d)\,(\d)/$1 , $2/gm' .$output+3currencyFix.txt # to PREVENT: e.g. 'X, 8, 8 Plus' --> 'X. , eighty-eight Plus'
 
-	# cp .$output+1_afterTokenization.txt .A.txt
 	echo "4. Generic normalization end..." # e.g. NUMBMERS are WORDED OUT,
 	perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
 
 	cp .$output+4generalNorm.txt .41_after_4_GenNormalization.txt
+
+	# URL
+	cp .$output+4generalNorm.txt .A.txt
+	perl -0777 -pi.orig -e 's/\b([a-zA-Z]{2,})\.([a-zA-Z]{2,})\b/\L$1 dot \U$2/gm' .$output+4generalNorm.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
+	cp .$output+4generalNorm.txt .AA.txt
 
 
 	#==========================================================
@@ -398,7 +402,6 @@ do
 	echo "5. TTS specific normalization..."
 	perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
 	cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
-	# cp $output+5TTS.txt .A.txt
 
 
 	## ABR-3 ACRONYMS: spacing Abreviations eg 'BMW' --> 'B M W.'
@@ -421,9 +424,6 @@ do
 	# cp $output+5TTS.txt .A.txt
 	# replacing `[dD]elimiter` for `DELIMITER`, since sometimes they are not capitalized
 	perl -0777 -pi.orig -e 's/delimiter/DELIMITER/gm' $output+5TTS.txt
-
-	# URL
-	perl -0777 -pi.orig -e 's/([a-z]{2,})\.([a-z]{2,})/\L$1 dot \U$2/gm' $output+5TTS.txt # more than 2, otherwise complication with e.g. ; 'e.g.'
 
 	# quotes: remove spaces arround
 	perl -0777 -pi.orig -e 's/\"\s(.+?)\s\"/\"$1\"/gm' $output+5TTS.txt

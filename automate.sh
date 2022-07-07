@@ -34,7 +34,7 @@ source ~/dev/.venv_TN_w_IRISA/bin/activate &&
 # PF excel to TXT
 #==========================================================
 printf "\n Converting the Excel sheets to separate .txt files..\n\n" &&
-python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py &&
+python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excelSheets_import_to_txt.py &&
 
 
 

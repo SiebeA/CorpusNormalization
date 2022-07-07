@@ -21,7 +21,7 @@ Make it specific to your local dir:
 
 ###### .  
 - **Converting each sheet in the inputted xlsx file to a txt file:**
-  - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py`
+  - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excelSheets_import_to_txt.py`
   - output in `dd`
 
 ###### .
@@ -88,7 +88,7 @@ pip install -r requirements.txt &&
   - `cd /TN_w_IRISA`
   - `source venv/bin/activate` # activate the virtual environment
   - Move the `.xls*` file with the sentences that need to be normalized to the `\ATN_input` dir
-  - `bash python3 pf_excel_all_columnsAndSheets_importer.py`
+  - `bash python3 pf_excelSheets_import_to_txt.py`
   - Use the adapted IRISA tool for (ATN) to normalize all `.txt` files in the `/ATN_input` dir.
   `bash e2e_normalization.sh`
 

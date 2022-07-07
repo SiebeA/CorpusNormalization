@@ -43,7 +43,7 @@ def xlsx_importerAndScout(file_path):
     #
     # print('\n Hereunder are the outputted text file(s) corresponding to each sheet in the xls* file:')
     for key in sheet_to_df_map.keys():
-        print('(pf_excelSheets_import_to_txt.py):', key)
+        print('(pf_excelSheets_import_to_txt.py): sheet name:', key)
         try:
             df = sheet_to_df_map[key]
             file_name = key.replace(" ", "_")

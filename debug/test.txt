@@ -1,10 +1,10 @@
-NEWTEST
-_________________________
-just a test.
-cbc.ca alright cbc.ca.
-harvard.edu alright harvard.edu.
 t.me alright t.me.
 PASSINGHEREUNDER_________________________
+90degF alright.
+90°F alright.
+cbc.ca alright cbc.ca.
+90°F alright.
+harvard.edu alright harvard.edu.
 it was in the E U and in the U K alright.
 it was in his interest(s)
 it was about 1000 alright 1000.
@@ -12,7 +12,6 @@ it was about 1000 alright 1000.
 Alliance™?
 X, 8, 8 Plus
 MyHyundai.com. Opting in
-90°F
 car(s)
 ie. or ie. alright.
 (SUV)

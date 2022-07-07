@@ -115,9 +115,11 @@ do
 	perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
 
  	# transfering to IRISA regex: r'(^\t.+\\)(.+\/)(.+)'
+
+
 	## SPY removing special symbols
-		# \SPECIFIC for geometry, coordinates
-	perl -0777 -pi.orig -e 's/°F/ degrees Fahrenheit/gmi' $input
+	# perl -0777 -pi.orig -e 's/°F/ degrees Fahrenheit/gmi' $input    # SPY-ref1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#NOTE THAT THE unidecode.unidecode function in `pf_excelSheets_import_to_txt.py` changes some special symbols, which account for a possible difference in output between `automate*` and `e2e*`
+		# \SPECIFIC for geometry, coordinates, this line is an example
 	perl -0777 -pi.orig -e 's/°/ degrees, /gm' $input
 	perl -0777 -pi.orig -e 's/′/ minutes, /gm' $input
 	perl -0777 -pi.orig -e 's/″/ and, seconds /gm' $input
@@ -302,6 +304,7 @@ do
 	#==========================================================
 
 	echo "2. Generic normalization start..."
+	# cp .$output+2_genNorma.txt .Aa.txt
 	perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1_afterTokenization.txt > .$output+2_genNorma.txt
 	cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
 
@@ -320,8 +323,9 @@ do
 
 
 	# ANU
-	# splitting out e.g. 'E5--> E 5'		TROUBLESHOOT
-	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/\U$1 $2/gm' .$output+2_genNorma.txt
+	# splitting out adjacent Alpha Numeric characters e.g. 'E5--> E 5'		TROUBLESHOOT
+	perl -0777 -pi.orig -e 's/([a-zA-Z]+)([0-9])/$1 $2/gm' .$output+2_genNorma.txt
+	perl -0777 -pi.orig -e 's/([0-9])([a-zA-Z]+)/$1 $2/gmi' .$output+2_genNorma.txt
 	# LEFTOFF
 
 	# echo 'salb replacing percentages"
@@ -414,6 +418,12 @@ do
 	perl -0777 -pi.orig -e 's/dollars dollars/dollars/gm' $output+5TTS.txt # occasional consequence NUC-1
 	# 'nan'
 	perl -0777 -pi.orig -e 's/^nan$/-$2/gm' $output+5TTS.txt
+
+
+	## SPY see SPY-ref1
+	perl -0777 -pi.orig -e 's/\bdegF\b/degrees Fahrenheit/gm' $output+5TTS.txt
+	perl -0777 -pi.orig -e 's/\bdegrees , F\b/degrees Fahrenheit/gm' $output+5TTS.txt
+
 
 
 	#==========================================================

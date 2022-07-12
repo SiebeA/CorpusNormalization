@@ -1,10 +1,10 @@
 #!/bin/bash
-DEBUG=1
+DEBUG=1 # debug mode 1 == debug mode on; 0 == off.
 # RDEBUG
 
 ### Navigating e2e_normalization:
 ## meta
-# referTo										references to eplacements outsourced to 													other scripts
+# referTo										references to eplacements outsourced to other scripts in the repo
 # backReplacements					replacing something first then replace the 													replacement eg '-' -> 'dashdash' ... 'dashdash' '-'
 
 ## Linguistic

@@ -1,5 +1,5 @@
 #!/bin/bash
-DEBUG=1 # debug mode 1 == debug mode on; 0 == off.
+DEBUG=0 # debug mode 1 == debug mode on; 0 == off.
 # RDEBUG
 
 ### Navigating e2e_normalization:
@@ -38,7 +38,7 @@ cd ATN_input
 # debug choose txt file folder instead:
 if [ "$DEBUG" = 1 ]; then
 	printf '\n\n\n\n DEBUG IS ON_______________________________________________________________________\n\n\n'
-	cd $ROOT/TN_w_IRISA/debug
+	cd $ROOT/debug
 fi
 
 
@@ -51,7 +51,7 @@ echo 'These are the files in the dir:'
 ls -l --sort=time *.txt | grep *'.txt' # show the user options of file that can be inputted
 # ls -l --sort=time *.txt # show the user options of file that can be inputted
 # read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
-# cd $ROOT/TN_w_IRISA
+# cd $ROOT
 
 
 
@@ -296,7 +296,7 @@ do
 
 	#=========================================================
 	# "  2. GENERIC NORMALIZATION           "
-	# "  	$ROOT/TN_w_IRISA/bin/en/start-generic-normalisation.pl  "
+	# "  	$ROOT/bin/en/start-generic-normalisation.pl  "
 	# "  2. Functions: (URLs, Americanize, "apply_rules(\$TEXT, "$RSRC/uk2us.rules");" )             "
 	#==========================================================
 	#==========================================================
@@ -542,16 +542,16 @@ echo $PWD
 
 if [ "$DEBUG" = 1 ]; then
 	echo debug =1, therefore deleting the orig. files in the /debug folder
-	rm $ROOT/TN_w_IRISA/debug/.ATN.txt
+	rm $ROOT/debug/.ATN.txt
 
-	perl -0777 -pi.orig -e 's/(DESIRED )/$1\n/gm' $ROOT/TN_w_IRISA/debug/test_ATN.txt # conv for observing diffs
+	perl -0777 -pi.orig -e 's/(DESIRED )/$1\n/gm' $ROOT/debug/test_ATN.txt # conv for observing diffs
 
 	rename 's/test_ATN/.ATN/' test_ATN.txt
 
-	rm $ROOT/TN_w_IRISA/debug/\.*.orig
-	rm $ROOT/TN_w_IRISA/debug/*.orig
+	rm $ROOT/debug/\.*.orig
+	rm $ROOT/debug/*.orig
 
-	rm $ROOT/TN_w_IRISA/debug/\.test*
+	rm $ROOT/debug/\.test*
 
 	rm .input.txt
 fi

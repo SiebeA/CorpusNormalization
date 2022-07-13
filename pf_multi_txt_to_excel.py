@@ -52,8 +52,7 @@ if __name__ == '__main__':
 
     # list a selection of files that can be inputted:
     import os
-    # os.chdir(os.getcwd())
-    os.chdir('/home/siebe.albers/dev/TN_w_IRISA')
+    root = os.getcwd()
     
     #
     # Create 2 branches, one for ATN & one for MTN
@@ -83,8 +82,9 @@ if __name__ == '__main__':
     
     # store a copy of the ATN excel file in MTN input, as it can be convenient by checking the text in a excel sheet
     import subprocess
+    os.chdir(root)
     try:
-        subprocess.run("cp /home/siebe.albers/dev/TN_w_IRISA/ATN_output/*/*ATN.xls* /home/siebe.albers/dev/TN_w_IRISA/MTN_input/*", shell=True)
+        subprocess.run("cp ATN_output/*/*ATN.xls* MTN_input/*", shell=True)
     except FileNotFoundError:
         print('_______except FileNotFoundError')
     

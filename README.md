@@ -1,20 +1,23 @@
+# Background info
+
+This is a text-normalization program, a.k.a IRISA, which core was originally made by glecorve in the programming language Perl [see-github-repo]( https://github.com/glecorve/irisa-text-normalizer/tree/00ab6459630874a1b2369a6fb8423e1728154c0d) later added to by pe-honnet to account for some TL-specific needs [see-github-repo]( https://ghe.exm-platform.com/pe-honnet/tl_lm_resources/tree/master/normalizers/irisa_normalizer; and finally iteratively improved by Siebe-albers [see-ticket](https://emachines.atlassian.net/browse/TLZD-302) to improve it further for TL-needs, and specifically to normalize texts covering a wide set of domains: see [server-location](/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction) of those texts. 
+
 # The Initial Setup of the program
 
 These steps are only required once in one's environment.
 
-- Clone or Download/Zip: git@ghe.exm-platform.com:siebe-albers/TN_w_IRISA.git
+- Clone the [Github-Repo](https://ghe.exm-platform.com/siebe-albers/TN_w_IRISA/tree/transition)
 
 - Install the following packages in your shell environment (if they don't already exist)
 
   - xdg-open; rename
-  
+
 - In your terminal, execute the following commands:
 
   - `cd /TN_w_IRISA`
-  - to create the necessary throughput & output folders in the repo:
-    - `mkdir ATN_input ATN_output MTN_input a_processing EXCEL_files`
+  - `mkdir ATN_input ATN_output MTN_input a_processing EXCEL_files` # to create the necessary throughput & output folders in the repo:
 
-- The program requires some dependencies , it is recommended to install them in a virtual environment (venv). Use pip to install dependencies in the venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
+- The program requires some dependencies for Python as well , it is recommended to install them in a virtual environment (venv). Use pip to install dependencies in the venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
 
   ```bash
   python3 -m venv .venv_TN_w_IRISA &&
@@ -22,7 +25,7 @@ These steps are only required once in one's environment.
   pip install -r requirements.txt
   ```
 
-*Note that if you do not have the shell python venv dependency package in your shell environment, shell will output a command that you can enter to install it, then input the herefore given commands again. 
+*Note that if you do not have the shell python venv dependency package in your shell environment, shell will output a command that you can enter to install it, then input the herefore given commands again.
 
 # Using the ATN tool
 
@@ -31,52 +34,48 @@ These steps are only required once in one's environment.
 ## The Post-initial procedure
 
   - `cd .../TN_w_IRISA`
-  - Store an input `.xlsx` file in the `.../EXCEL_files` folder
+  - Store an input Text/ `.xlsx` file in the `.../EXCEL_files` folder.
   - `bash automate.sh ` (information and feedback of the process will be outputted in the terminal )
-    -
 
 # After ATN: the MTN steps
 
 (MTN == Manual Text Normalization)
 
-MTN, a.k.a. Manual check of the ATN output, is necessary because the ATN program cannot adequately normalize all input texts patterns that are not seen before and for which it does not have coded instructions to normalize. Besides the former, after coding normalization commands, some tradeoffs can arise (e.g. either all abbreviations are normalized in the form of Acronyms ['FBI, NASA'], or Initialisms ['F B I,  N A S A']. 
+MTN, a.k.a. Manual check of the ATN output, is necessary for a general quality check; in addition, because the ATN program cannot adequately normalize all input texts patterns that are not seen before for which it does not have coded instructions for normalization. Besides the former, after coding normalization commands, some tradeoffs can arise (e.g. either all abbreviations are normalized in the form of Acronyms ['FBI, NASA'], or Initialisms ['F B I,  N A S A'].
 
 # Extra information on the ATN scripts
 
-Regarding the ATN stage of the process, the execution of the following scripts are bundled and automated in the `automate.sh` script:
-
-See the `Visual_process_Overview.vsdx` file for an overview in a visual flowchart view.
+FYI, but not critical to understand, regarding the ATN stage of the process, the execution of the following scripts are bundled and automated in the `automate.sh` script:
 
 - **Converting each sheet in the inputted `.xlsx` file to a `.txt` file:**
-  - `python3 .../TN_w_IRISA/pf_excelSheets_import_to_txt.py`
-    - output in
 
+
+
+  (PF == script with Python Functions)
+
+  - **PF call to import the texts from the excel files and sheets, converting them to `.txt` files for further processing:**
+    - `python3 pf_excelSheets_import_to_txt.py`
   - **ATN the .txt files with the ATN-Tool:**
-    - `.../TN_w_IRISA`  
-    - `cd .../TN_w_IRISA/; bash e2e_normalization.sh`
+    - `bash e2e_normalization.sh`
   - move the original files, for MTN convenience, to the same dir as the `ATN` files, and open the dir:
     - `mv .../TN_w_IRISA/ATN_input/*.txt .../TN_w_IRISA/ATN_output/; xdg-open .../TN_w_IRISA/ATN_output/`
-  - Move the original xlsx file to the same dir:
+  - Convenience: Move the original xlsx file to the same dir:
     - `mv .../TN_w_IRISA/EXCEL_files/*xls* .../TN_w_IRISA/ATN_output/`
-
-  - Create a MTN version:
+  - Convenience: Create a MTN version for later convenience during MTN:
     - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * .../TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
-  - Move all the files to the processing folder (and open it in Gnome)
+  - Convenience: Move all the files to the processing folder (and open it in Gnome)
     - `mv * .../TN_w_IRISA/a_processing/ ; xdg-open .../TN_w_IRISA/a_processing/`
-  - MTN: Open the files in Sublime, for MTN.
-    - 1 sublime window with 2 tabs open tabs (left the original `.txt`, right the `*ATN.txt`) to manually check the ATN output; keep the original file to the left to see how e.g. (alpha)numeric characters are normalized; the syntax coloring is a visual aid for this purpose.
-  - makes a folder that is named after the `*xlsx` file that is being processed:
+  - Convenience: makes a folder that is named after the `*xlsx` file that is being processed:
     - `cd a_processing/`
     - `mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/\.xlsx//')`
     - `mv *.xlsx *.txt */` # move the txt and xlsx files in the before created dir
-  - **PF call** **Writes the MTN.txt files to a .xls* file** with the original filename with `_MTN` appended to it:
-    - `cd .../TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py`
+  - **PF call**:  **Writes the `MTN.txt` files to a .xls* file** (with the original filename and `_MTN` appended to it):
+    - `python3 pf_multi_txt_to_excel.py`
+  - Other operations, such as removing obsolete files after a process iteration.
 
 ## Zooming in on the e2e_normalization.sh script.
 
-This is the  core of the ATN-stage of the program, it executes all the scripts and commands that are used to make the automatic text normalizations.
-
-Takes places in the `e2e_normalization.sh`. This is a normalization program, originally written in Perl by glecorve: https://github.com/glecorve/irisa-text-normalizer/tree/00ab6459630874a1b2369a6fb8423e1728154c0d; thereafter there were some funcunality added by pe-honnet: https://ghe.exm-platform.com/pe-honnet/tl_lm_resources/tree/master/normalizers/irisa_normalizer; and finally by me: https://ghe.exm-platform.com/siebe-albers/TN_w_IRISA/tree/528228c8b9c99c5f6c0e945e4d0f09d2db55bde7.
+Whereas `automate.sh` covers the entire normalization process, both ATN & ATN, the `e2e_normalization.sh` script  is the  core of the ATN-stage of the program, it executes all the scripts and commands that are used to make the automatic text normalizations. Most automatic normalization improvements that will implemented, will be coded into this file.
 
 # The set normalization parameters
 
@@ -117,3 +116,7 @@ The following improvements can be made with relatively low time investment:
 ###### Iterative improvement of the ATN tool after each normalization-cycle
 
 The herefore mentioned improvements are apart from the iterative improvements of the ATN-tool that will likely return after each finished process iteration--especially because the domains of the original texts are so general/wide--, i.e. after each finished MTN file. There is a trade-off of time investment versus return: After every iteration of the process the volume of normalization discrepancies that are identified in the MTN stage of the process has/will become less, and time spend on the MTN stage--with respects to the volume of the input text data, will be reduced.
+
+An example of a improvement that can be implemented given the observation of the last ATN output file (after the MTN check):
+
+- In the last original excel file there was a sheet where there are  phone numbers in the text, which should be distinctly normalized from other numbers (as they are pronounced digit by digit); a rough idea is to simply identify numbers in phone-number format by regex in a python script, and normalize those to digit-by-digit, and let all the other number formats be normalized by the current program as is.

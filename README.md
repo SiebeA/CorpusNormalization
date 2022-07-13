@@ -6,7 +6,7 @@ This is a text-normalization program, a.k.a IRISA, which core was originally mad
 
 These steps are only required once in one's environment.
 
-- Clone the [Github-Repo](https://ghe.exm-platform.com/siebe-albers/TN_w_IRISA/tree/transition)
+- Clone the This Repo
 
 - Install the following packages in your shell environment (if they don't already exist)
 

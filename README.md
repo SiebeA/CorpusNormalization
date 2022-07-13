@@ -1,20 +1,20 @@
-###### note: this README is still specific to siebe.albers (dir locations)
-
 # The Initial Setup of the program
 
-These steps are only required once in your environment. 
+These steps are only required once in one's environment. 
 
 - Clone or Download/Zip: git@ghe.exm-platform.com:siebe-albers/TN_w_IRISA.git
 
 - Install the following packages in your shell environment: 
 
   - xdg-open
-  - ...
+  - rename
+  - ...?
 
 - In your terminal, execute the following commands:
 
   - `cd /TN_w_IRISA`
-  - `mkdir ATN_input`
+  - Execute the following commands (to create the necessary throughput & output folders in the repo)
+    - `mkdir ATN_input ATN_output MTN_input a_processing`
 
 - The program requires some dependencies , it is recommended to install them in a virtual environment (venv). Use pip to install dependencies in the venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
 
@@ -25,28 +25,34 @@ These steps are only required once in your environment.
   pip install -r requirements.txt
   ```
 
-# Using the tool: the ATN (Automatic Text Normalization) stage of the process: 
+# Using the ATN tool
 
-## Post-initial procedure
+(ATN: Automatic Text Normalization)
+
+## The Post-initial procedure
 
   - `cd .../TN_w_IRISA`
   - Store an input `.xlsx` file int he `.../EXCEL_files` folder 
   - `bash automate.sh ` (information and feedback of the process will be outputted in the terminal )
   - 
 
-# The MTN (Manual Text normalization) stage of the process
+# The MTN steps
+
+(MTN == Manual Text Normalization)
 
 MTN, a.k.a. Manual check of the ATN output, is necessary because the ATN program hasn't been hardcoded to adequately normalize all input texts patterns that are not seen before; and/or some tradeoffs will arise (e.g. either all abbreviations are normalized in the form of Acronyms ['FBI, NASA'], or Initialisms ['F B I,  N A S A'])
 
 
 
-# FYI: regarding the ATN stage of the process, the execution of the following scripts are bundled and automated in the `automate.sh` script:
+# Extra information on the ATN scripts
 
-###### See the `Visual_process_Overview.vsdx` file for an overview in a visual flowchart view. 
+Regarding the ATN stage of the process, the execution of the following scripts are bundled and automated in the `automate.sh` script:
+
+See the `Visual_process_Overview.vsdx` file for an overview in a visual flowchart view. 
 
 - **Converting each sheet in the inputted `.xlsx` file to a `.txt` file:**
   - `python3 .../TN_w_IRISA/pf_excelSheets_import_to_txt.py`
-  - output in `dd`
+    - output in 
 
   - **ATN the .txt files with the ATN-Tool:**
     - `.../TN_w_IRISA`  
@@ -69,11 +75,16 @@ MTN, a.k.a. Manual check of the ATN output, is necessary because the ATN program
   - **PF call** **Writes the MTN.txt files to a .xls* file** with the original filename with `_MTN` appended to it:
     - `cd .../TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py`
 
-## The core of the proccess, the ATN tool: the e2e_normalization.sh script. 
+## The e2e_normalization.sh script. 
+
+This is the  core of the ATN-stage of the program, it executes all the scripts and commands that are used to make the automatic text normalizations. 
 
 Takes places in the `e2e_normalization.sh`. This is a normalization program, originally written in Perl by glecorve: https://github.com/glecorve/irisa-text-normalizer/tree/00ab6459630874a1b2369a6fb8423e1728154c0d; thereafter there were some funcunality added by pe-honnet: https://ghe.exm-platform.com/pe-honnet/tl_lm_resources/tree/master/normalizers/irisa_normalizer; and finally by me: https://ghe.exm-platform.com/siebe-albers/TN_w_IRISA/tree/528228c8b9c99c5f6c0e945e4d0f09d2db55bde7. 
 
-### Some of the Normalization parameters that are set for the ATN tool (and mentioning some of their caveats):
+# Configured normalization parameters 
+
+Some of the normalization paramaters that are set for the ATN tool (and mentioning some of their caveats):
+
 - Abbreviations:
   -  Initialism are capitalized and splitted e.g.' F B I', as well as Acronyms (the ATN tool cannot distinguish them, therefore the letters of the acronyms must be joined manually *[if time allows, there are perhaps ways, perhaps by entity tagging or word list references, to integrate the functionality of distinguishing the two and automate this part of the normalization process as well* ]). 
   - Their plurals are normalized as, e.g. F B I 's' ???????????????????????????????/
@@ -84,14 +95,14 @@ Takes places in the `e2e_normalization.sh`. This is a normalization program, ori
 - Proper nouns remain capitalized (including: names of services ,e.g.: 'Tire Rotation' )
 - Numbers are worded out, e.g.: '354' --> 'three hundred and fifty four'
   - Sometimes the way a number needs to be worded out is context dependent, for instance for phone numbers, which need to be normalized as follows: "911" --> 'nine one one'. 
-    - Because the program does not distuingish variable forms of numbers, 
+    - Because the program does not distinguish variable forms of numbers, 
 
 
 Understandably, all these forms are aimed to be normalized in a way that people in the context tend to refer to them. 
 
 ## Some possible To-do's:
 
-The value of (any) Improvements will always be subject to ROI (return on investment: most notably the time-input and the time-savings [regarding the time savings the volume of future normalizations projects need to be estimated])
+The value of (any) Improvement will always be subject to the ROI (return on investment: most notably the time-input and the time-savings. Prospectively, both of these... will always be an estimation. 
 
 The following improvements can be made with relatively low time investment:
 

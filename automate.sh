@@ -9,16 +9,16 @@ echo 'the pwd is: '  $PWD
 # cleaning up old files:
 printf '\n\n Creating the folders that are used for ATN/MTN processing  \n\n' &&
 # mkdir $ROOT/ATN_output/temp ; mkdir $ROOT/ATN_input/temp # such that I don't get the no files in dir error; TODO do cleaner solution later
-# rm -r  $ROOT/ATN_input &&
+rm -r  $ROOT/ATN_input &&
 mkdir  $ROOT/ATN_input &&
 
-# rm -r  $ROOT/ATN_output &&
+rm -r  $ROOT/ATN_output &&
 mkdir  $ROOT/ATN_output &&
 
-# rm -r  $ROOT/MTN_input &&
+rm -r  $ROOT/MTN_input &&
 mkdir  $ROOT/MTN_input &&
 
-# rm -r  $ROOT/a_processing &&
+rm -r  $ROOT/a_processing &&
 mkdir  $ROOT/a_processing &&
 
 
@@ -98,6 +98,7 @@ mv *.xlsx *.txt */ &&
 
 
 cd $ROOT &&
+rm -r a_processing/*
 xdg-open $ROOT/MTN_input && # open it already here, as it can't be done in the pf_multi file
 
 
@@ -106,7 +107,7 @@ printf "(automate.sh) executing the pf_multi_txt_to_excel.py script: " &&
 python3 pf_multi_txt_to_excel.py &&
 
 
-printf "\n\n (automate.sh) the automate.sh script has been succesfully executed in its entirety"
+printf "\n\n (automate.sh) the automate.sh script has been succesfully executed in its entirety \n\n\n"
 
 
 

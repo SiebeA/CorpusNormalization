@@ -73,7 +73,7 @@ do
 
 	TTS_CFG=tts_siebe.cfg
 	# TTS_CFG=tts_original.cfg
-	echo "${TTS_CFG} is the cfg file"
+	# echo "${TTS_CFG} is the cfg file"
 
 
 	printf "\n\n on input file: \n\n"; echo $input0; printf '\n'

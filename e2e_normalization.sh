@@ -47,7 +47,7 @@ echo The PWD:
 echo $PWD
 echo
 
-echo 'These are the files in the dir:'
+echo ' (e2e_normalization.sh:) These are the files in the dir:'
 ls -l --sort=time *.txt | grep *'.txt' # show the user options of file that can be inputted
 # ls -l --sort=time *.txt # show the user options of file that can be inputted
 # read -p 'insert the name of the file that you want to normalize with the ATN tool: ' input0 # ask for user input
@@ -76,7 +76,7 @@ do
 	# echo "${TTS_CFG} is the cfg file"
 
 
-	printf "\n\n on input file: \n\n"; echo $input0; printf '\n'
+	printf "\n\n (e2e_normalization.sh:)  on input file: \n\n"; echo $input0; printf '\n'
 
 	# salb don't want to manipulate the original input file, therefore
 	cp $input0 .input.txt
@@ -328,7 +328,7 @@ do
 	perl -0777 -pi.orig -e 's/([0-9])([a-zA-Z]+)/$1 $2/gmi' .$output+2_genNorma.txt
 	# LEFTOFF
 
-	# echo 'salb replacing percentages"
+	# echo ' (e2e_normalization.sh:) salb replacing percentages"
 	perl -0777 -pi.orig -e 's/\%/ percent/gm' .$output+2_genNorma.txt
 
 
@@ -517,26 +517,26 @@ done
 # DEBUG: (Comment out)
 
 if [ "$DEBUG" = 0 ]; then
-	printf '\n\n _________________Debug == 0 / off'
-	printf '\n\n cleaning up some obsolete files in the dir:\n\n'
-	rm .input*
-	rm .$output_file_name*
-	rm \.*
+	printf '\n\n (e2e_normalization.sh:) _________________Debug == 0 / off'
+	printf '\n\n (e2e_normalization.sh:) cleaning up some obsolete files in the dir...\n\n'
+	rm .input* 2>/dev/null # sa surpress error message as, besides files, also a hidden dir named '.' is present in git repoitories that are irrelevant.
+	rm .$output_file_name* 2>/dev/null
+	rm \.* 2>/dev/null
 fi
 
 
 # TODO handle when there are no . files to be removed.
 # if ! some_command; then
-#     echo 'some_command returned an error"
+#     echo ' (e2e_normalization.sh:) some_command returned an error"
 # fi
 
 
 
-printf "\n (renaming the file to have 'ATN' in the name note that THIS REQUIRES RENAME PACKAGE IN SHELL)"
+printf "\n (e2e_normalization.sh:)  (renaming the file to have 'ATN' in the name note that: ______________ THIS REQUIRES RENAME PACKAGE IN SHELL)______________"
 rename 's/\+5TTS/_ATN/g' *+5TTS.txt # removing the afix in the file name
-echo 'The end of the ATN normalization program'
+printf ' \n\n (e2e_normalization.sh:) The end of the ATN normalization program \n'
 echo
-echo 'opening the Procedure for MTN checklist'
+echo ' (e2e_normalization.sh:) opening the Procedure for MTN checklist'
 echo $PWD
 
 

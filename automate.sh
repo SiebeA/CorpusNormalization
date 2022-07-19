@@ -129,5 +129,3 @@ printf "\n\n (automate.sh) the automate.sh script has been succesfully executed 
 # TODO?
 # Moving the processed files to the SERVER:
 
-# /home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction Move the MTN file
-# /home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/01_auto_tn move the ATN file

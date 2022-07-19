@@ -55,7 +55,7 @@ printf "\n  (automate.sh) Copying the original xlsx file to the same_dir/**ATN_o
 # copy the file, such that 1 copy remains in the /EXCEL* folder (for debugging):
 cp $ROOT/EXCEL_files/*xls* $ROOT/ATN_output &&
 # now rename the file, ie append 'copy' to it (such that we can keep track of 1 original file in the entire pipeline):
-rename 's/(.*)\.xlsx/$1_copy.xlsx/' CNA\ Glossary\ of\ Insurance\ Terms.xlsx &&
+# rename 's/(.*)\.xlsx/$1_copy.xlsx/' CNA\ Glossary\ of\ Insurance\ Terms.xlsx &&
 
 
 printf "\n (automate.sh) Create a MTN version of any '_ATN' file (for manual-comparisson later on) \n" &&
@@ -98,7 +98,8 @@ mv *.xlsx *.txt */ &&
 
 
 cd $ROOT &&
-rm -r a_processing/*
+echo $PWD
+rm -r a_processing/* 2>/dev/null # delete any files inside the folder, if existing.
 xdg-open $ROOT/MTN_input && # open it already here, as it can't be done in the pf_multi file
 
 
@@ -128,4 +129,3 @@ printf "\n\n (automate.sh) the automate.sh script has been succesfully executed 
 
 # TODO?
 # Moving the processed files to the SERVER:
-

@@ -106,7 +106,7 @@ do
 	perl -0777 -pi.orig -e 's/\>\>\>/TRIPPLEGUILLEMET/gm' $input
 	perl -0777 -pi.orig -e 's/\_{25}/HORIZONTALLINE/gm' $input
 	perl -0777 -pi.orig -e 's/\-{3}/STIPPELLINE/gm' $input
-	perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
+	# perl -0777 -pi.orig -e 's/\/\w+\/.//gm' $input # remove pronunciation tips for dictionary explanations
 
 	### PUMA-1 Punctuation-marks
 	# cp $input .A.txt
@@ -203,7 +203,7 @@ do
 	perl -0777 -pi.orig -e 's/10 hundred /one thousand and /gm' $input
 	perl -0777 -pi.orig -e 's/20 hundred /two thousand and /gm' $input
 	perl -0777 -pi.orig -e 's/ and and/ and /gm' $input # occasional consequence of the former
-	perl -0777 -pi.orig -e 's/ and and zero //gm' $input # occasional consequence of the former
+	perl -0777 -pi.orig -e 's/ and and  zero //gm' $input # occasional consequence of the former
 
 
 	# SPY - ALPHA combi
@@ -554,6 +554,8 @@ if [ "$DEBUG" = 1 ]; then
 	rm $ROOT/debug/\.test*
 
 	rm .input.txt
+
+	rm $ROOT/e2e_normalization.sh.orig
 fi
 
 # mv $output_file_name'+5TTS.txt' $output_file_name+"ATN"

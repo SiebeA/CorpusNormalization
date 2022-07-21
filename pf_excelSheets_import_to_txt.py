@@ -22,7 +22,6 @@ def xlsx_importerAndScout(file_path):
     """
     import pandas as pd
     sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # reads the Excel file and store the separate sheets in a Dic
-    print('\n ADVICE: \n In the original text sometimes a Text that belongs to a certain column "e.g. `answers`" is (incorreclty) positioned in a following column (this will lead to the creation of a additional column (titled `Unnamed` for the ATN output, where there is text for the row under that column that was faulty placed there in the original file) because this happens sporadically, it is adviced to, instead checking beforehand to run  the program and see if an additonall column is created, if so, go to the original text and correct it, and run the ATN program again. \n ')
 
     
     commentFirstLine = input(' (pf_excelSheets_import_to_txt.py): does the excel file have comments on the first row, ie the headers are not on row 1? [y if yes, any other key if no] \n')

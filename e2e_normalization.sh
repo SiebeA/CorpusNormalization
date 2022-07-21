@@ -161,9 +161,6 @@ do
 	# ANUC PUNCT
 	perl -0777 -pi.orig -e 's/(years)*\s*\/\s*(\d+)/$1 or $2/g' $input # e.g. '10-year/100'|'years / 36,000 miles.' --> '10-year or 100'|'years or 36,000 miles.'
 
-	# PUMA SPLIT e.g. 'monday-friday' --> 'monday to friday'
-	perl -0777 -pi.orig -e 's/(\w{3,}day)\s*\-\s*(\w{3,}day)/$1 to $2/gi' $input
-
 	# SPY
 	perl -0777 -pi.orig -e 's/^(\#)\s*(\d+)/Number $2/gm' $input
 	perl -0777 -pi.orig -e 's/(\#)\s*(\d+)/umber $2/gm' $input
@@ -254,6 +251,10 @@ do
 	cp .$output+1_afterTokenization.txt .10_afterTokenization.txt
 	#==========================================================
 
+
+	perl -0777 -pi.orig -e 's/(\w{3}day)\s*-\s*(\w{3,}day)/$1 to $2/gm' .$output+1_afterTokenization.txt
+
+
 	### ANU
 	# million  & billion
 	perl -0777 -pi.orig -e 's/(\d\.*\d*)\s*(m)(\s)/$1 million /gim' .$output+1_afterTokenization.txt
@@ -269,6 +270,7 @@ do
 
 	# PUMA SPLIT NUCA eg '5,000-10,000' --> '5,000 and 10,000'
 	perl -pi.orig -e 's/(\d+)-(\d+)/$1 to $2 /gm' .$output+1_afterTokenization.txt
+
 
 	perl -pi.orig -e 's/\b([A-Z][a-z]+?)([A-Z][a-z]+?)\b/$1 $2/gm' .$output+1_afterTokenization.txt
 	#==========================================================

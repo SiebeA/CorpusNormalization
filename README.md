@@ -2,7 +2,7 @@
 
 This is a text-normalization program, a.k.a IRISA, which core was originally made by glecorve in the programming language Perl [see-github-repo]( https://github.com/glecorve/irisa-text-normalizer/tree/00ab6459630874a1b2369a6fb8423e1728154c0d) later added to by pe-honnet to account for some TL-specific needs his [see-github-repo](https://ghe.exm-platform.com/pe-honnet/tl_lm_resources/tree/master/normalizers/irisa_normalizer) ; and finally iteratively improved by Siebe-albers [see-ticket](https://emachines.atlassian.net/browse/TLZD-302) to improve it further for TL-needs, and specifically to normalize texts covering a wide set of domains: see the [server-location](/Data/tts_corpus_design/en/domains) of those texts. 
 
-# Using the Normalization Tool
+# User Guide: Using the Normalization Tool
 
 ## The Initial Setup of the ATN (Automatic Text Normalization) program
 
@@ -178,23 +178,25 @@ First Reproduce the Normalization Error in Debug mode:
     - type therein: "compare", then a function "sublimerge: compare to clipboard" will show, and hit enter. 
 
 
-# Improving the Process (ATN & MTN)
+# Developer guide: Improving the Process (ATN & MTN)
 
 Since I'm sure my normalization process is far from perfect (it has been/is still under development constantly there are also improvements to be made on the level of the entire normalization process. The value of (any) Improvement will always be subject to the ROI (return on investment: most notably the time-input and the time-savings (disguised cost/value) in special cases where you have to pay for functionality (as in the beginning where I thought that implementing a automatic grammar checker with a cost of 60 Francs for 3 months (visible costs), which was later dropped because it slowed down the process more than the value it added). In any event, you will have to estimate both the expected value and (visible and disguised) costs before you initiate the endeavor, but this is the fait of all R&D projects.
 
-###### Some estimated high value improvements: 
+###### Low (time) cost improvements: 
 
 The following improvements can be made with relatively low time investment:
 
 - Automatic row number check for each output MTN xlsx file and its corresponding raw input `xlsx` file, because in rare instances the tokenizer splits a text incorrectly, which leads to writing them to the next line and corresponding cell in the output ATN xlsx file.
 - Automatic correction of the ORIGINAL texts that belong to a certain column, however, which  are positioned in a following column. 
 - Move similar Perl oneliners to the replacement lists (located in the following folder `/rsrc/en/uk2us.rules` to clean up the `e2e` file more and make it more concise and clear. 
+  - Move the Perl oneliner SPY replacements to it's own replacement list
 
-###### Or more ambitious:  adding a new script and include it in the `e2e` file
+
+###### Relatively ambitious improvements:  adding a new script and include it in the `e2e` file
 
 - In the last original excel file there was a sheet where there are  phone numbers in the text, which should be distinctly normalized from other numbers (as they are pronounced digit by digit [e.g. '888' as 'eight eight eight' not 'eight hundred and eighty eight']) The original IRISA/ATN tool doesn't distinguish this; a rough idea is to simply identify numbers in phone-number format by regex in a python script (and execute this script before any of the Perl scripts), and normalize those to digit-by-digit, and let all the other number formats be normalized by the current program as is.
 
-###### Very ambitious projects
+###### More ambitious projects
 
  (You will have to determine the feasibility and ROI of the improvement, as I/Siebe has not determined it yet).
 

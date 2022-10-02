@@ -3,6 +3,7 @@
 
 # examine = 64 # debug facilitation
 
+
 def xlsx_importerAndScout(file_path):
     """
 
@@ -21,10 +22,9 @@ def xlsx_importerAndScout(file_path):
     """
     import pandas as pd
     sheet_to_df_map = pd.read_excel(file_path, sheet_name=None) # reads the Excel file and store the separate sheets in a Dic
-    print()
 
     
-    commentFirstLine = input('does the excel file have comments on the first row, ie the headers are not on row 1? [y if yes] ')
+    commentFirstLine = input(' (pf_excelSheets_import_to_txt.py): does the excel file have comments on the first row, ie the headers are not on row 1? [y if yes, any other key if no] \n')
     for key in sheet_to_df_map.keys():
         
         try:
@@ -34,7 +34,7 @@ def xlsx_importerAndScout(file_path):
             sheet_to_df_map[key] =  sheet_to_df_map[key].iloc[1:] # drop the first row
             sheet_to_df_map[key] =  sheet_to_df_map[key].reset_index(drop=True) # reset index (0th is back):
         except IndexError:
-            print('INDEXERROR, for: \n')
+            print('(pf_excelSheets_import_to_txt.py): INDEXERROR, for: \n')
             print(key)
             print()
 
@@ -43,11 +43,12 @@ def xlsx_importerAndScout(file_path):
     #
     # print('\n Hereunder are the outputted text file(s) corresponding to each sheet in the xls* file:')
     for key in sheet_to_df_map.keys():
-        print(key)
+        print('(pf_excelSheets_import_to_txt.py): sheet name:', key)
         try:
             df = sheet_to_df_map[key]
             file_name = key.replace(" ", "_")
-            with open(f'/home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}_RAW.txt', 'w') as f:
+            os.chdir(root)
+            with open(f'ATN_input/{file_name}_RAW.txt', 'w') as f:
                 # writing the columns names on the first line of the text file:
                 columns = ""
                 # & delimit the COLUMNS names, for conversion to xlsx later:
@@ -72,7 +73,7 @@ def xlsx_importerAndScout(file_path):
                             string = str(string)[0].upper()+str(string)[1:] # Only captialize the first char, but unlike capitalize(), the other charactersa re not uncased
                         # except AttributeError:
                         except:
-                            print(f'--------------------------------------------------------------------------, (probably a empty cell) for {file} {key}  :')
+                            print(f'--------------------------------------------------------------------------, (pf_excelSheets_import_to_txt.py): (probably a empty cell) for {file} {key}  :')
                             print(df.iloc[i][0])
                         string_decoded = unidecode.unidecode(str(string)) # remove e.g. accents from chars
                         string_concatted += str(string_decoded) + " DELIMITER "
@@ -96,8 +97,8 @@ def xlsx_importerAndScout(file_path):
         except TypeError:
             print(f"exceptions: sheet: {key}")
             
-    print('\n The RAW files are outputted in: \n /ATN_input:\n')
-        # print(f' \n /home/siebe.albers/dev/TN_w_IRISA/ATN_input/{file_name}.txt')
+    print('\n (pf_excelSheets_import_to_txt.py): The RAW files are outputted in: \n /ATN_input:\n')
+        # print(f' \n ATN_input/{file_name}.txt')
     
     return sheet_to_df_map  # return the df for importer()
 
@@ -112,13 +113,14 @@ if __name__ == '__main__':
     import glob
     import os
     os.chdir(os.getcwd())
+    root = os.getcwd()
     try:
-        os.chdir("/home/siebe.albers/dev/TN_w_IRISA/EXCEL_files")
+        os.chdir("EXCEL_files")
     except FileNotFoundError:
-        print('\n ERROR FILE CHANGING !!!!!!!!!!!!!!! \n')
+        print('\n (pf_excelSheets_import_to_txt.py): ERROR FILE CHANGING !!!!!!!!!!!!!!! \n')
         pass
     
-    print(f'\n pwd == {os.getcwd()}: \n\n')
+    print(f'\n (pf_excelSheets_import_to_txt.py): pwd == {os.getcwd()}: \n\n')
     for file in glob.glob("*.xls*"):
         print(file)
 
@@ -127,7 +129,7 @@ if __name__ == '__main__':
         if answer.lower() in ['y', 'yes']:
             file_path = file
     else:
-        file_path = input("\n input the file path to the xlsx file that you want to process: \n")
+        file_path = input("\n (pf_excelSheets_import_to_txt.py): input the file path to the xlsx file that you want to process: \n")
 
     # if file_path.endswith((".xls")):
     #     import xlrd

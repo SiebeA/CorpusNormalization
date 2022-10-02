@@ -1,360 +1,248 @@
-###### note: this readme is still specific to siebe.albers (dir locations)
+# Background info
 
-Make it specific to your local dir:
-- replace: `/home/siebe.albers/dev/`
-- for the: /{dir} in which you cloned the `/TN_w_IRISA`
+This is a text-normalization program, a.k.a IRISA, which core was originally made by glecorve in the programming language Perl [see-github-repo]( https://github.com/glecorve/irisa-text-normalizer/tree/00ab6459630874a1b2369a6fb8423e1728154c0d) later added to by pe-honnet to account for some TL-specific needs his [see-github-repo](https://ghe.exm-platform.com/pe-honnet/tl_lm_resources/tree/master/normalizers/irisa_normalizer) ; and finally iteratively improved by Siebe-albers [see-ticket](https://emachines.atlassian.net/browse/TLZD-302) to improve it further for TL-needs, and specifically to normalize texts covering a wide set of domains: see the [server-location](/Data/tts_corpus_design/en/domains) of those texts. 
 
+# User Guide: Using the Normalization Tool
 
-## TODO:
+## The Initial Setup of the ATN (Automatic Text Normalization) program
 
-- when a cell only has '\.' its delimitation is messed up
-- remove the space in the excel file
-- Continuously extend the excel file with the form-replacements.
+These steps are only required once in one's environment.
 
-- Processing with 2 xlsx files in the /EXCEL folder does not work, as they are both being forwarded; and then the .txt files of the different excel sheets are all moved to one bundle-folder
+- Clone this Repo
 
-- No space after hard PUNCT and new sentence
-- not all EOL are punctuated?
-- pf excel --> have a row equals goldstandard|raw check
-- number deletion -->
-- some phone number combinations are still not adequately normalized
-- fix that the line continues whenever there is not a punct mark.
-- always punct at BOL (now it is only with a period)
-<!-- - Capitalize weekdays -->
+- Install the following packages in your shell environment (if they don't already exist)
 
-**low priority**
-- Can non BOL cased-words be dealt with?
-- fix 1006 Bessy, does not break correctly
-- fix 1035 Bessy; in the excel files, the line breaks are messed up; (pf_excel ends up with the correct nr of lines though)
+  - xdg-open; rename
 
+- In your terminal, execute the following commands:
 
-## Dominic observations:
-| Observation      | expectation |
-| ----------- | ----------- |
-|Magnuson-Moss Warranty Act (15 U.S.C. 2302       |  magnuson moss warranty act fifteen, USC      |
-| 29.92 inhg us and canada      |twenty nine point ninety two inhg us and canada        |
-|The a340-600, at 75.30 m       | The A three hundred forty six hundred, at seventy five point three zero meters       |
-|       |        |
+  - `cd /TN_w_IRISA`
+  - `mkdir ATN_input ATN_output MTN_input a_processing EXCEL_files` # to create the necessary throughput & output folders in the repo:
 
+- The program requires some dependencies for Python as well , it is recommended to install them in a virtual environment (venv). Use pip to install dependencies in the venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
 
+  ```bash
+  python3 -m venv .venv_TN_w_IRISA &&
+  source .venv_TN_w_IRISA/bin/activate &&
+  pip install -r requirements.txt
+  ```
 
+*Note that if you do not have the shell python venv dependency package in your shell environment, shell will output a command that you can enter to install it, then input the herefore given commands again.
 
+## Using the ATN tool
+
+### The Post-initial procedure
+
+  - `cd .../TN_w_IRISA`
+  - Store an input Text/ `.xlsx` file in the `.../EXCEL_files` folder.
+  - `sed -e 's/DEBUG=[0-9]/DEBUG=0/i' e2e_normalization.sh -i && bash automate.sh`(information and feedback of the process will be outputted in the terminal )
+    - *Note, in order to not forget to turn off Debug mode in the `e2e_normalization.sh` file (also referred to as simply `e2e `file) the former command is used--which automatically switches off debug mod before exeucting the `automate.sh` file,  instead of simply `bash automate.sh` (Debug mode is explained in the "Zooming in on the `e2e_normalization.sh` script and how it is used for the iterative ATN improvement.".* 
 
 
+## The MTN (Manual Text Normalization) stage
+
+MTN, a.k.a. Manual check of the ATN output, is necessary for a general quality check; in addition, because the ATN program cannot adequately normalize all input texts patterns that are not seen before for which it does not have coded instructions for normalization. Besides the former, after coding normalization commands, some tradeoffs can arise (e.g. either all abbreviations are normalized in the form of Acronyms ['FBI, NASA'], or Initialisms ['F B I,  N A S A'].
+
+Install the following Application on your computer
+
+- Sublime Text editor; follow the README of my personally adapted version of it on [my Github](https://ghe.exm-platform.com/siebe-albers/sublime-syntax-for-TN)
+
+My MTN workflow was the following:
+
+**Quick MTN checking:**
+
+- In libreoffice:
+
+  - Open the original `xlsx` file on the left, the ATN `xlsx` file on the right of your screen (I used Libreoffice)
+
+  - Check whether the row size number equals that of the original file (or +1 if the orginal file has a comment on the first row )
 
 
-TODO Automate.sh
-- Replace `{/home/siebe.albers/dev}` for the dir-path in which you cloned the `/TN_w_IRISA`
+- In Sublime-text:
+  - Copy paste the Original file in a left Sublime text window, the ATN in the right (with the [sublime_syntax_functionality](https://ghe.exm-platform.com/siebe-albers/sublime-syntax-for-TN) enabled) you will already visually spot most of the correct/incorrect normalized text/patterns.
 
 
-## Post-initial setup for MULTI-SHEET_files (UNDER DEV):
-  - `cd /home/siebe.albers/dev/TN_w_IRISA`
-  - `source /home/siebe.albers/dev/.venv_TN_w_IRISA/bin/activate` # activate the virtual environment
+**Careful MTN checking**
+
+- In sublime Text:
+  - Open the command palette (ctrl shift p), type: "compare" and select "Sublimerge: Compare to view"; select the Tab with the original text on the left. 
+  - (When there are any differences, they are visually shown in the Sublime editor now)  Go over them and correct them in the Sublime editor themselves. 
+  - After the corrections have been made, copy paste them in the excel ATN file
+  - Save the Excel ATN file, replacing 'ATN' for 'MTN'
+- Move/Save both files to the Server:
+  - the ATN version of the excel file to `data\tts_corpus_design\en\domains_after_TN\01_auto_tn`
+  - the MTN version of the excel file to data\tts_corpus_design\en\domains_after_TN\02_manual_correction
+
+# Improving the Normalization process
+
+## Understanding the `e2e_normalization.sh` / ATN (script and how to improve it for more accurate automatic text normalization)
+
+Whereas `automate.sh` covers the entire normalization process, both ATN & MTN, the `e2e_normalization.sh` script (which itself is executed in the `automate.sh` script)  is the  core of the ATN-stage of the program, it executes all the Perl scripts that were originally designed by the Old developer (Glecorve)
+
+For example, the first Perl script does the Tokenization (for convience the `echo` command is used to denote the main function of the Perl script)
+
+- ```bash
+  echo "1. Tokenization..."
+  perl $ROOT/bin/$LANGUAGE/basic-tokenizer.pl $input > .$output+1_afterTokenization.txt # $output is the name of another variable, when you append to it, it will no longer refer to that variable, HOWEVER, using '.' can be appended, while still refering to the variable
+  cp .$output+1_afterTokenization.txt .10_afterTokenization.txt
+  ```
+
+Directly after,  I put a command to create a text file--which appears in the `debug` folder of the Repo. I did for the convenience for debugging, because if an incorrect normalization has been detected at the end of the entire `e2e_normalization.sh` script--which executes all the perl scripts and perl oneliners, you would have to figure out where the bug took place, now, you can scan all the intermediate output files, and when you identify the incorrect normalization, you only have one section to examine. 
+
+The other perl scripts executions in the `e2e_normalization.sh` file:
+
+- ```bash
+  echo "2. Generic normalization start..."
+  perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1_afterTokenization.txt > .$output+2_genNorma.txt
+  cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
+  ```
+
+- ```bash
+  echo "3. Currency conversion..." # originally added by pe-honnett
+  perl $ROOT/convert_currencies.pl .$output+2_genNorma.txt > .$output+3currencyFix.txt
+  cp .$output+3currencyFix.txt .31_after_Currency.txt
+  ```
+
+- ```bash
+  echo "4. Generic normalization end..." # e.g. NUMBMERS are WORDED OUT,
+  perl $ROOT/bin/$LANGUAGE/end-generic-normalisation.pl .$output+3currencyFix.txt > .$output+4generalNorm.txt
+  ```
+
+- ```bash
+  echo "5. TTS specific normalization..."
+  perl $ROOT/bin/$LANGUAGE/specific-normalisation.pl $ROOT/cfg/$TTS_CFG .$output+4generalNorm.txt > $output+5TTS.txt
+  cp $output+5TTS.txt .51_after_5_TTS_IRISA.txt
+  ```
+
+Besides these Perl script executions, I/Siebe added many, what are called, '[Perl oneliners](https://learnbyexample.github.io/learn_perl_oneliners/one-liner-introduction.html)'. These Perl oneliners are operated on the input text file before the first perl script--"1. Tokenization..."--, after that Perl script, as well for the following 4 Perl scripts herefore exemplified , and after the last perl script (which does the ""5. TTS specific normalization...").
+
+- In addition, each Perl oneliner replacement is marked with a reference that refers to the category of normalization replacement it belongs to, e.g. 'ABR' stands for Abbreviations (Acronyms & Initialisms ); e.g. the replacement  of commas for  all Semi-colons and colons are referernced as   'PUMA' stands for 'Punctuation Marks'. For instance, the following Perl oneliners have the PUMA referernce:
+
+```bash
+### PUMA-1 Punctuation-marks
+# cp $input .A.txt
+perl -0777 -pi.orig -e 's/(\D)\:/$1,/gm' $input # comma for colon
+perl -0777 -pi.orig -e 's/\((\d+)\)/$1,/gm' $input # comma for semi-colon
+```
+
+The legenda of these codes are commented at the top of the `e2e` file. Use these (cap sensitive) code to navigate the `e2e` file as to where certain Perl one liner regex replacements were made.
+
+All of these oneliners were implemented to correct for undesirable normalizations or lack of normalizations by the original IRISA/ATN tool devloped by glecorve in reference to our specific normalization purpose as described in the [TLZD-302](https://emachines.atlassian.net/browse/TLZD-302) ticket. These  normalizations issues were detected in the MTN stage of the process--applied on the following data with an application on the following text data files: `….data\tts_corpus_design\en\domains`. 
+
+The workflow after such a detection was as follows:
+
+### Using Debug mode
+
+First Reproduce the Normalization Error in Debug mode:
+
+- Copy the text/pattern of the ORIGINAL file, as a new line on top of tthe in the `debug/text.txt`, open it in Sublime-text as the left window (Install Sublime text, clone, and following the README of t[his Github repo](https://ghe.exm-platform.com/siebe-albers/sublime-syntax-for-TN) that I set up specifically for the TLZD-302 project). 
+
+- Set the `DEBUG=0` variable in the `e2e_normalization.sh` to `DEBUG=1` 
+
+- Execute the `Ie2e_normalization.sh` in your shell terminal
+
+  - (alternatively, run the following command in your terminal to automate the last 2 steps: `sed -e 's/DEBUG=[0-9]/DEBUG=1/i' e2e_normalization.sh -i && bash automate.sh`
+
+- Open the ultimate output file== `debug/.ATN.txt` in your right window (i.e. after all the previously exemplified Perl scripts, and all the Perl oneliners that follow it)
+
+  - Copy the output of the entire `/debug/.ATN.txt` to your clipboard
+
+- Open and examine the Intermediate-output files, and observe were the Normalization Error took place/failed to take place, and for improvement, where the desired normalization correction should be implemented, then;
+
+- Either:
+
+  - Change/add/delete one of the replacement lists that the Perl scripts use:
+
+    - e.g. if the pattern 'audi' was identified and should be normalized  as 'Audi', simply add it to the following file: `/home/siebe.albers/dev/TN_w_IRISA/rsrc/en/Siebe-Casing-properNouns.rules` as `audi => Audi` (All these replacement lists are then executed by the following pre-mentioned script in the `e2e` file:
+
+      - ```bash
+        echo "2. Generic normalization start..."
+        perl $ROOT/bin/$LANGUAGE/start-generic-normalisation.pl .$output+1_afterTokenization.txt > .$output+2_genNorma.txt
+        cp .$output+2_genNorma.txt .21_afterGenericNormalization_Tags_appear.txt
+        ```
+
+  - Or, when a pattern replacement solution requires more sophistication, add a new Perl-oneliner. E.g. after identifying the following pattern in the Ultimate output file '7th-6th', which normalization is desired as: '7th to 6th', I added the following Regex replacement in the Perl oneliner: 
+
+    ​	`perl -0777 -pi.orig -e 's/(\d{1,}th\s*)([–-])(\s*\d{1,}th)/$1 to $3 /gm' $input` (As you can see, this oneliner was executed on the Input text file (the ultimate desired normalization 'seventh to sixth' will be done later in the `e2e` file)--i.e. before execution of any of the Perl scripts, however, after the Perl oneliners that are placed before this partiuclar Perl oneliner [for learning purposes search the particular Perl oneliner here in the `e2e` file to see where it exactly is positioned]. Because order of the replacements matter, you might have to use trial and error as to when you should/should'nt make a additional regex Perl Oneliner replacement. 
+
+    (To aid me with choosing the correct Regex pattern, I use the following online tool: https://regex101.com/ [make sure you enable 'Substitution under 'functions'])
+
+- Then, run the exact command that you used formerly to check whether the improvement has taken effect:
+
+  - `sed -e 's/DEBUG=[0-9]/DEBUG=1/i' e2e_normalization.sh -i && bash automate.sh`
+
+- And observe the output in the Ultimate ATN output file again. AND. Also, do due diligence: also observe all the other tests that were passing before you made your latest replacement addition, by using the Sublime-text compare tool--to examine whether they still have the desirable normalizations as before you added the latest replacement. To aid you in this:
+
+  - Activate the compare function in Sublime merge by:
+    - Opening the command pallette: "ctrl shift P"
+    - type therein: "compare", then a function "sublimerge: compare to clipboard" will show, and hit enter. 
 
 
-  - Copy A .xls* file with the sentences that need to be normalized to the `\EXCEL_files` dir:
-      - [from location](file:///home/siebe.albers/Insync/savdelz@gmail.com/GD/tlzd-302_TN/domains)
-)
-      - [Dest location](file:///home/siebe.albers/dev/TN_w_IRISA/EXCEl_files)
-)
-    - `mv Insync/savdelz@gmail.com/GD/tlzd-302_TN/domains/ dev/TN_w_IRISA/EXCEL_files/ && open dev/TN_w_IRISA/EXCEL_files`
+# Developer guide: Improving the Process (ATN & MTN)
+
+Since I'm sure my normalization process is far from perfect (it has been/is still under development constantly there are also improvements to be made on the level of the entire normalization process. The value of (any) Improvement will always be subject to the ROI (return on investment: most notably the time-input and the time-savings (disguised cost/value) in special cases where you have to pay for functionality (as in the beginning where I thought that implementing a automatic grammar checker with a cost of 60 Francs for 3 months (visible costs), which was later dropped because it slowed down the process more than the value it added). In any event, you will have to estimate both the expected value and (visible and disguised) costs before you initiate the endeavor, but this is the fait of all R&D projects.
+
+###### Low (time) cost improvements: 
+
+The following improvements can be made with relatively low time investment:
+
+- Automatic row number check for each output MTN xlsx file and its corresponding raw input `xlsx` file, because in rare instances the tokenizer splits a text incorrectly, which leads to writing them to the next line and corresponding cell in the output ATN xlsx file.
+- Automatic correction of the ORIGINAL texts that belong to a certain column, however, which  are positioned in a following column. 
+- Move similar Perl oneliners to the replacement lists (located in the following folder `/rsrc/en/uk2us.rules` to clean up the `e2e` file more and make it more concise and clear. 
+  - Move the Perl oneliner SPY replacements to it's own replacement list
 
 
-# The Following commands are automated in the `automate.sh` file:
+###### Relatively ambitious improvements:  adding a new script and include it in the `e2e` file
 
-###### .  
-- **Converting each sheet in the inputted xlsx file to a txt file:**
-  - `python3 /home/siebe.albers/dev/TN_w_IRISA/pf_excel_all_columnsAndSheets_importer.py`
-  - output in `dd`
+- In the last original excel file there was a sheet where there are  phone numbers in the text, which should be distinctly normalized from other numbers (as they are pronounced digit by digit [e.g. '888' as 'eight eight eight' not 'eight hundred and eighty eight']) The original IRISA/ATN tool doesn't distinguish this; a rough idea is to simply identify numbers in phone-number format by regex in a python script (and execute this script before any of the Perl scripts), and normalize those to digit-by-digit, and let all the other number formats be normalized by the current program as is.
 
-###### .
-  - **ATN the .txt files with the ATN-Tool:**
-    - `/home/siebe.albers/dev/TN_w_IRISA`  
-    - `cd /home/siebe.albers/dev/TN_w_IRISA/; bash e2e_normalization.sh`
-###### .
+###### More ambitious projects
+
+ (You will have to determine the feasibility and ROI of the improvement, as I/Siebe has not determined it yet).
+
+- Automatic tagging of abbreviations, whether they are acronyms or initialisms, such that thereafter the correct from of normalization can be executed. (In my/Siebe experience, the abbreviation correction was laborious)
+
+## Understanding the `automate.sh` script (which covers the entire Normalization process)
+
+FYI, but not critical to understand, regarding the ATN stage of the process, the execution of the following scripts are bundled and automated in the `automate.sh` script:
+
+(PF == script with Python Functions)
+
+  - **PF call to import the texts from the excel files and sheets, converting them to `.txt` files for further processing:**
+    - `python3 pf_excelSheets_import_to_txt.py`
+  - **ATN the `.txt` files with the ATN-Tool:**
+    - `bash e2e_normalization.sh`
   - move the original files, for MTN convenience, to the same dir as the `ATN` files, and open the dir:
-    - `mv /home/siebe.albers/dev/TN_w_IRISA/ATN_input/*.txt /home/siebe.albers/dev/TN_w_IRISA/ATN_output/; xdg-open /home/siebe.albers/dev/TN_w_IRISA/ATN_output/`
-  - Move the original xlsx file to the same dir:
-    - `mv /home/siebe.albers/dev/TN_w_IRISA/EXCEL_files/*xls* /home/siebe.albers/dev/TN_w_IRISA/ATN_output/`
-
-###### .
-  - Create a MTN version:
-    - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * /home/siebe.albers/dev/TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
-###### .
-  - Move all the files to the processing folder (and open it in Gnome)
-    - `mv * /home/siebe.albers/dev/TN_w_IRISA/a_processing/ ; open /home/siebe.albers/dev/TN_w_IRISA/a_processing/`
-###### .
-  - MTN: Open the files in Sublime, for MTN.
-    - 1 sublime window with 2 tabs open tabs (left the original `.txt`, right the `*ATN.txt`) to manually check the ATN output; keep the original file to the left to see how e.g. (alpha)numeric characters are normalized; the syntax coloring is a visual aid for this purpose.
-###### .
-  - makes a folder that is named after the `*xlsx` file that is being processed:
+    - `mv .../TN_w_IRISA/ATN_input/*.txt .../TN_w_IRISA/ATN_output/; xdg-open .../TN_w_IRISA/ATN_output/`
+  - Convenience: Move the original xlsx file to the same dir:
+    - `mv .../TN_w_IRISA/EXCEL_files/*xls* .../TN_w_IRISA/ATN_output/`
+  - Convenience: Create a MTN version for later convenience during MTN:
+    - `mkdir ATN; cp *ATN.txt ATN; rename 's/ATN/MTN/' *ATN.txt; cd ATN; mv * .../TN_w_IRISA/ATN_output/; cd/dev/TN_w_IRISA/ATN_output; rm -r ATN`
+  - Convenience: Move all the files to the processing folder (and open it in Gnome)
+    - `mv * .../TN_w_IRISA/a_processing/ ; xdg-open .../TN_w_IRISA/a_processing/`
+  - Convenience: makes a folder that is named after the `*xlsx` file that is being processed:
     - `cd a_processing/`
     - `mkdir $(\ls *.xls* | sed -e 's/ /_/g' -e 's/\.xlsx//')`
     - `mv *.xlsx *.txt */` # move the txt and xlsx files in the before created dir
-###### .
-  - **PF call** **Writes the MTN.txt files to a .xls* file** with the original filename with `_MTN` appended to it:
-    - `cd /home/siebe.albers/dev/TN_w_IRISA/ ; python3 pf_multi_txt_to_excel.py`
+  - **PF call**:  **Writes the `MTN.txt` files to a `.xls*` file** (with the original filename and `_MTN` appended to it):
+    - `python3 pf_multi_txt_to_excel.py`
+  - I omitted some other operations, such as removing obsolete files after a process iteration.
 
-###### .
+# Some of the set normalization parameters
 
-Moving the processed files to the SERVER:
-  - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/02_manual_correction` Move the `MTN` file
-  - `/home/siebe.albers/tlzhsrv001/Data/tts_corpus_design/en/domains_after_TN/01_auto_tn` move the `ATN` file
+Some of the normalization paramaters that are set for the ATN tool (and mentioning some of their caveats):
 
-___
-### The Notable set of Normalization parameters
-- Acronyms, Initialism are split e.g.' F B I'
-  - plural: CTAs ???
-- Variable forms converted to 1 form:
-  - U.s. , U.s.a USA --> United States
+- Abbreviations:
+  -  Initialisms are capitalized and splitted as in  e.g.' F B I', as well as Acronyms (the ATN tool cannot distinguish them, therefore the letters of the acronyms must be joined manually *[if time allows, there are perhaps ways, perhaps by entity tagging or word list references, to integrate the functionality of distinguishing the two and automate this part of the normalization process as well* ]).
+  -  Their plurals are normalized as, e.g. F B I 's.
+
+- Variable forms e.g. of the following Entities are converted to an uniform form.
+  - U.s. , U.s.a USA --> United States (also for E U, U K, etc.)
 - All Hyphens are removed
 - Proper nouns remain capitalized (including: names of services ,e.g.: 'Tire Rotation' )
-
-**Manually** (cannot be automated, mostly because of trade-offs)
-- Phone number digits are written out digit by digit
-
-
-
-### Procedure steps:
-- First time:
-  - Clone this `TN_w_IRISA` repo
-  - `cd /TN_w_IRISA`
-  - `mkdir ATN_input`
-  - Optionally but recommended, pip install dependencies in venv: create a venv, activate, and install pip packages, by copy paste the following commands in your terminal:
-      ```
-python3 -m venv .venv_TN_w_IRISA &&
-source /home/siebe.albers/dev/.venv_TN_w_IRISA/bin/activate &&
-cd /home/siebe.albers/dev/TN_w_IRISA
-pip install -r requirements.txt &&
-      ```
-
-- Post-initial setup for MULTI-SHEET_files
-  - `cd /TN_w_IRISA`
-  - `source venv/bin/activate` # activate the virtual environment
-  - Move the `.xls*` file with the sentences that need to be normalized to the `\ATN_input` dir
-  - `bash python3 pf_excel_all_columnsAndSheets_importer.py`
-  - Use the adapted IRISA tool for (ATN) to normalize all `.txt` files in the `/ATN_input` dir.
-  `bash e2e_normalization.sh`
-
-___________________
-
-- Post-initial setup for FILE BY FILE processing
-  - `cd /TN_w_IRISA`
-  - `source venv/bin/activate` # activate the virtual environment
-  - Move the `.xls*` file with the sentences that need to be normalized to the **(using xls instead of .xlsx, and having column headers on the first row increases convenience level )** `TN_w_IRISA` dir
-  - Execute:
-  `python3 pf_excel_column_importer.py` (when there are empty rows, FYI the index of the rows will be outputted).
-    <!-- (text preprocessing takes places here) -->
-   <!-- e.g. stripping line breaks -->
-    - (If you want to run a comparison between ATN, and goldStandard_tts, follow the same process, but for GS. (instructions will be outputted in the shell))
-  - Use the adapted IRISA tool for (ATN), execute:
-  `bash e2e_normalization.sh`
-  <!-- TODO echo in the /e2e* that this might take a while, and the error messgaes that can be observed -->
-    <!-- - The normalized sentences are in `output.5tts.txt` # outputted in shell -->
-
-### For comparing the ATN to a Golden Standard normalized corpus:
-- To calculate the Levenhstein_distance between the ATN sentences, and the MTN sentences, In your terminal, run:
-`python3 pf_txt_to_df.py`
-- Then run:
-`python3 pf_Levenhstein_distance.py`
-+ Observe the edit-distance per text between the ATN & MTN in the file: `levenhstein_distance_output.xlsx`
-
-### Alternatively, run all commands:
-`python3 pf_excel_column_importer.py; bash e2e_normalization.sh; python3 pf_txt_to_df.py; pf_Levenhstein_distance.py`
-
-## TODO
-
-### Need-to-haves
-- Export the sentences from `Levenhstein_distance_output.xlsx` that are above a DISTANCE threshold to 2 seperate txt files
-  - Then, sublime merge those 2 text files
-
-### Nice to haves:
-<!-- - choose xls file automatically, confirm with 'y' -->
-[sublime-merge-diff-program-preview](https://ibb.co/b3YbnFB)
-- make a dependencies pip txt file, perhaps even automated virtual environment
-- in `pf_txt-to-df.py`, print the name of the available sheets of the `xlsx` file. --- done for xls files, not possible for xlsx files<!--
-- column names for `Levenhstein_distance_output.xlsx` by adapting  `python3 pf_Levenhstein_distance.py` -->
-- column names adapted for when it is not ATN but RAW
-
-### observations made about the normalized text files; THESE CONCERN SPECIFIC INSTANCES (not conclusions about the whole corpus)
+- Numbers are worded out, e.g.: '354' --> 'three hundred and fifty four'
+  - However, as mentioned before, sometimes the way a number needs to be worded out is context dependent, for instance for phone numbers, which need to be normalized as follows: "911" --> 'nine one one'.
+    - Because the program does not distinguish variable forms of numbers,
 
 
-
-## quantitative checks:
-- non capitalized BOL: `^[a-z]`
-- Capitalization omissions of non-BOL sentences `[\.\?\!](?!\n)\s[a-z]`
-- EOL without hard punctuation-mark `\w$`
-
-### Bessy:
-- 0 BOL sentences were not capitalized
-- 514 non BOL sentences were not capitalized
-- 142 EOL without hard punctuation-mark
-
-
-- i 3: MTN: "The actuators position a cars" IRISA does not mistake the **Plural vs Possessive**
-- i 87; the first letter is not always capped (verify with RE: ^[a-z] i)
-  - fixed by capitalize in `pf_xlsx_column_importer`
-  - Acronyms sa CD,DVD: "compact disc, digital video disc" are spelled out
-- Line 1069 at `bessy*`, when copy and pasting it in sublime, they become separate lines, plus quotation mark is added. -->
-
-### Rhoda:
-### Full data anlysis:
-- 0 BOL sentences were not capitalized
-- 509 non BOL sentences were not capitalized
-- 41 EOL had no punct mark.
-
-- Plural vs Possessive confusion
-  - l.10
-- Capitalization omission after hard punct in `raw` & `gold`
-  - l.747, l.748
-- Capitalization omission proper noun, eg `california`
-  - l.497
-- Capitalization omission of acronyms, eg `m p e g`
-  - l.484
-- Article (the) omission
-  - l.728
-- Article (a) omission
-  - l.494, l491
-- Replacement Colons for commas
-  - l.723
-- Omission of 'etc'
-  - l.695
-- quotation misplacement eg `|trip odometers|`
-  -l. 490
-- Replacement And/or for only `and`
-  -l.486
-
-### Cindy
-**observations**:
-- 0 BOL are not capitalized
-- 359 Non BOL sentences were not capitalized
-- 77 EOL had no PUNCT mark
-
-GS manual-normalization (MN) had:
-- 2 beginning of line (BOL) sentences were not capitalized. ATN fixes this.
-- 359 omissions of non-BOL sentences capitalization.
-- 77 EOL are without punctuation mark --> ATN fixes this.
-- MN removes  hyphens (all) --> ATN can be configured to do so or not.
-- MN removes brackets (all) --> --> ATN can be configured to do so or not
-- The raw `Cindy` texts has many incorrect uses of the plural vs possessive; Whenever the raw text makes this mistake, ATN follows it a, e.g. 'the cars window is broken' MN fixes most of them. I will do some further research whether ATN can solve this, but I think it's difficult.
-  - There are some instances where the Raw text, and therefore ATN, has the correct usages, and MN the incorrect usage.
-- GS has Plural vs Possessive correct:
-  - l.13              ATN incorrectly --> follows raw
-  - l.48              ATN incorrectly --> follows raw
-  - l.52              ATN incorrectly --> follows raw
-  - l.73              ATN incorrectly --> follows raw
-- Plural vs Possessive incorrect:
- - l. 671             ATN correct --> follows raw
-- converts enumeration
-  - l.84 raw: "either (i) has"  GS: "one, has"
-- removes sentence-part
-  - l.105
-  - fast-forward
-- removes acronyms
-  - l.631   GS spells acronym out, removes the acronym (which is explained in RAW)
-- converts acronyms to lesser known spelled out words
-  - l.647
-- Acronym spelling out of; when acronym is lowercase in the raw file, ATN does not capitalize (and not spell out as in GS)
-  - l.44
-
-
-### Rebecca
-**Observations**:
-##### Based on full data set analysis:
-Regex search:
-- 615 non-EOL sentences were not capitalized
-- 45 EOL sentences were not concluded with a hard punctuation mark.
-- Removal of All hyphens
-  - Even when stylistically it seems nicer to use hyphens:
-    e.g.:
-      - handling related
-      -
-
-#### Based on sampling observations:
-
-- Acronyms not capitalized
-  - e.g. "sedans b m w seven series"
-  - l.768
-
-- Article preceding noun omission   -- many, almost by rule.
-e.g.: "society of automotive engineers"
-  - l.235
-
-- Capitalization-omission of proper nouns:
-    - e.g. "ferrari, mercedes benz", "porsche" --> ATN doesn't fix this atm, but I think that including a NER could be a solution.
-
-
-- (non) Capitilization of letters
-  e.g. 'Shaped like a u and aptly named, the u joint ' --> ATN fixes this.
-
-
-- Incorrect wording-out of numbers:
-  l.982 (For the number'3':'thre' instead of 'three') --> ATN does not make such mistakes.
-
-
-- Spelling incorrect
-  - e.g. 'everyday'
-
-
-- Pronoun (Incorrect usage)
-  - e.g. "...a transmission linkage **that controls** the motion of the gearshift lever. "
-  - l.8
-
-
-- Punctuation - Comma omission
-  - e.g. 'Underinflation of a tire affects driving performance, wears the tire out more quickly and reduces fuel efficiency. '
-
-
-- Verb incorrect plural vs singular II
-    - e.g. "**slip angle** is caused by deflections in the tire's sidewall and **tread** during cornering. " MTN follows RAW, and so does ATN. When RAW does this,ATN will also not be able to correct it.
-    e.g. "A grouping of features that **affect** steering behavior"
-
-
-- Verb omissions    (many, almost by rule)
-  - e.g. "An air compressor [IS] used to force..."
-
-
-- Verb-form incorrect use
-    - Continuous vs present form
-      e.g. "A spring consisting of"
-
-
-- Words (Questionable additions of):
-  - adverbs
-    - e.g. "but it **actually** encompasses all varieties of compressors including turbochargers."
-
-
-### Summary for the 4 files:
-#### Quantitative
-- Almost all Acronyms are written-out, even when the acronyms are wider known (e.g. 'CD' vs 'compact disk')
-- Separated letters are often not capitalized
-- All hyphens are removed (sometimes that seems undesirable) (e.g.: Electro chemical, non linear, all weather)
-- More than half of the non-BOL lines are not capitalized
-- About 1/3 EOL do not have a hard-punctuation mark.
-
-#### Sampled
-- Omissions of an article before a noun seems to be the norm in RAW, and (probably therefore) in MTN.
-- Many proper nouns are not capitalized. --> ATN does not fix this atm, but I think a solution (with desirable ROC) could be a NER, and then the capitilization of that named entity.
-
-- in MTN, almost no unnecessary pronouns are removed from the RAW-text (e.g. "...and air which is brought...")
-- Several incorrect uses of verbs
-- Several incorrect uses of plural vs possessive form of the noun, i.e. it does not catch all the incorrect uses in the RAW-text, where this mistake is very widespread.)
-- Very occasionally a number is not correctly written out.
-
-However, for some of these 'mistakes' mentioned; if these are consistent, and this is standard language for the domain, I guess that this is also the language what we'd like to train on.
-
-
-
-### fixes archive
-<!-- - "atmospheric pressure at sea level is 14.7 `psi`." "Atmospheric pressure at sea level is fourteen point seven `psi`."
-- first row is omitted in `goldstandard & raw`
-- instead of skipping a empty row, write to it in the `txt` file as 'empty', such that the `xls` file and `txt` file match
-- The exclusion of the first row works, but I was just wondering if it would be easier just to enter the index you want to start from than assuming the 0 row is for column names.
-- 'honda vs Honda' sometimes with/without capitalization
-- 'Check your A/C operation normalized to 'Check your a C operation' -->
-
-<!-- - e.g. `monday–friday, 9:00 a.m.–5:00 p.m.`now to `Monday to friday, nine o'clock until five o'clock `
-- ‘12000-15000 miles' normalized to: ‘last twelve thousand fifteen thousand miles’ it should be 'last twelve thousand TO fifteen thousand miles’; Now to `Twelve th
-ousand to fifteen thousand miles.`
-- "the late 20th century" `the late twenty TH` century now to `the late twentieth century`
-- `Magnuson-Moss Warranty Act (15 U.S.C. 2302)` DESIRED `magnuson moss warranty act fifteen, USC. Two thousand three hundred and two.` -->
+Understandably, all these forms are aimed to be normalized in a way that people in the context where the end-products of TL are deployed tend to refer to them.
